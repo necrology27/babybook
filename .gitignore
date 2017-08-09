@@ -5,6 +5,10 @@
 !*/cache/index.html
 !*/cache/.htaccess
 
+.buildpath
+.project
+.settings/*
+
 #codeigniter 3
 application/logs/*
 !application/logs/index.html
