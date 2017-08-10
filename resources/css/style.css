@@ -1,0 +1,60 @@
+#child_boxes {
+	display: inline-block;
+	position: relative;
+	width: 70%;
+	left: 20%;
+}
+
+tr.child_row {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+}
+
+td.box {
+    display: table-cell;
+	position: relative;
+	height: 150px;
+	width: auto;
+	text-align: center;
+}
+
+td.ch11 {
+	background: #ccff00;
+}
+
+#navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #999;
+}
+
+li#title {
+	display: inline-block;
+	position: relative;
+	font-size: 26px;
+	margin-right: 30%;
+    float: left;
+    display: table-cell;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a {
+    float: left;
+    display: table-cell;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+    text-decoration: none;
+    color: #fff;
+}
