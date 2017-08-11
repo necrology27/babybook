@@ -18,12 +18,12 @@
    <?php echo form_open('verifylogin'); ?>
    <div class="form-group">
      <label for="email">Email:</label>
-     <input type="text" size="20" id="email" name="email"/>
+     <input class="form-control" type="text" id="email" name="email"/>
      <br/>
      </div>
      <div class="form-group">
      <label for="password">Password:</label>
-     <input type="password" size="20" id="passowrd" name="password"/>
+     <input class="form-control" type="password" id="passowrd" name="password"/>
      <br/>
      </div>
      <div class="form-group">

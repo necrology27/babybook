@@ -7,7 +7,12 @@
 	<script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
     <script>
     $( function() {
-    	var date = $('.datepicker').datepicker({ dateFormat: 'yy-mm-dd' }).val();
+    	var date = $('.datepicker').datepicker({
+        	 dateFormat: 'yy-mm-dd',
+    	     changeMonth: true,
+    	     changeYear: true,
+    	     yearRange: "-100:-10"
+    	 }).val();
     } );
     </script>
 	<link rel="stylesheet" href="<?php echo resources_url(); ?>jquery-ui/jquery-ui.css">
