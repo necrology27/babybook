@@ -1,3 +1,4 @@
+emese
 <?php
 	$array = array('b', 'a', 'c', 'y', 'u');
 	
