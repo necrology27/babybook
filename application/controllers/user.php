@@ -31,7 +31,7 @@ class user extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'trim|required|sha1');
         $this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|required|matches[password]|sha1');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');
-        $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required');
+        $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|date');
         
         // validate form input
         if ($this->form_validation->run() == FALSE) {
@@ -46,7 +46,7 @@ class user extends CI_Controller
                 'birthday' => $this->input->post('birthday'),
                 'role' => 2,
                 'language' => 1,
-                'measurement' => 1
+                'measurement' => $this->input->post('measurement')
             );
             
             // insert form data into database

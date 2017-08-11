@@ -56,17 +56,8 @@
                 <div class="form-group">
                     <label for="measurement">Measurement</label>
                     <select name='measurement' id='measurement'>
-          
-					<?php
-					
-					if (count($measurement)) {
-					    foreach ($measurement as $list) {
-					?>
-        				<option value='$list["id"]'> $list['title'] . </option>
-    				<?php
-                        }
-                    } 
-                    ?>
+        				<option value='1'> SI(metre, kilogram) </option>
+        				<option value='2'> English(yard, stone) </option>
 					</select><br/>
                     <span class="text-danger"><?php echo form_error('measurement'); ?></span>
                 </div>
