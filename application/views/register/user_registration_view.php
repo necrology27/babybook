@@ -20,9 +20,10 @@
     <link href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+ <img src="<?php echo resources_url();?>img/bemaszik.png" class="back-left"/>
 <button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>login'">Back to login</button>
            
-<div class="container">
+<div class="container animated_form">
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <?php echo $this->session->flashdata('verify_msg'); ?>

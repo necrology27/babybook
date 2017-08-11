@@ -6,8 +6,8 @@
    <link href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
  </head>
  <body>
- <img src="<?php echo resources_url();?>img/bemaszik.png" class="back-left">
-<div class="row login">
+ <img src="<?php echo resources_url();?>img/bemaszik.png" class="back-left"/>
+ <div class="row animated_form">
     <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-default">
         	<div class="panel-heading">
