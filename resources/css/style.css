@@ -24,6 +24,51 @@
 	border-radius: 4px;
 }
 
+@keyframes jon_a_form {
+    0%   {top:-80%;}
+    20%  {top:-60%;}
+    40%  {top:-40%;}
+    60%  {top:-20%;}
+    80%  {top:0%;}
+    100%  {top:20%;}
+}
+
+.login {
+	display: block;
+	position: relative;
+	top: 20%;
+    animation-name: jon_a_form;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+}
+
+@keyframes jon_a_baba {
+    0%   {left:-3%; top:20%;}
+    10%  {left:-2%; top:20%;}
+    20%  {left:-1%; top:20%;}
+    30%  {left:0%; top:20%;}
+    40%  {left:1%; top:20%;}
+    50%  {left:2%; top:20%;}
+    60%  {left:3%; top:20%;}
+    70%  {left:4%; top:20%;}
+    80%  {left:5%; top:20%;}
+    90%  {left:6%; top:20%;}
+    100% {left:7%; top:20%;}
+}
+
+.back-left {
+	z-index: -1;
+	top: 20%;
+	left: 7%;
+	display: block;
+	position: absolute;
+	width: 20%;
+	height: auto;
+    animation-name: jon_a_baba;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+}
+
 #child_boxes {
 	display: inline-block;
 	position: relative;

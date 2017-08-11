@@ -6,14 +6,14 @@
    <link href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
  </head>
  <body>
-<div class="row">
+ <img src="<?php echo resources_url();?>img/bemaszik.png" class="back-left">
+<div class="row login">
     <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-default">
         	<div class="panel-heading">
-   <h1>Simple Login with CodeIgniter</h1>
+   <h1>babybook | Login</h1>
    </div>
-            <div class="panel-body">
-   <!-- <?php $this->session->sess_destroy();?> -->
+   <div class="panel-body">
    <?php echo validation_errors(); ?>
    <?php echo form_open('verifylogin'); ?>
    <div class="form-group">
