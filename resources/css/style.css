@@ -17,6 +17,9 @@ td.box {
 	height: 150px;
 	width: auto;
 	text-align: center;
+	background-image: url('../img/elso.png');
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 td.ch11 {
