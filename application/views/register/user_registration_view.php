@@ -7,6 +7,8 @@
     <link href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>login'">Back to login</button>
+           
 <div class="container">
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -17,7 +19,7 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-default">
-            <div class="panel-heading">
+        	<div class="panel-heading">
                 <h4>User Registration Form</h4>
             </div>
             <div class="panel-body">

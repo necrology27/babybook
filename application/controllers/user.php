@@ -62,15 +62,4 @@ class user extends CI_Controller
             }
         }
     }
-
-    function verify($hash = NULL)
-    {
-        if ($this->user_model->verifyEmailID($hash)) {
-            $this->session->set_flashdata('verify_msg', '<div class="alert alert-success text-center">Your Email Address is successfully verified! Please login to access your account!</div>');
-            redirect('user/register');
-        } else {
-            $this->session->set_flashdata('verify_msg', '<div class="alert alert-danger text-center">Sorry! There is error verifying your Email Address!</div>');
-            redirect('user/register');
-        }
-    }
 }
