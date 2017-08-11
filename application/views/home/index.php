@@ -3,7 +3,7 @@
 	<li id="title">babybook</li>
 	<li><a>Forum</a></li>
 	<li><a>Settings</a></li>
-	<li><a>Logout</a></li>
+	<li><a href="home/logout">Logout</a></li>
 </ul>
 
 <a>Add child...</a>
