@@ -1,3 +1,9 @@
+
+INSERT INTO `skill_groups` (`id`, `name`) VALUES (1, 'Personal-Social');
+INSERT INTO `skill_groups` (`id`, `name`) VALUES (2, 'Fine Motor - Adaptive');
+INSERT INTO `skill_groups` (`id`, `name`) VALUES (3, 'Language');
+INSERT INTO `skill_groups` (`id`, `name`) VALUES (4, 'Gross Motor');
+
 Insert into skills (`id`, `name`, `passed25pct`, `passed50pct`, `passed75pct`, `passed90pct`, `description`, `skill_group_id`) VALUES (NULL, 'Regard Face', 0, 0, 0, 0, 'Hold the child or place the child on his/her back and put your face about 12 inches above the child\'s face. Pass if the child actually looks at you.', 1);
 Insert into skills (`id`, `name`, `passed25pct`, `passed50pct`, `passed75pct`, `passed90pct`, `description`, `skill_group_id`) VALUES (NULL, 'Smile Responsively', 0.5, 0.8, 1.2, 1.5, 'With the child lying on the back, smile and talk to the child. Do not tickle the child, or touch his/her face. Pass if the child smiles in response. The objective is a social response rather than a physical response.
 ', 1);

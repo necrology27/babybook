@@ -45,7 +45,7 @@ CREATE TABLE siblings(
 
 CREATE TABLE skill_groups(
 	id int NOT NULL AUTO_INCREMENT Primary key,
-    name enum('Personal-Social','Fine Motor-Adaptive','Language','Gross Motor')
+    name VARCHAR(30)
 
 );
 CREATE TABLE skills(
