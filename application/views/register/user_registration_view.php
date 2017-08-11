@@ -3,6 +3,14 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>babybook User Registration Form</title>
+	<script src="<?php echo resources_url();?>jquery.js"></script>
+	<script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
+    <script>
+    $( function() {
+    	var date = $('.datepicker').datepicker({ dateFormat: 'yy-mm-dd' }).val();
+    } );
+    </script>
+	<link rel="stylesheet" href="<?php echo resources_url(); ?>jquery-ui/jquery-ui.css">
     <link href="<?php echo resources_url(); ?>/css/style.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
 </head>
@@ -51,7 +59,7 @@
 
                 <div class="form-group">
                     <label for="birthday">Birthday</label>
-                    <input class="form-control" name="birthday" placeholder="birthday" type="text" />
+                    <input class="form-control datepicker" name="birthday" type="text" />
                     <span class="text-danger"><?php echo form_error('birthday'); ?></span>
                 </div>
                 
