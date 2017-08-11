@@ -28,7 +28,12 @@ class user extends CI_Controller
     {
         return ( ! preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
     } 
-
+    
+    public function valid_date($date)
+    {
+        $d = DateTime::createFromFormat('Y-m-d', $date);
+        return $d && $d->format('Y-m-d') === $date;
+    }
     function register()
     {
         // set validation rules
@@ -36,7 +41,7 @@ class user extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'trim|required|sha1');
         $this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|required|matches[password]|sha1');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');
-        $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|date');
+        $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
         
         // validate form input
         if ($this->form_validation->run() == FALSE) {
