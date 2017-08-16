@@ -6,7 +6,8 @@
 	<li><a href="home/logout">Logout</a></li>
 </ul>
 
-<a>Add child...</a>
+
+<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>user/add_child'">Add child</button>
 
 <div>
 	<h2>Children</h2>

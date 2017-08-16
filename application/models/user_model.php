@@ -12,6 +12,10 @@ class user_model extends CI_Model
     {
 		return $this->db->insert('users', $data);
 	}
+	function insertChild($data)
+	{
+	    return $this->db->insert('children', $data);
+	}
 	
 	function changePassword($data, $pwd)
 	{

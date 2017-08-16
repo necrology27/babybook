@@ -132,3 +132,9 @@ li a:hover {
     text-decoration: none;
     color: #fff;
 }
+
+.radiobtn {
+	display: inline-block;
+	position: relative;
+	width: auto;
+}
