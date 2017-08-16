@@ -8,6 +8,7 @@ class Home extends CI_Controller {
         {
             $session_data = $this->session->userdata('logged_in');
             $data['name'] = $session_data['name'];
+            $data['id'] = $session_data['id'];
            
             $this->load->view('templates/header', $data);
             $this->load->view('home/index.php', $data);

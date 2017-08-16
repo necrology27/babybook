@@ -63,24 +63,29 @@ $( function() {
 					
 
 						<div class="form-group">
-							<label for="birth_weight">Birth weight </label> 
-							<input class="form-control" name="birth_weight" placeholder="Birth_weight" type="text" value="<?php echo set_value('birth_weight'); ?>" /> 
+							<label for="birth_weight">Birth weight </label> <br> 
+							<input class="form-control2" name="birth_weight" type="text" value="<?php echo set_value('birth_weight'); ?>" /> 
+								<span class= "measurement">g</span>
 								<span class="text-danger">
 								<?php echo form_error('birth_weight'); ?>
 								</span>
 						</div>
 						
 						<div class="form-group">
-							<label for="birth_length">Birth length </label> 
-							<input class="form-control" name="birth_length" placeholder="Birth_length" type="text" value="<?php echo set_value('birth_length'); ?>" /> 
+							<label for="birth_length">Birth length </label> <br>
+							<input class="form-control2" name="birth_length" type="text" value="<?php echo set_value('birth_length'); ?>" /> 
+								<span class= "measurement">m</span>
 								<span class="text-danger">
+	
 								<?php echo form_error('birth_weight'); ?>
 								</span>
+								
 						</div>
 						
 						<div class="form-group">
-							<label for="apgar_score">Apgar score </label> 
-							<input class="form-control" name="apgar_score" placeholder="Apgar_score" type="text" value="<?php echo set_value('apgar_score'); ?>" /> 
+							<label for="apgar_score">Apgar score </label>  <br> 
+							<input class="form-control2" name="apgar_score" type="text" value="<?php echo set_value('apgar_score'); ?>" /> 
+								<span class= "measurement">/10</span>
 								<span class="text-danger">
 								<?php echo form_error('birth_weight'); ?>
 								</span>
