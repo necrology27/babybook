@@ -37,6 +37,7 @@
 					</div>
 					<div class="panel-body">
                 <?php $attributes = array("name" => "userupdateform");
+                echo $id . " " . $name;
                 echo form_open("home/update", $attributes); ?>
                 		<div class="form-group">
 							<label for="name">Name</label> 
@@ -87,8 +88,8 @@
 						<div class="form-group">
 							<label for="measurement">Measurement</label> 
 							<select name='measurement' id='measurement'>
-								<option value='1'>SI(metre, kilogram)</option>
-								<option value='2'>English(yard, stone)</option>
+								<option value='1' <?php if($measurement === 1) echo $measurement; ?>>SI(metre, kilogram)</option>
+								<option value='2' <?php if($measurement === 2) echo $measurement; ?>>English(yard, stone)</option>
 							</select>
 							<br /> 
 							<span class="text-danger">

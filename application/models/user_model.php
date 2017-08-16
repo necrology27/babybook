@@ -26,9 +26,22 @@ class user_model extends CI_Model
 	    return $result[0];
 	}
 	
-	function update_user_by_id($id,$data){
-	    $this->db->where('id', $id);
-	    return $this->db->update('users', $data)->get();
+	function update_user_by_id($id, $data){
+	    $this->db->trans_start();
+	    $this->db->update('users', $data, array('id' => $data['id']));
+	    $this->db->trans_complete();
+	    
+	    if ($this->db->affected_rows() > 0) {
+	        return 1;
+	    } else {
+	        if ($this->db->trans_status() === FALSE)
+	        {
+	            return 0;
+	        } else {
+	            return 1;
+	        }
+	        return 0;
+	    }
 	}
 	
 	function updateUser($data)

@@ -68,13 +68,13 @@ class Home extends CI_Controller {
     
     function update()
     {
+        $session_data = $this->session->userdata('logged_in');
         // set validation rules
         $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|min_length[3]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('newpassword', 'New Password', 'trim|sha1');
         $this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|matches[newpassword]|sha1');
         $this->form_validation->set_rules('gender', 'Gender', 'required');
-        //$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|edit_unique[users.email.' . $this->session->userdata('logged_in')['id'] . ']');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|callback_edit_unique[users.email.' . $session_data['id'] . ']');
         $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
         $this->form_validation->set_rules('measurement', 'Measurement', 'required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|sha1');
@@ -83,12 +83,13 @@ class Home extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             if($this->session->userdata('logged_in'))
             {
-                $session_data = $this->session->userdata('logged_in');
-                $data['name'] = $session_data['name'];
+                $user_data = $this->user_model->get_user_data($session_data['id']);
                 $data['id'] = $session_data['id'];
-                $user_data = $this->user_model->get_user_data($data['id']);
+                $data['name'] = $user_data['name'];
                 $data['email'] = $user_data['email'];
                 $data['birthday'] = $user_data['birthday'];
+                $data['measurement'] = $user_data['measurement'];
+                $data['gender'] = $user_data['gender'];
                 
                 $this->load->view('templates/header', $data);
                 $this->load->view('home/edit_self', $data);
@@ -96,9 +97,15 @@ class Home extends CI_Controller {
             }
         } else {
             // insert the user registration details into database
+            if ($this->input->post('newpassword') !== '') {
+                $pw = $this->input->post('newpassword');
+            } else {
+                $pw = $this->input->post('password');
+            }
             $data = array(
+                'id' => $session_data['id'],
                 'name' => $this->input->post('name'),
-                'password' => $this->input->post('newpassword'),
+                'password' => $pw,
                 'gender' => $this->input->post('gender'),
                 'email' => $this->input->post('email'),
                 'birthday' => $this->input->post('birthday'),
