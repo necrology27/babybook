@@ -30,7 +30,7 @@ class user extends CI_Controller
     }
     
     private function generatePassword($length){
-        return substr(str_shuffle('abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ23456789') , 0 , 10 );
+        return substr(str_shuffle('abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789') , 0 , $length);
     }
     
     public function forgot() {
@@ -45,10 +45,11 @@ class user extends CI_Controller
             
             $pwd = $this->generatePassword(8);
             
+            
             // insert form data into database
             if ($this->sendMail($data, $pwd)) {
                 
-               // $this->user_model->changePassword($data, $pwd);
+                $this->user_model->changePassword($data, $pwd);
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Mail sent, check your inbox!</div>');
                 redirect('user/forgot');
             } else {
