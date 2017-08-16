@@ -19,8 +19,8 @@ class user_model extends CI_Model
 	
 	function changePassword($data, $pwd)
 	{
-	    
-	    $this->db->set('password', password_hash($pwd, PASSWORD_BCRYPT));
+	    $sha_password = sha1($pwd);
+	    $this->db->set('password', $sha_password);
 	    $this->db->where('email', $data);
 	    return $this->db->update('users');
 	}
