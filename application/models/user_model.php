@@ -17,25 +17,23 @@ class user_model extends CI_Model
 	    return $this->db->insert('children', $data);
 	}
 	
-	function get_user_id($data){
-	    $email[] = $data['email'];
-	    $this->db->select('id');
+	function get_user_data($id){
+	    $this->db->select('*');
 	    $this->db->from('users');
-	    $this->db->where('email', $email);
+	    $this->db->where('id', $id);
 	    $query = $this->db->get();
-	    $result = $query->result();
-	    return $result;
+	    $result = $query->result_array();
+	    return $result[0];
 	}
 	
 	function update_user_by_id($id,$data){
 	    $this->db->where('id', $id);
-	    return $this->db->update('users', $data);
+	    return $this->db->update('users', $data)->get();
 	}
 	
 	function updateUser($data)
 	{
-	    $id = $this->get_user_id($data);
-	    return $this->update_user_by_id($id, $data);
+	    return $this->update_user_by_id($this->session->id, $data);
 	}
 	
 	function changePassword($data, $pwd)

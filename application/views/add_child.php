@@ -24,7 +24,7 @@ $( function() {
                 rel="stylesheet" type="text/css" />
                 </head>
                 <body>
-                <button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>login'">Back to home page</button>
+                <button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>home'">Back to home page</button>
                 <div class="container animated_form">
                 <div class="row">
                 <div class="col-md-6 col-md-offset-3">

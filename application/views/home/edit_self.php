@@ -24,6 +24,8 @@
 	rel="stylesheet" type="text/css" />
 </head>
 <body>
+<button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>home'">Back to home page</button>
+                
 	<img src="<?php echo resources_url();?>img/lancletra.png" class="back-left" />
 	<div class="container animated_form">
 		<div class="row">
@@ -38,7 +40,7 @@
                 echo form_open("home/update", $attributes); ?>
                 		<div class="form-group">
 							<label for="name">Name</label> 
-							<input class="form-control" name="name" placeholder="Your Name" type="text" value="<?php echo set_value('name'); ?>" /> 
+							<input class="form-control" name="name" type="text" value="<?php echo $name; ?>" /> 
 								<span class="text-danger">
 								<?php echo form_error('name'); ?>
 								</span>
@@ -68,7 +70,7 @@
 
 						<div class="form-group">
 							<label for="email">Email</label> 
-							<input class="form-control" name="email" placeholder="Email" type="text" value="<?php echo set_value('email'); ?>" /> 
+							<input class="form-control" name="email" type="text" value="<?php echo $email; ?>" /> 
 							<span class="text-danger">
 							<?php echo form_error('email'); ?>
 							</span>
@@ -76,7 +78,7 @@
 
 						<div class="form-group">
 							<label for="birthday">Birthday</label> 
-							<input class="form-control datepicker" name="birthday" type="text" /> 
+							<input class="form-control datepicker" name="birthday" type="text" value="<?php echo $birthday; ?>" /> 
 							<span class="text-danger">
 							<?php echo form_error('birthday'); ?>
 							</span>
