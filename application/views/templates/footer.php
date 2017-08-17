@@ -1,6 +1,6 @@
                	<br>
                	<br>
                	<br>
-                <em>&copy; <?php $d =  new DateTime(); echo date('Y'); ?></em>
+                <em class="footer">babybook &copy; <?php $d =  new DateTime(); echo date('Y'); ?></em>
         </body>
 </html>

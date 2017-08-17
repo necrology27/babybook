@@ -27,7 +27,12 @@ class user extends CI_Controller
     
     function alpha_dash_space($str)
     {
-        return ( ! preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
+        $CI =& get_instance();
+        $CI->load->database();
+        
+        $CI->form_validation->set_message('alpha_dash_space', "Invalid characters in %s.");
+        
+        return ( ! preg_match("/^([-a-z_ íéáőúűöüóÍÉÁŐÚŰÖÜÓ])+$/i", $str)) ? FALSE : TRUE;
     }
     
     private function generatePassword($length){
@@ -99,7 +104,7 @@ class user extends CI_Controller
                 'email' => $this->input->post('email'),
                 'birthday' => $this->input->post('birthday'),
                 'role' => 2,
-                'language' => 1,
+                'language' => $this->input->post('language'),
                 'measurement' => $this->input->post('measurement')
             );
             

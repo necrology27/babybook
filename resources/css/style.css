@@ -24,6 +24,16 @@
 	border-radius: 4px;
 }
 
+.footer {
+	display: block;
+	position: absolute;
+	float: right;
+	right: 5%;
+	text-decoration: none;
+	font-style: normal;
+	font-weight: bold;
+}
+
 @keyframes jon_a_form {
     0%   {top:-80%;}
     20%  {top:-60%;}

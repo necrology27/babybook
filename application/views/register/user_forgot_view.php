@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 <title>babybook Forgot Password</title>
 <link rel="stylesheet" href="<?php echo resources_url(); ?>jquery-ui/jquery-ui.css">
 <link href="<?php echo resources_url(); ?>/css/style.css" rel="stylesheet" type="text/css" />

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0; charset=utf-8">
 <title>babybook | Update Profile</title>
 <script src="<?php echo resources_url();?>jquery.js"></script>
 <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
@@ -37,7 +37,6 @@
 					</div>
 					<div class="panel-body">
                 <?php $attributes = array("name" => "userupdateform");
-                echo $id . " " . $name;
                 echo form_open("home/update", $attributes); ?>
                 		<div class="form-group">
 							<label for="name">Name</label> 
@@ -65,8 +64,8 @@
 						
                         <div class="form-group">
 							<label for="name">Gender</label><br>
-							<input class="radiobtn" type="radio" name="gender" value="M"> Male<br>
-  							<input class="radiobtn" type="radio" name="gender" value="F" checked> Female<br>
+							<input class="radiobtn" type="radio" name="gender" value="M" <?php if($gender === 'M') echo 'checked'; ?>> Male<br>
+  							<input class="radiobtn" type="radio" name="gender" value="F" <?php if($gender === 'F') echo 'checked'; ?>> Female<br>
 						</div>
 
 						<div class="form-group">
@@ -84,12 +83,25 @@
 							<?php echo form_error('birthday'); ?>
 							</span>
 						</div>
+						
+						<div class="form-group">
+							<label for="language">Language</label> 
+							<select name='language' id='language'>
+								<option value='1' <?php if($language == 1) echo 'selected'; ?>>English</option>
+								<option value='2' <?php if($language == 2) echo 'selected'; ?>>Magyar</option>
+								<option value='3' <?php if($language == 3) echo 'selected'; ?>>Román</option>
+							</select>
+							<br /> 
+							<span class="text-danger">
+							<?php echo form_error('measurement'); ?>
+							</span>
+						</div>
 
 						<div class="form-group">
 							<label for="measurement">Measurement</label> 
 							<select name='measurement' id='measurement'>
-								<option value='1' <?php if($measurement === 1) echo $measurement; ?>>SI(metre, kilogram)</option>
-								<option value='2' <?php if($measurement === 2) echo $measurement; ?>>English(yard, stone)</option>
+								<option value='1' <?php if($measurement === 'SI (metre, kilogram)') echo 'selected'; ?>>SI(metre, kilogram)</option>
+								<option value='2' <?php if($measurement === 'English units(yard, stone)') echo 'selected'; ?>>English(yard, stone)</option>
 							</select>
 							<br /> 
 							<span class="text-danger">

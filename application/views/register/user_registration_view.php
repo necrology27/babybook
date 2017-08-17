@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0; charset=utf-8">
 <title>babybook User Registration Form</title>
 <script src="<?php echo resources_url();?>jquery.js"></script>
 <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
@@ -73,6 +73,28 @@
 							<input class="form-control datepicker" name="birthday" type="text" /> 
 							<span class="text-danger">
 							<?php echo form_error('birthday'); ?>
+							</span>
+						</div>
+						
+						<div class="form-group">
+							<label for="name">Gender</label><br>
+							<input class="radiobtn" type="radio" name="gender" value="M"> Male<br>
+  							<input class="radiobtn" type="radio" name="gender" value="F" checked> Female<br>
+							<span class="text-danger">
+							<?php echo form_error('gender'); ?>
+							</span>
+						</div>
+
+						<div class="form-group">
+							<label for="language">Language</label> 
+							<select name='language' id='language'>
+								<option value='1'>English</option>
+								<option value='2'>Magyar</option>
+								<option value='3'>Román</option>
+							</select>
+							<br /> 
+							<span class="text-danger">
+							<?php echo form_error('language'); ?>
 							</span>
 						</div>
 

@@ -45,7 +45,12 @@ class Home extends CI_Controller {
     
     function alpha_dash_space($str)
     {
-        return ( ! preg_match("/^([-a-z_ ])+$/i", $str)) ? FALSE : TRUE;
+        $CI =& get_instance();
+        $CI->load->database();
+        
+        $CI->form_validation->set_message('alpha_dash_space', "Invalid characters in %s.");
+        
+        return ( ! preg_match("/^([-a-z_ íéáőúűöüóÍÉÁŐÚŰÖÜÓ])+$/i", $str)) ? FALSE : TRUE;
     }
     
     function edit_unique($value, $params)  {
@@ -76,6 +81,7 @@ class Home extends CI_Controller {
         $this->form_validation->set_rules('gender', 'Gender', 'required');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|callback_edit_unique[users.email.' . $session_data['id'] . ']');
         $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
+        $this->form_validation->set_rules('language', 'Language', 'required');
         $this->form_validation->set_rules('measurement', 'Measurement', 'required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|sha1');
         
@@ -89,6 +95,7 @@ class Home extends CI_Controller {
                 $data['email'] = $user_data['email'];
                 $data['birthday'] = $user_data['birthday'];
                 $data['measurement'] = $user_data['measurement'];
+                $data['language'] = $user_data['language'];
                 $data['gender'] = $user_data['gender'];
                 
                 $this->load->view('templates/header', $data);
@@ -110,7 +117,7 @@ class Home extends CI_Controller {
                 'email' => $this->input->post('email'),
                 'birthday' => $this->input->post('birthday'),
                 'role' => 2,
-                'language' => 1,
+                'language' => $this->input->post('language'),
                 'measurement' => $this->input->post('measurement')
             );
             
