@@ -130,7 +130,10 @@ class user extends CI_Controller
         
         // validate form input
         if ($this->form_validation->run() == FALSE) {
-            // fails
+            $measurement = $this->user_model->get_user_data($userId)['measurement'];
+            $data = array(
+                'measurement' => $measurement                
+            );
             $this->load->view('add_child', $data);
         } else {
             

@@ -23,7 +23,10 @@ class user_model extends CI_Model
 	    $this->db->where('id', $id);
 	    $query = $this->db->get();
 	    $result = $query->result_array();
-	    return $result[0];
+	    if ($this->db->affected_rows() > 0)
+	       return $result[0];
+	    else 
+	       return false;
 	}
 	
 	function update_user_by_id($id, $data){

@@ -36,7 +36,6 @@ $( function() {
 					<div class="panel-body">
                 <?php $attributes = array("name" => "addchildform");
                 echo form_open("user/add_child", $attributes); ?>
-                		<?php echo $measurement?>
                 		<div class="form-group">
 							<label for="name">Name</label> <input class="form-control"
 								name="name" placeholder="Child's name" type="text"
@@ -65,7 +64,14 @@ $( function() {
 						<div class="form-group">
 							<label for="birth_weight">Birth weight </label> <br> 
 							<input class="form-control2" name="birth_weight" type="text" value="<?php echo set_value('birth_weight'); ?>" /> 
-								<span class= "measurement">g</span>
+								<span class= "measurement">
+								<?php 
+								if ($measurement === 'SI (metre, kilogram)') 
+								    echo 'g';
+								 else 
+								     echo 'lb';
+								 ?>
+								 </span>
 								<span class="text-danger">
 								<?php echo form_error('birth_weight'); ?>
 								</span>
@@ -74,7 +80,14 @@ $( function() {
 						<div class="form-group">
 							<label for="birth_length">Birth length </label> <br>
 							<input class="form-control2" name="birth_length" type="text" value="<?php echo set_value('birth_length'); ?>" /> 
-								<span class= "measurement">cm</span>
+								<span class= "measurement">
+								<?php 
+								if ($measurement === 'SI (metre, kilogram)') 
+								    echo 'cm';
+								 else 
+								     echo 'in';
+								 ?>
+								 </span>
 								<span class="text-danger">
 	
 								<?php echo form_error('birth_weight'); ?>
