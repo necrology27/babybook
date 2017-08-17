@@ -3,3 +3,7 @@
 function resources_url(){
    return base_url().'resources/';
 }
+
+function uploads_url(){
+    return base_url().'uploads/';
+}
