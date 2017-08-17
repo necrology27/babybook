@@ -2,6 +2,7 @@
 
 class user extends CI_Controller
 {
+    
 
     public function __construct()
     {
@@ -117,20 +118,45 @@ class user extends CI_Controller
     }
     function add_child()
     {
+      
+        $session_data = $this->session->userdata('logged_in');
+        $userId = $session_data['id'];
+        
         // set validation rules
         $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|min_length[3]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
         
+       
+        
         // validate form input
         if ($this->form_validation->run() == FALSE) {
             // fails
-            $this->load->view('add_child');
+            $this->load->view('add_child', $data);
         } else {
+            
+            if($this->input->post('is_parent') == NULL)
+            {
+                $is_par=0;
+            }
+            else
+                $is_par=1;
+                
             // insert the user registration details into database
             $data = array(
                 'name' => $this->input->post('name'),
-                'password' => $this->input->post('password'),
-          
+                'birthday' => $this->input->post('birthday'),
+                'gender' => $this->input->post('gender'),
+                'birth_weight' => $this->input->post('birth_weight'),
+                'birth_length' => $this->input->post('birth_length'),
+                'apgar_score' => $this->input->post('apgar_score'),
+                'genetical_disorders' => $this->input->post('genetical_disorders'),
+                'other_disorders' => $this->input->post('other_disorders'),
+                //                 image
+                
+                'is_parent' =>  $is_par,
+                'other_disorders' => $this->input->post('other_disorders'),
+                'userId' => $userId,
+
             );
             
             // insert form data into database
@@ -138,11 +164,11 @@ class user extends CI_Controller
                 
                 // successfully sent mail
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">You are Successfully ADD A CHILD!</div>');
-                redirect('user/register');
+                redirect('user/add_child');
             } else {
                 // error
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t ADD CHILD.  Please try again later!!!</div>');
-                redirect('user/register');
+                redirect('user/add_child');
             }
         }
     }
