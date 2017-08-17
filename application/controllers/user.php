@@ -116,6 +116,25 @@ class user extends CI_Controller
             }
         }
     }
+    
+    function exists($value, $params) {
+        $CI =& get_instance();
+        $CI->load->database();
+        
+        $CI->form_validation->set_message('exists', "Sorry, that %s is already being used.");
+        
+        list($table, $field, $current_id) = explode(".", $params);
+        
+        $query = $CI->db->select()->from($table)->where($field, $value)->limit(1)->get();
+        
+        if ($query->row() && $query->row()->userId == $current_id)
+        {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
+    
     function add_child()
     {
       
@@ -123,9 +142,8 @@ class user extends CI_Controller
         $userId = $session_data['id'];
         
         // set validation rules
-        $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|min_length[3]|max_length[30]|xss_clean');
+        $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|callback_exists[children.name.'.$session_data['id'].']|min_length[3]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
-        
        
         
         // validate form input
