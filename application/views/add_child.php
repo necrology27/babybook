@@ -35,19 +35,20 @@ $( function() {
 					</div>
 					<div class="panel-body">
                 <?php $attributes = array("name" => "addchildform");
-                echo form_open("user/add_child", $attributes); ?>
+                echo form_open_multipart("upload_controller/add_child", $attributes); ?>
                 		<div class="form-group">
 							<label for="name">Name</label> <input class="form-control"
 								name="name" placeholder="Child's name" type="text"
-								value="<?php echo set_value('name'); ?>" /> <span
-								class="text-danger"><?php echo form_error('name'); ?></span>
+								value="<?php echo set_value('name'); ?>" /> 
+							<!-- 	<span>
+							 	class="text-danger"><?php echo form_error('name'); ?></span>   -->
 						</div>
 						
 						<div class="form-group">
 							<label for="birthday">Birthday</label> 
 							<input class="form-control datepicker" name="birthday" type="text" /> 
 							<span class="text-danger">
-							<?php echo form_error('birthday'); ?>
+						<!-- 	<?php echo form_error('birthday'); ?> -->
 							</span>
 						</div>
 						
@@ -60,7 +61,7 @@ $( function() {
 					
 					
 					
-
+  
 						<div class="form-group">
 							<label for="birth_weight">Birth weight </label> <br> 
 							<input class="form-control2" name="birth_weight" type="text" value="<?php echo set_value('birth_weight'); ?>" /> 
@@ -95,6 +96,7 @@ $( function() {
 								
 						</div>
 						
+						
 						<div class="form-group">
 							<label for="apgar_score">Apgar score </label>  <br> 
 							<input class="form-control2" name="apgar_score" type="text" value="<?php echo set_value('apgar_score'); ?>" /> 
@@ -125,12 +127,8 @@ $( function() {
 							<label for="image">Add default image</label> 
 					
 							 
-							 
-							 <!--	<?php echo $error;?> -->
-                                <?php echo form_open_multipart('upload_controller/do_upload');?>
+							<?php echo $error;?> 
                                 <?php echo "<input type='file' name='userfile' size='20' />"; ?>
-                                <?php echo "<input type='submit' name='submit' value='upload' /> ";?>
-                                <?php echo "</form>"?>
 							 
 								<span class="text-danger">
 								<?php echo form_error('image'); ?>
