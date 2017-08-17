@@ -123,7 +123,15 @@ $( function() {
 						
 						<div class="form-group">
 							<label for="image">Add default image</label> 
-							 <input type="file" name="image" accept="image/*"> 
+					
+							 
+							 
+							 <!--	<?php echo $error;?> -->
+                                <?php echo form_open_multipart('upload_controller/do_upload');?>
+                                <?php echo "<input type='file' name='userfile' size='20' />"; ?>
+                                <?php echo "<input type='submit' name='submit' value='upload' /> ";?>
+                                <?php echo "</form>"?>
+							 
 								<span class="text-danger">
 								<?php echo form_error('image'); ?>
 								</span>
