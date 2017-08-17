@@ -14,7 +14,8 @@ class user_model extends CI_Model
 	}
 	function insertChild($data)
 	{
-	    return $this->db->insert('children', $data);
+	    $this->db->insert('children', $data);
+	    return $this->db->insert_id();
 	}
 	
 	function get_user_data($id){

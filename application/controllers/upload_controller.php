@@ -59,14 +59,18 @@ class Upload_Controller extends MY_Controller {
                
                 
             );
+           
             
             // insert form data into database
-            if ($this->user_model->insertChild($data)) {
+            if ($childID=$this->user_model->insertChild($data)) {
                 
                 // successfully sent mail
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">You are Successfully ADD A CHILD!</div>');
-                $this->do_upload();die();
+                
+                
+                $this->do_upload($data["userId"], $childID);
                 redirect('upload_controller/add_child');
+                
             } else {
                 // error
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t ADD CHILD.  Please try again later!!!</div>');
@@ -75,10 +79,14 @@ class Upload_Controller extends MY_Controller {
         }
     }
         
-    public function do_upload(){
-  
+    public function do_upload($userId, $childId){
         
-        $config['upload_path'] = FCPATH . 'uploads';
+        
+        if (!file_exists(FCPATH . 'uploads/'.$userId. '/'.$childId)) {
+            mkdir(FCPATH . 'uploads/'.$userId. '/'.$childId, 0777, true);
+        }
+        
+        $config['upload_path'] = FCPATH . 'uploads/'.$userId. '/'.$childId;
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = '8192000';
         $config['max_width'] = '1024';
