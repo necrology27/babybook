@@ -84,6 +84,7 @@
 	position: relative;
 	width: 70%;
 	left: 20%;
+	right: 20%;
 }
 
 tr.child_row {
@@ -92,13 +93,18 @@ tr.child_row {
 	width: 100%;
 }
 
-td.box {
-    display: table-cell;
+#child_boxes tbody {
+	width: 100%;
+	display: block;
 	position: relative;
-	height: 150px;
-	width: auto;
+}
+
+td.box {
+    display: inline-block;
+	position: relative;
+	height: 250px;
+	width: 30%;
 	text-align: center;
-	background-image: url('../img/elso.png');
 	background-size: contain;
 	background-repeat: no-repeat;
 }

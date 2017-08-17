@@ -29,6 +29,18 @@ class user_model extends CI_Model
 	       return false;
 	}
 	
+	function get_children($id) {
+	    $this->db->select('*');
+	    $this->db->from('children');
+	    $this->db->where('userId', $id);
+	    $query = $this->db->get();
+	    $result = $query->result_array();
+	    if ($this->db->affected_rows() > 0)
+	        return $result;
+        else
+            return false;
+	}
+	
 	function update_user_by_id($id, $data){
 	    $this->db->trans_start();
 	    $this->db->update('users', $data, array('id' => $data['id']));
