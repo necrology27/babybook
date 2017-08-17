@@ -55,3 +55,4 @@ $route['default_controller'] = "login";
 //$route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['lang'] = "Lang_controller";

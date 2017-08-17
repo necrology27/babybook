@@ -25,7 +25,24 @@ class Home extends MY_Controller {
             $session_data = $this->session->userdata('logged_in');
             $data['name'] = $session_data['name'];
             $data['id'] = $session_data['id'];
-           
+            
+            $data['children'] = $this->user_model->get_children($data['id']);
+            $data['child_count'] = count($data['children']);
+            
+            $language = "romanian";
+            
+            //Choose language file according to selected lanaguage
+            if($language == "hungarian")
+                $this->lang->load('hungarian_lang','hungarian');
+            else if($language == "romanian")
+                $this->lang->load('romanian_lang','romanian');
+            else
+                $this->lang->load('english_lang','english');
+                
+            //Fetch the message from language file.
+            $data['msg'] = $this->lang->line('msg');
+            $data['home_title'] = $this->lang->line('home_title');
+       
             $this->load->view('templates/header', $data);
             $this->load->view('home/index.php', $data);
             $this->load->view('templates/footer', $data);
