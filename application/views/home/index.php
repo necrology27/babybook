@@ -7,7 +7,7 @@
 </ul>
 
 
-<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>user/add_child'">Add child</button>
+<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>upload_controller/add_child'">Add child</button>
 <button class="btn-default btn" onclick="location.href='<?php echo base_url();?>home/update'">Edit profile</button>
 
 <div>
