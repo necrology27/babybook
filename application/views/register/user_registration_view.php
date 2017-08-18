@@ -70,7 +70,7 @@
 
 						<div class="form-group">
 							<label for="birthday"><?php echo $birthday_label; ?></label> 
-							<input class="form-control datepicker" name="birthday" type="text" /> 
+							<input class="form-control datepicker" name="birthday" type="text" value="<?php echo set_value('birthday'); ?>" /> 
 							<span class="text-danger">
 							<?php echo form_error('birthday'); ?>
 							</span>
