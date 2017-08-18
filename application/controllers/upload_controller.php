@@ -76,7 +76,7 @@ class Upload_Controller extends MY_Controller {
                     $this->session->set_flashdata('msg', '<div>' . $err . '!!!</div>');
                     
                 }
-                redirect('upload_controller/add_child');
+                redirect('make_test');
                 
             } else {
                 // error
