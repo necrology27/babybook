@@ -20,7 +20,7 @@
 		    <?php
 		  for($j=$i*3; $j < min($i*3+3, $child_count); $j++) {
 		?>
-		     <td class="box <?php echo "ch" . $i . $j;?>">
+		     <td class="box <?php echo "ch" . $j;?>">
 		     	<?php echo $children[$j]['name'];?>
 		     </td>         
 		<?php
