@@ -71,8 +71,11 @@ class Upload_Controller extends MY_Controller {
                 // successfully sent mail
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Success!</div>');
                 
-                
-                $this->do_upload($data["userId"], $childID);
+                $err = $this->do_upload($data["userId"], $childID);
+                if ($err !== true) {
+                    $this->session->set_flashdata('msg', '<div>' . $err . '!!!</div>');
+                    
+                }
                 redirect('upload_controller/add_child');
                 
             } else {
@@ -97,19 +100,19 @@ class Upload_Controller extends MY_Controller {
         $config['remove_spaces'] = TRUE;
         $config['max_size'] = '8192000';
         $config['max_width'] = '1024';
-        $config['max_height'] = '768';
+        $config['max_height'] = '2048';
        
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
         if($this->upload->do_upload())
         {
-            echo 'kesz';
             $data = array('upload_data' => $this->upload->data());
             $this->load->view('upload_success',$data);
+            return true;
         }
         else
         {
-            echo  $this->upload->display_errors();
+            return $this->upload->display_errors();
             $data = array(
                 
                 'error' => $this->upload->display_errors()

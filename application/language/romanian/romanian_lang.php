@@ -6,6 +6,7 @@ $lang['home_title'] = "Acasă";
 $lang['login_title'] = "Intrare";
 $lang['register_title'] = "Înregistrare";
 $lang['forgot_title'] = "Am uitat parola";
+$lang['update_title'] = "Actualizare profil";
 
 //login info
 $lang['password'] = "Parola";
@@ -16,15 +17,12 @@ $lang['ex_mail'] = "exemplu@email.ro";
 //home page
 $lang['add_child'] = "Adăugare copil";
 $lang['edit_profile'] = "Editează profilul";
-$lang['logout'] = "Delogare";
 $lang['my_children'] = "Copii";
 $lang['forum'] = "Forum";
 $lang['settings'] = "Setări";
-$lang['logged_in_as'] = "Conectat ca";
 
-//editing
-$lang['update_title'] = "Actualizare profil";
-$lang['back_to_home'] = "Înapoi la pagina de start";
+//labels
+$lang['logged_in_as'] = "Conectat ca";
 $lang['name_label'] = "Nume";
 $lang['new_password_label'] = "Parolă nouă";
 $lang['confirm_password_label'] = "Confirma parola nouă";
@@ -38,6 +36,8 @@ $lang['measurement_label'] = "Măsură";
 $lang['old_password_label'] = "Parola actuală";
 
 //buttons
+$lang['logout'] = "Delogare";
+$lang['back_to_home'] = "Înapoi la pagina de start";
 $lang['add_button'] = "Adăugare";
 $lang['save_button'] = "Salvare";
 $lang['cancel_button'] = "Anulare";

@@ -30,6 +30,7 @@ class Home extends MY_Controller
             
             $data['name'] = $session_data['name'];
             $data['id'] = $session_data['id'];
+            $data['title'] = $this->lang->line('home_title');
             
             $data['children'] = $this->user_model->get_children($data['id']);
             $data['child_count'] = count($data['children']);
@@ -49,6 +50,7 @@ class Home extends MY_Controller
         $id = $session_data['id'];
         
         $data = $this->load_lang($id);
+        $data['title'] = $this->lang->line('update_title');
         
         // set validation rules
         $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|min_length[3]|max_length[30]|xss_clean');
