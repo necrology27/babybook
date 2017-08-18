@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0; charset=utf-8">
-<title>babybook User Registration Form</title>
+<title>babybook | Registration</title>
 <script src="<?php echo resources_url();?>jquery.js"></script>
 <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
 <script>
@@ -90,7 +90,7 @@
 							<select name='language' id='language'>
 								<option value='1'>English</option>
 								<option value='2'>Magyar</option>
-								<option value='3'>Román</option>
+								<option value='3'>Romï¿½n</option>
 							</select>
 							<br /> 
 							<span class="text-danger">

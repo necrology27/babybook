@@ -65,7 +65,7 @@ class Upload_Controller extends MY_Controller {
             if ($childID=$this->user_model->insertChild($data)) {
                 
                 // successfully sent mail
-                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">You are Successfully ADD A CHILD!</div>');
+                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Success!</div>');
                 
                 
                 $this->do_upload($data["userId"], $childID);
