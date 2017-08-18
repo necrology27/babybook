@@ -36,6 +36,22 @@ $lang['birthday_label'] = "Birth date";
 $lang['language_label'] = "Language";
 $lang['measurement_label'] = "Measurement";
 $lang['old_password_label'] = "Current password";
+
+//buttons
+$lang['add_button'] = "Add";
 $lang['save_button'] = "Save";
 $lang['cancel_button'] = "Cancel";
+$lang['signup_button'] = "Registration";
+$lang['send_email_button'] = "Send email";
+
+//add child
+$lang['child_name_placeholder'] = "Child's name";
+$lang['birth_weight_label'] = "Birth weight";
+$lang['birth_length_label'] = "Birth length";
+$lang['apgar_score_label'] = "Apgar score";
+$lang['genetical_disorders_label'] = "Genetical disorders";
+$lang['none_placeholder'] = "none";
+$lang['other_disorders_label'] = "Other disorders";
+$lang['default_image_label'] = "Default image";
+$lang['my_child_label'] = "My child";
 ?>

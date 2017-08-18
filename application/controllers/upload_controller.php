@@ -20,6 +20,8 @@ class Upload_Controller extends MY_Controller {
         
         $session_data = $this->session->userdata('logged_in');
         $userId = $session_data['id'];
+        
+        $data = $this->load_lang($userId);
        
         // set validation rules
         $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|callback_exists[children.name.'.$session_data['id'].']|min_length[3]|max_length[30]|xss_clean');
@@ -29,10 +31,12 @@ class Upload_Controller extends MY_Controller {
         // validate form input
         if ($this->form_validation->run() == FALSE) {
             $measurement = $this->user_model->get_user_data($userId)['measurement'];
-            $data = array(
+            $datas = array(
                 'measurement' => $measurement,
                 'error' => ' '
             );
+            
+            $data = $datas + $this->load_lang($userId);
             $this->load->view('add_child', $data);
         } else {
             

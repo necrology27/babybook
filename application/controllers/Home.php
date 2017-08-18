@@ -19,50 +19,6 @@ class Home extends MY_Controller
         $this->load->model('user_model');
     }
 
-    function load_lang($id)
-    {
-        
-        $language = $this->user_model->get_user_data($id)['language'];
-        
-        // Choose language file according to selected lanaguage
-        if ($language == 2)
-            $this->lang->load('hungarian_lang', 'hungarian');
-        else if ($language == 3)
-            $this->lang->load('romanian_lang', 'romanian');
-        else
-            $this->lang->load('english_lang', 'english');
-        
-        $data['lang'] = $language;
-        $data['msg'] = $this->lang->line('msg');
-        $data['home_title'] = $this->lang->line('home_title');
-        $data['password'] = $this->lang->line('password');
-        $data['add_child'] = $this->lang->line('add_child');
-        $data['edit_profile'] = $this->lang->line('edit_profile');
-        $data['logout'] = $this->lang->line('logout');
-        $data['my_children'] = $this->lang->line('my_children');
-        $data['forum'] = $this->lang->line('forum');
-        $data['settings'] = $this->lang->line('settings');
-        
-        $data['update_title'] = $this->lang->line('update_title');
-        $data['back_to_home'] = $this->lang->line('back_to_home');
-        $data['name_label'] = $this->lang->line('name_label');
-        $data['new_password_label'] = $this->lang->line('new_password_label');
-        $data['confirm_password_label'] = $this->lang->line('confirm_password_label');
-        $data['gender_label'] = $this->lang->line('gender_label');
-        $data['male'] = $this->lang->line('male');
-        $data['female'] = $this->lang->line('female');
-        $data['email_label'] = $this->lang->line('email_label');
-        $data['birthday_label'] = $this->lang->line('birthday_label');
-        $data['language_label'] = $this->lang->line('language_label');
-        $data['measurement_label'] = $this->lang->line('measurement_label');
-        $data['old_password_label'] = $this->lang->line('old_password_label');
-        $data['save_button'] = $this->lang->line('save_button');
-        $data['cancel_button'] = $this->lang->line('cancel_button');
-        $data['logged_in_as'] = $this->lang->line('logged_in_as');
-        
-        return $data;
-    }
-
     public function index()
     {
         if ($this->session->userdata('logged_in')) {

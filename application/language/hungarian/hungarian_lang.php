@@ -8,7 +8,7 @@ $lang['register_title'] = "Regisztráció";
 $lang['forgot_title'] = "Elfelejtett jelszó";
 
 //login info
-$lang['password'] = "Jelszó";
+$lang['password_label'] = "Jelszó";
 $lang['back_to_login'] = "Vissza a belépéshez";
 $lang['send_mail'] = "Email küldése";
 $lang['ex_mail'] = "pelda@valami.hu";
@@ -36,6 +36,22 @@ $lang['birthday_label'] = "Születési dátum";
 $lang['language_label'] = "Nyelv";
 $lang['measurement_label'] = "Mértékegységek";
 $lang['old_password_label'] = "Jelenlegi jelszó";
+
+//buttons
+$lang['add_button'] = "Hozzáad";
 $lang['save_button'] = "Mentés";
 $lang['cancel_button'] = "Mégse";
+$lang['signup_button'] = "Regisztráció";
+$lang['send_email_button'] = "E-mail küldése";
+
+//add child
+$lang['child_name_placeholder'] = "Gyerek neve";
+$lang['birth_weight_label'] = "Születési tömeg";
+$lang['birth_length_label'] = "Születési hossz";
+$lang['apgar_score_label'] = "Apgar-érték";
+$lang['genetical_disorders_label'] = "Genetikai rendellenességek";
+$lang['none_placeholder'] = "semmi";
+$lang['other_disorders_label'] = "Egyéb rendellenességek";
+$lang['default_image_label'] = "Alapértelmezett kép";
+$lang['my_child_label'] = "Saját gyerek";
 ?>

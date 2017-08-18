@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>babybook User Registration Form</title>
+<title>babybook | <?php echo $add_child; ?></title>
 <script src="<?php echo resources_url();?>jquery.js"></script>
 <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
 <script>
@@ -24,28 +24,28 @@ $( function() {
                 rel="stylesheet" type="text/css" />
                 </head>
                 <body>
-                <button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>home'">Back to home page</button>
+                <button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>home'"><?php echo $back_to_home; ?></button>
                 <div class="container animated_form">
                 <div class="row">
                 <div class="col-md-6 col-md-offset-3">
         <?php echo $this->session->flashdata('verify_msg'); ?>
 			<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4>Add a child</h4>
+						<h4><?php echo $add_child; ?></h4>
 					</div>
 					<div class="panel-body">
                 <?php $attributes = array("name" => "addchildform");
                 echo form_open_multipart("make_test", $attributes); ?>
                 		<div class="form-group">
-							<label for="name">Name</label> <input class="form-control"
-								name="name" placeholder="Child's name" type="text"
+							<label for="name"><?php echo $name_label; ?></label> <input class="form-control"
+								name="name" placeholder="<?php echo $child_name_placeholder; ?>" type="text"
 								value="<?php echo set_value('name'); ?>" /> 
 							<!-- 	<span>
 							 	class="text-danger"><?php echo form_error('name'); ?></span>   -->
 						</div>
 						
 						<div class="form-group">
-							<label for="birthday">Birthday</label> 
+							<label for="birthday"><?php echo $birthday_label; ?></label> 
 							<input class="form-control datepicker" name="birthday" type="text" /> 
 							<span class="text-danger">
 						<!-- 	<?php echo form_error('birthday'); ?> -->
@@ -54,16 +54,16 @@ $( function() {
 						
 						
 						<div class="form-group">
-							<label for="name">Gender</label><br>
-							<input class="radiobtn" type="radio" name="gender" value="M"> Male<br>
-  							<input class="radiobtn" type="radio" name="gender" value="F" checked> Female<br>
+							<label for="name"><?php echo $gender_label; ?></label><br>
+							<input class="radiobtn" type="radio" name="gender" value="M"> <?php echo $male; ?><br>
+  							<input class="radiobtn" type="radio" name="gender" value="F" checked><?php echo $female; ?><br>
 						</div>
 					
 					
 					
   
 						<div class="form-group">
-							<label for="birth_weight">Birth weight </label> <br> 
+							<label for="birth_weight"><?php echo $birth_weight_label; ?></label> <br> 
 							<input class="form-control2" name="birth_weight" type="text" value="<?php echo set_value('birth_weight'); ?>" /> 
 								<span class= "measurement">
 								<?php 
@@ -79,7 +79,7 @@ $( function() {
 						</div>
 						
 						<div class="form-group">
-							<label for="birth_length">Birth length </label> <br>
+							<label for="birth_length"><?php echo $birth_length_label; ?></label> <br>
 							<input class="form-control2" name="birth_length" type="text" value="<?php echo set_value('birth_length'); ?>" /> 
 								<span class= "measurement">
 								<?php 
@@ -91,40 +91,40 @@ $( function() {
 								 </span>
 								<span class="text-danger">
 	
-								<?php echo form_error('birth_weight'); ?>
+								<?php echo form_error('birth_length'); ?>
 								</span>
 								
 						</div>
 						
 						
 						<div class="form-group">
-							<label for="apgar_score">Apgar score </label>  <br> 
+							<label for="apgar_score"><?php echo $apgar_score_label; ?></label>  <br> 
 							<input class="form-control2" name="apgar_score" type="text" value="<?php echo set_value('apgar_score'); ?>" /> 
 								<span class= "measurement">/10</span>
 								<span class="text-danger">
-								<?php echo form_error('birth_weight'); ?>
+								<?php echo form_error('apgar_score'); ?>
 								</span>
 						</div>
 						
 						<div class="form-group">
-							<label for="genetical_disorders">Genetical disorders </label> 
-							<input class="form-control" name="genetical_disorders" placeholder="none" type="text" value="<?php echo set_value('genetical_disorders'); ?>" /> 
+							<label for="genetical_disorders"><?php echo $genetical_disorders_label; ?></label> 
+							<input class="form-control" name="genetical_disorders" placeholder="<?php echo $none_placeholder; ?>" type="text" value="<?php echo set_value('genetical_disorders'); ?>" /> 
 								<span class="text-danger">
-								<?php echo form_error('birth_weight'); ?>
+								<?php echo form_error('genetical_disorders'); ?>
 								</span>
 						</div>
 						
 						<div class="form-group">
-							<label for="other_disorders ">Other disorders</label> 
-							<input class="form-control" name="other_disorders" placeholder="none" type="text" value="<?php echo set_value('other_disorders'); ?>" /> 
+							<label for="other_disorders "><?php echo $other_disorders_label; ?></label> 
+							<input class="form-control" name="other_disorders" placeholder="<?php echo $none_placeholder; ?>" type="text" value="<?php echo set_value('other_disorders'); ?>" /> 
 								<span class="text-danger">
-								<?php echo form_error('birth_weight'); ?>
+								<?php echo form_error('other_disorders'); ?>
 								</span>
 						</div>
 
 						
 						<div class="form-group">
-							<label for="image">Add default image</label> 
+							<label for="image"><?php echo $default_image_label; ?></label> 
 					
 							 
 							<?php echo $error;?> 
@@ -136,16 +136,15 @@ $( function() {
 						</div>
 						
 							<div class="form-group">
-						<!--	<label for="birthday">Birthday</label> -->
-							<input type="checkbox" name="is_parent" value="is_parent"> My child.<br>
+							<input type="checkbox" name="is_parent" value="is_parent"><?php echo $my_child_label; ?><br>
 							<?php echo form_error('is_parent'); ?>
 							</span>
 						</div>
 						
 
 						<div class="form-group">
-							<button name="submit" type="submit" class="btn btn-default">Add</button>
-							<button name="cancel" type="reset" class="btn btn-default" onclick="location.href='<?php echo base_url();?>home'">Cancel</button>
+							<button name="submit" type="submit" class="btn btn-default"><?php echo $add_button; ?></button>
+							<button name="cancel" type="reset" class="btn btn-default" onclick="location.href='<?php echo base_url();?>home'"><?php echo $cancel_button; ?></button>
 						</div>
 					</form>
                 <?php echo $this->session->flashdata('msg'); ?>

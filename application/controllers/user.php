@@ -33,7 +33,8 @@ class user extends MY_Controller
         // validate form input
         if ($this->form_validation->run() == FALSE) {
             // fails
-            $this->load->view('register/user_forgot_view');
+            $data = $this->load_lang();
+            $this->load->view('register/user_forgot_view', $data);
         } else {
             // insert the user registration details into database
             $data = $this->input->post('email');
@@ -77,8 +78,9 @@ class user extends MY_Controller
         
         // validate form input
         if ($this->form_validation->run() == FALSE) {
+            $data = $this->load_lang();
             // fails
-            $this->load->view('register/user_registration_view');
+            $this->load->view('register/user_registration_view', $data);
         } else {
             // insert the user registration details into database
             $data = array(
@@ -92,11 +94,12 @@ class user extends MY_Controller
             );
             
             // insert form data into database
-            if ($this->user_model->insertUser($data)) {
+            if ($id = $this->user_model->insertUser($data)) {
                 
+                $data = $this->load_lang($id);
                 // successfully sent mail
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">You are Successfully Registered!</div>');
-                redirect('user/register');
+                redirect('user/register', $data);
             } else {
                 // error
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t insert data.  Please try again later!!!</div>');

@@ -36,6 +36,22 @@ $lang['birthday_label'] = "Data nasterii";
 $lang['language_label'] = "Limba";
 $lang['measurement_label'] = "Măsură";
 $lang['old_password_label'] = "Parola actuală";
-$lang['save_button'] = "Salvați";
+
+//buttons
+$lang['add_button'] = "Adăugare";
+$lang['save_button'] = "Salvare";
 $lang['cancel_button'] = "Anulare";
+$lang['signup_button'] = "Înregistrare";
+$lang['send_email_button'] = "Trimite email";
+
+//add child
+$lang['child_name_placeholder'] = "Numele copilului";
+$lang['birth_weight_label'] = "Greutate la naștere";
+$lang['birth_length_label'] = "Lungime la naștere";
+$lang['apgar_score_label'] = "Scorul Apgar";
+$lang['genetical_disorders_label'] = "Tulburări genetice";
+$lang['none_placeholder'] = "nici unul";
+$lang['other_disorders_label'] = "Alte tulburări";
+$lang['default_image_label'] = "Imagine prestabilită";
+$lang['my_child_label'] = "Copilul meu";
 ?>
