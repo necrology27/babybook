@@ -52,7 +52,6 @@
 						 	<?php echo $skill['name'];?><br>
 								<span class="popuptext" id="popup<?php echo $i;?>"> <?php echo $skill['description'];?></span>
 						</div> </td>
-						<br>
 						
 					</tr>	
 				<?php 
