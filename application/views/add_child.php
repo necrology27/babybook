@@ -35,7 +35,7 @@ $( function() {
 					</div>
 					<div class="panel-body">
                 <?php $attributes = array("name" => "addchildform");
-                echo form_open_multipart("upload_controller/add_child", $attributes); ?>
+                echo form_open_multipart("make_test", $attributes); ?>
                 		<div class="form-group">
 							<label for="name">Name</label> <input class="form-control"
 								name="name" placeholder="Child's name" type="text"
@@ -146,7 +146,6 @@ $( function() {
 						<div class="form-group">
 							<button name="submit" type="submit" class="btn btn-default">Add</button>
 							<button name="cancel" type="reset" class="btn btn-default" onclick="location.href='<?php echo base_url();?>home'">Cancel</button>
-							
 						</div>
 					</form>
                 <?php echo $this->session->flashdata('msg'); ?>

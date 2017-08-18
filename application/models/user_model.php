@@ -98,4 +98,16 @@ class user_model extends CI_Model
         $this->db->where('email', $data);
         return $this->db->update('users');
     }
+    
+        function get_skills_by_age($age)
+    {
+        $this->db->select('*');
+        $this->db->from('skills');
+        $this->db->where('passed25pct<', $age);
+        $this->db->where('passed90pct>', $age);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        return $result;
+    }
+    
 }
