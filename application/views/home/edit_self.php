@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0; charset=utf-8">
-<title>babybook | Update Profile</title>
+<title>babybook | <?php echo $update_title; ?></title>
 <script src="<?php echo resources_url();?>jquery.js"></script>
 <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
 <script>
@@ -24,7 +24,7 @@
 	rel="stylesheet" type="text/css" />
 </head>
 <body>
-<button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>home'">Back to home page</button>
+<button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>home'"><?php echo $back_to_home; ?></button>
                 
 	<img src="<?php echo resources_url();?>img/lancletra.png" class="back-left" />
 	<div class="container animated_form">
@@ -33,13 +33,13 @@
         <?php echo $this->session->flashdata('verify_msg'); ?>
 			<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4>User Profile</h4>
+						<h4><?php echo $update_title; ?></h4>
 					</div>
 					<div class="panel-body">
                 <?php $attributes = array("name" => "userupdateform");
                 echo form_open("home/update", $attributes); ?>
                 		<div class="form-group">
-							<label for="name">Name</label> 
+							<label for="name"><?php echo $name_label; ?></</label> 
 							<input class="form-control" name="name" type="text" value="<?php echo $name; ?>" /> 
 								<span class="text-danger">
 								<?php echo form_error('name'); ?>
@@ -47,29 +47,29 @@
 						</div>
 
 						<div class="form-group">
-							<label for="password">New Password</label>
-							<input class="form-control" name="newpassword" placeholder="Password" type="password" />
+							<label for="password"><?php echo $new_password_label; ?></</label>
+							<input class="form-control" name="newpassword" placeholder="<?php echo $new_password_label; ?>" type="password" />
 							<span class="text-danger">
 							<?php echo form_error('newpassword'); ?>
 							</span>
 						</div>
 
 						<div class="form-group">
-							<label for="subject">Confirm Password</label> 
-							<input class="form-control" name="cpassword" placeholder="Confirm New Password" type="password" /> 
+							<label for="subject"><?php echo $confirm_password_label; ?></</label> 
+							<input class="form-control" name="cpassword" placeholder="<?php echo $confirm_password_label; ?>" type="password" /> 
 							<span class="text-danger">
 							<?php echo form_error('cpassword'); ?>
 							</span>
 						</div>
 						
                         <div class="form-group">
-							<label for="name">Gender</label><br>
-							<input class="radiobtn" type="radio" name="gender" value="M" <?php if($gender === 'M') echo 'checked'; ?>> Male<br>
-  							<input class="radiobtn" type="radio" name="gender" value="F" <?php if($gender === 'F') echo 'checked'; ?>> Female<br>
+							<label for="name"><?php echo $gender_label; ?></</label><br>
+							<input class="radiobtn" type="radio" name="gender" value="M" <?php if($gender === 'M') echo 'checked'; ?>> <?php echo $male; ?></<br>
+  							<input class="radiobtn" type="radio" name="gender" value="F" <?php if($gender === 'F') echo 'checked'; ?>> <?php echo $female; ?></<br>
 						</div>
 
 						<div class="form-group">
-							<label for="email">Email</label> 
+							<label for="email"><?php echo $email_label; ?></</label> 
 							<input class="form-control" name="email" type="text" value="<?php echo $email; ?>" /> 
 							<span class="text-danger">
 							<?php echo form_error('email'); ?>
@@ -77,7 +77,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="birthday">Birthday</label> 
+							<label for="birthday"><?php echo $birthday_label; ?></</label> 
 							<input class="form-control datepicker" name="birthday" type="text" value="<?php echo $birthday; ?>" /> 
 							<span class="text-danger">
 							<?php echo form_error('birthday'); ?>
@@ -85,20 +85,20 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="language">Language</label> 
+							<label for="language"><?php echo $language_label; ?></</label> 
 							<select name='language' id='language'>
 								<option value='1' <?php if($language == 1) echo 'selected'; ?>>English</option>
 								<option value='2' <?php if($language == 2) echo 'selected'; ?>>Magyar</option>
-								<option value='3' <?php if($language == 3) echo 'selected'; ?>>Rom·n</option>
+								<option value='3' <?php if($language == 3) echo 'selected'; ?>>Rom√¢n</option>
 							</select>
 							<br /> 
 							<span class="text-danger">
-							<?php echo form_error('measurement'); ?>
+							<?php echo form_error('language'); ?>
 							</span>
 						</div>
 
 						<div class="form-group">
-							<label for="measurement">Measurement</label> 
+							<label for="measurement"><?php echo $measurement_label; ?></</label> 
 							<select name='measurement' id='measurement'>
 								<option value='1' <?php if($measurement === 'SI (metre, kilogram)') echo 'selected'; ?>>SI(metre, kilogram)</option>
 								<option value='2' <?php if($measurement === 'English units(yard, stone)') echo 'selected'; ?>>English(yard, stone)</option>
@@ -110,16 +110,16 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="password">Old Password</label>
-							<input class="form-control" name="password" placeholder="Password" type="password" />
+							<label for="password"><?php echo $old_password_label; ?></</label>
+							<input class="form-control" name="password" placeholder="<?php echo $old_password_label; ?>" type="password" />
 							<span class="text-danger">
 							<?php echo form_error('password'); ?>
 							</span>
 						</div>
 
 						<div class="form-group">
-							<button name="submit" type="submit" class="btn btn-primary">Save</button>
-							<button name="cancel" type="reset" class="btn btn-default">Cancel</button>
+							<button name="submit" type="submit" class="btn btn-primary"><?php echo $save_button; ?></</button>
+							<button name="cancel" type="reset" class="btn btn-default"><?php echo $cancel_button; ?></</button>
 						</div>
 					</form>
                 <?php echo $this->session->flashdata('msg'); ?>

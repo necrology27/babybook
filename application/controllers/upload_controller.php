@@ -88,6 +88,9 @@ class Upload_Controller extends MY_Controller {
         
         $config['upload_path'] = FCPATH . 'uploads/'.$userId. '/'.$childId;
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['file_name'] = 'attach_file_'.time();
+        $config['file_ext_tolower'] = TRUE;
+        $config['remove_spaces'] = TRUE;
         $config['max_size'] = '8192000';
         $config['max_width'] = '1024';
         $config['max_height'] = '768';
