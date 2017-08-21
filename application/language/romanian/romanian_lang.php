@@ -9,7 +9,7 @@ $lang['forgot_title'] = "Am uitat parola";
 $lang['update_title'] = "Actualizare profil";
 
 //login info
-$lang['password'] = "Parola";
+$lang['password_label'] = "Parola";
 $lang['back_to_login'] = "Înapoi la autentificare";
 $lang['send_mail'] = "Trimite email";
 $lang['ex_mail'] = "exemplu@email.ro";

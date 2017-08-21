@@ -8,15 +8,24 @@ class Login extends MY_Controller
     function __construct()
     {
         parent::__construct();
+        
+        $this->load->helper(array(
+            'form',
+            'url'
+        ));
+        $this->load->library(array(
+            'session',
+            'form_validation',
+            'email'
+        ));
+        $this->load->database();
+        $this->load->model('user_model');
     }
 
     function index()
     {
         $data = $this->load_lang();
         
-        $this->load->helper(array(
-            'form'
-        ));
         $this->load->view('login_view', $data);
     }
 

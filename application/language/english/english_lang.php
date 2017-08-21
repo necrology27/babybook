@@ -21,7 +21,7 @@ $lang['settings'] = "Settings";
 $lang['logged_in_as'] = "Logged in as";
 
 //labels
-$lang['password'] = "Password";
+$lang['password_label'] = "Password";
 $lang['back_to_home'] = "Back to home page";
 $lang['name_label'] = "Name";
 $lang['new_password_label'] = "New Password";

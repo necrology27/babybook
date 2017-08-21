@@ -18,7 +18,7 @@ class MY_Controller extends CI_Controller
         if ($this->session->userdata('logged_in')) {
             $language = $this->user_model->get_user_data($id)['language'];
         } else {
-            $language = 2;
+            $language = 1;
         }
         
         // Choose language file according to selected lanaguage
