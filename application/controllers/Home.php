@@ -34,6 +34,9 @@ class Home extends MY_Controller
             
             $data['children'] = $this->user_model->get_children($data['id']);
             $data['child_count'] = count($data['children']);
+            for ($i = 0; $i < $data['child_count']; $i++) {
+                $data['def_imgs'][$i] = $this->user_model->get_def_img($data['children'][$i]['id']);
+            }
             
             $this->load->view('templates/header', $data);
             $this->load->view('home/index.php', $data);

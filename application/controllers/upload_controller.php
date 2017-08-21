@@ -74,7 +74,7 @@ class Upload_Controller extends MY_Controller {
                 $err = $this->do_upload($data["userId"], $childID);
                 if ($err !== true) {
                     $this->session->set_flashdata('msg', '<div>' . $err . '!!!</div>');
-                    
+                    redirect('upload_controller/add_child');
                 }
                 redirect('make_test');
                 
@@ -92,7 +92,7 @@ class Upload_Controller extends MY_Controller {
         
         $data = array(
             'child_id' => $childId,
-            'file_name' => 'attach_file_'.$upload_date,
+            'file_name' => 'img_'.$upload_date,
             'title' => 'Default image',
         );
         
@@ -115,11 +115,11 @@ class Upload_Controller extends MY_Controller {
         
         $config['upload_path'] = FCPATH . 'uploads/'.$userId. '/'.$childId;
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
-        $config['file_name'] = 'attach_file_'.$upload_date;
+        $config['file_name'] = 'img_'.$upload_date;
         $config['file_ext_tolower'] = TRUE;
         $config['remove_spaces'] = TRUE;
         $config['max_size'] = '8192000';
-        $config['max_width'] = '1024';
+        $config['max_width'] = '2048';
         $config['max_height'] = '2048';
        
         $this->load->library('upload', $config);

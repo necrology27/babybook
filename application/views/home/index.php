@@ -20,7 +20,7 @@
 		    <?php
 		  for($j=$i*3; $j < min($i*3+3, $child_count); $j++) {
 		?>
-		     <td class="box <?php echo "ch" . $j;?>">
+		     <td class="box <?php echo "ch" . $j;?>" background="<?php echo uploads_url() . $id . "/" . $children[$j]['id'] . "/" . $def_imgs[$j] . ".png"; ?>">
 		     	<?php echo $children[$j]['name'];?>
 		     </td>         
 		<?php
