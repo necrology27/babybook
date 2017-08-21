@@ -73,7 +73,7 @@ class Upload_Controller extends MY_Controller {
                 
                 $err = $this->do_upload($data["userId"], $childID);
                 if ($err !== true) {
-                    $this->session->set_flashdata('msg', '<div>' . $err . '!!!</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">' . $err . '!!!</div>');
                     redirect('upload_controller/add_child');
                 }
                 
