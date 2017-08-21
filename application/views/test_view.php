@@ -32,7 +32,7 @@
 					<div class="panel-body">
                 <?php $attributes = array("name" => "addchildform");
                 echo form_open_multipart("upload_controller/add_child", $attributes); ?>
-               <p>Valamiii</p>
+              
                   <table>
   					<tr>
                         <th>Pass &nbsp&nbsp&nbsp</th>

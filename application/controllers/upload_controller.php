@@ -88,6 +88,26 @@ class Upload_Controller extends MY_Controller {
         
     public function do_upload($userId, $childId){
         
+        $upload_date=time();
+        
+        $data = array(
+            'child_id' => $childId,
+            'file_name' => 'attach_file_'.$upload_date,
+            'title' => 'Default image',
+        );
+        
+        
+        
+        if ($imageId=$this->user_model->insertImage($data)) {
+            $this->user_model->changeDefaultImage($childId, $imageId);
+
+        } else {
+            // error
+            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t ADD IMAGE.  Please try again later!!!</div>');
+            redirect('upload_controller/add_child');
+        }
+        
+        
         
         if (!file_exists(FCPATH . 'uploads/'.$userId. '/'.$childId)) {
             mkdir(FCPATH . 'uploads/'.$userId. '/'.$childId, 0777, true);
@@ -95,7 +115,7 @@ class Upload_Controller extends MY_Controller {
         
         $config['upload_path'] = FCPATH . 'uploads/'.$userId. '/'.$childId;
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
-        $config['file_name'] = 'attach_file_'.time();
+        $config['file_name'] = 'attach_file_'.$upload_date;
         $config['file_ext_tolower'] = TRUE;
         $config['remove_spaces'] = TRUE;
         $config['max_size'] = '8192000';
@@ -107,7 +127,7 @@ class Upload_Controller extends MY_Controller {
         if($this->upload->do_upload())
         {
             $data = array('upload_data' => $this->upload->data());
-            $this->load->view('upload_success',$data);
+            $this->load->view('add_child',$data);
             return true;
         }
         else

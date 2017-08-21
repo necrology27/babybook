@@ -99,6 +99,8 @@ class user_model extends CI_Model
         return $this->db->update('users');
     }
     
+    
+    
         function get_skills_by_age($age)
     {
         $this->db->select('*');
@@ -108,6 +110,19 @@ class user_model extends CI_Model
         $query = $this->db->get();
         $result = $query->result_array();
         return $result;
+    }
+    
+    function changeDefaultImage($childId, $imageId)
+    {
+        $this->db->set('default_image', $imageId);
+        $this->db->where('id', $childId);
+        return $this->db->update('children');
+    }
+    
+    function insertImage($data)
+    {
+        $this->db->insert('images', $data);
+        return $this->db->insert_id();
     }
     
 }
