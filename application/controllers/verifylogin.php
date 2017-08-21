@@ -21,8 +21,9 @@ class VerifyLogin extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database|sha1');
         
         if ($this->form_validation->run() == FALSE) {
+            $data = $this->load_lang();
             // Field validation failed. User redirected to login page
-            $this->load->view('login_view');
+            $this->load->view('login_view', $data);
         } else {
             // Go to private area
             redirect('home', 'refresh');

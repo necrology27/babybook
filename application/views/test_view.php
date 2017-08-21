@@ -42,6 +42,7 @@
   					</tr>
                 <?php
                 $i = 0;
+                
                 foreach($skills as $skill): ?>
                     <tr> 		
                 		 <td align="center">	<input type="radio" name="radio<?php echo $i;?>" value="Pass"> </td>
@@ -55,8 +56,20 @@
 						
 					</tr>	
 				<?php 
+				
+				$data =  array(
+				    $i => array(
+				        'skill_name' => $skill['name'],
+				        'respons' => 'radio'.$i
+				    )
+				);
+				
 				$i++;
-				endforeach; ?>
+				endforeach; 
+				$jsonString= json_encode($data) ;
+				# print_r($data);
+				# die();
+				?>
 			</table>	
 						<div class="form-group">
 							<button name="submit" type="submit" class="btn btn-default">Save</button>
