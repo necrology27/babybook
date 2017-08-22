@@ -138,8 +138,9 @@ class user_model extends CI_Model
         $this->db->insert('images', $data);
         return $this->db->insert_id();
     }
-    function insertAnswer($data)
+    function insert_answer($data)
     {
+        $this->db->delete('answers', array('child_id' => $data['child_id'], 'skill_id' => $data['skill_id']));
         return $this->db->insert('answers', $data);
     }
     

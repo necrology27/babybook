@@ -1,5 +1,5 @@
 <?php
-class make_test extends MY_Controller {
+class send_answer extends MY_Controller {
     
     public function __construct()
     {
@@ -19,16 +19,22 @@ class make_test extends MY_Controller {
     
     public function index()
     {
-        #die($child_id);
         $session_data = $this->session->userdata('logged_in');
         $userId = $session_data['id'];
+        $skill_id = $_REQUEST['id'];
+        $learned = $_REQUEST['value'];
+        $child_id = $_REQUEST['child_id'];
+    
+        $data = array(
+            'child_id' =>$child_id,
+            'skill_id' => $skill_id,
+            #'age' => $this->input->post('gender'),
+            'learned' => $learned,
+            'user_id' => $userId
+        );
         
-        $data['name'] = $session_data['name'];
-        $data['id'] = $session_data['id'];
-        $age=12;
-        $skills = $this->user_model->get_skills_by_age($age);
-        $data['skills'] = $skills;
-        $this->load->view('test_view', $data);
-            
+        $result = $this->user_model->insert_answer($data);
+        
+        echo "ok";
     }
 }
