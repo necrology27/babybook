@@ -1,0 +1,25 @@
+
+- 27 -
+
+24. Kiválasztja a leghosszabb vonalat
+Megmutatjuk a párhuzamos vonalat a tesztlap hátán és megkérdezzük, melyik vonal hosszabb. 
+Amikor a gyermek rámutat arra a vonalra, amit hosszabbnak gondol felülről lefelé fordítjuk a 
+lapot és megint megkérdezzük legalább háromszor ismételjük.
+Értékelés: Jó, ha 3-szor egymásután a jó vonalat választja.
+Ha nem sikerül, még háromszor meg kell próbálni. Ha hat próba közül ötben a jót választja,
+elfogadható. Csak az számít, ha 3 alaklomból 3-szor vagy 6 alkalomból 5-ször jót választ.
+
+25. Kört másol
+Megmutatja a tesztlap hátán a kört. Nem nevezzük meg, nem huzzuk rajta végig a ceruzát vagy az ujjunkat,
+hogy megmutassuk, hogy rajzolják. Azt mondjuk a gyermeknek, rajzoljon ugyanolyat, mint a képen.
+Értékelés: Jó, minden zárt forma, amit nem folytonos körmozgásokkal firkált.
+
+26. Bemutatott négyszöget utánoz
+Először próbáljuk ki, hogy le tudja-e másolni képről előrajzolás nélkül. Megmutatjuk a négyszöget a tesztlap
+hátán. Nem nevezzük meg és nem húzzuk utána ceruzával, vagy ujjunkkal. Azt mondjuk a gyermeknek, 
+hogy rajzoljon ugyanolyat. Ha nem tudja lemásolni a rajzot, a vizgáló megmutatja, hogyan kell rajzolni:
+mindig két-két szemben lévő oldalát rajzoljuk meg és nem folyamatosan egy mozdulattal, mert akkor
+a gyerek kereknek nézheti.
+
+Stencilsz.: 3213/83/KKné.
+Példánysz.: 110.
