@@ -25,7 +25,9 @@ class make_test extends MY_Controller {
         $data['id'] = $session_data['id'];
         # echo $_SESSION["child_id"]; die();
        
-        
+//         $skills = $this->user_model->get_fail_answer(232);
+//         print_r($skills);
+//         die();
         $skills = $this->user_model->get_skills_by_age($_SESSION["child_age_in_month"]);
         
        # $next_skills = $this->user_model->get_previous_skills(120, 3);

@@ -200,16 +200,22 @@ class user_model extends CI_Model
                 
     }
     
-    
+    #SELECT skill_group_id, COUNT(user_id) as fail_num FROM `answers` WHERE`child_id` = 232 AND `learned`='Fail' GROUP BY `skill_group_id` 
     function get_fail_answer($childID)
     {
         for ($i=1; $i<5; $i++)
         {
-            $this->db->select('skill_group_id', COUNT(user_id) as fail_num);
-            $this->db->group_by('skill_group_id'); 
+            $this->db->select('skill_group_id, COUNT(user_id) as fail_num');
             $this->db->from('answers');
-            $this->db->where('skill_group_id<', $i);
-            
+            $this->db->where('child_id', $childID);
+            $this->db->where('learned', 'Fail');
+            $this->db->group_by('skill_group_id');
+            $query = $this->db->get();
+            $result = $query->result_array();
+            if ($this->db->affected_rows() > 0)
+                return $result;
+                else
+                    return false;
         }
     }
     
