@@ -32,7 +32,7 @@ class Home extends MY_Controller
             $data['id'] = $session_data['id'];
             $data['title'] = $this->lang->line('home_title');
             
-            $data['children'] = $this->user_model->get_children($data['id']);
+            $data['children'] = $this->user_model->get_children_by_parent($data['id']);
             $data['child_count'] = count($data['children']);
             for ($i = 0; $i < $data['child_count']; $i++) {
                 $data['def_imgs'][$i] = $this->user_model->get_def_img($data['children'][$i]['id']);

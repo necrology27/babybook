@@ -33,8 +33,23 @@ class user_model extends CI_Model
         else
             return false;
     }
+    
+    function get_child_data($id)
+    {
+        $this->db->select('*');
+        $this->db->from('children');
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if ($this->db->affected_rows() > 0)
+            return $result[0];
+            else
+                return false;
+    }
+    
 
-    function get_children($id)
+
+    function get_children_by_parent($id)
     {
         $this->db->select('*');
         $this->db->from('children');
@@ -142,6 +157,60 @@ class user_model extends CI_Model
     {
         $this->db->delete('answers', array('child_id' => $data['child_id'], 'skill_id' => $data['skill_id']));
         return $this->db->insert('answers', $data);
+    }
+    
+    #################################### skill_model.php ###########
+    
+    
+    #egy id-hoz képest a következő képességek egy adott csoportban
+                    #SELECT * FROM skills WHERE id>110 AND skill_group_id=2 LIMIT 3
+    function get_next_skills($id, $skill_group_id)
+    {
+        $this->db->select('*');
+        $this->db->from('skills');
+        $this->db->where('id>', $id);
+        $this->db->where('skill_group_id', $skill_group_id);
+        $this->db->limit(4);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if ($this->db->affected_rows() > 0)
+            return $result;
+            else
+                return false;
+                
+                
+    }
+    #egy id-hoz képest az előző képességek egy adott csoportban
+                    #SELECT * FROM skills WHERE id < 113 AND `skill_group_id`=3 ORDER BY id DESC LIMIT 4 
+    function get_previous_skills($id, $skill_group_id)
+    {
+        $this->db->select('*');
+        $this->db->from('skills');
+        $this->db->where('id<', $id);
+        $this->db->where('skill_group_id', $skill_group_id);
+        $this->db->order_by('id', 'DESC');
+        $this->db->limit(4);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if ($this->db->affected_rows() > 0)
+            return $result;
+            else
+                return false;
+                
+                
+    }
+    
+    
+    function get_fail_answer($childID)
+    {
+        for ($i=1; $i<5; $i++)
+        {
+            $this->db->select('skill_group_id', COUNT(user_id) as fail_num);
+            $this->db->group_by('skill_group_id'); 
+            $this->db->from('answers');
+            $this->db->where('skill_group_id<', $i);
+            
+        }
     }
     
 }

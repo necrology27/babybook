@@ -63,12 +63,23 @@ class Upload_Controller extends MY_Controller {
                
                 
             );
+            
+            
+            $today = new DateTime();
+            $today->format('Y-m-d');
+            $diff = date_diff(new DateTime($data['birthday']), $today);
+            
+            
+            $age_in_month=($diff->y*12)+$diff->m+($diff->d/30);
+            
            
+            $_SESSION["child_age_in_month"] = $age_in_month; 
             
             // insert form data into database
             if ($childID=$this->user_model->insertChild($data)) {
                 
                 // successfully sent mail
+                $_SESSION["child_id"] = $childID;
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Success!</div>');
                 
                 $err = $this->do_upload($data["userId"], $childID);
@@ -79,7 +90,7 @@ class Upload_Controller extends MY_Controller {
                 
                 $this->session->set_flashdata('child_id', $childID);
                 
-                redirect('make_test');
+                redirect('make_test', $data);
                 
             } else {
                 // error

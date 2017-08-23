@@ -5,7 +5,7 @@
 <title>babybook Test</title>
 <script src="<?php echo resources_url();?>jquery.js"></script>
 <script src="<?php echo resources_url();?>main.js"></script>
-<script src="<?php echo resources_url();?>test.js?v=2"></script>
+<script src="<?php echo resources_url();?>test.js?v=4"></script>
 <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
 <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script> 
 <link rel="stylesheet" href="<?php echo resources_url(); ?>jquery-ui/jquery-ui.css">
@@ -39,10 +39,10 @@
                 
                 foreach($skills as $skill): ?>
                     <tr> 		
-                		 <td align="center">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'];?>.Pass" name="radio<?php echo  $skill['id'];?>" value="Pass"> </td>
-						 <td align="center">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'];?>.Fail" name="radio<?php echo $skill['id'];?>" value="Fail"> </td>
-						 <td align="center">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'];?>.No_opportunity" name="radio<?php echo $skill['id'];?>" value="No_opportunity"> </td>
-						 <td align="center">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'];?>.Refuse" name="radio<?php echo $skill['id'];?>" value="Refusal"> </td>
+                		 <td align="center">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'] . "." . $skill['skill_group_id'];?>.Pass" name="radio<?php echo  $skill['id'];?>" value="Pass"> </td>
+						 <td align="center">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'] . "." .$skill['skill_group_id'];?>.Fail" name="radio<?php echo $skill['id'];?>" value="Fail"> </td>
+						 <td align="center">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'] . "." .$skill['skill_group_id'];?>.No_opportunity" name="radio<?php echo $skill['id'];?>" value="No_opportunity"> </td>
+						 <td align="center">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'] . "." .$skill['skill_group_id'];?>.Refuse" name="radio<?php echo $skill['id'];?>" value="Refusal"> </td>
 						<td><div class="form-group popup" name=skill_name value=<?php echo $skill['name'];?> onclick="popup_function('popup<?php echo $i;?>')">
 						 	<?php echo $skill['name'];?><br>
 								<span class="popuptext" id="popup<?php echo $i;?>"> <?php echo $skill['description'];?></span>
@@ -51,19 +51,11 @@
 					</tr>	
 				<?php 
 				
-				# $'radio'.$i = $(".radio'.$i:checked").val();
-				$data =  array(
-				    $i => array(
-				        'skill_name' => $skill['name'],
-				        'respons' => 'radio'.$i
-				    )
-				);
+				
 				
 				$i++;
 				endforeach; 
-				$jsonString= json_encode($data) ;
-				# print_r($data);
-				# die();
+			
 				?>
 			</table>	
 			<div class="form-group">
@@ -72,8 +64,8 @@
 				
 			</div>
 		</form>
-		<p id="loading"></p>
-    <?php echo $this->session->flashdata('msg'); ?>
+		
+     <?php echo $this->session->flashdata('msg'); ?> 
 
 </body>
 </html>

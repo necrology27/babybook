@@ -11,7 +11,7 @@ $( function() {
         dateFormat: 'yy-mm-dd',
         changeMonth: true,
         changeYear: true,
-        yearRange: "-20:+3"
+        yearRange: "-5:+1"
     }).val();
 } );
     </script>

@@ -21,12 +21,17 @@ class make_test extends MY_Controller {
     {
         #die($child_id);
         $session_data = $this->session->userdata('logged_in');
-        $userId = $session_data['id'];
         
-        $data['name'] = $session_data['name'];
         $data['id'] = $session_data['id'];
-        $age=12;
-        $skills = $this->user_model->get_skills_by_age($age);
+        # echo $_SESSION["child_id"]; die();
+       
+        
+        $skills = $this->user_model->get_skills_by_age($_SESSION["child_age_in_month"]);
+        
+       # $next_skills = $this->user_model->get_previous_skills(120, 3);
+       # print_r($next_skills); die();
+        
+        
         $data['skills'] = $skills;
         $this->load->view('test_view', $data);
             
