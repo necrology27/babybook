@@ -47,6 +47,20 @@ class user_model extends CI_Model
                 return false;
     }
     
+    function get_child_birthday($id)
+    {
+        $this->db->select('birthday');
+        $this->db->from('children');
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if ($this->db->affected_rows() > 0)
+            return $result[0];
+            else
+                return false;
+    }
+    
+    
 
 
     function get_children_by_parent($id)
@@ -226,10 +240,10 @@ class user_model extends CI_Model
         $this->db->where('child_id', $childID);
         $query = $this->db->get();
         $result = $query->result_array();
-        if ($this->db->affected_rows() > 0)
-            return true;
-            else
-                return false;
+       # if ($this->db->affected_rows() > 0)
+            return $this->db->affected_rows();
+        #    else
+         #       return FALSE;
     }
     
 }

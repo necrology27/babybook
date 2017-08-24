@@ -16,8 +16,12 @@ class make_test extends MY_Controller {
         $this->load->database();
         $this->load->model('user_model');
     }
-    
     public function index()
+    {
+        
+    }
+    
+    public function set_text_items($child_id)
     {
         #die($child_id);
         $session_data = $this->session->userdata('logged_in');
@@ -25,18 +29,20 @@ class make_test extends MY_Controller {
         $data['id'] = $session_data['id'];
         # echo $_SESSION["child_id"]; die();
        
-        $child_id= $_SESSION["child_id"];
-       # die(print($_SESSION["child_id"]));
-        if($this->user_model->child_has_answer( print($_SESSION["child_id"]) )==FALSE)
+       # echo ("beirt sorok".$this->user_model->child_has_answer(print($this->session->child_id)));
+        $child_age = $this->get_child_age($this->user_model->get_child_birthday($child_id)['birthday']);
+       
+        echo "gyerek id:". $child_id."                                     meg megvan                    ";
+        if($this->user_model->child_has_answer( print($this->session->child_id) )===0)
         {
-            echo "nincs bent valasz";
-                $skills = $this->user_model->get_skills_by_age($_SESSION["child_age_in_month"]);
-        }
-        #else
-         #  {
-             #  echo "valami mas"; #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-             # die();
-          # }
+            echo ("beirt sorok?".$this->user_model->child_has_answer($this->session->child_id));
+            $skills = $this->user_model->get_skills_by_age($child_age);
+        } else
+           {
+               echo ("beirt sorok".$this->user_model->child_has_answer($this->session->child_id));
+               echo " valami mas"; #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            #  die();
+           }
         
        # $next_skills = $this->user_model->get_previous_skills(120, 3);
        # print_r($next_skills); die();
@@ -49,5 +55,15 @@ class make_test extends MY_Controller {
         #$fail_skills = $this->user_model->get_fail_answer($data['id']);
         #print_r($fail_skills);
             
+    }
+    
+    public function get_child_age($birthday)
+    {
+        $today = new DateTime();
+        $today->format('Y-m-d');
+        $diff = date_diff(new DateTime($birthday), $today);
+        
+        $age_in_month=($diff->y*12)+$diff->m+($diff->d/30);
+        return $age_in_month;
     }
 }

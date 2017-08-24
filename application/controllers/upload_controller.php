@@ -59,13 +59,14 @@ class Upload_Controller extends MY_Controller {
                 'userId' => $userId,                
             );
             
-            $this->save_child_age($data['birthday']);
+           
 
             // insert form data into database
             if ($childID=$this->user_model->insertChild($data)) {
                 
+                $data['child_id'] = $childID;
                 // successfully sent mail
-                $_SESSION["child_id"] = $childID;
+                $this->session->child_id = $childID;
                
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Success!</div>');
                 
@@ -74,8 +75,8 @@ class Upload_Controller extends MY_Controller {
                     $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">' . $err . '!!!</div>');
                     redirect('upload_controller/add_child');
                 }
-                $this->session->set_flashdata('child_id', $childID);
-                redirect('make_test', $data);
+                
+                redirect('make_test/set_text_items/'. $childID);
             } else {
                 // error
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t ADD CHILD.  Please try again later!!!</div>');
@@ -84,14 +85,7 @@ class Upload_Controller extends MY_Controller {
         }
     }
     
-    public function save_child_age($birthday){
-        $today = new DateTime();
-        $today->format('Y-m-d');
-        $diff = date_diff(new DateTime($birthday), $today);
-        
-        $age_in_month=($diff->y*12)+$diff->m+($diff->d/30);
-        $_SESSION["child_age_in_month"] = $age_in_month; 
-    }
+    
         
     public function do_upload($userId, $childId){
         
@@ -111,6 +105,7 @@ class Upload_Controller extends MY_Controller {
        
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
+        
         if($this->upload->do_upload())
         {
             $data = array('upload_data' => $this->upload->data());

@@ -29,6 +29,6 @@
 		<?php
 		
 		}?>
-		<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>make_test'">képesseg</button>
+		<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>make_test/set_text_items/'. 320'">képesseg</button>
 	</table>
 </div>
