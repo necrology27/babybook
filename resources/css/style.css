@@ -53,8 +53,8 @@
 	font-weight: bold;
 }
 
-body {
-    padding-top: 70px;
+#user {
+	color: #6666cc;
 }
 
 @keyframes jon_a_form {
