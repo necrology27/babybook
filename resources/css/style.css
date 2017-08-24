@@ -125,6 +125,7 @@ body {
 .child_box {
 	height: 250px;
 	width: auto;
+	background-color: lightgray;
 }
 
 #navbar {
