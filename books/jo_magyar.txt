@@ -31,13 +31,13 @@ Egy játékot, ami a gyermeknek tetszik, tegyük az asztalra egy
 kicsit messzebbre, mint ahogy eléri. Nem szabad túl sokáig
 otthagyni és nem szabad túl messzire tenni. Ez megzavarhatja a gyermeket.
 
-Darabosat eszik egyedül (keksz, kiflivég, babapiskóta)
+Darabosat eszik egyedül
 Szülő bemondása alapján is elfogadható. Meg kell kérdezni,
-hogy eszik-e a gyermek egyedül ilyen ropogós süteményt.
+hogy eszik-e a gyermek egyedül ropogós süteményt, pl. keksz, kiflivég, babapiskóta.
 Értékelés: Elfogadható, ha a szülő azt mondja, hogy a gyermek
 képes erre. "Nincs lehetőség" ha valamilyen okból nem kapott.
 
-Tapsi-tapsi
+Tapsi-tapsit játszik
 Szülő bemondása is elfogadható. Próbájuk rávenni, hogy
 tapsikoljon. Ne érintsük meg a gyermek kezét vagy karját.
 Értékelés: Jó, ha a gyermek reagál erre. Ha ezt nem látjuk,
@@ -188,7 +188,7 @@ oldalra. Meg lehet állítani, hogy a gyermek ismét figyeljen,
 figyelni a gyermek fej és szem mozgását.
 Értékelés: Jó, ha a gyermek az ív közepén túl követi a fonalat
 szemmel, vagy fejjel és szemmel is. Meggyőződünk róla, hogy felfigyelt-e a
-fonalra és nem követte - ebben az esetben az eredmény negatív
+fonalra és nem követte - ebben az esetben az eredmény negatív.
 
 Megragadja a csörgőt 
 Ha a gyermek az asztalon fekszik a hátán, vagy a szülő fogja
@@ -196,7 +196,7 @@ a karjában, tegyünk le egy csörgőt úgy, hogy érintse a gyermek
 ujjainak hegyét vagy hátát.
 Értékelés: Jó, ha a gyermek néhány másodpercre megragadja a csörgőt.
 
-Kezek együtt 
+Kezek összeérnek
 Bemondásra elfogadható. Figyeljük, hogy a gyerek összeérinti-e
 a kezét teste közepének magasságában. Ha nem lehet  látni, 
 kérdezzük meg a szülőt, hogy megtette-e.
@@ -266,6 +266,13 @@ jelezzük mozdulatokkal, hogy vegye fel a kockákat, ne adjuk oda neki.
 tart egy-egy kezében egyszerre. Ha nem csinálja, kérdezzük
 meg a szülőt, hogy felvesz-e a gyermek két tárgyat ilyen módon.
 
+Csipeszfogás
+A gyermeket úgy tartsa a szülő ölében, hogy kezét az asztalra tudja tenni.
+Leejtünk egy mazsolát a gyermek előtt könnyen elérhető távolságban. (Jól látható felületre, hozzá
+is érhet, hogy figyelmét felhívja a gyermeknek. Nézzük, hogyan veszi fel.
+Értékelés: Jó, ha a gyermek úgy veszi fel a mazsolát, hogy a
+hüvelykujját és egy másik ujját összehozva használja. A csipeszfogás is jó.
+
 Egymáshoz ütögeti a kezében tartott kockákat
 Bemondásra elfogadható.
 A gyermek mindkét kezébe kockát teszünk. A vizsgáló biztathatja a gyermeket,
@@ -287,7 +294,7 @@ elérhető távolságban. A vizsgáló a gyermek kezébe is adhatja a ceruzát.
 (Nem fogadható el a véletlenül húzott jel vagy a papír döfködése.) Ha nem firkál, kérdezzük meg
 a szülőt, hogy firkál-e a gyermek segítség nélkül.
 
-Kiönti a mazsolát az üvegből, miután megmutatták, hogyan kell
+Mazsolát üvegből kiborít bemutatás után
 Először nézzük meg, hogy a gyerek megcsinálja-e spontánul.
 Tegyünk egy mazsolát az üvegbe és mondjuk a gyermeknek, hogy szedje ki.
 Ha nem 9nti ki magától, megmutatjuk neki kétszer-háromszor.
@@ -308,17 +315,11 @@ amilyen magasra csak tudja. Megmutatja, hogy kell és/vagy odaadja neki a kocká
 Háromszor próbálkozhat a gyermek.
 Értékelés: Jó, ha négy kockát úgy tesz egymásra, hogy nem esnek le.
 
-Torony 6 kockából
+Torony hat kockából
 6 kockát teszünk a gyermek elé az asztalra. A vizsgáló bíztathatja, hogy tegye őket egymásra, amilyen
 magasra csak tudja. Megmutatja, hogy és/vagy odaadja neki a kockákat.
 Háromszor próbálkozhat.
 Értékelés: Jó, ha a gyermek 6 kockát úgy egyensúlyoz egymáson, hogy nem esnek le.
-
-Torony 8 kockából
-8 kockát teszünk a gyermek elé az asztalra. A vizsgáló bíztathatja, hogy tegye őket egymásra, amilyen
-magasra csak tudja. Megmutatja, hogy és/vagy odaadja neki a kockákat.
-Háromszor próbálkozhat.
-Értékelés: Jó, ha a gyermek 8 kockát úgy egyensúlyoz egymáson, hogy nem esnek le.
 
 Függőleges vonalat utánoz (30 fokon belül)
 A gyermeket úgy ültetjük az asztalhoz, hogy kényelmesen írhasson. Papírt és ceruzát teszünk eléje,
@@ -327,6 +328,12 @@ rajzolni. Vigyázzunk, hogy a vonal a gyermek számára valóban függőleges he
 vezetjük a gyermek kezét.
 Értékelés: Jó, ha a gyermek egy vagy több, legalább 2,5 cm hosszú vonalat húz, ami nem tér el több,
 mint 30 fokkal a függőlegestől. Nem kell, hogy teljesen egyenes vonalak legyenek.
+
+Torony nyolc kockából
+8 kockát teszünk a gyermek elé az asztalra. A vizsgáló bíztathatja, hogy tegye őket egymásra, amilyen
+magasra csak tudja. Megmutatja, hogy és/vagy odaadja neki a kockákat.
+Háromszor próbálkozhat.
+Értékelés: Jó, ha a gyermek 8 kockát úgy egyensúlyoz egymáson, hogy nem esnek le.
 
 Hüvelykujj mozgatása
 Mutassuk meg a gyermeknek egy vagy két kézzel, hogy a kezünket ökölbe szorítjuk 
@@ -340,7 +347,7 @@ Megmutatja a tesztlap hátán a kört. Nem nevezzük meg, nem húzzuk rajta vég
 hogy megmutassuk, hogy rajzolják. Azt mondjuk a gyermeknek, rajzoljon ugyanolyat, mint a képen.
 Értékelés: Jó, minden zárt forma, amit nem folytonos körmozgásokkal firkált.
 
-Embert rajzol 3 részben
+Embert rajzol három részben
 Ceruzát és papírt adunk a gyermeknek és felszólítjuk, hogy rajzoljon fiút vagy lányt
 (férfit vagy nőt). Ne mondjuk neki, hogy tegyen még részeket a rajzhoz. Ha úgy 
 tűnik, hogy befejezte, megkérdezzük, hogy elkészült-e. Ha igent válaszol,
@@ -348,14 +355,6 @@ tűnik, hogy befejezte, megkérdezzük, hogy elkészült-e. Ha igent válaszol,
 Értékelés: Jó, ha három vagy több testrészt rajzolt. Minden pár (két fül, két szem, stb.)
 egy pontot ér, egy pontot ér a nem páros testrész is (fej, nyak, test, stb.). Ha egy páros 
 testrésznek hiányzik az egyik fele, nem kap pontot.
-
-Embert rajzol hat részben
-Adunk a gyermeknek ceruzát és papírt és felszólítjuk, hogy rajzoljon 
-fiút vagy lányt (férfit vagy nőt). Ne mondjuk, hogy még kell valami a rajzhoz.
-Ha úgy tűnik, hogy végzett, megkérdezzük, hogy készen van-e.
-Ha igent mond, értékeljük a rajzot.
-Értékelés: Jó, ha hat vagy több testrészt rajzolt. Minden páros testrész egy pontot ér
-(két szem, két fül, stb.) egy-egy pontot ér minden páratlan testrész is (fej, nyak, törzs, stb.)
 
 Keresztet másol
 Megmutatjuk a tesztlap hátulján a keresztet, nem vezetjük rajta végig az ujjunkat
@@ -371,14 +370,6 @@ lapot és megint megkérdezzük legalább háromszor ismételjük.
 Ha nem sikerül, még háromszor meg kell próbálni. Ha hat próba közül ötben a jót választja,
 elfogadható. Csak az számít, ha 3 alaklomból 3-szor vagy 6 alkalomból 5-ször jót választ.
 
-Négyszöget másol
-Megmutatjuk a tesztlap hátán a négyszöget. Nem nevezzük meg,
-nem húzzuk utána ujjal vagy ceruzával. Felszólítjuk a gyermeket,
-rajzoljon olyat, mint a képen van.
-Értékelés: Jó, ha 4 derékszögű figurát rajzol úgy, hogy nem
-mutatták meg előzőleg, hogyan kell. Egymást metsző vonalak
-alkotják a sarkokat. Ne legyenek hegyesek vagy legömbölyítettek.
-
 Bemutatott négyszöget utánoz
 Először próbáljuk ki, hogy le tudja-e másolni képről előrajzolás nélkül. Megmutatjuk a négyszöget a tesztlap
 hátán. Nem nevezzük meg és nem húzzuk utána ceruzával, vagy ujjunkkal. Azt mondjuk a gyermeknek, 
@@ -388,6 +379,22 @@ a gyerek kereknek nézheti.
 Értékelés: Jó, ha négy derékszögű sarokkal rajzolja meg a
 formát. A vonalak túlmehetnek egymáson, de a szögek nagyjából
 legyenek derékszögek, ne legyenek legömbölyítve, vagy hegyesek.
+
+Embert rajzol hat részben
+Adunk a gyermeknek ceruzát és papírt és felszólítjuk, hogy rajzoljon 
+fiút vagy lányt (férfit vagy nőt). Ne mondjuk, hogy még kell valami a rajzhoz.
+Ha úgy tűnik, hogy végzett, megkérdezzük, hogy készen van-e.
+Ha igent mond, értékeljük a rajzot.
+Értékelés: Jó, ha hat vagy több testrészt rajzolt. Minden páros testrész egy pontot ér
+(két szem, két fül, stb.) egy-egy pontot ér minden páratlan testrész is (fej, nyak, törzs, stb.)
+
+Négyszöget másol
+Megmutatjuk a tesztlap hátán a négyszöget. Nem nevezzük meg,
+nem húzzuk utána ujjal vagy ceruzával. Felszólítjuk a gyermeket,
+rajzoljon olyat, mint a képen van.
+Értékelés: Jó, ha 4 derékszögű figurát rajzol úgy, hogy nem
+mutatták meg előzőleg, hogyan kell. Egymást metsző vonalak
+alkotják a sarkokat. Ne legyenek hegyesek vagy legömbölyítettek.
 
 
 
@@ -650,12 +657,12 @@ Bemondás is jó. Hason fektetjük a babát lapos felületen.
 Értékelés: Jó, ha a gyermek egy pillanatra felemeli a fejét úgy, hogy az álla az asztallap
 (a felület) fölé kerül anélkül, hogy az egyik vagy másik oldalra fordulna.
 
-Hason fejét 45°-os szögig emeli
+Hason fejét 45 fokos szögig emeli
 A gyermeket hason fektetjük lapos felületen.
 Értékelés: Jó, ha a gyermek felemeli a fejét úgy, hogy az arca kb. 45o -os szöget alkosson
 a lapos felülettel.
 
-Hason fejét 90°-os szögig emeli
+Hason fejét 90 fokos szögig emeli
 Fekszik a gyerek a hasán lapos felületen.
 Értékelés: Jó, ha a gyerek felemeli a fejét és mellkasát úgy, hogy az arca 90 fokos szöget 
 alkot a lapos felülettel.
@@ -664,6 +671,11 @@ Fejét egyenesen tartva ül
 Tartsuk a gyermeket ülő helyzetben.
 Értékelés: Jó, ha a gyermek egyenesen feltartja a fejét úgy, hogy nem billen.  
 (Rossz, ha csak pár pillanatig tartja a fejét és utána a mellére vagy oldalt ejti.)
+
+Állítva súlyát tartja
+Tartsuk a gyermeket álló pozícióban úgy, hogy lába az asztalon legyen.
+Lassan engedjünk a fogáson, hogy a gyermek súlyát a lábai tartsák fent.
+Értékelés: Jó, ha a gyermek néhány másodpercig tartja a súlyát a saját lábán.
 
 Karjára támaszkodva mellkasát emeli
 Fektessük a gyermeket a hasára lapos felületen.
