@@ -1,3 +1,22 @@
+.thumbnail {
+    position:relative;
+    overflow:hidden;
+}
+ 
+.caption {
+    position:absolute;
+    top:0;
+    right:0;
+    background:rgba(66, 139, 202, 0.75);
+    width:100%;
+    height:100%;
+    padding:2%;
+    display: none;
+    text-align:center;
+    color:#fff !important;
+    z-index:2;
+}
+
 .btn-right {
 	display: block;
 	position: absolute;
@@ -83,6 +102,18 @@ body {
     animation-duration: 3s;
 }
 
+.ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    z-index: -99;
+}
+
 #child_boxes {
 	display: inline-block;
 	position: relative;
@@ -91,26 +122,9 @@ body {
 	right: 20%;
 }
 
-tr.child_row {
-	display: inline-block;
-	position: relative;
-	width: 100%;
-}
-
-#child_boxes tbody {
-	width: 100%;
-	display: block;
-	position: relative;
-}
-
-td.box {
-    display: inline-block;
-	position: relative;
+.child_box {
 	height: 250px;
-	width: 30%;
-	text-align: center;
-	background-size: contain;
-	background-repeat: no-repeat;
+	width: auto;
 }
 
 #navbar {

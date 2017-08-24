@@ -10,3 +10,21 @@ function popup_function(id) {
     popup.classList.toggle("show");
 }
 
+$( document ).ready(function() {
+    $("[rel='tooltip']").tooltip();    
+ 
+    $('.thumbnail').hover(
+        function(){
+        	$(".ui-widget").remove();
+            $(this).find('.caption').fadeIn(250);//.slideDown(250); //.fadeIn(250)
+        	$(".ui-widget").remove();
+//            $(this).find('.caption').slideDown(250); //.fadeIn(250)
+        },
+        function(){
+        	$(".ui-widget").remove();
+            $(this).find('.caption').fadeOut(250);//.slideUp(250); //.fadeOut(250)
+        	$(".ui-widget").remove();
+//            $(this).find('.caption').slideUp(250); //.fadeOut(250)
+        }
+    ); 
+});
