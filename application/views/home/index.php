@@ -1,15 +1,3 @@
-
-<ul id="navbar">
-	<li id="title">babybook</li>
-	<li><a><?php echo $forum; ?></a></li>
-	<li><a><?php echo $settings; ?></a></li>
-	<li><a href="home/logout"><?php echo $logout; ?></a></li>
-</ul>
-
-
-<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>upload_controller/add_child'"><?php echo $add_child; ?></button>
-<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>home/update'"><?php echo $edit_profile; ?></button>
-
 <div>
 	<div id="child_boxes">
 	<h2><?php echo $my_children; ?></h2>
