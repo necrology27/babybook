@@ -66,6 +66,7 @@ class Upload_Controller extends MY_Controller {
                 
                 // successfully sent mail
                 $_SESSION["child_id"] = $childID;
+               
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Success!</div>');
                 
                 $err = $this->do_upload($data["userId"], $childID);
