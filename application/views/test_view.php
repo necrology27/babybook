@@ -17,7 +17,7 @@
     <div class="container animated_form">
     	<div class="row">
     		<div class="col-md-6 col-md-offset-3">
-    			<p id="chid" style="display:hidden;"><?php echo $this->session->flashdata('child_id'); ?></p>
+    			<?php echo '<p id="chid" style="display:hidden;">' .$this->session->flashdata('child_id') . '</p>'; ?>
        	 		<?php echo $this->session->flashdata('verify_msg'); ?>
 				<div class="panel panel-default">
 					<div class="panel-heading">

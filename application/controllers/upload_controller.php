@@ -20,14 +20,11 @@ class Upload_Controller extends MY_Controller {
         
         $session_data = $this->session->userdata('logged_in');
         $userId = $session_data['id'];
-        
         $data = $this->load_lang($userId);
-       
+        
         // set validation rules
         $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|callback_exists[children.name.'.$session_data['id'].']|min_length[3]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
-        
-        
         // validate form input
         if ($this->form_validation->run() == FALSE) {
             $measurement = $this->user_model->get_user_data($userId)['measurement'];
@@ -59,22 +56,11 @@ class Upload_Controller extends MY_Controller {
                 
                 'is_parent' =>  $is_par,
                 'other_disorders' => $this->input->post('other_disorders'),
-                'userId' => $userId,
-               
-                
+                'userId' => $userId,                
             );
             
-            
-            $today = new DateTime();
-            $today->format('Y-m-d');
-            $diff = date_diff(new DateTime($data['birthday']), $today);
-            
-            
-            $age_in_month=($diff->y*12)+$diff->m+($diff->d/30);
-            
-           
-            $_SESSION["child_age_in_month"] = $age_in_month; 
-            
+            $this->save_child_age($data['birthday']);
+
             // insert form data into database
             if ($childID=$this->user_model->insertChild($data)) {
                 
@@ -87,11 +73,8 @@ class Upload_Controller extends MY_Controller {
                     $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">' . $err . '!!!</div>');
                     redirect('upload_controller/add_child');
                 }
-                
                 $this->session->set_flashdata('child_id', $childID);
-                
                 redirect('make_test', $data);
-                
             } else {
                 // error
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t ADD CHILD.  Please try again later!!!</div>');
@@ -99,30 +82,19 @@ class Upload_Controller extends MY_Controller {
             }
         }
     }
+    
+    public function save_child_age($birthday){
+        $today = new DateTime();
+        $today->format('Y-m-d');
+        $diff = date_diff(new DateTime($birthday), $today);
+        
+        $age_in_month=($diff->y*12)+$diff->m+($diff->d/30);
+        $_SESSION["child_age_in_month"] = $age_in_month; 
+    }
         
     public function do_upload($userId, $childId){
         
         $upload_date=time();
-        
-        $data = array(
-            'child_id' => $childId,
-            'file_name' => 'img_'.$upload_date,
-            'title' => 'Default image',
-        );
-        
-        
-        
-        if ($imageId=$this->user_model->insertImage($data)) {
-            $this->user_model->changeDefaultImage($childId, $imageId);
-
-        } else {
-            // error
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t ADD IMAGE.  Please try again later!!!</div>');
-            redirect('upload_controller/add_child');
-        }
-        
-        
-        
         if (!file_exists(FCPATH . 'uploads/'.$userId. '/'.$childId)) {
             mkdir(FCPATH . 'uploads/'.$userId. '/'.$childId, 0777, true);
         }
@@ -141,6 +113,21 @@ class Upload_Controller extends MY_Controller {
         if($this->upload->do_upload())
         {
             $data = array('upload_data' => $this->upload->data());
+            
+            $upload_data = $data['upload_data'];
+            $file_name =   $upload_data['file_name'];
+            $data = array(
+                 'child_id' => $childId,
+                 'file_name' =>  $file_name,
+                 'title' => 'Default image',
+             );
+             if ($imageId=$this->user_model->insertImage($data)) {
+                 $this->user_model->changeDefaultImage($childId, $imageId);
+             } else {
+                 // error
+                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t ADD IMAGE.  Please try again later!!!</div>');
+                 redirect('upload_controller/add_child');
+             }
             $this->load->view('add_child',$data);
             return true;
         }
@@ -151,7 +138,6 @@ class Upload_Controller extends MY_Controller {
                 
                 'error' => $this->upload->display_errors()
             );
-            
             $this->load->view('add_child', $data);
         }
     }

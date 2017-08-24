@@ -20,13 +20,15 @@
 		    <?php
 		  for($j=$i*3; $j < min($i*3+3, $child_count); $j++) {
 		?>
-		     <td class="box <?php echo "ch" . $j;?>" background="<?php echo uploads_url() . $id . "/" . $children[$j]['id'] . "/" . $def_imgs[$j] . ".png"; ?>">
+		     <td class="box <?php echo "ch" . $j;?>" background="<?php echo uploads_url() . $id . "/" . $children[$j]['id'] . "/" . $def_imgs[$j]; ?>">
 		     	<?php echo $children[$j]['name'];?>
 		     </td>         
 		<?php
 		  }?>
 		  </tr>
 		<?php
+		
 		}?>
+		<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>make_test'">képesseg</button>
 	</table>
 </div>

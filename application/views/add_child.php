@@ -128,7 +128,7 @@ $( function() {
 					
 							 
 							<?php echo $error;?> 
-                                <?php echo "<input type='file' name='userfile' size='20' />"; ?>
+                                <input type='file' name='userfile' size='20' />
 							 
 								<span class="text-danger">
 								<?php echo form_error('image'); ?>

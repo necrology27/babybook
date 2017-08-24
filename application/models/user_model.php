@@ -219,4 +219,17 @@ class user_model extends CI_Model
         }
     }
     
+    function child_has_answer($childID)
+    {
+        $this->db->select('*');
+        $this->db->from('answers');
+        $this->db->where('child_id', $childID);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if ($this->db->affected_rows() > 0)
+            return true;
+            else
+                return false;
+    }
+    
 }
