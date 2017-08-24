@@ -33,13 +33,13 @@ class make_test extends MY_Controller {
         $child_age = $this->get_child_age($this->user_model->get_child_birthday($child_id)['birthday']);
        
         echo "gyerek id:". $child_id."                                     meg megvan                    ";
-        if($this->user_model->child_has_answer( print($this->session->child_id) )===0)
+        if($this->user_model->child_has_answer( $child_id )===0)
         {
-            echo ("beirt sorok?".$this->user_model->child_has_answer($this->session->child_id));
+            echo ("beirt sorok?".$this->user_model->child_has_answer($child_id));
             $skills = $this->user_model->get_skills_by_age($child_age);
         } else
            {
-               echo ("beirt sorok".$this->user_model->child_has_answer($this->session->child_id));
+               echo ("beirt sorok".$this->user_model->child_has_answer($child_id));
                echo " valami mas"; #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             #  die();
            }

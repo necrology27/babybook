@@ -66,7 +66,6 @@ class Upload_Controller extends MY_Controller {
                 
                 $data['child_id'] = $childID;
                 // successfully sent mail
-                $this->session->child_id = $childID;
                
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Success!</div>');
                 
