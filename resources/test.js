@@ -9,7 +9,7 @@ $(document).ready(function() {
 		
 		$.ajax({
 		  method: 'POST',
-		  url: 'send_answer',
+		  url: base_url + '/send_answer',
           dataType: 'text/html',
 		  data: {
 			'child_id': document.getElementById('chid').innerHTML,
@@ -21,4 +21,3 @@ $(document).ready(function() {
  
     });
 });
-

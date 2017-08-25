@@ -32,9 +32,13 @@ class Upload_Controller extends MY_Controller {
                 'measurement' => $measurement,
                 'error' => ' '
             );
+            $user_data = $this->user_model->get_user_data($session_data['id']);
+            $datas['name'] = $user_data['name'];
             
             $data = $datas + $this->load_lang($userId);
+            $this->load->view('templates/header.php', $data);
             $this->load->view('add_child', $data);
+            $this->load->view('templates/footer.php', $data);
         } else {
             
             if($this->input->post('is_parent') == NULL)
@@ -108,6 +112,18 @@ class Upload_Controller extends MY_Controller {
         if($this->upload->do_upload())
         {
             $data = array('upload_data' => $this->upload->data());
+            
+            $config['image_library'] = 'gd2';
+            $config['source_image'] = $upload_data['full_path'];
+            $config['maintain_ratio'] = TRUE;
+            $config['width']    = 250;
+            $config['height']   = 250;
+            
+            $this->load->library('image_lib', $config);
+            
+            $this->image_lib->clear();
+            $this->image_lib->initialize($configer);
+            $this->image_lib->resize();
             
             $upload_data = $data['upload_data'];
             $file_name =   $upload_data['file_name'];

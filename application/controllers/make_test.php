@@ -32,24 +32,24 @@ class make_test extends MY_Controller {
        # echo ("beirt sorok".$this->user_model->child_has_answer(print($this->session->child_id)));
         $child_age = $this->get_child_age($this->user_model->get_child_birthday($child_id)['birthday']);
        
-        echo "gyerek id:". $child_id."                                     meg megvan                    ";
         if($this->user_model->child_has_answer( $child_id )===0)
         {
-            echo ("beirt sorok?".$this->user_model->child_has_answer($child_id));
             $skills = $this->user_model->get_skills_by_age($child_age);
-        } else
-           {
-               echo ("beirt sorok".$this->user_model->child_has_answer($child_id));
-               echo " valami mas"; #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            #  die();
-           }
+        } 
         
        # $next_skills = $this->user_model->get_previous_skills(120, 3);
        # print_r($next_skills); die();
         
         
-        $data['skills'] = $skills;
-        $this->load->view('test_view', $data);
+           $datas['skills'] = $skills;
+           $user_data = $this->user_model->get_user_data($session_data['id']);
+           $userId = $user_data['id'];
+           $datas['name'] = $user_data['name'];
+           $datas['title'] = "Test";
+           $data = $datas + $this->load_lang($userId);
+           $this->load->view('templates/header.php', $data);
+           $this->load->view('test_view', $data);
+           $this->load->view('templates/footer.php', $data);
        
        
         #$fail_skills = $this->user_model->get_fail_answer($data['id']);
