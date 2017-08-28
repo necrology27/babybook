@@ -215,22 +215,54 @@ class user_model extends CI_Model
     }
     
     #SELECT skill_group_id, COUNT(user_id) as fail_num FROM `answers` WHERE`child_id` = 232 AND `learned`='Fail' GROUP BY `skill_group_id` 
-    function get_fail_answer($childID)
+    function get_nr_fail_answer($childID)
     {
-        for ($i=1; $i<5; $i++)
-        {
-            $this->db->select('skill_group_id, COUNT(user_id) as fail_num');
+        $this->db->select('skill_group_id, IFNULL(COUNT(user_id), 0) as fail_num', false);
+            
+            
             $this->db->from('answers');
             $this->db->where('child_id', $childID);
             $this->db->where('learned', 'Fail');
             $this->db->group_by('skill_group_id');
             $query = $this->db->get();
             $result = $query->result_array();
+            return $result;
+    }
+    
+    #SELECT * FROM skills where id IN (SELECT skill_id FROM answers WHERE child_id = 379 AND learned='Fail')
+    
+   
+    
+    
+    function get_fail_skill($skills_id)
+    {
+       
+            $this->db->select('*');
+            $this->db->from('skills');
+            $this->db->where_in('id', $skills_id);
+           
+            $query = $this->db->get();
+            $result = $query->result_array();
             if ($this->db->affected_rows() > 0)
                 return $result;
                 else
                     return false;
-        }
+
+    }
+    
+    function get_fail_skill_id($childID)
+    {
+        $this->db->select('skill_id');
+        $this->db->from('answers');
+        $this->db->where('child_id', $childID);
+        $this->db->where('learned', 'Fail');
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if ($this->db->affected_rows() > 0)
+            return $result;
+            else
+                return false;
+                
     }
     
     function child_has_answer($childID)
@@ -239,11 +271,20 @@ class user_model extends CI_Model
         $this->db->from('answers');
         $this->db->where('child_id', $childID);
         $query = $this->db->get();
+ 
         $result = $query->result_array();
-       # if ($this->db->affected_rows() > 0)
-            return $this->db->affected_rows();
-        #    else
-         #       return FALSE;
+        return $this->db->affected_rows();
+    }
+    
+    function last_checked_skill($childID)
+    {
+        $this->db->select('skill_group_id, MAX(skill_id) as max_skill_id');
+        $this->db->from('answers');
+        $this->db->where('child_id', $childID);
+        $this->db->group_by('skill_group_id');
+        $query = $this->db->get();
+        $result = $query->result_array();
+        return $result;
     }
     
 }

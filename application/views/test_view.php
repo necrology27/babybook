@@ -6,10 +6,13 @@ var base_url = '<?php echo base_url(); ?>';
 	<div class="row">
 	<div class="col-md-6 col-md-offset-3">
 		<?php echo '<p id="chid" style="display:hidden;">' .$this->session->flashdata('child_id') . '</p>'; ?>
+		
 	<?php echo $this->session->flashdata('verify_msg'); ?>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h4>Add a child</h4>
+			<p id="child_id" style="display:hidden" value=<?php echo $child_id; ?> ><?php echo $child_id; ?></p>
+			<p id="child_age" style="display:hidden;" value=<?php echo $child_age; ?> ><?php echo $child_age; ?></p>
 		</div>
 	<div class="panel-body">
     <?php $attributes = array("name" => "addchildform");?>
@@ -24,7 +27,7 @@ var base_url = '<?php echo base_url(); ?>';
 		</tr>
         <?php
         $i = 0;
-        
+       
         foreach($skills as $skill): ?>
             <tr> 		
         		 <td align="center">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'] . "." . $skill['skill_group_id'];?>.Pass" name="radio<?php echo  $skill['id'];?>" value="Pass"> </td>
@@ -44,7 +47,7 @@ var base_url = '<?php echo base_url(); ?>';
 		
 		$i++;
 		endforeach; 
-	
+        
 		?>
 	</table>
 	</div>	

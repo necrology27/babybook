@@ -1,15 +1,18 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="<?php echo resources_url(); ?>jquery-ui/jquery-ui.css">
-<link href="<?php echo resources_url(); ?>/css/style.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>bootstrap-3.3.7-dist/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>css/style.css">
+<link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>jquery-ui/jquery-ui.css">
+
 <script src="<?php echo resources_url();?>jquery.js"></script>
 <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
 <script src="<?php echo resources_url();?>bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 <script src="<?php echo resources_url();?>main.js"></script>
-<script src="<?php echo resources_url();?>test.js?v=5"></script>
-
+<script src="<?php echo resources_url();?>test.js?v=4"></script>
+<script>
+var base_url = "<?php echo base_url();?>";
+	</script>
 <title>babybook | <?php echo $title; ?></title>
 </head>
 <body>

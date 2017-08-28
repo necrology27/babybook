@@ -19,14 +19,14 @@ class send_answer extends MY_Controller {
     
     public function index()
     {
+      
         $session_data = $this->session->userdata('logged_in');
         $userId = $session_data['id'];
         $skill_id = $_REQUEST['id'];
         $skill_group_id = $_REQUEST['skill_group_id'];
         $learned = $_REQUEST['value'];
         $child_id = $_REQUEST['child_id'];
-        $age=$_SESSION['child_age_in_month'];
-    
+        $age=$_REQUEST['child_age'];
         $data = array(
             'child_id' =>$child_id,
             'skill_id' => $skill_id,
@@ -35,7 +35,6 @@ class send_answer extends MY_Controller {
             'learned' => $learned,
             'user_id' => $userId
         );
-        
         $result = $this->user_model->insert_answer($data);
         echo "ok";
     }
