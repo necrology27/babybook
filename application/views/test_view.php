@@ -11,8 +11,7 @@ var base_url = '<?php echo base_url(); ?>';
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h4>Add a child</h4>
-			<p id="child_id" style="display:hidden" value=<?php echo $child_id; ?> ><?php echo $child_id; ?></p>
-			<p id="child_age" style="display:hidden;" value=<?php echo $child_age; ?> ><?php echo $child_age; ?></p>
+			<input id="child_id" type = 'hidden' value=<?php echo $child_id; ?> >
 		</div>
 	<div class="panel-body">
     <?php $attributes = array("name" => "addchildform");?>

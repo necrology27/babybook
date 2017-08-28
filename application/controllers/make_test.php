@@ -23,18 +23,28 @@ class make_test extends MY_Controller {
     
     public function set_text_items($child_id = NULL)
     {
-       
-        if ( isset($_GET['child_id']) )
-            $child_id = $_GET['child_id'];
-        
+       #az o gyereke??
         $session_data = $this->session->userdata('logged_in');
         $data['id'] = $session_data['id'];
+        
+        
+        if($this->user_model->is_parent_child_relation($child_id,  $data['id'])==false)
+        {
+            ?>
+            window.location="http://localhost/babybook_git/index.php/home";
+        <?php 
+        }
+        
+        
         $data['child_id'] = $child_id;
         # echo $_SESSION["child_id"]; die();
       
         $child_age = $this->get_child_age($this->user_model->get_child_birthday($child_id)['birthday']);
        #elso kitoltes???
         $ans= $this->user_model->child_has_answer( $child_id );
+       
+        ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Szulo-e?????
+        
        
         if($ans===0)
         {

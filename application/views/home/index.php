@@ -27,7 +27,7 @@
                     <h4><?php echo $children[$j]['name'];?></h4>
                     <p>Last updated: <?php echo $children[$j]['birthday'];?></p>
                     <p><a href="" class="label label-danger" rel="tooltip" title="Edit">Edit</a>
-                    <a href="<?php echo base_url();?>make_test/set_text_items?child_id=<?php echo $children[$j]['id'];?>" class="label label-default" rel="tooltip" title="Take test">Take test</a></p>
+                    <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['id'];?>" class="label label-default" rel="tooltip" title="Take test">Take test</a></p>
            			
               </div>
                 

@@ -22,20 +22,31 @@ class send_answer extends MY_Controller {
       
         $session_data = $this->session->userdata('logged_in');
         $userId = $session_data['id'];
-        $skill_id = $_REQUEST['id'];
-        $skill_group_id = $_REQUEST['skill_group_id'];
-        $learned = $_REQUEST['value'];
-        $child_id = $_REQUEST['child_id'];
-        $age=$_REQUEST['child_age'];
+        
+        $skill_id =  $this->input->post('id');
+        $skill_group_id =  $this->input->post('skill_group_id');
+        $learned =  $this->input->post('value');
+        $child_id =  $this->input->post('child_id');
+        $age=4;
         $data = array(
             'child_id' =>$child_id,
             'skill_id' => $skill_id,
             'skill_group_id' => $skill_group_id,
-            'age' => $age,
+            'age' => $this->get_child_age($this->user_model->get_child_birthday($child_id)['birthday']),
             'learned' => $learned,
             'user_id' => $userId
         );
         $result = $this->user_model->insert_answer($data);
         echo "ok";
+    }
+    
+    public function get_child_age($birthday)
+    {
+        $today = new DateTime();
+        $today->format('Y-m-d');
+        $diff = date_diff(new DateTime($birthday), $today);
+        
+        $age_in_month=($diff->y*12)+$diff->m+($diff->d/30);
+        return $age_in_month;
     }
 }

@@ -20,6 +20,8 @@ class user_model extends CI_Model
         $this->db->insert('children', $data);
         return $this->db->insert_id();
     }
+    
+   
 
     function get_user_data($id)
     {
@@ -32,6 +34,24 @@ class user_model extends CI_Model
             return $result[0];
         else
             return false;
+    }
+    
+    function is_parent_child_relation($child_id, $user_id)
+    {
+        $this->db->select('*');
+        $this->db->from('children');
+        $this->db->where('id', $child_id);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if($result[0]['user_id'] == $user_id)
+        {
+            return true;
+        }
+        else
+        {
+            #$this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Not yor child!!!</div>');
+            return false;
+        }
     }
     
     function get_child_data($id)
@@ -60,20 +80,17 @@ class user_model extends CI_Model
                 return false;
     }
     
-    
-
-
     function get_children_by_parent($id)
     {
         $this->db->select('*');
         $this->db->from('children');
-        $this->db->where('userId', $id);
+        $this->db->where('user_id', $id);
         $query = $this->db->get();
         $result = $query->result_array();
         if ($this->db->affected_rows() > 0)
             return $result;
-        else
-            return false;
+            else
+                return false;
     }
     
     function get_def_img($id)
@@ -172,6 +189,8 @@ class user_model extends CI_Model
         $this->db->delete('answers', array('child_id' => $data['child_id'], 'skill_id' => $data['skill_id']));
         return $this->db->insert('answers', $data);
     }
+    
+    
     
     #################################### skill_model.php ###########
     

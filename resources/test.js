@@ -10,15 +10,17 @@ $(document).ready(function() {
 		
 		$.ajax({
 		  method: 'POST',
-		  url: base_url + '/send_answer',
+		  url: base_url + 'send_answer',
           dataType: 'text/html',
 		  data: {
-			'child_id': document.getElementById("child_id").innerHTML,
-			'child_age': document.getElementById("child_age").innerHTML,
+			'child_id': $("#child_id").val(),
 		    'id': id,
 		    'skill_group_id': skill_group_id,
 		    'value': value
-		  }
+		  },
+		  success: function(data) {
+		         console.log("kesz");
+		      }
         });
  
     });
