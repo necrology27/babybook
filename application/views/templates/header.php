@@ -40,7 +40,7 @@ var base_url = "<?php echo base_url();?>";
           	<button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>upload_controller/add_child'"><?php echo $add_child; ?></button>
     		<button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/update'"><?php echo $edit_profile; ?></button>
 		</div>
-      	<button class="btn-primary btn navbar-btn" onclick="home/logout"><?php echo $logout; ?></button>
+      	<button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/logout'" ><?php echo $logout; ?></button>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
