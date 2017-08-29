@@ -20,6 +20,7 @@ $lang['edit_profile'] = "Editează profilul";
 $lang['my_children'] = "Copii";
 $lang['forum'] = "Forum";
 $lang['settings'] = "Setări";
+$lang['no_child'] = "Nu ai nici un copil înregistrat!";
 
 //labels
 $lang['logged_in_as'] = "Conectat ca";

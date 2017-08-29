@@ -19,6 +19,7 @@ $lang['my_children'] = "My Children";
 $lang['forum'] = "Forum";
 $lang['settings'] = "Settings";
 $lang['logged_in_as'] = "Logged in as";
+$lang['no_child'] = "You have no registered child!";
 
 //labels
 $lang['password_label'] = "Password";

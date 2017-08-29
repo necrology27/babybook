@@ -63,6 +63,7 @@ class MY_Controller extends CI_Controller
         $data['language_label'] = $this->lang->line('language_label');
         $data['measurement_label'] = $this->lang->line('measurement_label');
         $data['old_password_label'] = $this->lang->line('old_password_label');
+        $data['no_child'] = $this->lang->line('no_child');
         $data['logged_in_as'] = $this->lang->line('logged_in_as');
         $data['my_child_label'] = $this->lang->line('my_child_label');
         $data['birth_weight_label'] = $this->lang->line('birth_weight_label');

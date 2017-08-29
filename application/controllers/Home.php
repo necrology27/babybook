@@ -34,8 +34,10 @@ class Home extends MY_Controller
             $data['title'] = $this->lang->line('home_title');
             
             $data['children'] = $this->user_model->get_users_children($data['id']);
-            
-            $data['child_count'] = count($data['children']);
+            if( $data['children']!=false)
+                $data['child_count'] = count($data['children']);
+            else
+                $data['child_count'] = 0;
             for ($i = 0; $i < $data['child_count']; $i++) {
                 $data['def_imgs'][$i] = $this->image_model->get_def_img($data['children'][$i]['id']);
             }

@@ -21,6 +21,8 @@ $lang['my_children'] = "Gyerekeim";
 $lang['forum'] = "Fórum";
 $lang['settings'] = "Beállítások";
 $lang['logged_in_as'] = "Belépve mint";
+$lang['no_child'] = "Nincs bevezetett gyerek!";
+
 
 //editing
 $lang['update_title'] = "Profil frissítése";
