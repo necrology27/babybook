@@ -7,9 +7,6 @@
 </ul>
 
 
-<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>upload_controller/add_child'"><?php echo $add_child; ?></button>
-<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>home/update'"><?php echo $edit_profile; ?></button>
-
 <div>
 	<div id="child_boxes">
 	<h2><?php echo $my_children; ?></h2>
@@ -29,12 +26,12 @@
         		?>   
                 <div class="col-md-3">   
         	     	<div class="thumbnail child_box">
-                      <img class="child_box" src="<?php echo uploads_url() . $id . "/" . $children[$j]['id'] . "/" . $def_imgs[$j]; ?>" alt="<?php echo $children[$j]['name'];?>">
+                      <img class="child_box" src="<?php echo uploads_url() . $id . "/" . $children[$j]['child_id'] . "/" . $def_imgs[$j]; ?>" alt="<?php echo $children[$j]['name'];?>">
                         <div class="caption">
                             <h4><?php echo $children[$j]['name'];?></h4>
                             <p>Last updated: <?php echo $children[$j]['birthday'];?></p>
-                            <p><a href="" class="label label-danger" rel="tooltip" title="Edit">Edit</a>
-                            <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['id'];?>" class="label label-default" rel="tooltip" title="Take test">Take test</a></p>
+                            <p><a href="<?php echo base_url();?>child/update_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger" rel="tooltip" title="Edit">Edit</a>
+                            <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['child_id'];?>" class="label label-default" rel="tooltip" title="Take test">Take test</a></p>
                    			
                       </div>
                         

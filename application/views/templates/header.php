@@ -31,13 +31,13 @@ var base_url = "<?php echo base_url();?>";
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-		<li><p class="navbar-text" id="user"><?php echo $logged_in_as; ?>: <?php echo $name; ?></p></li>
+		<li><p class="navbar-text" id="user"><?php echo $logged_in_as; ?>: <?php echo $user_name; ?></p></li>
         <li><a href="#"><?php echo $forum; ?></a></li>
         <li><a href="#"><?php echo $settings; ?></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	<div class="btn-group" role="group" aria-label="...">
-          	<button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>upload_controller/add_child'"><?php echo $add_child; ?></button>
+          	<button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>child/add_child'"><?php echo $add_child; ?></button>
     		<button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/update'"><?php echo $edit_profile; ?></button>
 		</div>
       	<button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/logout'" ><?php echo $logout; ?></button>

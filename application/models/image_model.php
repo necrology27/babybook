@@ -30,7 +30,7 @@ class image_model extends CI_Model
     function changeDefaultImage($childId, $imageId)
     {
         $this->db->set('default_image', $imageId);
-        $this->db->where('id', $childId);
+        $this->db->where('child_id', $childId);
         return $this->db->update('children');
     }
     

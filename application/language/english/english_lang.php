@@ -7,6 +7,7 @@ $lang['login_title'] = "Login";
 $lang['register_title'] = "Register";
 $lang['forgot_title'] = "Forgot Password";
 $lang['update_title'] = "Update profile";
+$lang['child_update_title'] = "Update your child's profile";
 
 //login info
 $lang['back_to_login'] = "Back to login";

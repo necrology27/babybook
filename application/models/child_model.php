@@ -14,11 +14,31 @@ class child_model extends CI_Model
         return $this->db->insert_id();
     }
     
+    function update_child_by_id($child_id, $data)
+    {
+        $this->db->trans_start();
+        $this->db->update('children', $data, array(
+            'child_id' => $data['child_id']
+        ));
+        $this->db->trans_complete();
+        
+        if ($this->db->affected_rows() > 0) {
+            return 1;
+        } else {
+            if ($this->db->trans_status() === FALSE) {
+                return 0;
+            } else {
+                return 1;
+            }
+            return 0;
+        }
+    }
+    
     function is_parent_child_relation($child_id, $user_id)
     {
         $this->db->select('*');
         $this->db->from('children');
-        $this->db->where('id', $child_id);
+        $this->db->where('child_id', $child_id);
         $query = $this->db->get();
         $result = $query->result_array();
         if($result[0]['user_id'] == $user_id)
@@ -35,7 +55,7 @@ class child_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('children');
-        $this->db->where('id', $id);
+        $this->db->where('child_id', $id);
         $query = $this->db->get();
         $result = $query->result_array();
         if ($this->db->affected_rows() > 0)
@@ -48,7 +68,7 @@ class child_model extends CI_Model
     {
         $this->db->select('birthday');
         $this->db->from('children');
-        $this->db->where('id', $id);
+        $this->db->where('child_id', $id);
         $query = $this->db->get();
         $result = $query->result_array();
         if ($this->db->affected_rows() > 0)

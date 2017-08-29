@@ -33,7 +33,7 @@ class make_test extends MY_Controller {
         
         if($this->child_model->is_parent_child_relation($child_id,  $data['id'])==false)
         {
-            ?>
+        ?>
             window.location="http://localhost/babybook_git/index.php/home";
         <?php 
         }
@@ -93,7 +93,7 @@ class make_test extends MY_Controller {
            $datas['skills'] = $skills;
            $user_data = $this->user_model->get_user_data($session_data['id']);
            $userId = $user_data['id'];
-           $datas['name'] = $user_data['name'];
+           $datas['user_name'] = $user_data['name'];
            $datas['title'] = "Test";
            $datas['child_id']= $child_id;
            $datas['child_age']= $child_age;

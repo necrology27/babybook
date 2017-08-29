@@ -35,7 +35,8 @@ $( function() {
 					</div>
 					<div class="panel-body">
                 <?php $attributes = array("name" => "addchildform");
-                echo form_open_multipart("upload_controller/add_child", $attributes); ?>
+                echo form_open_multipart("child/add_child", $attributes); ?>
+                		
                 		<div class="form-group">
 							<label for="name"><?php echo $name_label; ?></label> <input class="form-control"
 								name="name" placeholder="<?php echo $child_name_placeholder; ?>" type="text"
@@ -124,11 +125,8 @@ $( function() {
 						
 						<div class="form-group">
 							<label for="image"><?php echo $default_image_label; ?></label> 
-					
-							 
 							<?php echo $error;?> 
                                 <input type='file' name='userfile' size='20' />
-							 
 								<span class="text-danger">
 								<?php echo form_error('image'); ?>
 								</span>

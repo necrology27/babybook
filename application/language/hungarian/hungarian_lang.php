@@ -26,6 +26,7 @@ $lang['no_child'] = "Nincs bevezetett gyerek!";
 
 //editing
 $lang['update_title'] = "Profil frissítése";
+$lang['child_update_title'] = "Frissítse gyereke profilját";
 $lang['back_to_home'] = "Vissza a főoldalra";
 $lang['name_label'] = "Név";
 $lang['new_password_label'] = "Új jelszó";

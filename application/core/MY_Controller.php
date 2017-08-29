@@ -77,6 +77,8 @@ class MY_Controller extends CI_Controller
         $data['none_placeholder'] = $this->lang->line('none_placeholder');
         $data['ex_mail'] = $this->lang->line('ex_mail');
         
+        $data['child_update_title'] = $this->lang->line('child_update_title');
+        
         return $data;
     }
 

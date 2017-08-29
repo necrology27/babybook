@@ -7,6 +7,7 @@ $lang['login_title'] = "Intrare";
 $lang['register_title'] = "Înregistrare";
 $lang['forgot_title'] = "Am uitat parola";
 $lang['update_title'] = "Actualizare profil";
+$lang['child_update_title'] = "Actualizați profilul copilului";
 
 //login info
 $lang['password_label'] = "Parola";
