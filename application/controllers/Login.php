@@ -19,7 +19,7 @@ class Login extends MY_Controller
             'email'
         ));
         $this->load->database();
-        $this->load->model('user_model');
+        $this->load->model('user_model', '', TRUE);
     }
 
     function index()
@@ -50,12 +50,12 @@ class Login extends MY_Controller
 
     function check_database($password)
     {
-        $this->load->model('user', '', TRUE);
+        #$this->load->model('user', '', TRUE);
         // Field validation succeeded. Validate against database
         $email = $this->input->post('email');
         
         // query the database
-        $result = $this->user->login($email, $password);
+        $result = $this->user_model->login($email, $password);
         
         if ($result) {
             $sess_array = array();

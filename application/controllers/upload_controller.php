@@ -14,20 +14,22 @@ class Upload_Controller extends MY_Controller {
         ));
         $this->load->database();
         $this->load->model('user_model');
+        $this->load->model('image_model');
+        $this->load->model('child_model');
     }
     
     public function add_child(){
         
         $session_data = $this->session->userdata('logged_in');
-        $userId = $session_data['id'];
-        $data = $this->load_lang($userId);
+        $user_id = $session_data['id'];
+        $data = $this->load_lang($user_id);
         
         // set validation rules
         $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|callback_exists[children.name.'.$session_data['id'].']|min_length[3]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
         // validate form input
         if ($this->form_validation->run() == FALSE) {
-            $measurement = $this->user_model->get_user_data($userId)['measurement'];
+            $measurement = $this->user_model->get_user_data($user_id)['measurement'];
             $datas = array(
                 'measurement' => $measurement,
                 'error' => ' '
@@ -35,7 +37,7 @@ class Upload_Controller extends MY_Controller {
             $user_data = $this->user_model->get_user_data($session_data['id']);
             $datas['name'] = $user_data['name'];
             
-            $data = $datas + $this->load_lang($userId);
+            $data = $datas + $this->load_lang($user_id);
             $this->load->view('templates/header.php', $data);
             $this->load->view('add_child', $data);
             $this->load->view('templates/footer.php', $data);
@@ -60,20 +62,20 @@ class Upload_Controller extends MY_Controller {
                 
                 'is_parent' =>  $is_par,
                 'other_disorders' => $this->input->post('other_disorders'),
-                'userId' => $userId,                
+                'user_id' => $user_id,                
             );
             
            
 
             // insert form data into database
-            if ($childID=$this->user_model->insertChild($data)) {
+            if ($childID=$this->child_model->insertChild($data)) {
                 
                 $data['child_id'] = $childID;
                 // successfully sent mail
                
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Success!</div>');
                 
-                $err = $this->do_upload($data["userId"], $childID);
+                $err = $this->do_upload($data["user_id"], $childID);
                 if ($err !== true) {
                     $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">' . $err . '!!!</div>');
                     redirect('upload_controller/add_child');
@@ -90,14 +92,14 @@ class Upload_Controller extends MY_Controller {
     
     
         
-    public function do_upload($userId, $childId){
+    public function do_upload($user_id, $childId){
         
         $upload_date=time();
-        if (!file_exists(FCPATH . 'uploads/'.$userId. '/'.$childId)) {
-            mkdir(FCPATH . 'uploads/'.$userId. '/'.$childId, 0777, true);
+        if (!file_exists(FCPATH . 'uploads/'.$user_id. '/'.$childId)) {
+            mkdir(FCPATH . 'uploads/'.$user_id. '/'.$childId, 0777, true);
         }
         
-        $config['upload_path'] = FCPATH . 'uploads/'.$userId. '/'.$childId;
+        $config['upload_path'] = FCPATH . 'uploads/'.$user_id. '/'.$childId;
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
         $config['file_name'] = 'img_'.$upload_date;
         $config['file_ext_tolower'] = TRUE;
@@ -132,8 +134,8 @@ class Upload_Controller extends MY_Controller {
                  'file_name' =>  $file_name,
                  'title' => 'Default image',
              );
-             if ($imageId=$this->user_model->insertImage($data)) {
-                 $this->user_model->changeDefaultImage($childId, $imageId);
+             if ($imageId=$this->image_model->insertImage($data)) {
+                 $this->image_model->changeDefaultImage($childId, $imageId);
              } else {
                  // error
                  $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t ADD IMAGE.  Please try again later!!!</div>');

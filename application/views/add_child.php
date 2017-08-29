@@ -100,7 +100,6 @@ $( function() {
 						<div class="form-group">
 							<label for="apgar_score"><?php echo $apgar_score_label; ?></label>  <br> 
 							<input class="form-control2" name="apgar_score" type="text" value="<?php echo set_value('apgar_score'); ?>" /> 
-								<span class= "measurement">/10</span>
 								<span class="text-danger">
 								<?php echo form_error('apgar_score'); ?>
 								</span>

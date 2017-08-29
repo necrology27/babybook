@@ -17,6 +17,7 @@ class Home extends MY_Controller
         ));
         $this->load->database();
         $this->load->model('user_model');
+        $this->load->model('image_model');
     }
 
     public function index()
@@ -32,11 +33,11 @@ class Home extends MY_Controller
             $data['id'] = $session_data['id'];
             $data['title'] = $this->lang->line('home_title');
             
-            $data['children'] = $this->user_model->get_children_by_parent($data['id']);
+            $data['children'] = $this->user_model->get_users_children($data['id']);
             
             $data['child_count'] = count($data['children']);
             for ($i = 0; $i < $data['child_count']; $i++) {
-                $data['def_imgs'][$i] = $this->user_model->get_def_img($data['children'][$i]['id']);
+                $data['def_imgs'][$i] = $this->image_model->get_def_img($data['children'][$i]['id']);
             }
             
             $this->load->view('templates/header', $data);

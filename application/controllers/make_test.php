@@ -15,6 +15,9 @@ class make_test extends MY_Controller {
         ));
         $this->load->database();
         $this->load->model('user_model');
+        $this->load->model('child_model');
+        $this->load->model('skill_model');
+        $this->load->model('answer_model');
     }
     public function index()
     {
@@ -28,7 +31,7 @@ class make_test extends MY_Controller {
         $data['id'] = $session_data['id'];
         
         
-        if($this->user_model->is_parent_child_relation($child_id,  $data['id'])==false)
+        if($this->child_model->is_parent_child_relation($child_id,  $data['id'])==false)
         {
             ?>
             window.location="http://localhost/babybook_git/index.php/home";
@@ -39,47 +42,49 @@ class make_test extends MY_Controller {
         $data['child_id'] = $child_id;
         # echo $_SESSION["child_id"]; die();
       
-        $child_age = $this->get_child_age($this->user_model->get_child_birthday($child_id)['birthday']);
+       # $child_age = $this->get_child_age($this->child_model->get_child_birthday($child_id)['birthday']);
+        $child_age = $this->child_model->get_child_age_by_id($child_id);
+       
        #elso kitoltes???
-        $ans= $this->user_model->child_has_answer( $child_id );
+        $ans= $this->answer_model->child_answers( $child_id );
        
         ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Szulo-e?????
         
        
-        if($ans===0)
+        if($ans===false)
         {
-            $skills = $this->user_model->get_skills_by_age($child_age);
+            $skills = $this->skill_model->get_skills_by_age($child_age);
         }
         else
            {
            #elozoleg "fail" valaszok ujrakerdezese
                     #álcázott join
                     #kiveszem az answers tablabol a "fail" valaszu skill_id-ket, rendes tombbe teszem és megkeresem ezeket a skills táblában
-               $skills_id = $this->user_model->get_fail_skill_id($child_id);
+               $fail_skills_id = $this->answer_model->get_fail_skill_id($child_id);
                $j=0;
-               if ($skills_id != NULL)
+               if ($fail_skills_id != NULL)
                {
-                   foreach ($skills_id as $i)
+                   foreach ($fail_skills_id as $one_fail)
                    {
-                       $skills_ker[$j]= $i['skill_id'];
+                       $skills_ker[$j]= $one_fail['skill_id'];
                        $j++;
                    }
-                   $skills = $this->user_model->get_fail_skill($skills_ker);
+                   $skills = $this->skill_model->get_skills_by_id($skills_ker);
                }
                else
                     $skills = null;
                
            #by skill_group how many fail answer has
-               $nr_of_fail_ans = $this->user_model->get_nr_fail_answer($child_id);
+               $nr_of_fail_ans = $this->answer_model->get_nr_fail_answer($child_id);
                    
                    #by skill_group last checked skill id
-               $last_check = $this->user_model->last_checked_skill($child_id);
+               $last_check = $this->answer_model->last_checked_skill($child_id);
                    
                for($i=0; $i<4; $i++)
                {
                        #ha nincs beallitva, azaz a "Fail" válaszok száma 0 vagy kevesebb mint 3, akkor veszi a kovetkezo 4 kérdést
                    if (!isset($nr_of_fail_ans[$i]) || $nr_of_fail_ans[$i]['fail_num']<3)
-                   $skills = array_merge($skills, $this->user_model->get_next_skills($last_check[$i]['max_skill_id'], $i+1));
+                   $skills = array_merge($skills, $this->skill_model->get_next_skills($last_check[$i]['max_skill_id'], $i+1));
                }
            }
            

@@ -15,6 +15,7 @@ class send_answer extends MY_Controller {
         ));
         $this->load->database();
         $this->load->model('user_model');
+        $this->load->model('answer_model');
     }
     
     public function index()
@@ -36,7 +37,7 @@ class send_answer extends MY_Controller {
             'learned' => $learned,
             'user_id' => $userId
         );
-        $result = $this->user_model->insert_answer($data);
+        $result = $this->answer_model->insert_answer($data);
         echo "ok";
     }
     
