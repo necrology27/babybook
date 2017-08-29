@@ -28,10 +28,11 @@ class Child extends MY_Controller {
         $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|callback_exists[children.name.'.$session_data['id'].']|min_length[3]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
         // validate form input
+        
         if ($this->form_validation->run() == FALSE) {
             $measurement = $this->user_model->get_user_data($user_id)['measurement'];
             
-           
+            
             $datas = array(
                 'measurement' => $measurement,
                 'error' => ' '
@@ -44,7 +45,8 @@ class Child extends MY_Controller {
             $this->load->view('templates/header.php', $data);
             $this->load->view('add_child', $data);
             $this->load->view('templates/footer.php', $data);
-        } else {
+        } 
+        else {
             
             if($this->input->post('is_parent') == NULL)
                 $is_par=0;
@@ -76,8 +78,8 @@ class Child extends MY_Controller {
                 // successfully sent mail
                
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Success!</div>');
-                
                 $err = $this->do_upload($data["user_id"], $childID);
+                
                 if ($err !== true) {
                     $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">' . $err . '!!!</div>');
                     redirect('child/add_child');
@@ -96,11 +98,15 @@ class Child extends MY_Controller {
     
     function update_child($child_id = NULL)
     {
-        
-        
-        
         $session_data = $this->session->userdata('logged_in');
         $id = $session_data['id'];
+        
+        ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Szulo-e?????
+        
+        if($this->child_model->is_parent_child_relation($child_id,  $id)==false)
+        {
+            header("Location: http://localhost/babybook_git/index.php/home");
+        }
         
         $data = $this->load_lang($id);
         $data['title'] = $this->lang->line('child_update_title');
@@ -110,8 +116,10 @@ class Child extends MY_Controller {
         $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
         
         // validate form input
-        if ($this->form_validation->run() == FALSE) {
-            if ($this->session->userdata('logged_in')) {
+        if ($this->form_validation->run() == FALSE) 
+        {
+            if ($this->session->userdata('logged_in')) 
+            {
                 $child_data = $this->child_model->get_child_data($child_id);
                 $user_data = $this->user_model->get_user_data($session_data['id']);
                 $data['user_name'] = $user_data['name'];
@@ -125,40 +133,38 @@ class Child extends MY_Controller {
                 $this->load->view('edit_child', $data);
                 $this->load->view('templates/footer', $data);
             }
-        } else {
-              $data = array(
-                    'name' => $this->input->post('name'),
-                    'birthday' => $this->input->post('birthday'),
-                    'child_id' =>  $child_id,        
-                    'genetical_disorders' => $this->input->post('genetical_disorders'),
-                    'other_disorders' => $this->input->post('other_disorders'), 
-               );
+        } 
+        else {
+            $data = array(
+                'name' => $this->input->post('name'),
+                'birthday' => $this->input->post('birthday'),
+                'child_id' =>  $child_id,        
+                'genetical_disorders' => $this->input->post('genetical_disorders'),
+                'other_disorders' => $this->input->post('other_disorders'), 
+            );
             
                // insert form data into database
         
-              if ($this->child_model->update_child_by_id($child_id, $data))
-              {
+        if ($this->child_model->update_child_by_id($child_id, $data))
+        {
+        
+           if ($this->input->post('userfile') != null) {
+          
+                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Success!</div>');
+            
+                $err = $this->do_upload($session_data['id'], $child_id);
+                
+                if ($err !== true) 
+                {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">' . $err . '!!!</div>');
+                    redirect('child/add_child');
+                }
+           }
            
-                           if ($this->input->post('userfile') != null) {
-                          
-                                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Success!</div>');
-                                
-                                    $err = $this->do_upload($session_data['id'], $child_id);
-                                    if ($err !== true) {
-                                        $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">' . $err . '!!!</div>');
-                                        redirect('child/add_child');
-                   
-                                    }
-                           }
-                
-                
-                
-                
-                
-                // successfully sent mail
-                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your child\'s profile updated!</div>');
-                redirect('child/update_child/'.$child_id, $lang);
-            } else {
+            // successfully sent mail
+            $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your child\'s profile updated!</div>');
+            redirect('child/update_child/'.$child_id, $lang);
+        } else {
                 // error
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t update your child\'s profile.  Please try again later!!!</div>');
                 redirect('child/update_child'.$child_id, $lang);
@@ -181,7 +187,6 @@ class Child extends MY_Controller {
         $config['max_size'] = '8192000';
         $config['max_width'] = '2048';
         $config['max_height'] = '2048';
-       
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
         

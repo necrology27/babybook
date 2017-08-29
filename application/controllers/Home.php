@@ -40,9 +40,8 @@ class Home extends MY_Controller
                 $data['child_count'] = count($data['children']);
             else
                 $data['child_count'] = 0;
-            for ($i = 0; $i < $data['child_count']; $i++) {
+            for ($i = 0; $i < $data['child_count']; $i++) 
                 $data['def_imgs'][$i] = $this->image_model->get_def_img($data['children'][$i]['child_id']);
-            }
            
             $this->load->view('templates/header', $data);
             $this->load->view('home/index.php', $data);

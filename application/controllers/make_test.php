@@ -30,26 +30,19 @@ class make_test extends MY_Controller {
         $session_data = $this->session->userdata('logged_in');
         $data['id'] = $session_data['id'];
         
-        
+        ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Szulo-e?????
         if($this->child_model->is_parent_child_relation($child_id,  $data['id'])==false)
         {
-        ?>
-            window.location="http://localhost/babybook_git/index.php/home";
-        <?php 
+            header("Location: http://localhost/babybook_git/index.php/home");
         }
-        
-        
+
         $data['child_id'] = $child_id;
-        # echo $_SESSION["child_id"]; die();
-      
-       # $child_age = $this->get_child_age($this->child_model->get_child_birthday($child_id)['birthday']);
         $child_age = $this->child_model->get_child_age_by_id($child_id);
        
        #elso kitoltes???
         $ans= $this->answer_model->child_answers( $child_id );
        
-        ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Szulo-e?????
-        
+       
        
         if($ans===false)
         {
@@ -87,9 +80,6 @@ class make_test extends MY_Controller {
                    $skills = array_merge($skills, $this->skill_model->get_next_skills($last_check[$i]['max_skill_id'], $i+1));
                }
            }
-           
-           
-        
            $datas['skills'] = $skills;
            $user_data = $this->user_model->get_user_data($session_data['id']);
            $userId = $user_data['id'];
@@ -104,11 +94,6 @@ class make_test extends MY_Controller {
            $this->load->view('templates/header.php', $data);
            $this->load->view('test_view', $data);
            $this->load->view('templates/footer.php', $data);
-       
-       
-        #$fail_skills = $this->user_model->get_nr_fail_answer($data['id']);
-        #print_r($fail_skills);
-            
     }
     
     public function get_child_age($birthday)
