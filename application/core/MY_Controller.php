@@ -78,7 +78,11 @@ class MY_Controller extends CI_Controller
         $data['ex_mail'] = $this->lang->line('ex_mail');
         
         $data['child_update_title'] = $this->lang->line('child_update_title');
-        
+        $data['take_test_title'] = $this->lang->line('take_test_title');
+        $data['pass'] = $this->lang->line('pass');
+        $data['fail'] = $this->lang->line('fail');
+        $data['no_opportunity'] = $this->lang->line('no_opportunity');
+        $data['refusal'] = $this->lang->line('refusal');
         return $data;
     }
 

@@ -57,4 +57,10 @@ $lang['none_placeholder'] = "semmi";
 $lang['other_disorders_label'] = "Egyéb rendellenességek";
 $lang['default_image_label'] = "Alapértelmezett kép";
 $lang['my_child_label'] = "Saját gyerek";
-?>
+
+//take test
+$lang['take_test_title'] = "Teszt kitöltése";
+$lang['pass'] = "Teljesíti";
+$lang['fail'] = "Nem teljesíti";
+$lang['no_opportunity'] = "Nincs rá lehetősége";
+$lang['refusal'] = "Visszautastja";

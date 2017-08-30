@@ -56,4 +56,11 @@ $lang['none_placeholder'] = "nici unul";
 $lang['other_disorders_label'] = "Alte tulburări";
 $lang['default_image_label'] = "Imagine prestabilită";
 $lang['my_child_label'] = "Copilul meu";
+
+//take test
+$lang['take_test_title'] = "Completați testul";
+$lang['pass'] = "Putea";
+$lang['fail'] = "Nu putea";
+$lang['no_opportunity'] = "Nu este posibil";
+$lang['refusal'] = "Refuz";
 ?>

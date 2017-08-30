@@ -29,7 +29,7 @@ class make_test extends MY_Controller {
        #az o gyereke??
         $session_data = $this->session->userdata('logged_in');
         $data['id'] = $session_data['id'];
-        
+        $data['title'] = $this->lang->line('take_test_title');
         ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Szulo-e?????
         if($this->child_model->is_parent_child_relation($child_id,  $data['id'])==false)
         {
@@ -43,11 +43,15 @@ class make_test extends MY_Controller {
         $ans= $this->answer_model->child_answers( $child_id );
        
        
-       
+       # var_dump($this->user_model->get_user_lang($session_data['id'])); die();
+        $lang_id=$this->user_model->get_user_lang($session_data['id']);
+        
         if($ans===false)
         {
-            $skills = $this->skill_model->get_skills_by_age($child_age);
+            $skills = $this->skill_model->get_skills_by_age($child_age, $lang_id);
+            
         }
+        
         else
            {
            #elozoleg "fail" valaszok ujrakerdezese
@@ -62,7 +66,9 @@ class make_test extends MY_Controller {
                        $skills_ker[$j]= $one_fail['skill_id'];
                        $j++;
                    }
-                   $skills = $this->skill_model->get_skills_by_id($skills_ker);
+                  # var_dump($this->skill_model->get_skills_name_and_language_by_id_and_lang($skills_ker, 2));die();
+                  
+                   $skills = $this->skill_model->get_skills_name_and_language_by_id_and_lang($skills_ker, $lang_id);
                }
                else
                     $skills = null;
@@ -77,7 +83,7 @@ class make_test extends MY_Controller {
                {
                        #ha nincs beallitva, azaz a "Fail" válaszok száma 0 vagy kevesebb mint 3, akkor veszi a kovetkezo 4 kérdést
                    if (!isset($nr_of_fail_ans[$i]) || $nr_of_fail_ans[$i]['fail_num']<3)
-                   $skills = array_merge($skills, $this->skill_model->get_next_skills($last_check[$i]['max_skill_id'], $i+1));
+                       $skills = array_merge($skills, $this->skill_model->get_next_skills($last_check[$i]['max_skill_id'], $i+1, $lang_id));
                }
            }
            $datas['skills'] = $skills;

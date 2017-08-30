@@ -8,6 +8,7 @@ $lang['register_title'] = "Register";
 $lang['forgot_title'] = "Forgot Password";
 $lang['update_title'] = "Update profile";
 $lang['child_update_title'] = "Update your child's profile";
+$lang['take_test_title'] = "Take the test";
 
 //login info
 $lang['back_to_login'] = "Back to login";
@@ -56,5 +57,11 @@ $lang['save_button'] = "Save";
 $lang['cancel_button'] = "Cancel";
 $lang['signup_button'] = "Registration";
 $lang['send_email_button'] = "Send email";
+
+//take test
+$lang['pass'] = "Pass";
+$lang['fail'] = "Fail";
+$lang['no_opportunity'] = "No opportunity";
+$lang['refusal'] = "Refusal";
 
 ?>

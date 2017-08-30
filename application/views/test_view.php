@@ -10,7 +10,7 @@ var base_url = '<?php echo base_url(); ?>';
 	<?php echo $this->session->flashdata('verify_msg'); ?>
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h4>Add a child</h4>
+			<h4><?php echo $take_test_title; ?></h4>
 			<input id="child_id" type = 'hidden' value=<?php echo $child_id; ?> >
 		</div>
 	<div class="panel-body">
@@ -19,10 +19,10 @@ var base_url = '<?php echo base_url(); ?>';
       <div class="table-responsive">
       <table class="table-striped">
 		<tr>
-            <th>Pass &nbsp&nbsp&nbsp</th>
-            <th>Fail &nbsp&nbsp&nbsp</th> 
-            <th>No opportunity &nbsp</th>
-            <th>Refusal &nbsp&nbsp&nbsp</th>
+            <th><?php echo $pass; ?> &nbsp&nbsp&nbsp</th>
+            <th><?php echo $fail; ?> &nbsp&nbsp&nbsp</th> 
+            <th><?php echo $no_opportunity; ?> &nbsp</th>
+            <th><?php echo $refusal; ?>&nbsp&nbsp&nbsp</th>
 		</tr>
         <?php
         $i = 0;
