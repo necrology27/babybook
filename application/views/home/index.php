@@ -30,7 +30,7 @@
                         <div class="caption">
                             <h4><?php echo $children[$j]['name'];?></h4>
                             <p>Last updated: <?php echo $children[$j]['birthday'];?></p>
-                            <p><a href="<?php echo base_url();?>child/update_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger" rel="tooltip" title="Edit">Edit</a>
+                            <p ><a href="<?php echo base_url();?>child/update_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger"  rel="tooltip" title="Edit">Edit</a>
                             <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['child_id'];?>" class="label label-default" rel="tooltip" title="Take test">Take test</a></p>
                    			
                       </div>

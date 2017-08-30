@@ -128,6 +128,8 @@ class Child extends MY_Controller {
                 $data['birthday'] = $child_data['birthday'];
                 $data['error'] = ' ';
                 $data['child_id'] = $child_id;
+                $data['genetical_disorders']=$child_data['genetical_disorders'];
+                $data['other_disorders']=$child_data['other_disorders'];
                 
                 $this->load->view('templates/header', $data);
                 $this->load->view('edit_child', $data);
