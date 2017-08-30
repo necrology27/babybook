@@ -77,6 +77,22 @@ class child_model extends CI_Model
                 return false;
     }
     
+    function get_last_update($id)
+    {
+        $this->db->select('MAX(checked_date)');
+        $this->db->from('answers');
+        $this->db->where('child_id', $id);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if ($this->db->affected_rows() > 0)
+        {
+           
+            return $result[0]['MAX(checked_date)'];
+        }
+            else
+                return false;
+    }
+    
     public function get_child_age_by_id($child_id)
     {
         

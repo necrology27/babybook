@@ -28,10 +28,10 @@
         	     	<div class="thumbnail child_box">
                       <img class="child_box" src="<?php echo uploads_url() . $id . "/" . $children[$j]['child_id'] . "/" . $def_imgs[$j]; ?>" alt="<?php echo $children[$j]['name'];?>">
                         <div class="caption">
-                            <h4><?php echo $children[$j]['name'];?></h4>
-                            <p>Last updated: <?php echo $children[$j]['birthday'];?></p>
-                            <p ><a href="<?php echo base_url();?>child/update_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger"  rel="tooltip" title="Edit">Edit</a>
-                            <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['child_id'];?>" class="label label-default" rel="tooltip" title="Take test">Take test</a></p>
+                            <h3><?php echo $children[$j]['name'];?></h3>
+                            <p>Last updated:<br> <?php echo $last_up[$j];?></p>
+                            <h4><a href="<?php echo base_url();?>child/update_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger"  rel="tooltip" title="Edit">Edit</a>
+                            <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['child_id'];?>" class="label label-success" rel="tooltip" title="Take test">Take test</a></h3>
                    			
                       </div>
                         

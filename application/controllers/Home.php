@@ -41,8 +41,12 @@ class Home extends MY_Controller
             else
                 $data['child_count'] = 0;
             for ($i = 0; $i < $data['child_count']; $i++) 
+            {
                 $data['def_imgs'][$i] = $this->image_model->get_def_img($data['children'][$i]['child_id']);
+                $data['last_up'][$i] = $this->child_model->get_last_update($data['children'][$i]['child_id']);
+            }
            
+                
             $this->load->view('templates/header', $data);
             $this->load->view('home/index.php', $data);
             $this->load->view('templates/footer', $data);
