@@ -149,9 +149,9 @@ class Child extends MY_Controller {
         
         if ($this->child_model->update_child_by_id($child_id, $data))
         {
-        
-           if ($this->input->post('userfile') != null) {
-          
+           
+           if ($_FILES['userfile'] != null) {
+
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Success!</div>');
             
                 $err = $this->do_upload($session_data['id'], $child_id);
@@ -191,10 +191,10 @@ class Child extends MY_Controller {
         $config['max_height'] = '2048';
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
-        
+         
         if($this->upload->do_upload())
         {
-          
+
             $data = array('upload_data' => $this->upload->data());
             
             $config['image_library'] = 'gd2';
@@ -235,6 +235,41 @@ class Child extends MY_Controller {
             );
             $this->load->view('add_child', $data);
         }
+    }
+    function profil($child_id = NULL)
+    {
+        $session_data = $this->session->userdata('logged_in');
+        $id = $session_data['id'];
+        
+        ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Szulo-e?????
+        
+        if($this->child_model->is_parent_child_relation($child_id,  $id)==false)
+        {
+            header("Location: http://localhost/babybook_git/index.php/home");
+        }
+        
+        $data = $this->load_lang($id);
+        $child_data = $this->child_model->get_child_data($child_id);
+        $user_data = $this->user_model->get_user_data($session_data['id']);
+        $data['user_name'] = $user_data['name'];
+        $data['user_id'] = $session_data['id'];
+        $data['name'] = $child_data['name'];
+        $data['birthday'] = $child_data['birthday'];
+        $data['error'] = ' ';
+        $data['child_id'] = $child_id;
+        
+        $data['title'] = $this->lang->line('');
+        
+       
+        
+        
+        
+        $this->load->view('templates/header', $data);
+        $this->load->view('child_profil', $data);
+        $this->load->view('templates/footer', $data);
+        
+        
+        
     }
 }
 ?>

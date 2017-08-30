@@ -63,4 +63,13 @@ $lang['pass'] = "Putea";
 $lang['fail'] = "Nu putea";
 $lang['no_opportunity'] = "Nu este posibil";
 $lang['refusal'] = "Refuz";
+
+//profil
+$lang['profil_title'] = "Profilul copilului";
+$lang['actual_development_level'] = "Nivelul actual de dezvoltare";
+$lang['album'] = "Fotografiile";
+$lang['social'] = "Social";
+$lang['fine_motor'] = "Motricitatea fina";
+$lang['language'] = "Limbaj";
+$lang['gross_motor'] = "Motricitatea grosiera";
 ?>

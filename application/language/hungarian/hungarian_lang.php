@@ -64,3 +64,12 @@ $lang['pass'] = "Teljesíti";
 $lang['fail'] = "Nem teljesíti";
 $lang['no_opportunity'] = "Nincs rá lehetősége";
 $lang['refusal'] = "Visszautastja";
+
+//profil
+$lang['profil_title'] = "Gyerek adatlapja";
+$lang['actual_development_level'] = "Jelenlegi fejlődési szint";
+$lang['album'] = "Képek";
+$lang['social'] = "Szociális";
+$lang['fine_motor'] = "Finommozgás";
+$lang['language'] = "Nyelv";
+$lang['gross_motor'] = "Nagymozgás";

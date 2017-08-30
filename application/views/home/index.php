@@ -32,6 +32,7 @@
                             <p>Last updated:<br> <?php echo $last_up[$j];?></p>
                             <h4><a href="<?php echo base_url();?>child/update_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger"  rel="tooltip" title="Edit">Edit</a>
                             <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['child_id'];?>" class="label label-success" rel="tooltip" title="Take test">Take test</a></h3>
+                            <a href="<?php echo base_url();?>child/profil/<?php echo $children[$j]['child_id'];?>" class="label label-success" rel="tooltip" title="Take test">Profil</a>
                    			
                       </div>
                         

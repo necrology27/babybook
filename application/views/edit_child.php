@@ -1,30 +1,4 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0; charset=utf-8">
-<title>babybook | <?php echo $child_update_title; ?></title>
-<script src="<?php echo resources_url();?>jquery.js"></script>
-<script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
-<script>
-    $( function() {
-    	var date = $('.datepicker').datepicker({
-        	 dateFormat: 'yy-mm-dd',
-    	     changeMonth: true,
-    	     changeYear: true,
-    	     yearRange: "-100:-10"
-    	 }).val();
-    } );
-</script>
-<link rel="stylesheet"
-	href="<?php echo resources_url(); ?>jquery-ui/jquery-ui.css">
-<link href="<?php echo resources_url(); ?>/css/style.css"
-	rel="stylesheet" type="text/css" />
-<link
-	href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css"
-	rel="stylesheet" type="text/css" />
-</head>
-<body>
 	<input id="child_id" type = 'hidden' value=<?php echo $child_id; ?> >
 <button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>home'"><?php echo $back_to_home; ?></button>
 	<img src="<?php echo uploads_url() . $user_id . "/" . $child_id . "/" . $this->image_model->get_def_img($child_id); ?>" class="back-left" />
@@ -39,7 +13,7 @@
 					</div>
 					<div class="panel-body">
                 <?php $attributes = array("name" => "userupdateform");
-                echo form_open("child/update_child/".$child_id, $attributes); ?>
+                echo form_open_multipart("child/update_child/".$child_id, $attributes); ?>
                 		<div class="form-group">
 							<label for="name"><?php echo $name_label; ?></</label> 
 							<input class="form-control" name="name" type="text" value="<?php echo $name; ?>" /> 
@@ -91,6 +65,9 @@
 						</div>
 					</form>
                 <?php echo $this->session->flashdata('msg'); ?>
-
-</body>
-</html>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                

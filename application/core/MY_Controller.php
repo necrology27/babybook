@@ -83,6 +83,15 @@ class MY_Controller extends CI_Controller
         $data['fail'] = $this->lang->line('fail');
         $data['no_opportunity'] = $this->lang->line('no_opportunity');
         $data['refusal'] = $this->lang->line('refusal');
+        
+        $data['profil_title'] = $this->lang->line('profil_title');
+        $data['actual_development_level'] = $this->lang->line('actual_development_level');
+        $data['album'] = $this->lang->line('album');
+        $data['social'] = $this->lang->line('social');
+        $data['language'] = $this->lang->line('language');
+        $data['fine_motor'] = $this->lang->line('fine_motor');
+        $data['gross_motor'] = $this->lang->line('gross_motor');
+        
         return $data;
     }
 

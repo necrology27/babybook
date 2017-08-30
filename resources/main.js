@@ -9,6 +9,7 @@ function popup_function(id) {
     var popup = document.getElementById(id);
     popup.classList.toggle("show");
 }
+
 /*
 $( document ).ready(function() {
     $("[rel='tooltip']").tooltip();    

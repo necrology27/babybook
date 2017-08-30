@@ -16,6 +16,7 @@ class send_answer extends MY_Controller {
         $this->load->database();
         $this->load->model('user_model');
         $this->load->model('answer_model');
+        $this->load->model('child_model');
     }
     
     public function index()
@@ -33,7 +34,7 @@ class send_answer extends MY_Controller {
             'child_id' =>$child_id,
             'skill_id' => $skill_id,
             'skill_group_id' => $skill_group_id,
-            'age' => $this->get_child_age($this->user_model->get_child_birthday($child_id)['birthday']),
+            'age' => $this->get_child_age($this->child_model->get_child_birthday($child_id)['birthday']),
             'learned' => $learned,
             'user_id' => $userId
         );

@@ -1,35 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>babybook | <?php echo $add_child; ?></title>
-<script src="<?php echo resources_url();?>jquery.js"></script>
-<script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
-<script>
-$( function() {
-    var date = $('.datepicker').datepicker({
-        dateFormat: 'yy-mm-dd',
-        changeMonth: true,
-        changeYear: true,
-        yearRange: "-5:+1"
-    }).val();
-} );
-    </script>
-    <link rel="stylesheet"
-        href="<?php echo resources_url(); ?>jquery-ui/jquery-ui.css">
-        <link href="<?php echo resources_url(); ?>/css/style.css"
-            rel="stylesheet" type="text/css" />
-            <link
-            href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css"
-                rel="stylesheet" type="text/css" />
-                </head>
-                <body>
+
                 <button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>home'"><?php echo $back_to_home; ?></button>
-                <div class="container animated_form">
-                <div class="row">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="container animated_form row col-md-6 col-md-offset-3 panel panel-default">
+         
         <?php echo $this->session->flashdata('verify_msg'); ?>
-			<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4><?php echo $add_child; ?></h4>
 					</div>
@@ -135,7 +108,7 @@ $( function() {
 							<div class="form-group">
 							<input type="checkbox" name="is_parent" value="is_parent"><?php echo $my_child_label; ?><br>
 							<?php echo form_error('is_parent'); ?>
-							</span>
+							
 						</div>
 						
 
@@ -143,8 +116,7 @@ $( function() {
 							<button name="submit" type="submit" class="btn btn-default"><?php echo $add_button; ?></button>
 							<button name="cancel" type="reset" class="btn btn-default" onclick="location.href='<?php echo base_url();?>home'"><?php echo $cancel_button; ?></button>
 						</div>
-					</form>
+					<?php echo form_close()?>
                 <?php echo $this->session->flashdata('msg'); ?>
-
-</body>
-</html>
+</div>
+</div>

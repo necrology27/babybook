@@ -1,6 +1,3 @@
-<script>
-var base_url = '<?php echo base_url(); ?>';
-</script>
 <button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>home'"><?php echo $back_to_home;?></button>
 <div class="container animated_form">
 	<div class="row">

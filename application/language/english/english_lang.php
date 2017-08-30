@@ -64,4 +64,13 @@ $lang['fail'] = "Fail";
 $lang['no_opportunity'] = "No opportunity";
 $lang['refusal'] = "Refusal";
 
+//profil
+$lang['profil_title'] = "Child\'s profil";
+$lang['actual_development_level'] = "Actual development level";
+$lang['album'] = "Album";
+$lang['social'] = "Personal-Social";
+$lang['fine_motor'] = "Fine Motor - Adaptive";
+$lang['language'] = "Language";
+$lang['gross_motor'] = "Gross Motor";
+
 ?>
