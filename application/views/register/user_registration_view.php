@@ -7,7 +7,7 @@
 <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
 <script>
     $( function() {
-    	var date = $('.datepicker').datepicker({
+    	var date = $('.datepicker2').datepicker({
         	 dateFormat: 'yy-mm-dd',
     	     changeMonth: true,
     	     changeYear: true,
@@ -24,7 +24,7 @@
 	rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<img src="<?php echo resources_url();?>img/bemaszik.png" class="back-left" />
+	<img src="<?php echo resources_url();?>img/bemaszik.png" alt="missing image" class="back-left" />
 	<button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>login'"><?php echo $back_to_login; ?></button>
 	<div class="container animated_form">
 		<div class="row">
@@ -38,7 +38,8 @@
                 <?php $attributes = array("name" => "registrationform");
                 echo form_open("user/register", $attributes); ?>
                 <div class="form-group">
-							<label for="name"><?php echo $name_label; ?></label> <input class="form-control"
+							<label for="name"><?php echo $name_label; ?></label> 
+							<input id="name" class="form-control"
 								name="name" placeholder="<?php echo $name_label; ?>" type="text"
 								value="<?php echo set_value('name'); ?>" /> <span
 								class="text-danger"><?php echo form_error('name'); ?></span>
@@ -46,7 +47,7 @@
 
 						<div class="form-group">
 							<label for="password"><?php echo $password_label; ?></label>
-							<input class="form-control" name="password" placeholder="<?php echo $password_label; ?>" type="password" />
+							<input id="password" class="form-control" name="password" placeholder="<?php echo $password_label; ?>" type="password" />
 							<span class="text-danger">
 							<?php echo form_error('password'); ?>
 							</span>
@@ -54,7 +55,7 @@
 
 						<div class="form-group">
 							<label for="subject"><?php echo $confirm_password_label; ?></label> 
-							<input class="form-control" name="cpassword" placeholder="<?php echo $confirm_password_label; ?>" type="password" /> 
+							<input id="subject" class="form-control" name="cpassword" placeholder="<?php echo $confirm_password_label; ?>" type="password" /> 
 							<span class="text-danger">
 							<?php echo form_error('cpassword'); ?>
 							</span>
@@ -62,7 +63,7 @@
 
 						<div class="form-group">
 							<label for="email"><?php echo $email_label; ?></label> 
-							<input class="form-control" name="email" placeholder="<?php echo $email_label; ?>" type="text" value="<?php echo set_value('email'); ?>" /> 
+							<input id="email" class="form-control" name="email" placeholder="<?php echo $email_label; ?>" type="text" value="<?php echo set_value('email'); ?>" /> 
 								<span class="text-danger">
 								<?php echo form_error('email'); ?>
 								</span>
@@ -70,14 +71,14 @@
 
 						<div class="form-group">
 							<label for="birthday"><?php echo $birthday_label; ?></label> 
-							<input class="form-control datepicker" name="birthday" type="text" value="<?php echo set_value('birthday'); ?>" /> 
+							<input id="birthday" class="form-control datepicker2" name="birthday" type="text" value="<?php echo set_value('birthday'); ?>" /> 
 							<span class="text-danger">
 							<?php echo form_error('birthday'); ?>
 							</span>
 						</div>
 						
 						<div class="form-group">
-							<label for="name"><?php echo $gender_label; ?></label><br>
+							<label><?php echo $gender_label; ?></label><br>
 							<input class="radiobtn" type="radio" name="gender" value="M"> <?php echo $male; ?><br>
   							<input class="radiobtn" type="radio" name="gender" value="F" checked> <?php echo $female; ?><br>
 							<span class="text-danger">
@@ -114,8 +115,12 @@
 							<button name="submit" type="submit" class="btn btn-default"><?php echo $signup_button; ?></button>
 							<button name="cancel" type="reset" class="btn btn-default"><?php echo $cancel_button; ?></button>
 						</div>
-					</form>
+					<?php echo form_close()?>
                 <?php echo $this->session->flashdata('msg'); ?>
-
+</div>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

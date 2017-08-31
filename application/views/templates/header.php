@@ -10,7 +10,7 @@
 </head>
 <body> 
 
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
+<nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -29,13 +29,14 @@
         <li><a href="#"><?php echo $forum; ?></a></li>
         <li><a href="#"><?php echo $settings; ?></a></li>
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
-      	<div class="btn-group" role="group" aria-label="...">
-          	<button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>child/add_child'"><?php echo $add_child; ?></button>
-    		<button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/update'"><?php echo $edit_profile; ?></button>
-		</div>
-      	<button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/logout'" ><?php echo $logout; ?></button>
+      	
+          	<li><div class="btn-group" role="group" aria-label="..."><button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>child/add_child'"><?php echo $add_child; ?></button>
+    		<button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/update'"><?php echo $edit_profile; ?></button></div></li> 
+      		<li><button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/logout'" ><?php echo $logout; ?></button></li>
       </ul>
+      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

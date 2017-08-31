@@ -73,3 +73,6 @@ $lang['social'] = "Szociális";
 $lang['fine_motor'] = "Finommozgás";
 $lang['language'] = "Nyelv";
 $lang['gross_motor'] = "Nagymozgás";
+
+//error
+$lang['missing_image'] = "Hiányzó kép";

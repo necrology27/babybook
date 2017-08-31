@@ -16,20 +16,21 @@
       <div class="table-responsive">
       <table class="table-striped">
 		<tr>
-            <th><?php echo $pass; ?> &nbsp&nbsp&nbsp</th>
-            <th><?php echo $fail; ?> &nbsp&nbsp&nbsp</th> 
-            <th><?php echo $no_opportunity; ?> &nbsp</th>
-            <th><?php echo $refusal; ?>&nbsp&nbsp&nbsp</th>
+            <th><?php echo $pass; ?></th>
+            <th><?php echo $fail; ?></th> 
+            <th><?php echo $no_opportunity; ?></th>
+            <th><?php echo $refusal; ?></th>
+            <th></th>
 		</tr>
         <?php
         $i = 0;
        
         foreach($skills as $skill): ?>
             <tr> 		
-        		 <td align="center">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'] . "." . $skill['skill_group_id'];?>.Pass" name="radio<?php echo  $skill['id'];?>" value="Pass"> </td>
-				 <td align="center">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'] . "." .$skill['skill_group_id'];?>.Fail" name="radio<?php echo $skill['id'];?>" value="Fail"> </td>
-				 <td align="center">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'] . "." .$skill['skill_group_id'];?>.No_opportunity" name="radio<?php echo $skill['id'];?>" value="No_opportunity"> </td>
-				 <td align="center">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'] . "." .$skill['skill_group_id'];?>.Refuse" name="radio<?php echo $skill['id'];?>" value="Refusal"> </td>
+        		 <td style="text-align:center;">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'] . "." . $skill['skill_group_id'];?>.Pass" name="radio<?php echo  $skill['id'];?>" value="Pass"> </td>
+				 <td style="text-align:center;">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'] . "." .$skill['skill_group_id'];?>.Fail" name="radio<?php echo $skill['id'];?>" value="Fail"> </td>
+				 <td style="text-align:center;">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'] . "." .$skill['skill_group_id'];?>.No_opportunity" name="radio<?php echo $skill['id'];?>" value="No_opportunity"> </td>
+				 <td style="text-align:center;">	<input type="radio" class="answerRadio" id="<?php echo  $skill['id'] . "." .$skill['skill_group_id'];?>.Refuse" name="radio<?php echo $skill['id'];?>" value="Refusal"> </td>
 				 <td>
 				
                  <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" 
@@ -55,3 +56,8 @@
 </form>
 
 <?php echo $this->session->flashdata('msg'); ?> 
+</div>
+</div>
+</div>
+</div>
+</div>

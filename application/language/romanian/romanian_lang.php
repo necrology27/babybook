@@ -72,4 +72,7 @@ $lang['social'] = "Social";
 $lang['fine_motor'] = "Motricitatea fina";
 $lang['language'] = "Limbaj";
 $lang['gross_motor'] = "Motricitatea grosiera";
+
+//error
+$lang['missing_image'] = "Lipsește imaginea";
 ?>

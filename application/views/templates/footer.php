@@ -19,6 +19,15 @@ var base_url = "<?php echo base_url();?>";
     	     yearRange: "-100:-10"
     	 }).val();
     } );
+    $( function() {
+    	var date = $('.datepicker2').datepicker({
+        	 dateFormat: 'yy-mm-dd',
+    	     changeMonth: true,
+    	     changeYear: true,
+    	     yearRange: "-100:-10"
+    	 }).val();
+    } );
+    
 </script>
 <?php 
 if(isset($scripts))

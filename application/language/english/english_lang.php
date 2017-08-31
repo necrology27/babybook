@@ -73,4 +73,7 @@ $lang['fine_motor'] = "Fine Motor - Adaptive";
 $lang['language'] = "Language";
 $lang['gross_motor'] = "Gross Motor";
 
+//error
+$lang['missing_image'] = "Missing image";
+
 ?>

@@ -49,6 +49,7 @@ class MY_Controller extends CI_Controller
         $data['signup_button'] = $this->lang->line('signup_button');
         $data['send_email_button'] = $this->lang->line('send_email_button');
         $data['back_to_login'] = $this->lang->line('back_to_login');
+        $data['missing_image'] = $this->lang->line('missing_image');
         
         $data['my_children'] = $this->lang->line('my_children');
         $data['name_label'] = $this->lang->line('name_label');
