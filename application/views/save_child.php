@@ -16,7 +16,7 @@
 					</div>
 					<div class="panel-body">
                 <?php $attributes = array("name" => "userupdateform");
-                echo form_open_multipart("child/update_child/".$child_id, $attributes); ?>
+                echo form_open_multipart("child/add_child/".$child_id, $attributes); ?>
                 		<div class="form-group">
 							<label for="name"><?php echo $name_label; ?></label> 
 							<input id="name" class="form-control" name="name" type="text" value="<?php echo $name; ?>" /> 
@@ -24,8 +24,6 @@
 								<?php echo form_error('name'); ?>
 								</span>
 						</div>
-
-
 						<div class="form-group">
 							<label for="birthday"><?php echo $birthday_label; ?></label> 
 							<input id="birthday" class="form-control datepicker" name="birthday" type="text" value="<?php echo $birthday; ?>" /> 
@@ -35,18 +33,12 @@
 						</div> 
 						
 						<?php if ($child_id == 0) { ?>
-						    
-						    
-						    
         						    <div class="form-group">
         						    <label><?php echo $gender_label; ?></label><br>
         							<input class="radiobtn" type="radio" name="gender" value="M"> <?php echo $male; ?><br>
           							<input class="radiobtn" type="radio" name="gender" value="F" checked><?php echo $female; ?><br>
         						</div>
-        					
-        					
-        					
-          
+
         						<div class="form-group">
         							<label for="birth_weight"><?php echo $birth_weight_label; ?></label> <br> 
         							<input id="birth_weight" class="form-control2" name="birth_weight" type="text" value="<?php echo set_value('birth_weight'); ?>" /> 
@@ -80,8 +72,6 @@
         								</span>
         								
         						</div>
-        						
-        						
         						<div class="form-group">
         							<label for="apgar_score"><?php echo $apgar_score_label; ?></label>  <br> 
         							<input id="apgar_score" class="form-control2" name="apgar_score" type="text" value="<?php echo set_value('apgar_score'); ?>" /> 
@@ -89,15 +79,8 @@
         								<?php echo form_error('apgar_score'); ?>
         								</span>
         						</div>
-						    
-						    
-						    
-						    
 						<?php }?>
-						    
-						    
-						 
-						
+
 						<div class="form-group">
 							<label for="genetical_disorders"><?php echo $genetical_disorders_label; ?></label> 
 							<input id="genetical_disorders" class="form-control" name="genetical_disorders" placeholder="<?php echo $none_placeholder; ?>" type="text" value="<?php echo $genetical_disorders; ?>" /> 
