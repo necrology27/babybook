@@ -13,12 +13,22 @@ class image_model extends CI_Model
         return $this->db->insert_id();
     }
     
+    function get_def_img_id($child_id)
+    {
+        $this->db->select('default_image');
+        $this->db->from('children');
+        $this->db->where('child_id', $child_id);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        return $result[0]['default_image'];
+    }
+    
     function get_def_img($id)
     {
+        $image_id = $this->get_def_img_id($id);
         $this->db->select('file_name');
         $this->db->from('images');
-        $this->db->where('title', 'Default image');
-        $this->db->where('child_id', $id);
+        $this->db->where('id', $image_id);
         $query = $this->db->get();
         $result = $query->result_array();
         if ($this->db->affected_rows() > 0)
