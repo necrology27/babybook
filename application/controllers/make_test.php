@@ -24,7 +24,7 @@ class make_test extends MY_Controller {
         $scripts = array(
             'test.js'
         );
-        $data['scripts'] = $scripts;
+        $datas['scripts'] = $scripts;
     }
     
     public function set_text_items($child_id = NULL)
