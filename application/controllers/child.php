@@ -38,12 +38,19 @@ class Child extends MY_Controller {
                 'error' => ' '
             );
             $user_data = $this->user_model->get_user_data($session_data['id']);
-            $datas['name'] = $user_data['name'];
-            
+          
             $data = $datas + $this->load_lang($user_id);
+            $data['child_id'] = "0";
+            $datas['user_name'] = $user_data['name'];
+            $data['name']= "";
+            $data['birthday']= "";
+            $data['genetical_disorders']= "";
+            $data['other_disorders']= "";
+            
+            
             $data['user_name'] = $this->user_model->get_user_data($user_id)['name'];
             $this->load->view('templates/header.php', $data);
-            $this->load->view('add_child', $data);
+            $this->load->view('save_child', $data);
             $this->load->view('templates/footer.php', $data);
         } 
         else {
@@ -132,7 +139,7 @@ class Child extends MY_Controller {
                 $data['other_disorders']=$child_data['other_disorders'];
                 
                 $this->load->view('templates/header', $data);
-                $this->load->view('edit_child', $data);
+                $this->load->view('save_child', $data);
                 $this->load->view('templates/footer', $data);
             }
         } 

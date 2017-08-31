@@ -24,7 +24,7 @@
 	rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<img src="<?php echo resources_url();?>img/bemaszik.png" alt="missing image" class="back-left" />
+	<img src="<?php echo resources_url();?>img/bemaszik.png" alt="<?php echo $missing_image; ?>" class="back-left" />
 	<button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>login'"><?php echo $back_to_login; ?></button>
 	<div class="container animated_form">
 		<div class="row">

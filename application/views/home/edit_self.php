@@ -1,6 +1,6 @@
 <button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>home'"><?php echo $back_to_home; ?></button>
-                
-	<img src="<?php echo resources_url();?>img/lancletra.png" alt="missing image" class="back-left" />
+	<img src="<?php echo resources_url();?>img/lancletra.png" alt='"<?php echo $missing_image; ?>"' class="back-left" />
+	
 	<div class="container animated_form">
 	<div class="row" >
 	<div class="col-md-6 col-md-offset-3">
