@@ -247,9 +247,36 @@ class Child extends MY_Controller {
         $data['title'] = $this->lang->line('');
         
        
-       # $data['answers']=$this->answer_model->get_answers_with_data_by_child($child_id);
-       # var_dump($data['answers']); die();
+        $scores = $this->answer_model->get_score($child_id);
+            #array(4) { ["Personal_Social"]=> int(1) ["Fine_Motor"]=> int(-2) ["Language"]=> int(0) ["Gross Motor"]=> int(0) }
+        $min_score=-10;
+        $max_score=10;
         
+        $total=$max_score-$min_score;
+        
+        $data['min_score']=0;
+        $data['max_score']=$total;
+        
+        if($scores["personal_social"]!=NULL)
+            $data['personal_social_value_pct']=100*($scores["personal_social"]-$min_score)/$total;
+        else
+            $data['personal_social_value_pct']=NULL;
+        
+        if($scores["fine_motor"]!=NULL)
+            $data['fine_motor_value_pct']=100*($scores["fine_motor"]-$min_score)/$total;
+        else
+            $data['fine_motor_value_pct']=NULL;
+        
+        if($scores["language"]!=NULL)
+            $data['language_value_pct']=100*($scores["language"]-$min_score)/$total;
+        else
+            $data['language_value_pct']=NULL;
+        
+        if($scores["gross_motor"]!=NULL)
+            $data['gross_motor_value_pct']=100*($scores["gross_motor"]-$min_score)/$total;
+        else 
+            $data['gross_motor_value_pct']=NULL;
+
         $this->load->view('templates/header', $data);
         $this->load->view('child_profil', $data);
         $this->load->view('templates/footer', $data);

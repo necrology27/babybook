@@ -24,7 +24,7 @@
 						</div>
 						<div class="form-group">
 							<label for="birthday"><?php echo $birthday_label; ?></label> 
-							<input id="birthday" class="form-control datepicker" name="birthday" type="text" value="<?php echo $birthday; ?>" /> 
+							<input id="birthday" class="form-control datepicker2" name="birthday" type="text" value="<?php echo $birthday; ?>" /> 
 							<span class="text-danger">
 							<?php echo form_error('birthday'); ?>
 							</span>

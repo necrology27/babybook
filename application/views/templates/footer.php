@@ -12,8 +12,6 @@ var base_url = "<?php echo base_url();?>";
 <script src="<?php echo resources_url();?>main.js"></script>
 <script src="<?php echo resources_url();?>test.js?v=4"></script>
 
-
-
 <script>
     $( function() {
     	var date = $('.datepicker').datepicker({
@@ -28,7 +26,7 @@ var base_url = "<?php echo base_url();?>";
         	 dateFormat: 'yy-mm-dd',
     	     changeMonth: true,
     	     changeYear: true,
-    	     yearRange: "-100:-10"
+    	     yearRange: "-6:+1"
     	 }).val();
     } );
     
