@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $(".answerRadio").click(function (e) {
+    	
     	var name = $(this).attr('id');
     	var arr = name.split(".");
     	var id = arr[0];

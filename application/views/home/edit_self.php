@@ -1,4 +1,3 @@
-<button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>home'"><?php echo $back_to_home; ?></button>
 	<img src="<?php echo resources_url();?>img/lancletra.png" alt='"<?php echo $missing_image; ?>"' class="back-left" />
 	
 	<div class="container animated_form">

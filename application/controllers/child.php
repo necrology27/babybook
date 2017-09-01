@@ -16,6 +16,7 @@ class Child extends MY_Controller {
         $this->load->model('user_model');
         $this->load->model('image_model');
         $this->load->model('child_model');
+        $this->load->model('answer_model');
     }
     
     public function add_child($get_child_id = 0){
@@ -246,8 +247,8 @@ class Child extends MY_Controller {
         $data['title'] = $this->lang->line('');
         
        
-        
-        
+       # $data['answers']=$this->answer_model->get_answers_with_data_by_child($child_id);
+       # var_dump($data['answers']); die();
         
         $this->load->view('templates/header', $data);
         $this->load->view('child_profil', $data);

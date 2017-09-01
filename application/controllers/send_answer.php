@@ -21,7 +21,7 @@ class send_answer extends MY_Controller {
     
     public function index()
     {
-      
+       
         $session_data = $this->session->userdata('logged_in');
         $userId = $session_data['id'];
         

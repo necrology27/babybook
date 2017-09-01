@@ -39,7 +39,6 @@ $lang['old_password_label'] = "Parola actuală";
 
 //buttons
 $lang['logout'] = "Delogare";
-$lang['back_to_home'] = "Înapoi la pagina de start";
 $lang['add_button'] = "Adăugare";
 $lang['save_button'] = "Salvare";
 $lang['cancel_button'] = "Anulare";

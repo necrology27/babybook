@@ -1,8 +1,6 @@
 
 
 <input id="child_id" type = 'hidden' value=<?php echo $child_id; ?> >
-
-<button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>home'"><?php echo $back_to_home; ?></button>
 	<?php if ($child_id != 0) {
 	echo '<img src='.uploads_url() . $user_id . "/" . $child_id . "/" . $this->image_model->get_def_img($child_id).' alt= '.$missing_image.'. class="back-left" />';
 	} ?>

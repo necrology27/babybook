@@ -25,7 +25,6 @@ $lang['no_child'] = "You have no registered child!";
 
 //labels
 $lang['password_label'] = "Password";
-$lang['back_to_home'] = "Back to home page";
 $lang['name_label'] = "Name";
 $lang['new_password_label'] = "New Password";
 $lang['confirm_password_label'] = "Confirm password";

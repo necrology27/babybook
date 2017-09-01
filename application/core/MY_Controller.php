@@ -42,7 +42,6 @@ class MY_Controller extends CI_Controller
         $data['logout'] = $this->lang->line('logout');
         $data['forum'] = $this->lang->line('forum');
         $data['settings'] = $this->lang->line('settings');
-        $data['back_to_home'] = $this->lang->line('back_to_home');
         $data['save_button'] = $this->lang->line('save_button');
         $data['cancel_button'] = $this->lang->line('cancel_button');
         $data['add_button'] = $this->lang->line('add_button');
