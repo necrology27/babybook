@@ -11,27 +11,37 @@ function popup_function(id) {
 }
 
 $( document ).ready(function() {
+	var babyScheme = {
+        navigationbar: {
+            background: '#9ce',
+            border: '1px dotted #555',
+            color: '#ccc',
+            colorHover: '#fff'
+        },
+        thumbnail: {
+            background: '#9ce',
+            border: '0px solid #000',
+            labelBackground: 'transparent',
+            labelOpacity: '0.8',
+            titleColor: '#fff',
+            descriptionColor: '#eee'
+        }
+    };
+    var babySchemeViewer = {
+        background: 'rgba(1, 1, 1, 0.75)',
+        imageBorder: '1px solid #f8f8f8',
+        imageBoxShadow: '#888 0px 0px 20px',
+        barBackground: '#222',
+        barBorder: '2px solid #111',
+        barColor: '#eee',
+        barDescriptionColor: '#aaa'
+    };
+	    
     $("#nanoGallery").nanoGallery({
-        thumbnailWidth:300,
-        thumbnailHeight:300,
         thumbnailHoverEffect:'borderDarker,labelAppear75',
-        items: [
-            {
-                // image url
-                src: base_url + 'uploads/16/404/img_1504507238.png',		
-                // thumbnail url
-                srct: base_url + 'uploads/16/404/img_1504507238.png',		
-                // Title
-                title: 'Ferike',
-                // Description
-                description : 'Ferike elso kepe'		
-            },
-            {
-                src: base_url + 'uploads/10/390/img_1503996872.png',
-                srct: base_url + 'uploads/10/390/img_1503996872.png',
-                title: 'Lacika'
-            }
-        ]
+        itemsBaseURL:base_url + 'uploads/',
+        colorScheme: babyScheme,
+        colorSchemeViewer: babySchemeViewer
     });
 });
 

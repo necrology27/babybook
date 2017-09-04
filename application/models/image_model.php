@@ -33,8 +33,21 @@ class image_model extends CI_Model
         $result = $query->result_array();
         if ($this->db->affected_rows() > 0)
             return $result[0]['file_name'];
-            else
-                return false;
+        else
+            return false;
+    }
+    
+    function get_all_imgs($child_id)
+    {
+        $this->db->select('file_name, title, description');
+        $this->db->from('images');
+        $this->db->where('child_id', $child_id);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if ($this->db->affected_rows() > 0)
+            return $result;
+        else
+            return false;
     }
     
     function changeDefaultImage($childId, $imageId)

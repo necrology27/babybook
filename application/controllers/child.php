@@ -238,6 +238,12 @@ class Child extends MY_Controller {
         $data['error'] = ' ';
         $data['child_id'] = $child_id;
         
+        $data['imgs'] = $this->image_model->get_all_imgs($data['child_id']);
+        if( $data['imgs']!=false)
+            $data['img_count'] = count($data['imgs']);
+        else
+            $data['img_count'] = 0;
+        
         $data['title'] = $this->lang->line('album_title');
         
         $this->load->view('templates/header', $data);

@@ -51,6 +51,7 @@ class child_model extends CI_Model
             return false;
         }
     }
+    
     function get_child_data($id)
     {
         $this->db->select('*');
@@ -60,8 +61,8 @@ class child_model extends CI_Model
         $result = $query->result_array();
         if ($this->db->affected_rows() > 0)
             return $result[0];
-            else
-                return false;
+        else
+            return false;
     }
     
     function get_child_birthday($id)
@@ -73,8 +74,8 @@ class child_model extends CI_Model
         $result = $query->result_array();
         if ($this->db->affected_rows() > 0)
             return $result[0];
-            else
-                return false;
+        else
+            return false;
     }
     
     function get_last_update($id)
@@ -85,12 +86,9 @@ class child_model extends CI_Model
         $query = $this->db->get();
         $result = $query->result_array();
         if ($this->db->affected_rows() > 0)
-        {
-           
             return $result[0]['MAX(checked_date)'];
-        }
-            else
-                return false;
+        else
+            return false;
     }
     
     public function get_child_age_by_id($child_id)
