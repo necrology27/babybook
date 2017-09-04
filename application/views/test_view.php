@@ -1,4 +1,4 @@
-<div class="container animated_form">
+<div class="container">
 	<div class="row">
 	<div class="col-md-8 col-md-offset-3">
 		<?php echo '<p id="chid" style="display:hidden;">' .$this->session->flashdata('child_id') . '</p>'; ?>
@@ -13,7 +13,8 @@
     <?php $attributes = array("name" => "addchildform");?>
     <form>
       <div class="table-responsive">
-      <table class="table-striped">
+      <table class="table table-striped table-bordered table-condensed">
+      <thead class="thead-inverse">
 		<tr>
             <th><?php echo $pass; ?></th>
             <th><?php echo $fail; ?></th> 
@@ -21,6 +22,8 @@
             <th><?php echo $refusal; ?></th>
             <th></th>
 		</tr>
+	</thead>
+	<tbody>
         <?php
         $i = 0;
        
@@ -33,18 +36,19 @@
 				 <td>
 				
                  <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" 
-                 		data-placement="right" data-content="<?php echo $skill['description'];?>">
+                 		data-placement="bottom" data-content="<?php echo $skill['description'];?>">
                   <?php echo $skill['name'];?>
                  </button>
 				 </td>
 				
 			</tr>	
 		<?php 
-		
 		$i++;
 		endforeach; 
         
 		?>
+		
+	</tbody>
 	</table>
 	</div>	
 	<div class="form-group">

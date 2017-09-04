@@ -10,7 +10,7 @@ class MY_Controller extends CI_Controller
         
         $CI->form_validation->set_message('alpha_dash_space', "Invalid characters in %s.");
         
-        return (! preg_match("/^([-a-z_ Ã­Ã©Ã¡Å‘ÃºÅ±Ã¶Ã¼Ã³Ã�Ã‰Ã�Å�ÃšÅ°Ã–ÃœÃ“])+$/i", $str)) ? FALSE : TRUE;
+        return (! preg_match("/^([-a-z_ áéöüóőúűíÉÁŐÚŰÖÜÓÍ])+$/i", $str)) ? FALSE : TRUE;
     }
 
     function load_lang($id = NULL)

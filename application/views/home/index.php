@@ -1,12 +1,3 @@
-
-<ul id="navbar">
-	<li id="title">babybook</li>
-	<li><a><?php echo $forum; ?></a></li>
-	<li><a><?php echo $settings; ?></a></li>
-	<li><a href="home/logout"><?php echo $logout; ?></a></li>
-</ul>
-
-
 <div>
 	<div id="child_boxes">
 	<h2><?php echo $my_children; ?></h2>

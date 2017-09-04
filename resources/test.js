@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	$('[data-toggle="popover"]').popover();
     $(".answerRadio").click(function (e) {
     	
     	var name = $(this).attr('id');
@@ -25,4 +26,8 @@ $(document).ready(function() {
         });
  
     });
+});
+
+$('.btn').on('click', function (e) {
+    $('.btn').not(this).popover('hide');
 });
