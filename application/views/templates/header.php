@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>bootstrap-3.3.7-dist/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>css/style.css">
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>jquery-ui/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>nanogallery/css/nanogallery.css">
 
 <title>babybook | <?php echo $title; ?></title>
 </head>

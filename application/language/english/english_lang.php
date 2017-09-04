@@ -9,6 +9,7 @@ $lang['forgot_title'] = "Forgot Password";
 $lang['update_title'] = "Update profile";
 $lang['child_update_title'] = "Update your child's profile";
 $lang['take_test_title'] = "Take the test";
+$lang['album_title'] = "Photo Gallery";
 
 //login info
 $lang['back_to_login'] = "Back to login";

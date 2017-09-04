@@ -10,22 +10,27 @@ function popup_function(id) {
     popup.classList.toggle("show");
 }
 
-/*
 $( document ).ready(function() {
-    $("[rel='tooltip']").tooltip();    
- 
-    $('.thumbnail').hover(
-        function(){
-        	$(".ui-widget").remove();
-            $(this).find('.caption').fadeIn(250);//.slideDown(250); //.fadeIn(250)
-        	$(".ui-widget").remove();
-//            $(this).find('.caption').slideDown(250); //.fadeIn(250)
-        },
-        function(){
-        	$(".ui-widget").remove();
-            $(this).find('.caption').fadeOut(250);//.slideUp(250); //.fadeOut(250)
-        	$(".ui-widget").remove();
-//            $(this).find('.caption').slideUp(250); //.fadeOut(250)
-        }
-    ); 
-});*/
+    $("#nanoGallery").nanoGallery({
+        thumbnailWidth:300,
+        thumbnailHeight:300,
+        thumbnailHoverEffect:'borderDarker,labelAppear75',
+        items: [
+            {
+                // image url
+                src: base_url + 'uploads/16/404/img_1504507238.png',		
+                // thumbnail url
+                srct: base_url + 'uploads/16/404/img_1504507238.png',		
+                // Title
+                title: 'Ferike',
+                // Description
+                description : 'Ferike elso kepe'		
+            },
+            {
+                src: base_url + 'uploads/10/390/img_1503996872.png',
+                srct: base_url + 'uploads/10/390/img_1503996872.png',
+                title: 'Lacika'
+            }
+        ]
+    });
+});

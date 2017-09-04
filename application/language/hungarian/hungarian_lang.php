@@ -6,6 +6,7 @@ $lang['home_title'] = "Főoldal";
 $lang['login_title'] = "Belépés";
 $lang['register_title'] = "Regisztráció";
 $lang['forgot_title'] = "Elfelejtett jelszó";
+$lang['album_title'] = "Fotóalbum";
 
 //login info
 $lang['password_label'] = "Jelszó";

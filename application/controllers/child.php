@@ -222,6 +222,29 @@ class Child extends MY_Controller {
             $this->load->view('add_child', $data);
         }
     }
+    
+    function album($child_id = NULL)
+    {
+        $session_data = $this->session->userdata('logged_in');
+        $id = $session_data['id'];
+        
+        $data = $this->load_lang($id);
+        $child_data = $this->child_model->get_child_data($child_id);
+        $user_data = $this->user_model->get_user_data($session_data['id']);
+        $data['user_name'] = $user_data['name'];
+        $data['user_id'] = $session_data['id'];
+        $data['name'] = $child_data['name'];
+        $data['birthday'] = $child_data['birthday'];
+        $data['error'] = ' ';
+        $data['child_id'] = $child_id;
+        
+        $data['title'] = $this->lang->line('album_title');
+        
+        $this->load->view('templates/header', $data);
+        $this->load->view('album_view', $data);
+        $this->load->view('templates/footer', $data);
+    }
+    
     function profil($child_id = NULL)
     {
         $session_data = $this->session->userdata('logged_in');
@@ -280,8 +303,6 @@ class Child extends MY_Controller {
         $this->load->view('templates/header', $data);
         $this->load->view('child_profil', $data);
         $this->load->view('templates/footer', $data);
-        
-        
         
     }
 }
