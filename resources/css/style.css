@@ -247,3 +247,8 @@ li a:hover {
     from {opacity: 0;}
     to {opacity:1 ;}
 } 
+
+.prog_val{
+	
+	z-index:100;
+}

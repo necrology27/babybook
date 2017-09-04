@@ -54,20 +54,50 @@ $( document ).ready(function() {
     	
     	for (i = 0; i < prog.length; i++) {
     		var someValueToCheck = prog[i].getAttribute('value');
+    		var txt = document.getElementById('prog_value' + i);
+    		
     		console.log(someValueToCheck);
-	    	if(someValueToCheck >= 95) progressBarColor = "#e60000";
-	    	else if(someValueToCheck >=80) progressBarColor = "#999966";
-	    	else if(someValueToCheck >=70) progressBarColor = "#b3ffb3";
-	    	else if(someValueToCheck >=55) progressBarColor = "#00cc99";
-	    	else if(someValueToCheck >=45) progressBarColor = "#ccccff";
-	    	else if(someValueToCheck >=35) progressBarColor = "#ffcccc";
-	    	else if(someValueToCheck >=25) progressBarColor = "#ff9999";
-	    	else if(someValueToCheck >=10) progressBarColor = "#ff6666";
-	    	else if(someValueToCheck >=5) progressBarColor = "#e60000";
-	    	else progressBarColor = "#666633";
-	
-	    	//prog[i].css('background-color', progressBarColor);
-	    	prog[i].style.color=progressBarColor;
+	    	if(someValueToCheck >= 95) {
+	    		progressBarColor = "#e60000";
+	    		txt.innerHTML = "Átlgon felüli";
+	    	}
+	    	else if(someValueToCheck >=80) {
+	    		progressBarColor = "#999966";
+	    		txt.innerHTML = "Átlgon felüli";
+	    	}
+	    	else if(someValueToCheck >=70) {
+	    		txt.innerHTML = "Átlgon felüli";
+	    		progressBarColor = "#b3ffb3";
+	    	}
+	    	else if(someValueToCheck >=55) {
+	    		progressBarColor = "#00cc99";
+	    		txt.innerHTML = "Átlagos";
+	    	}
+	    	else if(someValueToCheck >=45) {
+	    		txt.innerHTML = "Átlagos";
+		    	progressBarColor = "#ccccff";
+	    	}	
+	    	else if(someValueToCheck >=35) {
+	    		txt.innerHTML = "Átlagos";
+	    		progressBarColor = "#ffcccc";
+	    	}
+	    	else if(someValueToCheck >=25) {
+	    		txt.innerHTML = "Átlagon aluli";
+		    	progressBarColor = "#ff9999";
+	    	}
+	    	else if(someValueToCheck >=10) {
+	    		txt.innerHTML = "Átlagon aluli";
+		    	progressBarColor = "#ff6666";
+	    	}
+	    	else if(someValueToCheck >=5) {
+	    		progressBarColor = "#e60000";
+	    		txt.innerHTML = "Átlagon aluli";
+	    	}
+	    	else {
+	    		progressBarColor = "#666633";
+	    		txt.innerHTML = "Nincs adat!";
+	    	}
+
 	    	prog[i].style.backgroundColor = progressBarColor; 
     	}
 
