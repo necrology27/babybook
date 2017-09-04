@@ -30,6 +30,11 @@ var base_url = "<?php echo base_url();?>";
     	     yearRange: "-6:+1"
     	 }).val();
     } );
+
+
+	
+
+
     
 </script>
 <?php 

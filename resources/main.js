@@ -34,3 +34,32 @@ $( document ).ready(function() {
         ]
     });
 });
+
+$( document ).ready(function() {
+//  szin:
+    $( function() {
+    	var prog = document.getElementsByClassName("myProgress");
+    	var progressBarColor;
+    	
+    	
+    	for (i = 0; i < prog.length; i++) {
+    		var someValueToCheck = prog[i].getAttribute('value');
+    		console.log(someValueToCheck);
+	    	if(someValueToCheck >= 95) progressBarColor = "#e60000";
+	    	else if(someValueToCheck >=80) progressBarColor = "#999966";
+	    	else if(someValueToCheck >=70) progressBarColor = "#b3ffb3";
+	    	else if(someValueToCheck >=55) progressBarColor = "#00cc99";
+	    	else if(someValueToCheck >=45) progressBarColor = "#ccccff";
+	    	else if(someValueToCheck >=35) progressBarColor = "#ffcccc";
+	    	else if(someValueToCheck >=25) progressBarColor = "#ff9999";
+	    	else if(someValueToCheck >=10) progressBarColor = "#ff6666";
+	    	else if(someValueToCheck >=5) progressBarColor = "#e60000";
+	    	else progressBarColor = "#666633";
+	
+	    	//prog[i].css('background-color', progressBarColor);
+	    	prog[i].style.color=progressBarColor;
+	    	prog[i].style.backgroundColor = progressBarColor; 
+    	}
+
+    });
+});
