@@ -21,8 +21,8 @@ class skill_model extends CI_Model
         $result = $query->result_array();
         if ($this->db->affected_rows() > 0)
             return $result;
-            else
-                return false;
+//             else
+//                 return false;
                 
     }
     
@@ -74,8 +74,8 @@ class skill_model extends CI_Model
             
             return $result;
         }
-            else
-                return false;
+             else
+                 return array();
                 
                 
     }

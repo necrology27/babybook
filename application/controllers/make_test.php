@@ -29,6 +29,7 @@ class make_test extends MY_Controller {
     
     public function set_text_items($child_id = NULL)
     {
+        $skills= array();
        #az o gyereke??
         $session_data = $this->session->userdata('logged_in');
         $data['id'] = $session_data['id'];
@@ -74,8 +75,11 @@ class make_test extends MY_Controller {
                    $skills = $this->skill_model->get_skills_name_and_language_by_id_and_lang($skills_ker, $lang_id);
                }
                else
-                    $skills = null;
-               
+               {
+                   $skills = $skills + array();
+                 //   var_dump("Ures?". $skills );
+                }
+                
            #by skill_group how many fail answer has
                $nr_of_fail_ans = $this->answer_model->get_nr_fail_answer($child_id);
                    
@@ -85,8 +89,14 @@ class make_test extends MY_Controller {
                for($i=0; $i<4; $i++)
                {
                        #ha nincs beallitva, azaz a "Fail" válaszok száma 0 vagy kevesebb mint 3, akkor veszi a kovetkezo 4 kérdést
-                   if (!isset($nr_of_fail_ans[$i]) || $nr_of_fail_ans[$i]['fail_num']<3)
+                 
+                   
+                   if ($nr_of_fail_ans[$i]<3)
+                   {
                        $skills = array_merge($skills, $this->skill_model->get_next_skills($last_check[$i]['max_skill_id'], $i+1, $lang_id));
+                       
+                       
+                   }
                }
            }
            $datas['skills'] = $skills;

@@ -60,16 +60,20 @@ class answer_model extends CI_Model
     #SELECT skill_group_id, COUNT(user_id) as fail_num FROM `answers` WHERE`child_id` = 232 AND `learned`='Fail' GROUP BY `skill_group_id`
     function get_nr_fail_answer($childID)
     {
-        $this->db->select('skill_group_id, IFNULL(COUNT(user_id), 0) as fail_num', false);
-        
-        
-        $this->db->from('answers');
-        $this->db->where('child_id', $childID);
-        $this->db->where('learned', 'Fail');
-        $this->db->group_by('skill_group_id');
-        $query = $this->db->get();
-        $result = $query->result_array();
-        return $result;
+        for($i=0; $i<4; $i++)
+        {
+            $this->db->select('COUNT(user_id) as fail_nr');
+            $this->db->from('answers');
+            $this->db->where('child_id', $childID);
+            $this->db->where('learned', 'Fail');
+            $this->db->where('skill_group_id', $i);
+            $query = $this->db->get();
+            $result = $query->result_array();
+            $res[$i]=$result[0]["fail_nr"];
+           
+        }
+       
+        return $res;
     }
     
     function get_answers_with_data_by_child($child_id)
