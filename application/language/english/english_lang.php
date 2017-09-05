@@ -24,6 +24,20 @@ $lang['settings'] = "Settings";
 $lang['logged_in_as'] = "Logged in as";
 $lang['no_child'] = "You have no registered child!";
 
+//filter
+$lang['boy']= "Boy";
+$lang['girl']= "Girl";
+$lang['month0_6']= "0 to 6 months";
+$lang['month6_12']= "6 to 12 months";
+$lang['year1_2']= "1 to 2 years";
+$lang['year2_3']= "2 to 3 years";
+$lang['year3_4']= "3 to 4 years";
+$lang['year4_5']= "4 to 5 years";
+$lang['year5']= "5+ years";
+$lang['sort_by_name']= "by name";
+$lang['sort_by_age']= "by age";
+$lang['sort_by_registration']= "by registration date";
+
 //labels
 $lang['password_label'] = "Password";
 $lang['name_label'] = "Name";

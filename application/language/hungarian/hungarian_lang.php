@@ -23,7 +23,20 @@ $lang['forum'] = "Fórum";
 $lang['settings'] = "Beállítások";
 $lang['logged_in_as'] = "Belépve mint";
 $lang['no_child'] = "Nincs bevezetett gyerek!";
-
+    
+//filter
+$lang['boy']= "Fiú";
+$lang['girl']= "Lány";
+$lang['month0_6']= "0-tól 6-hónaposig";
+$lang['month6_12']= "6-tól 12 hónaposig";
+$lang['year1_2']= "1-től 2 évesig";
+$lang['year2_3']= "2-től 3 évesig";
+$lang['year3_4']= "3-tól 4 évesig";
+$lang['year4_5']= "4-tól 5 évesig";
+$lang['year5']= "5+ éves";
+$lang['sort_by_name']= "Név szerint";
+$lang['sort_by_age']= "Életkor szerint";
+$lang['sort_by_registration']= "Regisztráció ideje szerint";
 
 //editing
 $lang['update_title'] = "Profil frissítése";

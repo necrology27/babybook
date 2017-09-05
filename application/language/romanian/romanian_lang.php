@@ -24,6 +24,20 @@ $lang['forum'] = "Forum";
 $lang['settings'] = "Setări";
 $lang['no_child'] = "Nu ai nici un copil înregistrat!";
 
+//filter
+$lang['boy']= "Băiat";
+$lang['girl']= "Fată";
+$lang['month0_6']= "de la 0 până la 6 luni";
+$lang['month6_12']= "de la 6 până la 12 luni";
+$lang['year1_2']= "de la 1 până la 2 ani";
+$lang['year2_3']= "de la 2 până la 3 ani";
+$lang['year3_4']= "de la 3 până la 4 ani";
+$lang['year4_5']= "de la 4 până la 5 ani";
+$lang['year5']= "5+ ani";
+$lang['sort_by_name']= "După nume";
+$lang['sort_by_age']= "După vârstă";
+$lang['sort_by_registration']= "După data de înregistrare";
+
 //labels
 $lang['logged_in_as'] = "Conectat ca";
 $lang['name_label'] = "Nume";

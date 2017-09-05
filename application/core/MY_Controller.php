@@ -99,6 +99,24 @@ class MY_Controller extends CI_Controller
         $data['very_good']= $this->lang->line('very_good');
         
         
+        $data['boy']= $this->lang->line('boy');
+        $data['girl']= $this->lang->line('girl');
+        $data['month0_6']= $this->lang->line('month0_6');
+        $data['month6_12']= $this->lang->line('month6_12');
+        $data['year1_2']= $this->lang->line('year1_2');
+        $data['year2_3']= $this->lang->line('year2_3');
+        $data['year3_4']= $this->lang->line('year3_4');
+        $data['year4_5']= $this->lang->line('year4_5');
+        $data['year5_6']= $this->lang->line('year5_6');
+        $data['sort_by_name']= $this->lang->line('sort_by_name');
+        $data['sort_by_age']= $this->lang->line('sort_by_age');
+        $data['sort_by_registration']= $this->lang->line('sort_by_registration');
+        
+        
+        
+        
+        
+        
         return $data;
     }
 
