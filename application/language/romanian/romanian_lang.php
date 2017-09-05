@@ -37,6 +37,7 @@ $lang['year5']= "5+ ani";
 $lang['sort_by_name']= "După nume";
 $lang['sort_by_age']= "După vârstă";
 $lang['sort_by_registration']= "După data de înregistrare";
+$lang['search_by_name']= "Căutare după nume";
 
 //labels
 $lang['logged_in_as'] = "Conectat ca";

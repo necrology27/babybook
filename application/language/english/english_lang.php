@@ -37,6 +37,7 @@ $lang['year5']= "5+ years";
 $lang['sort_by_name']= "by name";
 $lang['sort_by_age']= "by age";
 $lang['sort_by_registration']= "by registration date";
+$lang['search_by_name']= "Search by name";
 
 //labels
 $lang['password_label'] = "Password";

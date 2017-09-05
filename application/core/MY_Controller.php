@@ -111,6 +111,7 @@ class MY_Controller extends CI_Controller
         $data['sort_by_name']= $this->lang->line('sort_by_name');
         $data['sort_by_age']= $this->lang->line('sort_by_age');
         $data['sort_by_registration']= $this->lang->line('sort_by_registration');
+        $data['search_by_name']= $this->lang->line('search_by_name');
         
         
         

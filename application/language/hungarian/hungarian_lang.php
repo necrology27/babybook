@@ -37,6 +37,7 @@ $lang['year5']= "5+ éves";
 $lang['sort_by_name']= "Név szerint";
 $lang['sort_by_age']= "Életkor szerint";
 $lang['sort_by_registration']= "Regisztráció ideje szerint";
+$lang['search_by_name']= "Keresés név szerint";
 
 //editing
 $lang['update_title'] = "Profil frissítése";

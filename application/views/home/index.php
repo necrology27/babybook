@@ -46,8 +46,11 @@
                   <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="checkbox"/><?php echo $sort_by_registration; ?></a></li>
                 </ul>
             	 </div>
+            	 
+            	 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="<?php echo $search_by_name; ?>"  style="float: right;">
               </div>
-              
+            
+            <div id="childs" >  
 		    <?php
 		    for ($i = 0; $i < $child_count/3; $i++) {
 		        ?>
@@ -55,7 +58,7 @@
         		    <?php
         		  for($j=$i*3; $j < min($i*3+3, $child_count); $j++) {
         		?>   
-                <div class="col-md-3" id="child<?php echo $j;?>">   
+                <div class="col-md-3 one_child" id="child<?php echo $j;?>">   
         	     	<div class="thumbnail child_box">
                       <img class="child_box" src="<?php echo uploads_url() . $id . "/" . $children[$j]['child_id'] . "/" . $def_imgs[$j]; ?>" alt="<?php echo $children[$j]['name'];?>">
                         <div class="caption">
@@ -74,5 +77,28 @@
         		<?php
         		}
 		  }?>
+		  </div>
+		  
+		  
+		  <script>
+            function myFunction() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("childs");
+                li = ul.getElementsByClassName("one_child");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("h3")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+            
+                    }
+                }
+            }
+            </script>
+		  
+		  
 		</div>
 </div>
