@@ -16,10 +16,9 @@
            		<div class="dropdown pull-left">
                     <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="gendercheck">
                     <span class="glyphicon glyphicon-cog"></span>  Nem szerint  <span class="caret"></span></button>
-                    <ul class="dropdown-menu" role="filter" aria-labelledby="gendercheck">
-                      <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/><?php echo $girl; ?></a></li>
-                      <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/><?php echo $boy; ?></a></li>
-                      
+                    <ul class="dropdown-menu" role="filter" aria-labelledby="gendercheck" id="gender_check_list">
+                      <li><input type="checkbox" id="female_check"/><?php echo $girl; ?></li>
+                      <li><input type="checkbox" id="male_check"/><?php echo $boy; ?></li>
                     </ul>
             	 </div>
             
@@ -62,8 +61,14 @@
         	     	<div class="thumbnail child_box">
                       <img class="child_box" src="<?php echo uploads_url() . $id . "/" . $children[$j]['child_id'] . "/" . $def_imgs[$j]; ?>" alt="<?php echo $children[$j]['name'];?>">
                         <div class="caption">
-                            <h3><?php echo $children[$j]['name'];?></h3>
-                           <!-- <?php echo '<h1 id="chid" style="display:hidden;">' .$children[$j]['birthday'] . '</h1>'; ?>  --> 
+                            <h3><?php echo $children[$j]['name'];?>
+                            	<em id="gender<?php echo $j;?>" style="display: none;"><?php if ($children[$j]['gender'] == 'F') {
+                                    echo 'female';
+                                } else {
+                                    echo 'male';
+                                }
+                                ?></em>
+                            </h3>
                             <input class="birthday" id="child_id" type = 'hidden' value=<?php echo $children[$j]['birthday']; ?> >
                             <input class="registration_date" id="child_id" type = 'hidden' value=<?php echo $children[$j]['registration_date']; ?> >
                            
