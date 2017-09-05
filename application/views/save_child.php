@@ -98,10 +98,17 @@
 						
 						
 						<div class="form-group">
-							<label for="image"><?php echo $default_image_label; ?></label> 
-							<?php echo $error;?> 
-                                <input id="image" type='file' name='userfile' size='20' />
+						<div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-info">
+                                   <?php echo $default_image_label; ?> 
+                                <input id="image" type='file' style="display: none;" name='userfile' size='20' />
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly>
+                        </div>
 								<span class="text-danger">
+								<?php echo $error;?> 
 								<?php echo form_error('image'); ?>
 								</span>
 						</div>

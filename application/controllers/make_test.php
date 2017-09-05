@@ -85,15 +85,15 @@ class make_test extends MY_Controller {
                    
                    #by skill_group last checked skill id
                $last_check = $this->answer_model->last_checked_skill($child_id);
-                   
+               
                for($i=0; $i<4; $i++)
                {
                        #ha nincs beallitva, azaz a "Fail" válaszok száma 0 vagy kevesebb mint 3, akkor veszi a kovetkezo 4 kérdést
                  
                    
-                   if ($nr_of_fail_ans[$i]<3)
+                   if ($nr_of_fail_ans[$i]<3 && $last_check[$i]!=null)
                    {
-                       $skills = array_merge($skills, $this->skill_model->get_next_skills($last_check[$i]['max_skill_id'], $i+1, $lang_id));
+                       $skills = array_merge($skills, $this->skill_model->get_next_skills($last_check[$i], $i+1, $lang_id));
                        
                        
                    }

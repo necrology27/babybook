@@ -13,10 +13,11 @@ var very_good = "<?php echo $very_good;?>";
 
 	</script>            
 <script src="<?php echo resources_url();?>jquery.js"></script>
+<script src="<?php echo resources_url();?>jquery.form.js"></script>
 <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
 <script src="<?php echo resources_url();?>nanogallery/jquery.nanogallery.js"></script>
 <script src="<?php echo resources_url();?>bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-<script src="<?php echo resources_url();?>main.js"></script>
+<script src="<?php echo resources_url();?>main.js?v=1"></script>
 <script src="<?php echo resources_url();?>test.js?v=4"></script>
 
 <script>
