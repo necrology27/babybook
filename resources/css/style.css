@@ -252,3 +252,9 @@ li a:hover {
 	
 	z-index:100;
 }
+
+.progress-label {
+    float: right;
+    margin-right: 1em;
+    font-style: italic;
+}

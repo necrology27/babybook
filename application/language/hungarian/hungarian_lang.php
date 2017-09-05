@@ -74,5 +74,11 @@ $lang['fine_motor'] = "Finommozgás";
 $lang['language'] = "Nyelv";
 $lang['gross_motor'] = "Nagymozgás";
 
+$lang['weak']="Gyenge";
+$lang['below_average']="Átlagon aluli";
+$lang['average']="Átlagos";
+$lang['good']="Jó";
+$lang['very_good']="Nagyon jó";
+
 //error
 $lang['missing_image'] = "Hiányzó kép";

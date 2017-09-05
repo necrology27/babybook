@@ -57,48 +57,36 @@ $( document ).ready(function() {
     		var txt = document.getElementById('prog_value' + i);
     		
     		console.log(someValueToCheck);
-	    	if(someValueToCheck >= 95) {
-	    		progressBarColor = "#e60000";
-	    		txt.innerHTML = "Átlgon felüli";
+    		
+    		if(someValueToCheck >=80) {
+	    		txt.innerHTML = very_good;
+	    		progressBarColor = "#0099cc";
 	    	}
-	    	else if(someValueToCheck >=80) {
-	    		progressBarColor = "#999966";
-	    		txt.innerHTML = "Átlgon felüli";
+	    	else if(someValueToCheck >=60) {
+	    		txt.innerHTML = good;
+		    	progressBarColor = "#80d4ff";
 	    	}
-	    	else if(someValueToCheck >=70) {
-	    		txt.innerHTML = "Átlgon felüli";
-	    		progressBarColor = "#b3ffb3";
+	    	else if(someValueToCheck >=40) {
+	    		txt.innerHTML = average;
+		    	progressBarColor = "#59b300";
 	    	}
-	    	else if(someValueToCheck >=55) {
-	    		progressBarColor = "#00cc99";
-	    		txt.innerHTML = "Átlagos";
+	    	else if(someValueToCheck >=20) {
+	    		progressBarColor = "#ffcc66";
+	    		txt.innerHTML = below_average;
 	    	}
-	    	else if(someValueToCheck >=45) {
-	    		txt.innerHTML = "Átlagos";
-		    	progressBarColor = "#ccccff";
-	    	}	
-	    	else if(someValueToCheck >=35) {
-	    		txt.innerHTML = "Átlagos";
-	    		progressBarColor = "#ffcccc";
-	    	}
-	    	else if(someValueToCheck >=25) {
-	    		txt.innerHTML = "Átlagon aluli";
-		    	progressBarColor = "#ff9999";
-	    	}
-	    	else if(someValueToCheck >=10) {
-	    		txt.innerHTML = "Átlagon aluli";
-		    	progressBarColor = "#ff6666";
-	    	}
-	    	else if(someValueToCheck >=5) {
-	    		progressBarColor = "#e60000";
-	    		txt.innerHTML = "Átlagon aluli";
+	    	else if(someValueToCheck >=20) {
+	    		progressBarColor = "#ff0000";
+	    		txt.innerHTML = weak;
 	    	}
 	    	else {
 	    		progressBarColor = "#666633";
 	    		txt.innerHTML = "Nincs adat!";
 	    	}
 
+    	
+
 	    	prog[i].style.backgroundColor = progressBarColor; 
+	    	txt.className += 'progress-label';
     	}
 
     });

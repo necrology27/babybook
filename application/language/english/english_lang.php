@@ -73,6 +73,12 @@ $lang['fine_motor'] = "Fine Motor - Adaptive";
 $lang['language'] = "Language";
 $lang['gross_motor'] = "Gross Motor";
 
+$lang['weak']="Weak";
+$lang['below_average']="Below_average";
+$lang['average']="Average";
+$lang['good']="Good";
+$lang['very_good']="Very good";
+
 //error
 $lang['missing_image'] = "Missing image";
 

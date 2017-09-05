@@ -73,6 +73,12 @@ $lang['fine_motor'] = "Motricitatea fina";
 $lang['language'] = "Limbaj";
 $lang['gross_motor'] = "Motricitatea grosiera";
 
+$lang['weak']="Slab";
+$lang['below_average']="Sub medie";
+$lang['average']="Medie";
+$lang['good']="Bine";
+$lang['very_good']="Foarte bine";
+
 //error
 $lang['missing_image'] = "Lipsește imaginea";
 ?>

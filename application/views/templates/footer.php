@@ -5,6 +5,12 @@
                 
     <script>
 var base_url = "<?php echo base_url();?>";
+var weak = "<?php echo $weak;?>";
+var below_average = "<?php echo $below_average;?>";
+var average = "<?php echo $average;?>";
+var good = "<?php echo $good;?>";
+var very_good = "<?php echo $very_good;?>";
+
 	</script>            
 <script src="<?php echo resources_url();?>jquery.js"></script>
 <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>

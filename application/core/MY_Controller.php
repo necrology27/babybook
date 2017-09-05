@@ -92,6 +92,13 @@ class MY_Controller extends CI_Controller
         $data['fine_motor'] = $this->lang->line('fine_motor');
         $data['gross_motor'] = $this->lang->line('gross_motor');
         
+        $data['weak']= $this->lang->line('weak');
+        $data['below_average']= $this->lang->line('below_average');
+        $data['average']= $this->lang->line('average');
+        $data['good']= $this->lang->line('good');
+        $data['very_good']= $this->lang->line('very_good');
+        
+        
         return $data;
     }
 

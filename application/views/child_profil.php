@@ -16,7 +16,7 @@
               <div class="progress">
                 <?php 
                 if($personal_social_value_pct!=NULL) 
-                    echo "<div class='progress-bar progress-bar-striped myProgress' id='myProgress' role='progressbar' aria-valuenow='".$personal_social_value_pct."' value=".$personal_social_value_pct." aria-valuemin='0' aria-valuemax='".$max_score."' style='width: ".$personal_social_value_pct."%'></div><p id='prog_value0'></p>";
+                    echo "<div class='progress-bar progress-bar-striped myProgress' role='progressbar' value=".$personal_social_value_pct." aria-valuemin='0' aria-valuenow='".$personal_social_value_pct."' aria-valuemax='".$max_score."' style='width: ".$personal_social_value_pct."%'></div><p id='prog_value0'></p>";
                 else
                     echo"<div><p>Nincs adat!!!</p></div>";
                 ?>
@@ -28,7 +28,7 @@
               <div class="progress">
                 <?php
                 if($fine_motor_value_pct!=NULL) 
-                    echo "<div class='progress-bar progress-bar-striped  myProgress' role='progressbar myProgress' value='".$fine_motor_value_pct."' aria-valuenow='".$fine_motor_value_pct."' aria-valuemin='0' aria-valuemax='".$max_score."' style='width: ".$fine_motor_value_pct."%'></div><p id='prog_value1'></p>";
+                    echo "<div class='progress-bar progress-bar-striped myProgress' role='progressbar' value='".$fine_motor_value_pct."' aria-valuenow='".$fine_motor_value_pct."' aria-valuemin='0' aria-valuemax='".$max_score."' style='width: ".$fine_motor_value_pct."%'></div><p id='prog_value1'></p>";
                 else
                     echo"<div><p>Nincs adat!!!</p></div>";
                 ?>
@@ -41,7 +41,7 @@
              
                 <?php 
                 if($language_value_pct!=NULL) 
-                    echo "<div class='progress-bar progress-bar-striped  myProgress' role='progressbar' value='".$language_value_pct."' aria-valuemin='0' aria-valuemax='".$max_score."' style='width: ".$language_value_pct."%'></div><p id='prog_value1'></p>";
+                    echo "<div class='progress-bar progress-bar-striped myProgress' role='progressbar' value='".$language_value_pct."' aria-valuemin='0' aria-valuemax='".$max_score."' style='width: ".$language_value_pct."%'></div><p id='prog_value2'></p>";
                 else
                        echo"<div><p>Nincs adat!!!</p></div>";
                        ?>
@@ -53,7 +53,7 @@
                   <div class="progress">
                     <?php 
                     if($gross_motor_value_pct!=NULL) 
-                        echo "<div class='progress-bar progress-bar-striped  progress' role='progressbar' value='".$gross_motor_value_pct."' aria-valuenow='".$gross_motor_value_pct."' aria-valuemin='0' aria-valuemax='".$max_score."' style='width: ".$gross_motor_value_pct."%'></div><p id='prog_value1'></p>";
+                        echo "<div class='progress-bar progress-bar-striped myProgress' role='progressbar' value='".$gross_motor_value_pct."' aria-valuenow='".$gross_motor_value_pct."' aria-valuemin='0' aria-valuemax='".$max_score."' style='width: ".$gross_motor_value_pct."%'></div><p id='prog_value3'></p>";
                     else
                         echo"<div><p>Nincs adat!!!</p></div>";
                     ?>
