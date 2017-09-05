@@ -18,6 +18,7 @@ var very_good = "<?php echo $very_good;?>";
 <script src="<?php echo resources_url();?>nanogallery/jquery.nanogallery.js"></script>
 <script src="<?php echo resources_url();?>bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 <script src="<?php echo resources_url();?>main.js?v=1"></script>
+<script src="<?php echo resources_url();?>sort.js?v=1"></script>
 <script src="<?php echo resources_url();?>test.js?v=4"></script>
 
 <script>

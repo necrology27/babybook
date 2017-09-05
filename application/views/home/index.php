@@ -41,20 +41,20 @@
                 <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="regdatecheck">
                 <span class="glyphicon glyphicon-cog"></span> Rendezés <span class="caret"></span></button>
                 <ul class="dropdown-menu" aria-labelledby="regdatecheck">
-                  <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="checkbox"/><?php echo $sort_by_name; ?></a></li>
+                  <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="checkbox" onclick="sort_by_name()"/><?php echo $sort_by_name; ?></a></li>
                   <li><a href="#" class="small" data-value="option2" tabIndex="-3"><input type="checkbox"/><?php echo $sort_by_age; ?></a></li>
                   <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="checkbox"/><?php echo $sort_by_registration; ?></a></li>
                 </ul>
             	 </div>
             	 
-            	 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="<?php echo $search_by_name; ?>"  style="float: right;">
+            	 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="<?php echo $search_by_name; ?>" style="float: right;">
               </div>
             
-            <div id="childs" >  
+            <div id="childs"  style="width:900px;" >  
 		    <?php
 		    for ($i = 0; $i < $child_count/3; $i++) {
 		        ?>
-           		<div class="row">
+           		
         		    <?php
         		  for($j=$i*3; $j < min($i*3+3, $child_count); $j++) {
         		?>   
@@ -73,31 +73,13 @@
         		</div>
         		<?php
         		  }?>
-        		</div>
+        		
         		<?php
         		}
 		  }?>
 		  </div>
 		  
-		  
-		  <script>
-            function myFunction() {
-                var input, filter, ul, li, a, i;
-                input = document.getElementById("myInput");
-                filter = input.value.toUpperCase();
-                ul = document.getElementById("childs");
-                li = ul.getElementsByClassName("one_child");
-                for (i = 0; i < li.length; i++) {
-                    a = li[i].getElementsByTagName("h3")[0];
-                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                        li[i].style.display = "";
-                    } else {
-                        li[i].style.display = "none";
-            
-                    }
-                }
-            }
-            </script>
+		
 		  
 		  
 		</div>
