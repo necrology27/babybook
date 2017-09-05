@@ -42,8 +42,8 @@
                 <span class="glyphicon glyphicon-cog"></span> Rendezés <span class="caret"></span></button>
                 <ul class="dropdown-menu" aria-labelledby="regdatecheck">
                   <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="checkbox" onclick="sort_by_name()"/><?php echo $sort_by_name; ?></a></li>
-                  <li><a href="#" class="small" data-value="option2" tabIndex="-3"><input type="checkbox"/><?php echo $sort_by_age; ?></a></li>
-                  <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="checkbox"/><?php echo $sort_by_registration; ?></a></li>
+                  <li><a href="#" class="small" data-value="option2" tabIndex="-3"><input type="checkbox" onclick="sort_by_age()"/><?php echo $sort_by_age; ?></a></li>
+                  <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="checkbox" onclick="sort_by_registration()"/><?php echo $sort_by_registration; ?></a></li>
                 </ul>
             	 </div>
             	 
@@ -63,6 +63,10 @@
                       <img class="child_box" src="<?php echo uploads_url() . $id . "/" . $children[$j]['child_id'] . "/" . $def_imgs[$j]; ?>" alt="<?php echo $children[$j]['name'];?>">
                         <div class="caption">
                             <h3><?php echo $children[$j]['name'];?></h3>
+                           <!-- <?php echo '<h1 id="chid" style="display:hidden;">' .$children[$j]['birthday'] . '</h1>'; ?>  --> 
+                            <input class="birthday" id="child_id" type = 'hidden' value=<?php echo $children[$j]['birthday']; ?> >
+                            <input class="registration_date" id="child_id" type = 'hidden' value=<?php echo $children[$j]['registration_date']; ?> >
+                           
                             <p>Last updated:<br> <?php echo $last_up[$j];?></p>
                             <h4><a href="<?php echo base_url();?>child/add_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger" title="Edit">Edit</a>
                             <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['child_id'];?>" class="label label-success"  title="Take test">Take test</a>
