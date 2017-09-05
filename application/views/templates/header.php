@@ -33,8 +33,12 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-    		<li><button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/update'"><?php echo $edit_profile; ?></button></li> 
-      		<li><button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/logout'" ><?php echo $logout; ?></button></li>
+    		<li>
+    		<div class="btn-group" role="group" aria-label="New image/album">
+    			<button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/update'"><?php echo $edit_profile; ?></button>
+      			<button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/logout'" ><?php echo $logout; ?></button>
+  			</div>
+      		</li>
       		<li><p class="navbar-text" id="user"><?php echo $logged_in_as; ?>: <?php echo $user_name; ?></p></li>
       </ul>
       

@@ -41,9 +41,11 @@ $( document ).ready(function() {
         thumbnailHoverEffect:'borderDarker,labelAppear75',
         itemsBaseURL:base_url + 'uploads/',
         colorScheme: babyScheme,
-        colorSchemeViewer: babySchemeViewer
+        colorSchemeViewer: babySchemeViewer,
+        thumbnailWidth: '300 XS100 LA400 XL500', thumbnailHeight: '200 XS80 LA250 XL350'
     });
 });
+
 
 $( document ).ready(function() {
 //  szin:

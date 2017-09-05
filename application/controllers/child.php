@@ -149,11 +149,9 @@ class Child extends MY_Controller {
                         }
                     }
                     
-                    // successfully sent mail
                     $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Your child\'s profile updated!</div>');
                     redirect('child/add_child/'. $get_child_id, $lang);
                 } else {
-                    // error
                     $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t update your child\'s profile.  Please try again later!!!</div>');
                     redirect('child/add_child'. $get_child_id, $lang);
                 }
