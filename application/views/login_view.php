@@ -8,6 +8,8 @@
 <link
 	href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css"
 	rel="stylesheet" type="text/css" />
+	
+<script src="<?php echo resources_url();?>facebook.js"></script>
 </head>
 <body>
 	<img src="<?php echo resources_url();?>img/bemaszik.png" alt='"<?php echo $missing_image; ?>"'
@@ -38,11 +40,25 @@
 	<div class="form-group">
     	<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>user/forgot'"><?php echo $forgot_title; ?></button>
     	<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>user/register'"><?php echo $register_title; ?></button>
+<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&     FACEBOOK LOGIN     &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->    	
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+            <div id="fb-root"></div>
+            <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
+    	
 	</div>
 </div>
 </div>
 </div>
 </div>
 
+
 </body>
+
+
 </html>

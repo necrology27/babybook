@@ -40,9 +40,9 @@
                 <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="regdatecheck">
                 <span class="glyphicon glyphicon-cog"></span> Rendezés <span class="caret"></span></button>
                 <ul class="dropdown-menu" aria-labelledby="regdatecheck">
-                  <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="checkbox" onclick="sort_by_name()"/><?php echo $sort_by_name; ?></a></li>
-                  <li><a href="#" class="small" data-value="option2" tabIndex="-3"><input type="checkbox" onclick="sort_by_age()"/><?php echo $sort_by_age; ?></a></li>
-                  <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="checkbox" onclick="sort_by_registration()"/><?php echo $sort_by_registration; ?></a></li>
+                  <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_name()"/><?php echo $sort_by_name; ?></a></li>
+                  <li><a href="#" class="small" data-value="option2" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_age()"/><?php echo $sort_by_age; ?></a></li>
+                  <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_registration()"/><?php echo $sort_by_registration; ?></a></li>
                 </ul>
             	 </div>
             	 

@@ -40,8 +40,6 @@ var very_good = "<?php echo $very_good;?>";
     } );
 
 
-	
-
 
     
 </script>
