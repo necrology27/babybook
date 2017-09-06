@@ -123,4 +123,26 @@ function sort_by_registration() {
 	  }
 }
 
+$('#gender_check_list input[type=checkbox]').change(function(){ 
+	var children = document.getElementsByClassName('child_box');
+	var checkedItems = $('#gender_check_list').find('input:checked');
+	console.log(checkedItems);
+	console.log("asd " + $.inArray($('input#female_check'), checkedItems));
+	if (checkedItems.length == 2 || checkedItems.length == 0) {
+		for (var i = 0; i < children.length/2; i++) {
+			$('#child' + i).show();
+		}
+	} else {
+		for (var i = 0; i < children.length/2; i++) {
+			if ($('#female_check').is(":checked") && document.getElementById('gender' + i).innerHTML == 'male') {
+
+				console.log(checkedItems);
+				$('#child' + i).hide();
+			} else if ($('#male_check').is(":checked") && document.getElementById('gender' + i).innerHTML == 'female') {
+				console.log(checkedItems);
+				$('#child' + i).hide();
+			}
+		}
+	}
+});
 

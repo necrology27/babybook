@@ -1,5 +1,5 @@
 <div>
-	<div id="child_boxes">
+	<div class="container-fluid" id="child_boxes">
 	<h2><?php echo $my_children; ?></h2>
 		<?php 
 		if ($child_count==0)
@@ -10,10 +10,11 @@
 		}
 		else{
 		   ?> 
-		   
-
-		    <div class="container">
-           		<div class="dropdown pull-left">
+		   <div class="container">
+		    	<h3 class="pull-left">Szűrés:</h3>
+		    	<br>
+		    	<br>
+           		<div class="dropdown pull-left col-md-2">
                     <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="gendercheck">
                     <span class="glyphicon glyphicon-cog"></span>  Nem szerint  <span class="caret"></span></button>
                     <ul class="dropdown-menu" role="filter" aria-labelledby="gendercheck" id="gender_check_list">
@@ -22,35 +23,34 @@
                     </ul>
             	 </div>
             
-           		<div class="dropdown pull-left">
-                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="agecheck">
-                <span class="glyphicon glyphicon-cog"></span> Életkor szerint <span class="caret"></span></button>
-                <ul class="dropdown-menu"  aria-labelledby="agecheck">
-                  <li><a href="#" class="small" data-value="option1" tabIndex="-2"><input type="checkbox"/><?php echo $month0_6; ?></a></li>
-                  <li><a href="#" class="small" data-value="option2" tabIndex="-2"><input type="checkbox"/><?php echo $month6_12; ?></a></li>
-                  <li><a href="#" class="small" data-value="option1" tabIndex="-2"><input type="checkbox"/><?php echo $year1_2; ?></a></li>
-                  <li><a href="#" class="small" data-value="option2" tabIndex="-2"><input type="checkbox"/><?php echo $year2_3; ?></a></li>
-                  <li><a href="#" class="small" data-value="option2" tabIndex="-2"><input type="checkbox"/><?php echo $year3_4; ?></a></li>
-                  <li><a href="#" class="small" data-value="option2" tabIndex="-2"><input type="checkbox"/><?php echo $year4_5; ?></a></li>
-                  <li><a href="#" class="small" data-value="option2" tabIndex="-2"><input type="checkbox"/><?php echo $year5_6; ?></a></li>
-                </ul>
-            	 </div>
+            	
+           		<div class="pull-left form-inline">
+           			<label for="ageslider" class="col-md-8">Életkor szerint:</label>
+           			<div class="form-group col-md-4">
+                   		<input type="text" id="ageslider" class="span2" value="" data-slider-min="0" data-slider-max="72"
+                    	 data-slider-step="0.1" data-slider-value="[0, 72]" data-slider-orientation="horizontal" data-slider-handle="round"
+                    	  data-slider-selection="after" data-slider-tooltip="show">
+					</div>
+                </div>
+                
+                <div class="col-xs-2 pull-right form-group">
+                	<input class="form-control" type="text" id="myInput" onkeyup="myFunction()" placeholder="<?php echo $search_by_name; ?>">
+                </div>
             
-           		<div class="dropdown pull-left">
-                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="regdatecheck">
-                <span class="glyphicon glyphicon-cog"></span> Rendezés <span class="caret"></span></button>
-                <ul class="dropdown-menu" aria-labelledby="regdatecheck">
-                  <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_name()"/><?php echo $sort_by_name; ?></a></li>
-                  <li><a href="#" class="small" data-value="option2" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_age()"/><?php echo $sort_by_age; ?></a></li>
-                  <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_registration()"/><?php echo $sort_by_registration; ?></a></li>
-                </ul>
-            	 </div>
+           		<div class="dropdown pull-right">
+                    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="regdatecheck">
+                    <span class="glyphicon glyphicon-cog"></span> Rendezés <span class="caret"></span></button>
+                    <ul class="dropdown-menu" aria-labelledby="regdatecheck">
+                      <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_name()"/><?php echo $sort_by_name; ?></a></li>
+                      <li><a href="#" class="small" data-value="option2" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_age()"/><?php echo $sort_by_age; ?></a></li>
+                      <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_registration()"/><?php echo $sort_by_registration; ?></a></li>
+                    </ul>
+        	    </div>
             	 
-            	 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="<?php echo $search_by_name; ?>" style="float: right;">
-              </div>
+            </div>
             
-            <div id="childs"  style="width:900px;" >  
-		    <?php
+            <div id="childs">  
+		   <?php
 		    for ($i = 0; $i < $child_count/3; $i++) {
 		        ?>
            		
@@ -59,9 +59,10 @@
         		?>   
                 <div class="col-md-3 one_child" id="child<?php echo $j;?>">   
         	     	<div class="thumbnail child_box">
-                      <img class="child_box" src="<?php echo uploads_url() . $id . "/" . $children[$j]['child_id'] . "/" . $def_imgs[$j]; ?>" alt="<?php echo $children[$j]['name'];?>">
+                      <img class="child_box" style="max-height: 100%;" src="<?php echo uploads_url() . $id . "/" . $children[$j]['child_id'] . "/" . $def_imgs[$j]; ?>" alt="<?php echo $children[$j]['name'];?>">
                         <div class="caption">
                             <h3><?php echo $children[$j]['name'];?>
+                            	<em id="age<?php echo $j;?>" style="display: none;"><?php echo $children[$j]['birthday']; ?></em>
                             	<em id="gender<?php echo $j;?>" style="display: none;"><?php if ($children[$j]['gender'] == 'F') {
                                     echo 'female';
                                 } else {
@@ -87,9 +88,6 @@
         		}
 		  }?>
 		  </div>
-		  
-		
-		  
 		  
 		</div>
 </div>

@@ -1,27 +1,4 @@
 
-$('#gender_check_list input[type=checkbox]').change(function(){ 
-	var children = document.getElementsByClassName('child_box');
-	var checkedItems = $('#gender_check_list').find('input:checked');
-	console.log(checkedItems);
-	console.log("asd " + $.inArray($('input#female_check'), checkedItems));
-	if (checkedItems.length == 2 || checkedItems.length == 0) {
-		for (var i = 0; i < children.length/2; i++) {
-			$('#child' + i).show();
-		}
-	} else {
-		for (var i = 0; i < children.length/2; i++) {
-			if ($('#female_check').is(":checked") && document.getElementById('gender' + i).innerHTML == 'male') {
-
-				console.log(checkedItems);
-				$('#child' + i).hide();
-			} else if ($('#male_check').is(":checked") && document.getElementById('gender' + i).innerHTML == 'female') {
-				console.log(checkedItems);
-				$('#child' + i).hide();
-			}
-		}
-	}
-});
-
 function popup_function(id) {
 	var popups = document.getElementsByClassName("show");
 	var i;
@@ -33,7 +10,37 @@ function popup_function(id) {
     popup.classList.toggle("show");
 }
 
+function monthDiff(from, to) {
+	var months = to.getMonth() - from.getMonth() 
+    + (12 * (to.getFullYear() - from.getFullYear()));
+
+	if(to.getDate() < from.getDate()){
+	    months--;
+	}
+	return months;
+}
+
 $( document ).ready(function() {
+	$("#ageslider").slider().on('slide', function(ev){
+		var sl = $("#ageslider");
+		var children = document.getElementsByClassName('child_box');
+		if ($.inArray(0, sl.data('slider').getValue()) > -1 && $.inArray(72, sl.data('slider').getValue()) > -1) {
+			for (var i = 0; i < children.length/2; i++) {
+				$('#child' + i).show();
+			}
+		} else {
+			for (var i = 0; i < children.length/2; i++) {
+				var birthday = new Date(document.getElementById('age' + i).innerHTML);
+				var age = monthDiff(birthday, new Date());
+				if (age >= sl.data('slider').getValue()[0] && age <= sl.data('slider').getValue()[1]) {
+					$('#child' + i).show();
+				} else {
+					$('#child' + i).hide();
+				}
+			}
+		}
+	});
+	
     $("[rel='tooltip']").tooltip();    
  
     $('.thumbnail').hover(
