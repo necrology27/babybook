@@ -48,7 +48,7 @@
 -->
 
             <div id="fb-root"></div>
-            <div class="fb-login-button"></div>
+            <div class="fb-login-button" data-max-rows="1" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
 <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
     	<label id=status></label>
 	</div>
