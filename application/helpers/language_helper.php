@@ -15,7 +15,7 @@ if (!function_exists('ls_get_current_language_id')) {
     function ls_get_current_language_id() {
        
         $CI = &get_instance();
-        $active_user = $CI->session->userdata("active_user");
+        $active_user = $CI->session->userdata("logged_in");
        
         if (isset($active_user['user_language_id']) && $active_user['user_language_id'] > 0) {
             return $active_user['user_language_id'];
@@ -99,9 +99,9 @@ if (!function_exists('LANG_ID')) {
     function LANG_ID($code = null) {
        
         $ids = array(
-            'eng' => '1',
-            'hun' => '2',
-            'rou' => '3',
+            'english' => '1',
+            'hungarian' => '2',
+            'romanian' => '3',
         );
        
         if (isset($code) && isset($ids[$code])) {
@@ -115,9 +115,9 @@ if (!function_exists('LANG_CODE')) {
    
     function LANG_CODE($id = null) {
         $codes = array(
-            '1' => 'eng',
-            '2' => 'hun',
-            '3' => 'rou',
+            '1' => 'english',
+            '2' => 'hungarian',
+            '3' => 'romanian',
         );
        
         if (isset($id) && isset($codes[$id])) {

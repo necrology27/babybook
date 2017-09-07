@@ -59,7 +59,7 @@
         		?>   
                 <div class="col-md-3 one_child" id="child<?php echo $j;?>">   
         	     	<div class="thumbnail child_box">
-                      <img class="child_box" style="max-height: 100%;" src="<?php echo uploads_url() . $id . "/" . $children[$j]['child_id'] . "/" . $def_imgs[$j]; ?>" alt="<?php echo $children[$j]['name'];?>">
+                      <img class="child_box" style="max-height: 100%;" src="<?php echo uploads_url() . getCurrentUserID() . "/" . $children[$j]['child_id'] . "/" . $def_imgs[$j]; ?>" alt="<?php echo $children[$j]['name'];?>">
                         <div class="caption">
                             <h3><?php echo $children[$j]['name'];?>
                             	<em id="age<?php echo $j;?>" style="display: none;"><?php echo $children[$j]['birthday']; ?></em>

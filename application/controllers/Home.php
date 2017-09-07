@@ -50,7 +50,6 @@ class Home extends MY_Controller
         $session_data = $this->session->userdata('logged_in');
         $id = $session_data['id'];
         
-        $data = $this->load_lang($id);
         $data['title'] = $this->lang->line('update_title');
         
         // set validation rules
@@ -68,18 +67,18 @@ class Home extends MY_Controller
         if ($this->form_validation->run() == FALSE) {
             if ($this->session->userdata('logged_in')) {
                 $user_data = $this->user_model->get_user_data($session_data['id']);
-                $data['id'] = $session_data['id'];
-                $data['name'] = $user_data['name'];
-                $data['user_name'] = $user_data['name'];
-                $data['email'] = $user_data['email'];
-                $data['birthday'] = $user_data['birthday'];
-                $data['measurement'] = $user_data['measurement'];
-                $data['language'] = $user_data['language'];
-                $data['gender'] = $user_data['gender'];
+                $this->data['id'] = $session_data['id'];
+                $this->data['name'] = $user_data['name'];
+                $this->data['user_name'] = $user_data['name'];
+                $this->data['email'] = $user_data['email'];
+                $this->data['birthday'] = $user_data['birthday'];
+                $this->data['measurement'] = $user_data['measurement'];
+                $this->data['language'] = $user_data['language'];
+                $this->data['gender'] = $user_data['gender'];
                 
-                $this->load->view('templates/header', $data);
-                $this->load->view('home/edit_self', $data);
-                $this->load->view('templates/footer', $data);
+                $this->load->view('templates/header', $this->data);
+                $this->load->view('home/edit_self', $this->data);
+                $this->load->view('templates/footer', $this->data);
             }
         } else {
             // insert the user registration details into database

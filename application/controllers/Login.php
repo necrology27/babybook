@@ -26,7 +26,6 @@ class Login extends MY_Controller
 
     function verify_login()
     {
-        $data = $this->load_lang();
         
         // This method will have the credentials validation
         $this->load->library('form_validation');
@@ -35,11 +34,9 @@ class Login extends MY_Controller
         $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database|sha1');
         
         if ($this->form_validation->run() == FALSE) {
-            // Field validation failed. User redirected to login page
             $this->load->view('login_view', $data);
             $this->load->view('templates/footer', $data);
         } else {
-            // Go to private area
             redirect('home', 'refresh');
         }
     }
@@ -78,11 +75,8 @@ class Login extends MY_Controller
 
     function check_database($password)
     {
-        #$this->load->model('user', '', TRUE);
-        // Field validation succeeded. Validate against database
         $email = $this->input->post('email');
         
-        // query the database
         $result = $this->user_model->login($email, $password);
         
         if ($result) {
