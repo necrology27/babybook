@@ -23,13 +23,13 @@ class Home extends MY_Controller
             
             $this->data['children'] = $this->user_model->get_users_children(getCurrentUserID());
             if( $this->data['children']!=false)
-                $this->data['child_count'] = count($data['children']);
+                $this->data['child_count'] = count($this->data['children']);
             else
                 $this->data['child_count'] = 0;
             for ($i = 0; $i < $this->data['child_count']; $i++) 
             {
-                $this->data['def_imgs'][$i] = $this->image_model->get_def_img($data['children'][$i]['child_id']);
-                $this->data['last_up'][$i] = $this->child_model->get_last_update($data['children'][$i]['child_id']);
+                $this->data['def_imgs'][$i] = $this->image_model->get_def_img($this->data['children'][$i]['child_id']);
+                $this->data['last_up'][$i] = $this->child_model->get_last_update($this->data['children'][$i]['child_id']);
             }
            
                 

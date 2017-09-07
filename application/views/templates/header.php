@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>jquery-ui/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>nanogallery/css/nanogallery.css">
 
-<title>babybook | <?php echo $title; ?></title>
+<title>babybook | <?php echo $this->data['title']; ?></title>
 </head>
 <body> 
 

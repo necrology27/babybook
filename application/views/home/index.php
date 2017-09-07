@@ -1,6 +1,6 @@
 <div>
 	<div class="container-fluid" id="child_boxes">
-	<h2><?php echo $my_children; ?></h2>
+	<h2><?php echo _e('my_children'); ?></h2>
 		<?php 
 		if ($child_count==0)
 		{?>
@@ -18,14 +18,14 @@
                     <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="gendercheck">
                     <span class="glyphicon glyphicon-cog"></span>  Nem szerint  <span class="caret"></span></button>
                     <ul class="dropdown-menu" role="filter" aria-labelledby="gendercheck" id="gender_check_list">
-                      <li><input type="checkbox" id="female_check"/><?php echo $girl; ?></li>
-                      <li><input type="checkbox" id="male_check"/><?php echo $boy; ?></li>
+                      <li><input type="checkbox" id="female_check"/><?php echo _e('girl'); ?></li>
+                      <li><input type="checkbox" id="male_check"/><?php echo _e('boy'); ?></li>
                     </ul>
             	 </div>
             
             	
            		<div class="pull-left form-inline">
-           			<label for="ageslider" class="col-md-8">Életkor szerint:</label>
+           			<label for="ageslider" class="col-md-8">Életkor szerint (hónapok):</label>
            			<div class="form-group col-md-4">
                    		<input type="text" id="ageslider" class="span2" value="" data-slider-min="0" data-slider-max="72"
                     	 data-slider-step="0.1" data-slider-value="[0, 72]" data-slider-orientation="horizontal" data-slider-handle="round"
@@ -34,16 +34,16 @@
                 </div>
                 
                 <div class="col-xs-2 pull-right form-group">
-                	<input class="form-control" type="text" id="myInput" onkeyup="myFunction()" placeholder="<?php echo $search_by_name; ?>">
+                	<input class="form-control" type="text" id="myInput" onkeyup="myFunction()" placeholder="<?php echo _e('search_by_name'); ?>">
                 </div>
             
            		<div class="dropdown pull-right">
                     <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="regdatecheck">
                     <span class="glyphicon glyphicon-cog"></span> Rendezés <span class="caret"></span></button>
                     <ul class="dropdown-menu" aria-labelledby="regdatecheck">
-                      <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_name()"/><?php echo $sort_by_name; ?></a></li>
-                      <li><a href="#" class="small" data-value="option2" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_age()"/><?php echo $sort_by_age; ?></a></li>
-                      <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_registration()"/><?php echo $sort_by_registration; ?></a></li>
+                      <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_name()"/><?php echo _e('sort_by_name');; ?></a></li>
+                      <li><a href="#" class="small" data-value="option2" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_age()"/><?php echo _e('sort_by_age'); ?></a></li>
+                      <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_registration()"/><?php echo _e('sort_by_registration'); ?></a></li>
                     </ul>
         	    </div>
             	 
