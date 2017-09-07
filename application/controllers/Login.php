@@ -44,10 +44,12 @@ class Login extends MY_Controller
     {
         $user_name =  $this->input->post('name');
         $user_face_id=  $this->input->post('id');
+        $user_email=  $this->input->post('email');
         
         $data = array(
             'facebook_id' => $user_face_id,
-            'name' =>  $user_name
+            'name' =>  $user_name,
+            'email' => $user_email
         );
         
         $user_id = $this->user_model->insert_user_by_facebook_id($data);
@@ -56,6 +58,7 @@ class Login extends MY_Controller
             'name' => $user_name,
             'id' => $user_id,
             'user_language_id' => 1
+            
         );
 
         setCurrentUserData($sess_array);

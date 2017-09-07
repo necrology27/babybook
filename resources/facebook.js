@@ -34,7 +34,7 @@ function faceFunc() {
 	    FB.init({
 	    appId      : '1082827931852967',
 	    cookie     : true,
-	                        
+	    secret	   :	'514e9e758718035e7664636ef56de7b5',               
 	    xfbml      : true,  
 	    version    : 'v2.10'
 	    });
@@ -57,13 +57,14 @@ function faceFunc() {
 	
         function testAPI() {
             console.log('Welcome!  Fetching your information.... ');
-            FB.api('/me',  {"fields":"id,name,email"}, function(response) {
-            	alert(response.email);
+            FB.api('/me?fields=id,name,first_name,last_name,picture,email,permissions', function(response) {
+            	alert(JSON.stringify(response));
               console.log('Successful login for: ' + response.name);
               faceWindow.document.getElementById('status').innerHTML =
                 'Thanks for logging in, ' + response.name + '!';
            	var name = response.name;
            	var id= response.id;
+           	var email = response.email;
            	
             $.ajax({
 	      		  method: 'POST',
@@ -71,7 +72,8 @@ function faceFunc() {
 	                dataType: 'text',
 	      		  data: {
 	      			'name': name,
-	      			'id': id
+	      			'id': id,
+	      			'email':email
 	      		  },
 	      		  success: function(data) {
 			         if(data == 'ok')
