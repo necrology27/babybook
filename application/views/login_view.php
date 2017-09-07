@@ -40,18 +40,8 @@
 	<div class="form-group">
     	<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>user/forgot'"><?php echo _e('forgot_title'); ?></button>
     	<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>user/register'"><?php echo _e('register_title'); ?></button>
-<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&     FACEBOOK LOGIN     &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->    	
-<!--
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
--->
-
-            <div id="fb-root"></div>
-            <div class="fb-login-button" data-max-rows="1" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
-    	<label id=status></label>
-	</div>
+		<button onclick="faceFunc()">Bejelentkezés Facebook-kal</button>  
+</div>
 </div>
 </div>
 </div>
