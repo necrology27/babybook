@@ -48,17 +48,16 @@ class Home extends MY_Controller
     function update()
     {
         $session_data = $this->session->userdata('logged_in');
-        $id = $session_data['id'];
+        $id = getCurrentUserID();
         
-        
-        $this->data['title'] = _e('update_title');
+        $this->data['title'] = $this->lang->line('update_title');
         
         // set validation rules
         $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|min_length[3]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('newpassword', 'New Password', 'trim|sha1');
         $this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|matches[newpassword]|sha1');
         $this->form_validation->set_rules('gender', 'Gender', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|callback_edit_unique[users.email.' . $session_data['id'] . ']');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|callback_edit_unique[users.email.' . $id . ']');
         $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
         $this->form_validation->set_rules('language', 'Language', 'required');
         $this->form_validation->set_rules('measurement', 'Measurement', 'required');
@@ -67,7 +66,7 @@ class Home extends MY_Controller
         // validate form input
         if ($this->form_validation->run() == FALSE) {
             if ($this->session->userdata('logged_in')) {
-                $user_data = $this->user_model->get_user_data($session_data['id']);
+                $user_data = $this->user_model->get_user_data($id);
                 $this->data['id'] = $session_data['id'];
                 $this->data['name'] = $user_data['name'];
                 $this->data['user_name'] = $user_data['name'];
@@ -89,7 +88,7 @@ class Home extends MY_Controller
                 $pw = $this->input->post('password');
             }
             $data = array(
-                'id' => $session_data['id'],
+                'id' => $id,
                 'name' => $this->input->post('name'),
                 'password' => $pw,
                 'gender' => $this->input->post('gender'),

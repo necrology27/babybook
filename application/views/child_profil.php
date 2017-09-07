@@ -12,7 +12,7 @@
 		<h2><?php echo $actual_development_level;?></h2> -->
 		 <div class="container">
 			<div>
-              <h3><?php echo $social; ?></h3>
+              <h3><?php echo _e('social'); ?></h3>
               <div class="progress">
                 <?php 
                 if($personal_social_value_pct!=NULL) 
@@ -24,7 +24,7 @@
               </div>
     
 			<div>
-              <h3><?php echo $fine_motor; ?></h3>
+              <h3><?php echo _e('fine_motor'); ?></h3>
               <div class="progress">
                 <?php
                 if($fine_motor_value_pct!=NULL) 
@@ -36,7 +36,7 @@
                 </div>
               </div>
             <div >
-              <h3><?php echo $language; ?></h3>
+              <h3><?php echo _e('language'); ?></h3>
               <div class="progress">
              
                 <?php 
@@ -49,7 +49,7 @@
                 </div>
               </div>
 			<div>
-              <h3><?php echo $gross_motor; ?></h3>
+              <h3><?php echo _e('gross_motor'); ?></h3>
                   <div class="progress">
                     <?php 
                     if($gross_motor_value_pct!=NULL) 

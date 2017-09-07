@@ -1,16 +1,17 @@
+<div>
 	<img src="<?php echo resources_url();?>img/lancletra.png" alt='"<?php echo _e('missing_image'); ?>"' class="back-left" />
 	
 	<div class="container animated_form">
-	<div class="row" >
-	<div class="col-md-6 col-md-offset-3">
-        <?php echo $this->session->flashdata('verify_msg'); ?>
-			<div class="panel panel-default">
+		<div class="row" >
+			<div class="col-md-6 col-md-offset-3">
+       		<?php echo $this->session->flashdata('verify_msg'); ?>
+				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4><?php echo _e('update_title'); ?></h4>
 					</div>
 					<div class="panel-body">
-                <?php $attributes = array("name" => "userupdateform");
-                echo form_open("home/update", $attributes); ?>
+                        <?php $attributes = array("name" => "userupdateform");
+                        echo form_open("home/update", $attributes); ?>
                 		<div class="form-group">
 							<label for="name"><?php echo _e('name_label'); ?></label> 
 							<input id="name" class="form-control" name="name" type="text" value="<?php echo $this->data['name']; ?>" /> 
@@ -96,8 +97,9 @@
 						</div>
 					<?php echo form_close()?>
                 <?php echo $this->session->flashdata('msg'); ?>
-</div>
-</div>
-</div>
-</div>
+            		</div>
+            	</div>
+            </div>
+        </div>
+    </div>
 </div>

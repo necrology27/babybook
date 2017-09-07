@@ -6,7 +6,7 @@
 	<?php echo $this->session->flashdata('verify_msg'); ?>
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h4><?php echo $take_test_title; ?></h4>
+			<h4><?php echo _e('take_test_title'); ?></h4>
 			<input id="child_id" type = 'hidden' value=<?php echo $child_id; ?> >
 		</div>
 	<div class="panel-body">
@@ -16,10 +16,10 @@
       <table class="table table-striped table-bordered table-condensed">
       <thead class="thead-inverse">
 		<tr>
-            <th><?php echo $pass; ?></th>
-            <th><?php echo $fail; ?></th> 
-            <th><?php echo $no_opportunity; ?></th>
-            <th><?php echo $refusal; ?></th>
+            <th><?php echo _e('pass'); ?></th>
+            <th><?php echo _e('fail'); ?></th> 
+            <th><?php echo _e('no_opportunity'); ?></th>
+            <th><?php echo _e('refusal'); ?></th>
             <th></th>
 		</tr>
 	</thead>
@@ -52,8 +52,8 @@
 	</table>
 	</div>	
 	<div class="form-group">
-		<button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url();?>home'"><?php echo $save_button;?></button>
-		<button name="cancel" type="reset" class="btn btn-default"><?php echo $cancel_button;?></button>
+		<button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url();?>home'"><?php echo _e('save_button');?></button>
+		<button name="cancel" type="reset" class="btn btn-default"><?php echo _e('cancel_button');?></button>
 		
 	</div>
 </form>
