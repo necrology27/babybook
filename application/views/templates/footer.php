@@ -5,11 +5,11 @@
                 
     <script>
 var base_url = "<?php echo base_url();?>";
-var weak = "<?php echo $weak;?>";
-var below_average = "<?php echo $below_average;?>";
-var average = "<?php echo $average;?>";
-var good = "<?php echo $good;?>";
-var very_good = "<?php echo $very_good;?>";
+var weak = "<?php echo _e('weak');?>";
+var below_average = "<?php echo _e('below_average');?>";
+var average = "<?php echo _e('average');?>";
+var good = "<?php echo _e('good');?>";
+var very_good = "<?php echo _e('very_good');?>";
 
 	</script>            
 <script src="<?php echo resources_url();?>jquery.js"></script>

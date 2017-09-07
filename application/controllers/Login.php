@@ -52,9 +52,7 @@ class Login extends MY_Controller
         );
         
         $user_id = $this->user_model->insert_user_by_facebook_id($data);
-        $data = $this->load_lang();
         
-     
         $sess_array = array(
             'name' => $user_name,
             'id' => $user_id
