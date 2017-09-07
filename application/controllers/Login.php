@@ -19,9 +19,10 @@ class Login extends MY_Controller
         if(getCurrentLoggedInUser() != NULL)
             redirect(base_url('home'));
         
-        $data['scripts'][] = 'facebook.js';
-        $this->load->view('login_view', $data);
-        $this->load->view('templates/footer', $data);
+        $this->data['title'] = _e('login_title');
+        $this->data['scripts'][] = 'facebook.js';
+        $this->load->view('login_view', $this->data);
+        $this->load->view('templates/footer', $this->data);
     }
 
     function verify_login()
@@ -55,7 +56,8 @@ class Login extends MY_Controller
         
         $sess_array = array(
             'name' => $user_name,
-            'id' => $user_id
+            'id' => $user_id,
+            'user_language_id' => $row->language
         );
 
         setCurrentUserData($sess_array);
@@ -82,7 +84,8 @@ class Login extends MY_Controller
             foreach ($result as $row) {
                 $sess_array = array(
                     'name' => $row->name,
-                    'id' => $row->id
+                    'id' => $row->id,
+                    'user_language_id' => $row->language
                 );
                 $this->session->set_userdata('logged_in', $sess_array);
             }

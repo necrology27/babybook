@@ -58,7 +58,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label for="language"><?php echo _e('language_labe'); ?></label> 
+							<label for="language"><?php echo _e('language_label'); ?></label> 
 							<select id="language" name='language'>
 								<option value='1' <?php if($language == 1) echo 'selected'; ?>>English</option>
 								<option value='2' <?php if($language == 2) echo 'selected'; ?>>Magyar</option>

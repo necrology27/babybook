@@ -21,7 +21,6 @@ class VerifyLogin extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database|sha1');
         
         if ($this->form_validation->run() == FALSE) {
-            $data = $this->load_lang();
             // Field validation failed. User redirected to login page
             $this->load->view('login_view', $data);
         } else {
@@ -43,7 +42,8 @@ class VerifyLogin extends CI_Controller
             foreach ($result as $row) {
                 $sess_array = array(
                     'name' => $row->name,
-                    'id' => $row->id
+                    'id' => $row->id,
+                    'user_language_id' => $row->language
                 );
                 $this->session->set_userdata('logged_in', $sess_array);
             }

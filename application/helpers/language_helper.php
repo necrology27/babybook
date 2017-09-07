@@ -6,7 +6,7 @@ if (!function_exists('ls_switch_language_by_id')) {
 
         $CI = &get_instance();
        
-        $CI->lang->load('texts', strtolower(LANG_NAME($language_id)));
+        $CI->lang->load(LANG_NAME($language_id), strtolower(LANG_NAME($language_id)));
     }
 }
 
@@ -16,8 +16,8 @@ if (!function_exists('ls_get_current_language_id')) {
        
         $CI = &get_instance();
         $active_user = $CI->session->userdata("logged_in");
-       
         if (isset($active_user['user_language_id']) && $active_user['user_language_id'] > 0) {
+            
             return $active_user['user_language_id'];
         }
         return 0;
@@ -57,7 +57,7 @@ if (!function_exists('ls_init_language')) {
         if ($language_id > 0) {
             ls_switch_language_by_id($language_id);
         } else {
-            $CI->lang->load('texts', 'english');
+            $CI->lang->load('english', 'english');
         }
     }
 }

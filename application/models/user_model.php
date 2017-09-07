@@ -60,7 +60,7 @@ class user_model extends CI_Model
     function login($email, $password)
     {
         $password_hash=sha1($password);
-        $this -> db -> select('id, name, password');
+        $this -> db -> select('id, name, password, language');
         $this -> db -> from('users');
         $this -> db -> where('email', $email);
         $this -> db -> where('password', $password_hash);

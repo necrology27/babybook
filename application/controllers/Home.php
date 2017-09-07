@@ -50,7 +50,8 @@ class Home extends MY_Controller
         $session_data = $this->session->userdata('logged_in');
         $id = $session_data['id'];
         
-        $data['title'] = $this->lang->line('update_title');
+        
+        $this->data['title'] = _e('update_title');
         
         // set validation rules
         $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|min_length[3]|max_length[30]|xss_clean');

@@ -6,13 +6,6 @@ class Child extends MY_Controller {
        
         parent::__construct();
         $this->load->library('upload');
-        $this->load->helper(array('form', 'url'));
-        $this->load->library(array(
-            'session',
-            'form_validation',
-            'email'
-        ));
-        $this->load->database();
         $this->load->model('user_model');
         $this->load->model('image_model');
         $this->load->model('child_model');
@@ -22,8 +15,6 @@ class Child extends MY_Controller {
     public function add_child($get_child_id = 0){
         
         $session_data = $this->session->userdata('logged_in');
-        $user_id = $session_data['id'];
-        $data['user_id']=$user_id;
         if($get_child_id != 0)
         {
             ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Szulo-e?????
@@ -33,9 +24,8 @@ class Child extends MY_Controller {
             }
         }
         
-        $data = $this->load_lang($user_id);
-        $data['title'] = $this->lang->line('child_update_title');
-        $data['id']=$session_data['id'];
+        $this->data['title'] = $this->lang->line('add_child');
+        $this->data['id'] = getCurrentUserID();
         
         // set validation rules
         $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|callback_exists[children.name.'.$session_data['id'].']|min_length[3]|max_length[30]|xss_clean');
@@ -43,27 +33,27 @@ class Child extends MY_Controller {
         // validate form input
         
         if ($this->form_validation->run() == FALSE) {
-            $measurement = $this->user_model->get_user_data($user_id)['measurement'];
+            $measurement = $this->user_model->get_user_data(getCurrentUserID())['measurement'];
             
-            $user_data = $this->user_model->get_user_data($session_data['id']);
+            $user_data = getCurrentLoggedInUser();
             $datas = array(
                 'measurement' => $measurement,
                 'error' => ' ',
                 'user_name' => $user_data['name']
             );
-            $data = $data + $datas + $this->load_lang($session_data['id']);
+            $this->data = $this->data + $datas;
             
             if($get_child_id == 0)
             {
-                $data['child_id'] = "0";
-                $data['name']= "";
-                $data['birthday']= "";
-                $data['genetical_disorders']= "";
-                $data['other_disorders']= "";
+                $this->data['child_id'] = "0";
+                $this->data['name']= "";
+                $this->data['birthday']= "";
+                $this->data['genetical_disorders']= "";
+                $this->data['other_disorders']= "";
             }
             else{
                 $child_data = $this->child_model->get_child_data($get_child_id);
-                $data = $data+ array(
+                $this->data = $this->data + array(
                     'child_id' => $get_child_id,
                     'name' => $child_data['name'],
                     'birthday' => $child_data['birthday'],
@@ -72,10 +62,10 @@ class Child extends MY_Controller {
                     'error' => ''
                 );
             }
-            $data['user_id']= $user_id;
-            $this->load->view('templates/header.php', $data);
-            $this->load->view('save_child', $data);
-            $this->load->view('templates/footer.php', $data);
+            $this->data['user_id']= getCurrentUserID();
+            $this->load->view('templates/header.php', $this->data);
+            $this->load->view('save_child', $this->data);
+            $this->load->view('templates/footer.php', $this->data);
         } 
         else {
             
@@ -106,17 +96,17 @@ class Child extends MY_Controller {
                 'other_disorders' => $this->input->post('other_disorders'),
                 'user_id' => $user_id                
             );
-            $data=$data+$new_child_data;
+            $this->data = $this->data + $new_child_data;
             if($get_child_id==0)
             {
                 // insert form data into database
                 if ($childID=$this->child_model->insertChild($new_child_data)) {
                     
-                    $data['child_id'] = $childID;
+                    $this->data['child_id'] = $childID;
                     // successfully sent mail
                    
                     $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Success!</div>');
-                    $err = $this->do_upload($data["user_id"], $childID);
+                    $err = $this->do_upload($this->data["user_id"], $childID);
                     
                     if ($err !== true) {
                         $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">' . $err . '!!!</div>');
@@ -213,11 +203,11 @@ class Child extends MY_Controller {
         else
         {
             return $this->upload->display_errors();
-            $data = $data +  array(
+            $this->data = $this->data +  array(
                 
                 'error' => $this->upload->display_errors()
             );
-            $this->load->view('add_child', $data);
+            $this->load->view('add_child', $this->data);
         }
     }
     
@@ -226,27 +216,26 @@ class Child extends MY_Controller {
         $session_data = $this->session->userdata('logged_in');
         $id = $session_data['id'];
         
-        $data = $this->load_lang($id);
         $child_data = $this->child_model->get_child_data($child_id);
         $user_data = $this->user_model->get_user_data($session_data['id']);
-        $data['user_name'] = $user_data['name'];
-        $data['user_id'] = $session_data['id'];
-        $data['name'] = $child_data['name'];
-        $data['birthday'] = $child_data['birthday'];
-        $data['error'] = ' ';
-        $data['child_id'] = $child_id;
+        $this->data['user_name'] = $user_data['name'];
+        $this->data['user_id'] = $session_data['id'];
+        $this->data['name'] = $child_data['name'];
+        $this->data['birthday'] = $child_data['birthday'];
+        $this->data['error'] = ' ';
+        $this->data['child_id'] = $child_id;
         
-        $data['imgs'] = $this->image_model->get_all_imgs($data['child_id']);
-        if( $data['imgs']!=false)
-            $data['img_count'] = count($data['imgs']);
+        $this->data['imgs'] = $this->image_model->get_all_imgs($this->data['child_id']);
+        if( $this->data['imgs']!=false)
+            $this->data['img_count'] = count($this->data['imgs']);
         else
-            $data['img_count'] = 0;
+            $this->data['img_count'] = 0;
         
-        $data['title'] = $this->lang->line('album_title');
-        
-        $this->load->view('templates/header', $data);
-        $this->load->view('album_view', $data);
-        $this->load->view('templates/footer', $data);
+        $this->data['title'] = $this->lang->line('album_title');
+    
+        $this->load->view('templates/header', $this->data);
+        $this->load->view('album_view', $this->data);
+        $this->load->view('templates/footer', $this->data);
     }
     
     function profil($child_id = NULL)
@@ -261,17 +250,16 @@ class Child extends MY_Controller {
             header("Location: http://localhost/babybook_git/index.php/home");
         }
         
-        $data = $this->load_lang($id);
         $child_data = $this->child_model->get_child_data($child_id);
         $user_data = $this->user_model->get_user_data($session_data['id']);
-        $data['user_name'] = $user_data['name'];
-        $data['user_id'] = $session_data['id'];
-        $data['name'] = $child_data['name'];
-        $data['birthday'] = $child_data['birthday'];
-        $data['error'] = ' ';
-        $data['child_id'] = $child_id;
+        $this->data['user_name'] = $user_data['name'];
+        $this->data['user_id'] = $session_data['id'];
+        $this->data['name'] = $child_data['name'];
+        $this->data['birthday'] = $child_data['birthday'];
+        $this->data['error'] = ' ';
+        $this->data['child_id'] = $child_id;
         
-        $data['title'] = $this->lang->line('');
+        $this->data['title'] = $this->lang->line('');
         
        
         $scores = $this->answer_model->get_score($child_id);
@@ -281,32 +269,32 @@ class Child extends MY_Controller {
         
         $total=$max_score-$min_score;
         
-        $data['min_score']=0;
-        $data['max_score']=$total;
+        $this->data['min_score']=0;
+        $this->data['max_score']=$total;
         
         if($scores["personal_social"]!=NULL)
-            $data['personal_social_value_pct']=100*($scores["personal_social"]-$min_score)/$total;
+            $this->data['personal_social_value_pct']=100*($scores["personal_social"]-$min_score)/$total;
         else
-            $data['personal_social_value_pct']=NULL;
+            $this->data['personal_social_value_pct']=NULL;
         
         if($scores["fine_motor"]!=NULL)
-            $data['fine_motor_value_pct']=100*($scores["fine_motor"]-$min_score)/$total;
+            $this->data['fine_motor_value_pct']=100*($scores["fine_motor"]-$min_score)/$total;
         else
-            $data['fine_motor_value_pct']=NULL;
+            $this->data['fine_motor_value_pct']=NULL;
         
         if($scores["language"]!=NULL)
-            $data['language_value_pct']=100*($scores["language"]-$min_score)/$total;
+            $this->data['language_value_pct']=100*($scores["language"]-$min_score)/$total;
         else
-            $data['language_value_pct']=NULL;
+            $this->data['language_value_pct']=NULL;
         
         if($scores["gross_motor"]!=NULL)
-            $data['gross_motor_value_pct']=100*($scores["gross_motor"]-$min_score)/$total;
+            $this->data['gross_motor_value_pct']=100*($scores["gross_motor"]-$min_score)/$total;
         else 
-            $data['gross_motor_value_pct']=NULL;
+            $this->data['gross_motor_value_pct']=NULL;
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('child_profil', $data);
-        $this->load->view('templates/footer', $data);
+        $this->load->view('templates/header', $this->data);
+        $this->load->view('child_profil', $this->data);
+        $this->load->view('templates/footer', $this->data);
         
     }
 }
