@@ -6,7 +6,7 @@ if (!function_exists('ls_switch_language_by_id')) {
 
         $CI = &get_instance();
        
-        $CI->lang->load(LANG_NAME($language_id), strtolower(LANG_NAME($language_id)));
+        $CI->lang->load(strtolower(LANG_NAME($language_id)), strtolower(LANG_NAME($language_id)));
     }
 }
 
@@ -131,9 +131,9 @@ if (!function_exists('LANG_NAME')) {
    
     function LANG_NAME($id = null) {
         $codes = array(
-            '1' => 'English',
-            '2' => 'Hungarian',
-            '3' => 'Romanian',
+            '1' => 'english',
+            '2' => 'hungarian',
+            '3' => 'romanian',
         );
        
         if (isset($id) && isset($codes[$id])) {

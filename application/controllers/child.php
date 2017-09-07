@@ -94,7 +94,7 @@ class Child extends MY_Controller {
                 
                 'genetical_disorders' => $this->input->post('genetical_disorders'),
                 'other_disorders' => $this->input->post('other_disorders'),
-                'user_id' => $user_id                
+                'user_id' => getCurrentUserID()                
             );
             $this->data = $this->data + $new_child_data;
             if($get_child_id==0)
