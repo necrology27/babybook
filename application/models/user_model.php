@@ -14,7 +14,36 @@ class user_model extends CI_Model
     {
         return $this->db->insert('users', $data);
     }
+    
+    function insert_user_by_facebook_id($data)
+    {
+        
+        $res=$this->get_user_data_by_face_id($data['facebook_id']);
+        if($res==false)
+        {
+            $this->db->insert('users', $data);
+            return $this->db->insert_id();
+        }
+        else
+            return $res['id'];
+    }
+    
+    
+    function get_user_data_by_face_id($facebook_id)
+    {
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where('facebook_id', $facebook_id);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if ($this->db->affected_rows() > 0)
+            return $result[0];
+            else
+                return false;
+    }
 
+    
+    
     function get_user_data($id)
     {
         $this->db->select('*');

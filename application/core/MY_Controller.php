@@ -3,6 +3,14 @@
 class MY_Controller extends CI_Controller
 {
 
+    public $data = array();
+    
+    
+    public function __construct()
+    {
+        parent::__construct();
+    }
+    
     function alpha_dash_space($str)
     {
         $CI = & get_instance();
@@ -11,114 +19,6 @@ class MY_Controller extends CI_Controller
         $CI->form_validation->set_message('alpha_dash_space', "Invalid characters in %s.");
         
         return (! preg_match("/^([-a-z_ áéöüóőúűíÉÁŐÚŰÖÜÓÍ])+$/i", $str)) ? FALSE : TRUE;
-    }
-
-    function load_lang($id = NULL)
-    {
-        if ($this->session->userdata('logged_in')) {
-            $language = $this->user_model->get_user_data($id)['language'];
-        } else {
-            $language = 1;
-        }
-        
-        // Choose language file according to selected lanaguage
-        if ($language == 2)
-            $this->lang->load('hungarian_lang', 'hungarian');
-        else if ($language == 3)
-            $this->lang->load('romanian_lang', 'romanian');
-        else
-            $this->lang->load('english_lang', 'english');
-        
-        $data['lang'] = $language;
-        $data['msg'] = $this->lang->line('msg');
-        $data['home_title'] = $this->lang->line('home_title');
-        $data['login_title'] = $this->lang->line('login_title');
-        $data['forgot_title'] = $this->lang->line('forgot_title');
-        $data['register_title'] = $this->lang->line('register_title');
-        $data['update_title'] = $this->lang->line('update_title');
-        
-        $data['add_child'] = $this->lang->line('add_child');
-        $data['edit_profile'] = $this->lang->line('edit_profile');
-        $data['logout'] = $this->lang->line('logout');
-        $data['forum'] = $this->lang->line('forum');
-        $data['settings'] = $this->lang->line('settings');
-        $data['save_button'] = $this->lang->line('save_button');
-        $data['cancel_button'] = $this->lang->line('cancel_button');
-        $data['add_button'] = $this->lang->line('add_button');
-        $data['signup_button'] = $this->lang->line('signup_button');
-        $data['send_email_button'] = $this->lang->line('send_email_button');
-        $data['back_to_login'] = $this->lang->line('back_to_login');
-        $data['missing_image'] = $this->lang->line('missing_image');
-        
-        $data['my_children'] = $this->lang->line('my_children');
-        $data['name_label'] = $this->lang->line('name_label');
-        $data['password_label'] = $this->lang->line('password_label');
-        $data['new_password_label'] = $this->lang->line('new_password_label');
-        $data['confirm_password_label'] = $this->lang->line('confirm_password_label');
-        $data['gender_label'] = $this->lang->line('gender_label');
-        $data['male'] = $this->lang->line('male');
-        $data['female'] = $this->lang->line('female');
-        $data['email_label'] = $this->lang->line('email_label');
-        $data['birthday_label'] = $this->lang->line('birthday_label');
-        $data['language_label'] = $this->lang->line('language_label');
-        $data['measurement_label'] = $this->lang->line('measurement_label');
-        $data['old_password_label'] = $this->lang->line('old_password_label');
-        $data['no_child'] = $this->lang->line('no_child');
-        $data['logged_in_as'] = $this->lang->line('logged_in_as');
-        $data['my_child_label'] = $this->lang->line('my_child_label');
-        $data['birth_weight_label'] = $this->lang->line('birth_weight_label');
-        $data['birth_length_label'] = $this->lang->line('birth_length_label');
-        $data['apgar_score_label'] = $this->lang->line('apgar_score_label');
-        $data['genetical_disorders_label'] = $this->lang->line('genetical_disorders_label');
-        $data['other_disorders_label'] = $this->lang->line('other_disorders_label');
-        $data['default_image_label'] = $this->lang->line('default_image_label');
-        
-        $data['child_name_placeholder'] = $this->lang->line('child_name_placeholder');
-        $data['none_placeholder'] = $this->lang->line('none_placeholder');
-        $data['ex_mail'] = $this->lang->line('ex_mail');
-        
-        $data['child_update_title'] = $this->lang->line('child_update_title');
-        $data['take_test_title'] = $this->lang->line('take_test_title');
-        $data['pass'] = $this->lang->line('pass');
-        $data['fail'] = $this->lang->line('fail');
-        $data['no_opportunity'] = $this->lang->line('no_opportunity');
-        $data['refusal'] = $this->lang->line('refusal');
-        
-        $data['profil_title'] = $this->lang->line('profil_title');
-        $data['actual_development_level'] = $this->lang->line('actual_development_level');
-        $data['album'] = $this->lang->line('album');
-        $data['social'] = $this->lang->line('social');
-        $data['language'] = $this->lang->line('language');
-        $data['fine_motor'] = $this->lang->line('fine_motor');
-        $data['gross_motor'] = $this->lang->line('gross_motor');
-        
-        $data['weak']= $this->lang->line('weak');
-        $data['below_average']= $this->lang->line('below_average');
-        $data['average']= $this->lang->line('average');
-        $data['good']= $this->lang->line('good');
-        $data['very_good']= $this->lang->line('very_good');
-        
-        
-        $data['boy']= $this->lang->line('boy');
-        $data['girl']= $this->lang->line('girl');
-        $data['month0_6']= $this->lang->line('month0_6');
-        $data['month6_12']= $this->lang->line('month6_12');
-        $data['year1_2']= $this->lang->line('year1_2');
-        $data['year2_3']= $this->lang->line('year2_3');
-        $data['year3_4']= $this->lang->line('year3_4');
-        $data['year4_5']= $this->lang->line('year4_5');
-        $data['year5_6']= $this->lang->line('year5_6');
-        $data['sort_by_name']= $this->lang->line('sort_by_name');
-        $data['sort_by_age']= $this->lang->line('sort_by_age');
-        $data['sort_by_registration']= $this->lang->line('sort_by_registration');
-        $data['search_by_name']= $this->lang->line('search_by_name');
-        
-        
-        
-        
-        
-        
-        return $data;
     }
 
     function valid_date($date)

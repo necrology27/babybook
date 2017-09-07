@@ -28,19 +28,19 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-		<li><a href="<?php echo base_url();?>child/add_child"><?php echo $add_child; ?></a></li>
-        <li><a href="#"><?php echo $forum; ?></a></li>
-        <li><a href="#"><?php echo $settings; ?></a></li>
+		<li><a href="<?php echo base_url();?>child/add_child"><?php echo _e('add_child'); ?></a></li>
+        <li><a href="#"><?php echo _e('forum'); ?></a></li>
+        <li><a href="#"><?php echo _e('settings'); ?></a></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
     		<li>
     		<div class="btn-group" role="group" aria-label="New image/album">
-    			<button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/update'"><?php echo $edit_profile; ?></button>
-      			<button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/logout'" ><?php echo $logout; ?></button>
+    			<button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/update'"><?php echo _e('edit_profile'); ?></button>
+      			<button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>login/logout'" ><?php echo _e('logout'); ?></button>
   			</div>
       		</li>
-      		<li><p class="navbar-text" id="user"><?php echo $logged_in_as; ?>: <?php echo $user_name; ?></p></li>
+      		<li><p class="navbar-text" id="user"><?php echo _e('logged_in_as'); ?>: <?php echo getCurrentUserName(); ?></p></li>
       </ul>
       
     </div><!-- /.navbar-collapse -->

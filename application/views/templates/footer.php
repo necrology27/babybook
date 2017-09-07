@@ -22,6 +22,7 @@ var very_good = "<?php echo $very_good;?>";
 <script src="<?php echo resources_url();?>sort.js?v=1"></script>
 <script src="<?php echo resources_url();?>test.js?v=4"></script>
 
+
 <script>
     $( function() {
     	var date = $('.datepicker').datepicker({

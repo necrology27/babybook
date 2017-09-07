@@ -8,10 +8,10 @@
 <link
 	href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css"
 	rel="stylesheet" type="text/css" />
-	
-<script src="<?php echo resources_url();?>facebook.js"></script>
 </head>
 <body>
+
+
 	<img src="<?php echo resources_url();?>img/bemaszik.png" alt='"<?php echo $missing_image; ?>"'
 		class="back-left" />
 	<div class="row animated_form">
@@ -50,15 +50,9 @@
             <div id="fb-root"></div>
             <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
 <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
-    	
+    	<label id=status></label>
 	</div>
 </div>
 </div>
 </div>
 </div>
-
-
-</body>
-
-
-</html>

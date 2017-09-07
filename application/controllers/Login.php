@@ -9,24 +9,19 @@ class Login extends MY_Controller
     {
         parent::__construct();
         
-        $this->load->helper(array(
-            'form',
-            'url'
-        ));
-        $this->load->library(array(
-            'session',
-            'form_validation',
-            'email'
-        ));
         $this->load->database();
         $this->load->model('user_model', '', TRUE);
+       
     }
 
     function index()
     {
-        $data = $this->load_lang();
+        if(getCurrentLoggedInUser() != NULL)
+            redirect(base_url('home'));
         
+        $data['scripts'][] = 'facebook.js';
         $this->load->view('login_view', $data);
+        $this->load->view('templates/footer', $data);
     }
 
     function verify_login()
@@ -42,11 +37,44 @@ class Login extends MY_Controller
         if ($this->form_validation->run() == FALSE) {
             // Field validation failed. User redirected to login page
             $this->load->view('login_view', $data);
+            $this->load->view('templates/footer', $data);
         } else {
             // Go to private area
             redirect('home', 'refresh');
         }
     }
+    
+    function login_with_facebook()
+    {
+        $user_name =  $this->input->post('name');
+        $user_face_id=  $this->input->post('id');
+        
+        $data = array(
+            'facebook_id' => $user_face_id,
+            'name' =>  $user_name
+        );
+        
+        $user_id = $this->user_model->insert_user_by_facebook_id($data);
+        $data = $this->load_lang();
+        
+     
+        $sess_array = array(
+            'name' => $user_name,
+            'id' => $user_id
+        );
+
+        setCurrentUserData($sess_array);
+        
+        echo "ok";
+    }
+    
+    function logout()
+    {
+        removeCurrentUserData();
+        session_destroy();
+        redirect(base_url());
+    }
+    
 
     function check_database($password)
     {

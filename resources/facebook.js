@@ -1,3 +1,4 @@
+
 (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -37,7 +38,7 @@
     
     window.fbAsyncInit = function() {
     FB.init({
-    appId      : '115520915787365',
+    appId      : '1082827931852967',
     cookie     : true,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
@@ -57,29 +58,53 @@
     // These three cases are handled in the callback function.
     
     FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
+    	console.log('Be van jelentkezve');
+        statusChangeCallback(response);
+        
     });
     
     };
     
     // Load the SDK asynchronously
     (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    
-    // Here we run a very simple test of the Graph API after login is
-    // successful.  See statusChangeCallback() for when this call is made.
-    function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        
+        // Here we run a very simple test of the Graph API after login is
+        // successful.  See statusChangeCallback() for when this call is made.
+        function testAPI() {
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function(response) {
+              console.log('Successful login for: ' + response.name);
+              document.getElementById('status').innerHTML =
+                'Thanks for logging in, ' + response.name + '!';
+             
+           	var name = response.name;
+           	var id= response.id;
+           	
+            $.ajax({
+	
+      		  method: 'POST',
+      		  url: base_url + 'login/login_with_facebook',
+                dataType: 'text',
+      		  data: {
+      			'name': name,
+      			'id': id
+      		  },
+      		success: function(data) {
+		         if(data == 'ok')
+		        	 window.location.href = base_url + "home";
+		      },
+		      error: function(xhr, status, error) {
+		    	  alert(error);
+		      }
+      		
+      		});
+       
     });
 }
-
-

@@ -6,16 +6,7 @@ class Home extends MY_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->helper(array(
-            'form',
-            'url'
-        ));
-        $this->load->library(array(
-            'session',
-            'form_validation',
-            'email'
-        ));
-        $this->load->database();
+       
         $this->load->model('user_model');
         $this->load->model('image_model');
         $this->load->model('child_model');
@@ -28,29 +19,25 @@ class Home extends MY_Controller
             $session_data = $this->session->userdata('logged_in');
             $id = $session_data['id'];
             
-            $data = $this->load_lang($id);
+            $this->data['title'] = $this->lang->line('home_title');
             
-            $data['name'] = $session_data['name'];
-            $data['user_name'] = $session_data['name'];
-            $data['id'] = $session_data['id'];
-            $data['title'] = $this->lang->line('home_title');
-            
-            $data['children'] = $this->user_model->get_users_children($data['id']);
-            if( $data['children']!=false)
-                $data['child_count'] = count($data['children']);
+            $this->data['children'] = $this->user_model->get_users_children(getCurrentUserID());
+            if( $this->data['children']!=false)
+                $this->data['child_count'] = count($data['children']);
             else
-                $data['child_count'] = 0;
-            for ($i = 0; $i < $data['child_count']; $i++) 
+                $this->data['child_count'] = 0;
+            for ($i = 0; $i < $this->data['child_count']; $i++) 
             {
-                $data['def_imgs'][$i] = $this->image_model->get_def_img($data['children'][$i]['child_id']);
-                $data['last_up'][$i] = $this->child_model->get_last_update($data['children'][$i]['child_id']);
+                $this->data['def_imgs'][$i] = $this->image_model->get_def_img($data['children'][$i]['child_id']);
+                $this->data['last_up'][$i] = $this->child_model->get_last_update($data['children'][$i]['child_id']);
             }
            
                 
-            $this->load->view('templates/header', $data);
-            $this->load->view('home/index.php', $data);
-            $this->load->view('templates/footer', $data);
+            $this->load->view('templates/header', $this->data);
+            $this->load->view('home/index.php', $this->data);
+            $this->load->view('templates/footer', $this->data);
         } else {
+            die("nincs session");
             // If no session, redirect to login page
             redirect('login', 'refresh');
         }
@@ -125,13 +112,6 @@ class Home extends MY_Controller
                 redirect('home/update', $lang);
             }
         }
-    }
-
-    function logout()
-    {
-        $this->session->unset_userdata('logged_in');
-        session_destroy();
-        redirect('home', 'refresh');
     }
 
     public function view($page = 'home')
