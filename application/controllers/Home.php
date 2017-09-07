@@ -61,7 +61,6 @@ class Home extends MY_Controller
         $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
         $this->form_validation->set_rules('language', 'Language', 'required');
         $this->form_validation->set_rules('measurement', 'Measurement', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|sha1');
         
         // validate form input
         if ($this->form_validation->run() == FALSE) {
@@ -82,15 +81,10 @@ class Home extends MY_Controller
             }
         } else {
             // insert the user registration details into database
-            if ($this->input->post('newpassword') !== '') {
-                $pw = $this->input->post('newpassword');
-            } else {
-                $pw = $this->input->post('password');
-            }
+            
             $data = array(
                 'id' => $id,
                 'name' => $this->input->post('name'),
-                'password' => $pw,
                 'gender' => $this->input->post('gender'),
                 'email' => $this->input->post('email'),
                 'birthday' => $this->input->post('birthday'),
@@ -98,12 +92,15 @@ class Home extends MY_Controller
                 'language' => $this->input->post('language'),
                 'measurement' => $this->input->post('measurement')
             );
-            
+            if ($this->input->post('newpassword') !== '') {
+                $data['password'] = $this->input->post('newpassword');
+            }
             // insert form data into database
             if ($this->user_model->updateUser($data)) {
                 
                 // successfully sent mail
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Profile updated!</div>');
+                setCurrentUserData($data);
                 redirect('home/update', $lang);
             } else {
                 // error

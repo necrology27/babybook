@@ -82,14 +82,6 @@
 							<?php echo form_error('measurement'); ?>
 							</span>
 						</div>
-						
-						<div class="form-group">
-							<label for="password2"><?php echo _e('old_password_label'); ?></label>
-							<input id="password2" class="form-control" name="password" placeholder="<?php echo _e('old_password_label'); ?>" type="password" />
-							<span class="text-danger">
-							<?php echo form_error('password'); ?>
-							</span>
-						</div>
 
 						<div class="form-group">
 							<button name="submit" type="submit" class="btn btn-primary"><?php echo _e('save_button'); ?></button>
