@@ -36,7 +36,7 @@
 				 <td>
 				
                  <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" 
-                 		data-placement="bottom" data-content="<?php echo $skill['description'];?>">
+                 		data-placement="bottom" data-html="true" data-content="<?php echo $skill['description'];?>">
                   <?php echo $skill['name'];?>
                  </button>
 				 </td>

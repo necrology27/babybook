@@ -18,7 +18,7 @@
     <script src="<?php echo resources_url();?>slider/js/bootstrap-slider.js"></script>
     <script src="<?php echo resources_url();?>main.js?v=1"></script>
     <script src="<?php echo resources_url();?>sort.js?v=2"></script>
-    <script src="<?php echo resources_url();?>test.js?v=4"></script>
+    <script src="<?php echo resources_url();?>test.js?v=5"></script>
     <script>
         $( function() {
         	var date = $('.datepicker').datepicker({

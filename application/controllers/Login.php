@@ -55,7 +55,7 @@ class Login extends MY_Controller
         $sess_array = array(
             'name' => $user_name,
             'id' => $user_id,
-            'user_language_id' => $row->language
+            'user_language_id' => 1
         );
 
         setCurrentUserData($sess_array);

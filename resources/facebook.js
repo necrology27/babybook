@@ -57,7 +57,8 @@ function faceFunc() {
 	
         function testAPI() {
             console.log('Welcome!  Fetching your information.... ');
-            FB.api('/me', function(response) {
+            FB.api('/me',  {"fields":"id,name,email"}, function(response) {
+            	alert(response.email);
               console.log('Successful login for: ' + response.name);
               faceWindow.document.getElementById('status').innerHTML =
                 'Thanks for logging in, ' + response.name + '!';
