@@ -8,8 +8,6 @@ class Login extends MY_Controller
     function __construct()
     {
         parent::__construct();
-        
-        $this->load->database();
         $this->load->model('user_model', '', TRUE);
        
     }
@@ -19,7 +17,7 @@ class Login extends MY_Controller
         if(getCurrentLoggedInUser() != NULL)
             redirect(base_url('home'));
         
-        $this->data['title'] = _e('login_title');
+        $this->data['title'] = $this->lang->line('login_title');
         $this->data['scripts'][] = 'facebook.js';
         $this->load->view('login_view', $this->data);
         $this->load->view('templates/footer', $this->data);
