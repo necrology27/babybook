@@ -22,6 +22,8 @@ class make_test extends MY_Controller {
         $skills= array();
         $session_data = $this->session->userdata('logged_in');
         $this->data['id'] = $session_data['id'];
+        
+        ls_init_language();
         $this->data['title'] = $this->lang->line('take_test_title');
         
         if($this->child_model->is_parent_child_relation($child_id,  $this->data['id'])==false)
@@ -33,7 +35,6 @@ class make_test extends MY_Controller {
         $child_age = $this->child_model->get_child_age_by_id($child_id);
        
         $ans= $this->answer_model->child_answers( $child_id );
-       
        
         $lang_id=$this->user_model->get_user_lang($session_data['id']);
         
@@ -87,7 +88,6 @@ class make_test extends MY_Controller {
            
            $this->data = $this->data + $datas;
            
-          
            $this->load->view('templates/header.php', $this->data);
            $this->load->view('test_view', $this->data);
            $this->load->view('templates/footer.php', $this->data);

@@ -19,6 +19,7 @@ class Home extends MY_Controller
             $session_data = $this->session->userdata('logged_in');
             $id = $session_data['id'];
             
+            ls_init_language();
             $this->data['title'] = $this->lang->line('home_title');
             
             $this->data['children'] = $this->user_model->get_users_children(getCurrentUserID());
@@ -50,6 +51,7 @@ class Home extends MY_Controller
         $session_data = $this->session->userdata('logged_in');
         $id = getCurrentUserID();
         
+        ls_init_language();
         $this->data['title'] = $this->lang->line('update_title');
         
         // set validation rules

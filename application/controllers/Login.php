@@ -16,7 +16,8 @@ class Login extends MY_Controller
     {
         if(getCurrentLoggedInUser() != NULL)
             redirect(base_url('home'));
-        
+            
+        ls_init_language();
         $this->data['title'] = $this->lang->line('login_title');
         $this->data['scripts'][] = 'facebook.js';
         $this->load->view('login_view', $this->data);

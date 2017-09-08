@@ -23,6 +23,10 @@ $lang['forum'] = "Forum";
 $lang['settings'] = "Settings";
 $lang['logged_in_as'] = "Logged in as";
 $lang['no_child'] = "You have no registered child!";
+$lang['filter'] = "Filter";
+$lang['by_gender'] = "By gender";
+$lang['by_age'] = "By age (months)";
+$lang['sort_by'] = "Sort";
 
 //filter
 $lang['boy']= "Boy";
@@ -38,6 +42,17 @@ $lang['sort_by_name']= "by name";
 $lang['sort_by_age']= "by age";
 $lang['sort_by_registration']= "by registration date";
 $lang['search_by_name']= "Search by name";
+$lang['last_updated']= "Last updated";
+
+//album
+$lang['new_album_label'] = "New album";
+$lang['upload_photo_label'] = "Upload photo";
+$lang['title_label'] = "Title";
+$lang['description_label'] = "Description";
+$lang['choose_file_label'] = "Choose file";
+$lang['click_on_label'] = "Click on";
+$lang['to_select_label'] = "to select an image to upload.";
+$lang['upload_button'] = "Upload";
 
 //labels
 $lang['password_label'] = "Password";
@@ -72,6 +87,10 @@ $lang['save_button'] = "Save";
 $lang['cancel_button'] = "Cancel";
 $lang['signup_button'] = "Registration";
 $lang['send_email_button'] = "Send email";
+$lang['edit_button']= "Edit";
+$lang['take_test_button']= "Take test";
+$lang['profile_button']= "Profile";
+$lang['album_button']= "Album";
 
 //take test
 $lang['pass'] = "Pass";
@@ -80,13 +99,14 @@ $lang['no_opportunity'] = "No opportunity";
 $lang['refusal'] = "Refusal";
 
 //profil
-$lang['profil_title'] = "Child\'s profil";
+$lang['profil_title'] = "Child's profil";
 $lang['actual_development_level'] = "Actual development level";
 $lang['album'] = "Album";
 $lang['social'] = "Personal-Social";
 $lang['fine_motor'] = "Fine Motor - Adaptive";
 $lang['language'] = "Language";
 $lang['gross_motor'] = "Gross Motor";
+$lang['no_data'] = "No data!";
 
 $lang['weak']="Weak";
 $lang['below_average']="Below_average";

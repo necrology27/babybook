@@ -24,6 +24,7 @@ class Child extends MY_Controller {
             }
         }
         
+        ls_init_language();
         $this->data['title'] = $this->lang->line('add_child');
         $this->data['id'] = getCurrentUserID();
         
@@ -193,18 +194,18 @@ class Child extends MY_Controller {
                  'file_name' =>  $file_name,
                  'title' => 'Default image',
              );
-             $imageId=$this->image_model->insertImage($data);
+            $this->data = $this->data + $data;
+            $imageId=$this->image_model->insertImage($data);
                  
             
-             $this->image_model->changeDefaultImage($childId, $imageId);
-            $this->load->view('save_child',$data);
+            $this->image_model->changeDefaultImage($childId, $imageId);
+            $this->load->view('save_child', $this->data);
             return true;
         }
         else
         {
             return $this->upload->display_errors();
             $this->data = $this->data +  array(
-                
                 'error' => $this->upload->display_errors()
             );
             $this->load->view('add_child', $this->data);
@@ -230,7 +231,8 @@ class Child extends MY_Controller {
             $this->data['img_count'] = count($this->data['imgs']);
         else
             $this->data['img_count'] = 0;
-        
+            
+        ls_init_language();
         $this->data['title'] = $this->lang->line('album_title');
     
         $this->load->view('templates/header', $this->data);
@@ -259,7 +261,8 @@ class Child extends MY_Controller {
         $this->data['error'] = ' ';
         $this->data['child_id'] = $child_id;
         
-        $this->data['title'] = $this->lang->line('');
+        ls_init_language();
+        $this->data['title'] = $this->lang->line('profil_title');
         
        
         $scores = $this->answer_model->get_score($child_id);

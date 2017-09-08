@@ -11,12 +11,12 @@
 		else{
 		   ?> 
 		   <div class="container">
-		    	<h3 class="pull-left">Szűrés:</h3>
+		    	<h3 class="pull-left"><?php echo _e('filter');?>:</h3>
 		    	<br>
 		    	<br>
            		<div class="dropdown pull-left col-md-2">
                     <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="gendercheck">
-                    <span class="glyphicon glyphicon-cog"></span>  Nem szerint  <span class="caret"></span></button>
+                    <span class="glyphicon glyphicon-cog"></span>  <?php echo _e('by_gender');?>  <span class="caret"></span></button>
                     <ul class="dropdown-menu" role="filter" aria-labelledby="gendercheck" id="gender_check_list">
                       <li><input type="checkbox" id="female_check"/><?php echo _e('girl'); ?></li>
                       <li><input type="checkbox" id="male_check"/><?php echo _e('boy'); ?></li>
@@ -25,7 +25,7 @@
             
             	
            		<div class="pull-left form-inline">
-           			<label for="ageslider" class="col-md-8">Életkor szerint (hónapok):</label>
+           			<label for="ageslider" class="col-md-8"><?php echo _e('by_age');?>:</label>
            			<div class="form-group col-md-4">
                    		<input type="text" id="ageslider" class="span2" value="" data-slider-min="0" data-slider-max="72"
                     	 data-slider-step="0.1" data-slider-value="[0, 72]" data-slider-orientation="horizontal" data-slider-handle="round"
@@ -39,7 +39,7 @@
             
            		<div class="dropdown pull-right">
                     <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="regdatecheck">
-                    <span class="glyphicon glyphicon-cog"></span> Rendezés <span class="caret"></span></button>
+                    <span class="glyphicon glyphicon-cog"></span> <?php echo _e('sort_by');?> <span class="caret"></span></button>
                     <ul class="dropdown-menu" aria-labelledby="regdatecheck">
                       <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_name()"/><?php echo _e('sort_by_name');; ?></a></li>
                       <li><a href="#" class="small" data-value="option2" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_age()"/><?php echo _e('sort_by_age'); ?></a></li>
@@ -73,11 +73,11 @@
                             <input class="birthday" id="child_id" type = 'hidden' value=<?php echo $children[$j]['birthday']; ?> >
                             <input class="registration_date" id="child_id" type = 'hidden' value=<?php echo $children[$j]['registration_date']; ?> >
                            
-                            <p>Last updated:<br> <?php echo $last_up[$j];?></p>
-                            <h4><a href="<?php echo base_url();?>child/add_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger" title="Edit">Edit</a>
-                            <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['child_id'];?>" class="label label-success"  title="Take test">Take test</a>
-                            <a href="<?php echo base_url();?>child/profil/<?php echo $children[$j]['child_id'];?>" class="label label-success" title="Profil">Profil</a>
-                   			<a href="<?php echo base_url();?>child/album/<?php echo $children[$j]['child_id'];?>" class="label label-success" title="Album">Album</a></h4>	
+                            <p><?php echo _e('last_updated');?>:<br> <?php echo $last_up[$j];?></p>
+                            <h4><a href="<?php echo base_url();?>child/add_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger" title="Edit"><?php echo _e('edit_button');?></a>
+                            <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['child_id'];?>" class="label label-success"  title="Take test"><?php echo _e('take_test_button');?></a>
+                            <a href="<?php echo base_url();?>child/profil/<?php echo $children[$j]['child_id'];?>" class="label label-success" title="Profile"><?php echo _e('profile_button');?></a>
+                   			<a href="<?php echo base_url();?>child/album/<?php echo $children[$j]['child_id'];?>" class="label label-success" title="Album"><?php echo _e('album_button');?></a></h4>	
                       	</div>
                    </div>
         		</div>

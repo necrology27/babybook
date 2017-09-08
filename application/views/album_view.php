@@ -4,45 +4,45 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4><span class="glyphicon"></span>Upload Photo</h4>
+                <h4><span class="glyphicon"></span><?php echo  _e('upload_photo_label');?></h4>
             </div>
             <div class="modal-body" id="upload_modal_body">
                 <form method="post" action="" id="upload_file">
-                    <label for="title">Title</label>
+                    <label for="title"><?php echo  _e('title_label');?></label>
        				<input class="form-control" type="text" name="title" id="new_title" value="" />
        				<br>
-                    <label for="description">Description</label>
+                    <label for="description"><?php echo  _e('description_label');?></label>
        				<input class="form-control" type="text" name="description" id="new_description" value="" />
        				
        				<br>
        				
-                	<label for="new_image">Choose and Upload </label>
+                	<label for="new_image"><?php echo  _e('choose_file_label');?></label>
                     <div class="input-group">
                         <label class="input-group-btn">
                             <span class="btn btn-info">
-                               <?php echo $default_image_label; ?> 
+                               <?php echo  _e('choose_file_label');?>
                             <input id="new_image" type='file' style="display: none;" name='new_image' size='20' />
                             </span>
                         </label>
                         <input type="text" class="form-control" readonly>
                     </div>
-                    <div id="upload" style="display:none;">Uploading..</div>
+                    <div id="upload" style="display:none;"><?php echo  _e('uploading_label');?></div>
                     <br>
                     <input type="button" class="btn btn-default pull-right"
                            id="uploadingFileButton" name="uploadingFileButton"
-                           value="Upload"/>
+                           value="<?php echo  _e('upload_button');?>"/>
               	</form>
             </div>
             <br>
             <div class="modal-footer">
-                <em> Click on <strong>Choose File/ Browse</strong> to select and upload a file </em>
+                <em> <?php echo  _e('click_on_label');?> <strong><?php echo  _e('choose_file_label');?></strong> <?php echo  _e('to_select_label');?> </em>
             </div>
         </div>
     </div>
 </div>
 	<div class="btn-group-vertical col-md-2 pull-right" role="group" aria-label="New image/album">
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#upload_modal" id="new_image_btn">Upload Photo</button>
-      <button type="button" class="btn btn-secondary btn-lg">New Album</button>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#upload_modal" id="new_image_btn"><?php echo  _e('upload_photo_label');?></button>
+      <button type="button" class="btn btn-secondary btn-lg"><?php echo  _e('new_album_label');?></button>
     </div>
 </div>
 <div>

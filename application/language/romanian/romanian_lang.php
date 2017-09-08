@@ -23,6 +23,11 @@ $lang['my_children'] = "Copii";
 $lang['forum'] = "Forum";
 $lang['settings'] = "Setări";
 $lang['no_child'] = "Nu ai nici un copil înregistrat!";
+$lang['filter'] = "Filtru";
+$lang['by_gender'] = "După sex";
+$lang['by_age'] = "După vârstă (luni)";
+$lang['sort_by'] = "Sortare";
+$lang['last_updated']= "Ultima actualizare";
 
 //filter
 $lang['boy']= "Băiat";
@@ -38,6 +43,16 @@ $lang['sort_by_name']= "După nume";
 $lang['sort_by_age']= "După vârstă";
 $lang['sort_by_registration']= "După data de înregistrare";
 $lang['search_by_name']= "Căutare după nume";
+
+//album
+$lang['new_album_label'] = "Album nou";
+$lang['upload_photo_label'] = "Încarcă fotografie";
+$lang['title_label'] = "Titlu";
+$lang['description_label'] = "Descriere";
+$lang['choose_file_label'] = "Alege fișierul";
+$lang['click_on_label'] = "Click pe";
+$lang['to_select_label'] = "pentru a selecta o imagine pe care să o încărcați.";
+$lang['upload_button'] = "Încărcare";
 
 //labels
 $lang['logged_in_as'] = "Conectat ca";
@@ -60,6 +75,10 @@ $lang['save_button'] = "Salvare";
 $lang['cancel_button'] = "Anulare";
 $lang['signup_button'] = "Înregistrare";
 $lang['send_email_button'] = "Trimite email";
+$lang['edit_button']= "Editare";
+$lang['take_test_button']= "Completați testul";
+$lang['profile_button']= "Profil";
+$lang['album_button']= "Album";
 
 //add child
 $lang['child_name_placeholder'] = "Numele copilului";
@@ -78,6 +97,7 @@ $lang['pass'] = "Putea";
 $lang['fail'] = "Nu putea";
 $lang['no_opportunity'] = "Nu este posibil";
 $lang['refusal'] = "Refuz";
+$lang['no_data'] = "Nu există date!";
 
 //profil
 $lang['profil_title'] = "Profilul copilului";

@@ -23,6 +23,11 @@ $lang['forum'] = "Fórum";
 $lang['settings'] = "Beállítások";
 $lang['logged_in_as'] = "Belépve mint";
 $lang['no_child'] = "Nincs bevezetett gyerek!";
+$lang['filter'] = "Szűrés";
+$lang['by_gender'] = "Nem szerint";
+$lang['by_age'] = "Életkor szerint (hónapok)";
+$lang['sort_by'] = "Rendezés";
+$lang['last_updated']= "Utolsó frissítés";
     
 //filter
 $lang['boy']= "Fiú";
@@ -38,6 +43,16 @@ $lang['sort_by_name']= "Név szerint";
 $lang['sort_by_age']= "Életkor szerint";
 $lang['sort_by_registration']= "Regisztráció ideje szerint";
 $lang['search_by_name']= "Keresés név szerint";
+
+//album
+$lang['new_album_label'] = "Új album";
+$lang['upload_photo_label'] = "Fénykép feltöltése";
+$lang['title_label'] = "Cím";
+$lang['description_label'] = "Leírás";
+$lang['choose_file_label'] = "Fájl kiválasztása";
+$lang['click_on_label'] = "Kattintson a";
+$lang['to_select_label'] = "gombra a feltöltendő kép kiválasztásához.";
+$lang['upload_button'] = "Feltöltés";
 
 //editing
 $lang['update_title'] = "Profil frissítése";
@@ -60,6 +75,10 @@ $lang['save_button'] = "Mentés";
 $lang['cancel_button'] = "Mégse";
 $lang['signup_button'] = "Regisztráció";
 $lang['send_email_button'] = "E-mail küldése";
+$lang['edit_button']= "Módosítás";
+$lang['take_test_button']= "Teszt kitöltése";
+$lang['profile_button']= "Profil";
+$lang['album_button']= "Fotóalbum";
 
 //add child
 $lang['child_name_placeholder'] = "Gyerek neve";
@@ -87,6 +106,7 @@ $lang['social'] = "Szociális";
 $lang['fine_motor'] = "Finommozgás";
 $lang['language'] = "Nyelv";
 $lang['gross_motor'] = "Nagymozgás";
+$lang['no_data'] = "Nincs adat!";
 
 $lang['weak']="Gyenge";
 $lang['below_average']="Átlagon aluli";
