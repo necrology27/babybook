@@ -68,13 +68,14 @@ if (!function_exists('__')) {
        
         if ($system) {
             ls_init_language($system);
+        } else {
+            ls_init_language();
         }
        
         $CI = &get_instance();
         $text = $CI->lang->line(trim($key), false);
        
         if ($text === false) {
-            ls_init_language($system);
             $text = $CI->lang->line(trim($key), false);
         }
 

@@ -95,12 +95,16 @@ class Home extends MY_Controller
             if ($this->input->post('newpassword') !== '') {
                 $data['password'] = $this->input->post('newpassword');
             }
-            // insert form data into database
             if ($this->user_model->updateUser($data)) {
                 
-                // successfully sent mail
                 $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Profile updated!</div>');
-                setCurrentUserData($data);
+                $user_data = array(
+                    'id' => $data['id'],
+                    'name' => $data['name'],
+                    'user_language_id' => $data['language']
+                );
+                setCurrentUserData($user_data);
+                ls_init_language();
                 redirect('home/update', $lang);
             } else {
                 // error
