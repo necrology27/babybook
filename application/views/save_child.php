@@ -2,7 +2,7 @@
 
 <input id="child_id" type = 'hidden' value=<?php echo $child_id; ?> >
 	<?php if ($child_id != 0) {
-	echo '<img src='.uploads_url() . $user_id . "/" . $child_id . "/" . $this->image_model->get_def_img($child_id).' alt= '.$missing_image.'. class="back-left" />';
+	    echo "<img src=".uploads_url() . getCurrentUserID() . "/" . $child_id . "/" . $this->image_model->get_def_img($child_id)." alt= '._e('missing_image')' class='back-left' />";
 	} ?>
 	<div class="container animated_form">
 		<div class="row">

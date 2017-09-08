@@ -74,7 +74,8 @@
                             <input class="registration_date" id="child_id" type = 'hidden' value=<?php echo $children[$j]['registration_date']; ?> >
                            
                             <p><?php echo _e('last_updated');?>:<br> <?php echo $last_up[$j];?></p>
-                            <h4><a href="<?php echo base_url();?>child/add_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger" title="Edit"><?php echo _e('edit_button');?></a>
+                            <h4>
+                            <a href="<?php echo base_url();?>child/add_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger" title="Edit"><?php echo _e('edit_button');?></a>
                             <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['child_id'];?>" class="label label-success"  title="Take test"><?php echo _e('take_test_button');?></a>
                             <a href="<?php echo base_url();?>child/profil/<?php echo $children[$j]['child_id'];?>" class="label label-success" title="Profile"><?php echo _e('profile_button');?></a>
                    			<a href="<?php echo base_url();?>child/album/<?php echo $children[$j]['child_id'];?>" class="label label-success" title="Album"><?php echo _e('album_button');?></a></h4>	

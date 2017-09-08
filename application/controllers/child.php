@@ -18,8 +18,10 @@ class Child extends MY_Controller {
         if($get_child_id != 0)
         {
             ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Szulo-e?????
-            if($this->child_model->is_parent_child_relation($get_child_id,  $user_id)==false)
+           
+            if($this->child_model->is_parent_child_relation($get_child_id,  getCurrentUserID())==false)
             {
+                
                 header("Location: http://localhost/babybook_git/index.php/home");
             }
         }
