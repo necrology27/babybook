@@ -40,7 +40,9 @@
 	<div class="form-group">
     	<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>user/forgot'"><?php echo _e('forgot_title'); ?></button>
     	<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>user/register'"><?php echo _e('register_title'); ?></button>
-		<button onclick="faceFunc()">Bejelentkezés Facebook-kal</button>  
+		<div id='fb-root'></div>
+		<div class='fb-login-button' onclick="faceFunc()">Bejelentkezés Facebook-kal</div>  
+		<label id=status></label>
 </div>
 </div>
 </div>

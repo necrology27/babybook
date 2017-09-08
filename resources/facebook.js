@@ -1,36 +1,43 @@
 function faceFunc() {
     
-	var faceWindow = window.open("", "", "width=200,height=100");
-	faceWindow.document.write("<div id='fb-root'></div>");
-	faceWindow.document.write("<div class='fb-login-button'  data-max-rows='1' data-button-type='continue_with' data-show-faces='false' data-auto-logout-link='false' data-use-continue-as='false'></div>");
-	faceWindow.document.write("<label id=status></label>");
+	//var faceWindow = window.open("", "", "width=200,height=100");
+	//faceWindow.document.write("<div id='fb-root'></div>");
+	//faceWindow.document.write("<div class='fb-login-button'  data-max-rows='1' data-button-type='continue_with' data-show-faces='false' data-auto-logout-link='false' data-use-continue-as='false'></div>");
+	//faceWindow.document.write("<label id=status></label>");
 
 	(function(d, s, id) {
+		 console.log("1");
 	    var js, fjs = d.getElementsByTagName(s)[0];
 	    if (d.getElementById(id)) return;
 	    js = d.createElement(s); js.id = id;
 	    js.src = "//connect.facebook.net/hu_HU/sdk.js#xfbml=1&version=v2.10";
 	    fjs.parentNode.insertBefore(js, fjs);
-	}(faceWindow.opener.document, 'script', 'facebook-jssdk'));
+	    console.log("2");
+	}(document, 'script', 'facebook-jssdk'));
 	
     function statusChangeCallback(response) {
+    	console.log("3");
         console.log('statusChangeCallback');
         console.log(response);
         if (response.status === 'connected') {
               testAPI();
         } else {
-        	faceWindow.document.getElementById('status').innerHTML = 'Please log ' +
+        	document.getElementById('status').innerHTML = 'Please log ' +
                 'into this app.';
         }
+        console.log("4");
     }
 	    
     function checkLoginState() {
+    	console.log("5");
 	    FB.getLoginStatus(function(response) {
 	      statusChangeCallback(response);
 	    });
+	    console.log("6");
     }
 	    
     window.fbAsyncInit = function() {
+    	console.log("7");
 	    FB.init({
 	    appId      : '1082827931852967',
 	    cookie     : true,
@@ -43,24 +50,28 @@ function faceFunc() {
 	        statusChangeCallback(response);
 	        
 	    });
+	    console.log("8");
     
     };
 	
     (function(d, s, id) {
+    	console.log("9");
 	        var js, fjs = d.getElementsByTagName(s)[0];
 	        if (d.getElementById(id)) return;
 	        
 	        js = d.createElement(s); js.id = id;
 	        js.src = "//connect.facebook.net/en_US/sdk.js";
 	        fjs.parentNode.insertBefore(js, fjs);
-     }(faceWindow.opener.document, 'script', 'facebook-jssdk'));
+	        console.log("10");
+     }(document, 'script', 'facebook-jssdk'));
 	
         function testAPI() {
+        	console.log("11");
             console.log('Welcome!  Fetching your information.... ');
             FB.api('/me?fields=id,name,first_name,last_name,picture,email,permissions', function(response) {
-            	alert(JSON.stringify(response));
+            	//alert(JSON.stringify(response));
               console.log('Successful login for: ' + response.name);
-              faceWindow.document.getElementById('status').innerHTML =
+              document.getElementById('status').innerHTML =
                 'Thanks for logging in, ' + response.name + '!';
            	var name = response.name;
            	var id= response.id;
@@ -86,5 +97,7 @@ function faceFunc() {
       			});
        
             });
+            console.log("12");
+            //FB.logout();
         }
 }
