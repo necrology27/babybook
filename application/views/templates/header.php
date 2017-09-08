@@ -29,7 +29,7 @@
       <ul class="nav navbar-nav">
 
 		<li><a href="<?php echo base_url();?>child/add_child"><?php echo _e('add_child'); ?></a></li>
-        <li><a href="#"><?php echo _e('forum'); ?></a></li>
+        <li><a href="<?php echo base_url();?>discussions"><?php echo _e('forum'); ?></a></li>
         <li><a href="#"><?php echo _e('settings'); ?></a></li>
       </ul>
       

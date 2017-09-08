@@ -122,3 +122,43 @@ $lang['success_message'] = "Succes!";
 $lang['add_child_error'] = "Oops! Nu se poate <b>adăuga copilul</b>. Încercați din nou mai târziu!";
 $lang['child_update_success'] = "Profilul copilului actualizat cu succes!";
 $lang['child_update_error'] = "Oops! Nu se poate <b>actualiza profilul copilului</b>. Încercați din nou mai târziu!";
+
+
+// ------------------------------------------------------- Forum ----------------------------------------
+// General
+$lang['system_system_name'] = "Forum";
+
+// Top Nav
+$lang['top_nav_view_discussions'] = "Home";
+$lang['top_nav_new_discussion'] = "Új beszélgetés";
+
+// Discussions
+$lang['discussions_title'] = "Beszélgetés";
+$lang['discussions_num_comments'] = 'Hozzászóllások';
+
+// Comments
+$lang['comments_form_instruction'] = "Szólj hozzá";
+$lang['comments_flag'] = ' [Megjelölés]';
+$lang['comments_created_by'] = 'Készítette ';
+$lang['comments_created_at'] = ' létrehozta ';
+$lang['comments_comment_name'] = 'A neved';
+$lang['comments_comment_email'] = 'Email címed';
+$lang['comments_comment_body'] = 'Hozzászollás';
+
+// Discussions
+$lang['discussion_form_instruction'] = "Hozza létre saját témáját, töltse ki az alábbi úrlapot";
+$lang['discussion_flag'] = ' [Megjelölés]';
+$lang['discussion_usr_name'] = 'A neved';
+$lang['discussion_usr_email'] = 'Email címed';
+$lang['discussion_ds_title'] = 'A téma címe';
+$lang['discussion_ds_body'] = 'A kérdésed, megjegyzésed stb.';
+
+// Admin - login
+$lang['admin_login_header'] = "Kérlek jelentkezz be";
+$lang['admin_login_email'] = "Email";
+$lang['admin_login_password'] = "Jelszó";
+$lang['admin_login_signin'] = "Bejelentkezés...";
+$lang['admin_login_error'] = "Oupsz!  Valami hiba történt!";
+$lang['admin_dash_allow'] = "Engedélyezve";
+$lang['admin_dash_disallow'] = "Nem engedélyezve";
+//----------------------------------------------------------------------------------------------------------------

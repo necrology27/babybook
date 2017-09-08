@@ -103,19 +103,6 @@ class user_model extends CI_Model
         $this->db->where('id', $user_id);
         $query = $this->db->get();
         $result = $query->result_array();
-        
-//         if ($this->db->affected_rows() > 0) {
-//             if ($result[0]['language'] == 1) {
-//                 return "english";
-//             } else if ($result[0]['language'] == 2) {
-//                 return "hungarian";
-//             } else {
-//                 return "romanian";
-//             }
-//         } else
-//             return "english";
-        
-
             if ($this->db->affected_rows() > 0) {
                 return $result[0]['language'];
             } else

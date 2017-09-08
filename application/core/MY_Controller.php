@@ -64,7 +64,7 @@ class MY_Controller extends CI_Controller
             ->limit(1)
             ->get();
         
-        if ($query->row() && $query->row()->userId == $current_id) {
+        if ($query->row() && $query->row()->user_id == $current_id) {
             return FALSE;
         } else {
             return TRUE;
