@@ -21,7 +21,6 @@ class Child extends MY_Controller {
            
             if($this->child_model->is_parent_child_relation($get_child_id,  getCurrentUserID())==false)
             {
-                
                 header("Location: http://localhost/babybook_git/index.php/home");
             }
         }
@@ -216,6 +215,13 @@ class Child extends MY_Controller {
     
     function album($child_id = NULL)
     {
+        
+        $scripts = array(
+            'nanogallery/jquery.nanogallery.js',
+            'album.js'
+        );
+        $this->data['scripts'] = $scripts;
+        
         $session_data = $this->session->userdata('logged_in');
         $id = $session_data['id'];
         
@@ -247,8 +253,6 @@ class Child extends MY_Controller {
         $session_data = $this->session->userdata('logged_in');
         $id = $session_data['id'];
         
-        ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Szulo-e?????
-        
         if($this->child_model->is_parent_child_relation($child_id,  $id)==false)
         {
             header("Location: http://localhost/babybook_git/index.php/home");
@@ -266,9 +270,7 @@ class Child extends MY_Controller {
         ls_init_language();
         $this->data['title'] = $this->lang->line('profil_title');
         
-       
         $scores = $this->answer_model->get_score($child_id);
-            #array(4) { ["Personal_Social"]=> int(1) ["Fine_Motor"]=> int(-2) ["Language"]=> int(0) ["Gross Motor"]=> int(0) }
         $min_score=-10;
         $max_score=10;
         

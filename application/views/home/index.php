@@ -18,11 +18,10 @@
                     <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="gendercheck">
                     <span class="glyphicon glyphicon-cog"></span>  <?php echo _e('by_gender');?>  <span class="caret"></span></button>
                     <ul class="dropdown-menu" role="filter" aria-labelledby="gendercheck" id="gender_check_list">
-                      <li><input type="checkbox" id="female_check"/><?php echo _e('girl'); ?></li>
-                      <li><input type="checkbox" id="male_check"/><?php echo _e('boy'); ?></li>
+                      <li class="small"><input type="checkbox" id="female_check"/><?php echo _e('girl'); ?></li>
+                      <li class="small"><input type="checkbox" id="male_check"/><?php echo _e('boy'); ?></li>
                     </ul>
             	 </div>
-            
             	
            		<div class="pull-left form-inline">
            			<label for="ageslider" class="col-md-8"><?php echo _e('by_age');?>:</label>
@@ -41,9 +40,9 @@
                     <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="regdatecheck">
                     <span class="glyphicon glyphicon-cog"></span> <?php echo _e('sort_by');?> <span class="caret"></span></button>
                     <ul class="dropdown-menu" aria-labelledby="regdatecheck">
-                      <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_name()"/><?php echo _e('sort_by_name');; ?></a></li>
-                      <li><a href="#" class="small" data-value="option2" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_age()"/><?php echo _e('sort_by_age'); ?></a></li>
-                      <li><a href="#" class="small" data-value="option1" tabIndex="-3"><input type="radio" name="sort" onclick="sort_by_registration()"/><?php echo _e('sort_by_registration'); ?></a></li>
+                      <li class="small"><input type="radio" name="sort" onclick="sort_by_name()"/><?php echo _e('sort_by_name');; ?></li>
+                      <li class="small"><input type="radio" name="sort" onclick="sort_by_age()"/><?php echo _e('sort_by_age'); ?></li>
+                      <li class="small"><input type="radio" name="sort" onclick="sort_by_registration()"/><?php echo _e('sort_by_registration'); ?></li>
                     </ul>
         	    </div>
             	 

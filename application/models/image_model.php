@@ -57,5 +57,13 @@ class image_model extends CI_Model
         return $this->db->update('children');
     }
     
-    
+    function insertAlbum($childId, $albumName)
+    {
+        $data = array(
+            'child_id' => $childId,
+            'name' => $albumName
+        );
+        $this->db->insert('album', $data);
+        return $this->db->insert_id();
+    }
 }

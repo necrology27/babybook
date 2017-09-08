@@ -16,6 +16,11 @@ class Home extends MY_Controller
     {
         if ($this->session->userdata('logged_in')) {
             
+            $scripts = array(
+                'sort.js'
+            );
+            $this->data['scripts'] = $scripts;
+            
             $session_data = $this->session->userdata('logged_in');
             $id = $session_data['id'];
             
@@ -38,8 +43,6 @@ class Home extends MY_Controller
             $this->load->view('home/index.php', $this->data);
             $this->load->view('templates/footer', $this->data);
         } else {
-            die("nincs session");
-            // If no session, redirect to login page
             redirect('login', 'refresh');
         }
     }

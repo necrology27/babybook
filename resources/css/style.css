@@ -45,8 +45,9 @@
 
 .footer {
 	display: block;
-	position: absolute;
+	position: fixed;
 	float: right;
+	bottom: 3%;
 	right: 5%;
 	text-decoration: none;
 	font-style: normal;

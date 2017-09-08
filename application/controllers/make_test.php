@@ -14,7 +14,7 @@ class make_test extends MY_Controller {
         $scripts = array(
             'test.js'
         );
-        $datas['scripts'] = $scripts;
+        $this->data['scripts'] = $scripts;
     }
     
     public function set_text_items($child_id = NULL)
@@ -78,15 +78,18 @@ class make_test extends MY_Controller {
                    }
                }
            }
-           $datas['skills'] = $skills;
+           
+           $scripts = array(
+               'test.js'
+           );
+           $this->data['scripts'] = $scripts;
+           $this->data['skills'] = $skills;
            $user_data = $this->user_model->get_user_data($session_data['id']);
            $userId = $user_data['id'];
-           $datas['user_name'] = $user_data['name'];
-           $datas['title'] = "Test";
-           $datas['child_id']= $child_id;
-           $datas['child_age']= $child_age;
-           
-           $this->data = $this->data + $datas;
+           $this->data['user_name'] = $user_data['name'];
+           $this->data['title'] = "Test";
+           $this->data['child_id']= $child_id;
+           $this->data['child_age']= $child_age;
            
            $this->load->view('templates/header.php', $this->data);
            $this->load->view('test_view', $this->data);
