@@ -116,6 +116,9 @@ $lang['average']="Medie";
 $lang['good']="Bine";
 $lang['very_good']="Foarte bine";
 
-//error
+//messages
 $lang['missing_image'] = "Lipsește imaginea";
-?>
+$lang['success_message'] = "Succes!";
+$lang['add_child_error'] = "Oops! Nu se poate <b>adăuga copilul</b>. Încercați din nou mai târziu!";
+$lang['child_update_success'] = "Profilul copilului actualizat cu succes!";
+$lang['child_update_error'] = "Oops! Nu se poate <b>actualiza profilul copilului</b>. Încercați din nou mai târziu!";

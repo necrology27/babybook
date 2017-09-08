@@ -116,5 +116,9 @@ $lang['average']="Átlagos";
 $lang['good']="Jó";
 $lang['very_good']="Nagyon jó";
 
-//error
+//messages
 $lang['missing_image'] = "Hiányzó kép";
+$lang['success_message'] = "Siker!";
+$lang['add_child_error'] = "Hoppá! Nem sikerült a <b>gyereket hozzáadni</b>. Próbálkozzon később!";
+$lang['child_update_success'] = "Gyerek profilja sikeresen frissítve!";
+$lang['child_update_error'] = "Hoppá! Nem sikerült a <b>gyereket frissíteni</b>. Próbálkozzon később!";

@@ -116,7 +116,14 @@ $lang['average']="Average";
 $lang['good']="Good";
 $lang['very_good']="Very good";
 
-//error
+//messages
 $lang['missing_image'] = "Missing image";
+$lang['success_message'] = "Success!";
+$lang['add_child_error'] = "Oops! Can't <b>add child</b>.  Please try again later!";
+$lang['child_update_success'] = "Successfully updated your child's profile!";
+$lang['child_update_error'] = "Oops! Can't <b>update your child's profile</b>.  Please try again later!";
+$lang[''] = "";
+$lang[''] = "";
+$lang[''] = "";
 
 ?>
