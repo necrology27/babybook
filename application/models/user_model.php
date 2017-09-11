@@ -141,5 +141,13 @@ class user_model extends CI_Model
         $this->db->where('email', $data);
         return $this->db->update('users');
     }
+    function getAllUsers()
+    {
+        $this->db->select('*');
+        $this->db->from('users');
+        $query = $this->db->get();
+        $result = $query->result_array();
+            return $result;
+    }
     
 }

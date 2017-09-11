@@ -72,6 +72,8 @@ $lang['birthday_label'] = "Születési dátum";
 $lang['language_label'] = "Nyelv";
 $lang['measurement_label'] = "Mértékegységek";
 $lang['old_password_label'] = "Jelenlegi jelszó";
+$lang['role_label'] = "Szerepkör";
+
 
 //buttons
 $lang['add_button'] = "Hozzáad";

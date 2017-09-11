@@ -71,6 +71,8 @@ $lang['birthday_label'] = "Data nasterii";
 $lang['language_label'] = "Limba";
 $lang['measurement_label'] = "Măsură";
 $lang['old_password_label'] = "Parola actuală";
+$lang['registration_date'] = "Registration date";
+$lang['role_label'] = "Role";
 
 //buttons
 $lang['logout'] = "Delogare";

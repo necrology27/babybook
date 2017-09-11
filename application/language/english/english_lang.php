@@ -78,6 +78,8 @@ $lang['genetical_disorders_label'] = "Genetical disorders";
 $lang['other_disorders_label'] = "Other disorders";
 $lang['default_image_label'] = "Default image";
 $lang['my_child_label'] = "My child";
+$lang['registration_date'] = "Registration date";
+$lang['role_label'] = "Role";
 
 //placeholders
 $lang['ex_mail'] = "example@something.com";

@@ -6,6 +6,7 @@ class Admin extends MY_Controller {
         $this->load->helper('string');
         $this->load->library('form_validation');
         $this->load->model('Admin_model');
+        $this->load->model('User_model');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>'); 
     }
 
@@ -69,7 +70,7 @@ class Admin extends MY_Controller {
 
         $this->data['comment_query'] = $this->Admin_model->dashboard_fetch_comments();
         $this->data['discussion_query'] = $this->Admin_model->dashboard_fetch_discussions();
-
+        $this->data['users'] = $this->User_model->getAllUsers();
         $this->load->view('templates/header', $this->data);
         $this->load->view('nav/top_nav');
         $this->load->view('admin/dashboard', $this->data);
