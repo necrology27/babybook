@@ -28,6 +28,8 @@ $lang['by_gender'] = "După sex";
 $lang['by_age'] = "După vârstă (luni)";
 $lang['sort_by'] = "Sortare";
 $lang['last_updated']= "Ultima actualizare";
+$lang['today'] = "Azi";
+$lang['days_ago'] = "zile în urmă";
 
 //filter
 $lang['boy']= "Băiat";

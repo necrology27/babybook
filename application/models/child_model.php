@@ -85,9 +85,14 @@ class child_model extends CI_Model
         $this->db->where('child_id', $id);
         $query = $this->db->get();
         $result = $query->result_array();
-        if ($this->db->affected_rows() > 0)
-            return $result[0]['MAX(checked_date)'];
-        else
+        if ($this->db->affected_rows() > 0) {
+            $today = new DateTime();
+            $today->setTimestamp(time());
+            $last = new DateTime($result[0]['MAX(checked_date)']);
+            $diff = $today->diff($last)->format("%a");
+            
+            return $diff;
+        } else
             return false;
     }
     

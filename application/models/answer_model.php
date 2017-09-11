@@ -95,6 +95,7 @@ class answer_model extends CI_Model
         $this->db->where('a.child_id', $child_id);
         $query = $this->db->get();
         $result = $query->result_array();
+        
         return $result;
     }
     
@@ -136,8 +137,11 @@ class answer_model extends CI_Model
     function get_score($child_id)
     {
         $full_answers = $this->get_answers_with_data_by_child($child_id);
-        $age=$full_answers[0]["age"];
-            #skill_group/ok szerint
+        $age = 0;
+        if($full_answers != null){
+            $age=$full_answers[0]["age"];
+        }
+       
         $ans1=array();
         $ans2=array();
         $ans3=array();
@@ -147,8 +151,6 @@ class answer_model extends CI_Model
         
         foreach ($full_answers as $one_answer)
         {
-            #echo '<pre>' .var_dump($one_answer). '</pre>';
-            
             if($one_answer["skill_group_id"]==1)
                 $ans1[] = $one_answer;
                 elseif($one_answer["skill_group_id"]==2)

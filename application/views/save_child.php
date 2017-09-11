@@ -95,8 +95,6 @@
 								</span>
 						</div>
 
-						
-						
 						<div class="form-group">
 						<div class="input-group">
                             <label class="input-group-btn">

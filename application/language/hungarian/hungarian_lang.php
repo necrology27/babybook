@@ -28,6 +28,8 @@ $lang['by_gender'] = "Nem szerint";
 $lang['by_age'] = "Életkor szerint (hónapok)";
 $lang['sort_by'] = "Rendezés";
 $lang['last_updated']= "Utolsó frissítés";
+$lang['today'] = "Ma";
+$lang['days_ago'] = "napja";
     
 //filter
 $lang['boy']= "Fiú";

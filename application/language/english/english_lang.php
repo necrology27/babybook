@@ -27,6 +27,9 @@ $lang['filter'] = "Filter";
 $lang['by_gender'] = "By gender";
 $lang['by_age'] = "By age (months)";
 $lang['sort_by'] = "Sort";
+$lang['last_updated']= "Last updated";
+$lang['today'] = "Today";
+$lang['days_ago'] = "days ago";
 
 //filter
 $lang['boy']= "Boy";
@@ -42,7 +45,6 @@ $lang['sort_by_name']= "by name";
 $lang['sort_by_age']= "by age";
 $lang['sort_by_registration']= "by registration date";
 $lang['search_by_name']= "Search by name";
-$lang['last_updated']= "Last updated";
 
 //album
 $lang['new_album_label'] = "New album";

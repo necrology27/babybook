@@ -72,7 +72,13 @@
                             <input class="birthday" id="child_id" type = 'hidden' value=<?php echo $children[$j]['birthday']; ?> >
                             <input class="registration_date" id="child_id" type = 'hidden' value=<?php echo $children[$j]['registration_date']; ?> >
                            
-                            <p><?php echo _e('last_updated');?>:<br> <?php echo $last_up[$j];?></p>
+                            <p><?php echo _e('last_updated');?>:<br> <?php if ($last_up[$j] == 0) 
+                                                                              echo _e('today');
+                                                                           else {
+                                                                              echo $last_up[$j] . " "; 
+                                                                              _e('days_ago');
+                                                                           }
+                                                                     ?></p>
                             <h4>
                             <a href="<?php echo base_url();?>child/add_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger" title="Edit"><?php echo _e('edit_button');?></a>
                             <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['child_id'];?>" class="label label-success"  title="Take test"><?php echo _e('take_test_button');?></a>
