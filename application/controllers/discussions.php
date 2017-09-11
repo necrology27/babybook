@@ -21,6 +21,8 @@ class Discussions extends MY_Controller {
             $page_data['dir'] = 'ASC';
         }
         
+        ls_init_language();
+        $this->data['title'] = $this->lang->line('discussions_title');
         $page_data['query'] = $this->Discussions_model->fetch_discussions($filter,$direction);
         
         $this->load->view('templates/header');
@@ -33,6 +35,8 @@ class Discussions extends MY_Controller {
         $this->form_validation->set_rules('ds_title', $this->lang->line('discussion_ds_title'), 'required|min_length[1]|max_length[255]');
         $this->form_validation->set_rules('ds_body', $this->lang->line('discussion_ds_body'), 'required|min_length[1]|max_length[5000]');
         
+        ls_init_language();
+        $this->data['title'] = $this->lang->line('top_nav_new_discussion');
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates/header');
             $this->load->view('nav/top_nav');

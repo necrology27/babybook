@@ -10,6 +10,7 @@ $lang['update_title'] = "Update profile";
 $lang['child_update_title'] = "Update your child's profile";
 $lang['take_test_title'] = "Take the test";
 $lang['album_title'] = "Photo Gallery";
+$lang['discussions_title'] = "Discuți";
 
 //login info
 $lang['back_to_login'] = "Back to login";
@@ -136,7 +137,7 @@ $lang[''] = "";
 
 // ------------------------------------------------------- Forum ----------------------------------------
 // General
-$lang['system_system_name'] = "Forum";
+$lang['system_system_name'] = "babybook Forum";
 
 // Top Nav
 $lang['top_nav_view_discussions'] = "Home";
@@ -175,5 +176,3 @@ $lang['admin_dash_allow'] = "Allow";
 $lang['admin_dash_disallow'] = "Disallow";
 
 //-------------------------------------------------------------------------------------------------------------
-
-?>

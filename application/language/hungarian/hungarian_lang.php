@@ -8,6 +8,7 @@ $lang['register_title'] = "Regisztráció";
 $lang['forgot_title'] = "Elfelejtett jelszó";
 $lang['album_title'] = "Fotóalbum";
 $lang['users'] = "Felhasználók";
+$lang['discussions_title'] = "Témák";
 
 //login info
 $lang['password_label'] = "Jelszó";
@@ -133,14 +134,14 @@ $lang['child_update_error'] = "Hoppá! Nem sikerült a <b>gyereket frissíteni</
 
 // ------------------------------------------------------- Forum ----------------------------------------
 // General
-$lang['system_system_name'] = "Forum";
+$lang['system_system_name'] = "babybook Fórum";
 
 // Top Nav
 $lang['top_nav_view_discussions'] = "Home";
 $lang['top_nav_new_discussion'] = "Új beszélgetés";
 
 // Discussions
-$lang['discussions_title'] = "Beszélgetés";
+$lang['discussions_title'] = "Beszélgetések";
 $lang['discussions_num_comments'] = 'Hozzászóllások';
 
 // Comments

@@ -2,20 +2,19 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><?php echo $this->lang->line('system_system_name'); ?></a>
+      <a class="navbar-brand" href="<?php echo base_url();?>home">babybook</a>
     </div>
-    <div class="navbar-collapse collapse">
-    
+<div class="navbar-collapse collapse">
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">babybook</a>
+      <a class="navbar-brand" href="<?php echo base_url();?>admin/dashboard"><?php echo $this->lang->line('system_system_name'); ?></a>
     </div>
     
       <ul class="nav navbar-nav">

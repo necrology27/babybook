@@ -68,7 +68,8 @@ class Admin extends MY_Controller {
     public function users() {
         
         $this->data['users'] = $this->User_model->getAllUsers();
-        
+        ls_init_language();
+        $this->data['title'] = $this->lang->line('forum');
         
         $this->load->view('templates/header', $this->data);
         $this->load->view('nav/top_nav');
@@ -81,6 +82,8 @@ class Admin extends MY_Controller {
         
         $this->data['discussion_query'] = $this->Admin_model->dashboard_fetch_discussions();
         
+        ls_init_language();
+        $this->data['title'] = $this->lang->line('forum');
         
         $this->load->view('templates/header', $this->data);
         $this->load->view('nav/top_nav');
@@ -93,6 +96,8 @@ class Admin extends MY_Controller {
         
         $this->data['children'] = $this->Child_model->getAllChildren();
         
+        ls_init_language();
+        $this->data['title'] = $this->lang->line('forum');
         
         $this->load->view('templates/header', $this->data);
         $this->load->view('nav/top_nav');
@@ -105,6 +110,8 @@ class Admin extends MY_Controller {
         
         $this->data['comment_query'] = $this->Admin_model->dashboard_fetch_comments();
         
+        ls_init_language();
+        $this->data['title'] = $this->lang->line('forum');
         $this->load->view('templates/header', $this->data);
         $this->load->view('nav/top_nav');
         $this->load->view('admin/admin_nav', $this->data);
@@ -116,8 +123,10 @@ class Admin extends MY_Controller {
         if ($this->session->userdata('logged_in') == FALSE) {
             redirect('admin/login');
         } 
-
-                $this->load->view('templates/header', $this->data);
+        
+        ls_init_language();
+        $this->data['title'] = $this->lang->line('forum');
+        $this->load->view('templates/header', $this->data);
         $this->load->view('nav/top_nav');
         $this->load->view('admin/admin_nav', $this->data);
         $this->load->view('admin/dashboard', $this->data);

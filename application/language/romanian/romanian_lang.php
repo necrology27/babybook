@@ -133,7 +133,7 @@ $lang['child_update_error'] = "Oops! Nu se poate <b>actualiza profilul copilului
 
 // ------------------------------------------------------- Forum ----------------------------------------
 // General
-$lang['system_system_name'] = "Forum";
+$lang['system_system_name'] = "babybook Forum";
 
 // Top Nav
 $lang['top_nav_view_discussions'] = "Home";

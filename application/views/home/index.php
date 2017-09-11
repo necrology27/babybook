@@ -13,7 +13,6 @@
 		   <div class="container">
 		    	<h3 class="pull-left"><?php echo _e('filter');?>:</h3>
 		    	<br>
-		    	<br>
            		<div class="dropdown pull-left col-md-2">
                     <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="gendercheck">
                     <span class="glyphicon glyphicon-cog"></span>  <?php echo _e('by_gender');?>  <span class="caret"></span></button>
@@ -24,7 +23,7 @@
             	 </div>
             	
            		<div class="pull-left form-inline">
-           			<label for="ageslider" class="col-md-8"><?php echo _e('by_age');?>:</label>
+           			<label for="ageslider" class="col-md-8 col-xs-12"><?php echo _e('by_age');?>:</label>
            			<div class="form-group col-md-4">
                    		<input type="text" id="ageslider" class="span2" value="" data-slider-min="0" data-slider-max="72"
                     	 data-slider-step="0.1" data-slider-value="[0, 72]" data-slider-orientation="horizontal" data-slider-handle="round"
@@ -32,7 +31,7 @@
 					</div>
                 </div>
                 
-                <div class="col-xs-2 pull-right form-group">
+                <div class="col-xs-12 col-md-2 pull-right form-group">
                 	<input class="form-control" type="text" id="myInput" onkeyup="myFunction()" placeholder="<?php echo _e('search_by_name'); ?>">
                 </div>
             
