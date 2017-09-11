@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0 charset=utf-8">
-<link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>bootstrap-3.3.7-dist/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>bootstrap-3.3.7-dist/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>css/style.css">
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>slider/css/slider.css">
-<link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>jquery-ui/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>nanogallery/css/nanogallery.css">
+<link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>jquery-ui/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>nanogallery/dist/css/nanogallery.min.css">
 
 <title>babybook | <?php echo $this->data['title']; ?></title>
 </head>

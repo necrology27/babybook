@@ -107,7 +107,7 @@ class Child extends MY_Controller {
                     $this->data['child_id'] = $childID;
                     // successfully sent mail
                    
-                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">' . _e('success_message') . '</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">' . $this->lang->line('success_message') . '</div>');
                     $err = $this->do_upload($this->data["user_id"], $childID);
                     
                     if ($err !== true) {
@@ -118,7 +118,7 @@ class Child extends MY_Controller {
                     redirect('make_test/set_text_items/'. $childID);
                 } else {
                     // error
-                    $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">' . _e('add_child_error'). '</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">' . $this->lang->line('add_child_error'). '</div>');
                     redirect('child/add_child');
                 }
                
@@ -130,7 +130,7 @@ class Child extends MY_Controller {
                     
                     if ($_FILES['userfile'] != null) {
                         
-                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">' . _e('success_message') . '</div>');
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">' . $this->lang->line('success_message') . '</div>');
                         
                         $err = $this->do_upload($session_data['id'], $get_child_id);
                         
@@ -141,10 +141,10 @@ class Child extends MY_Controller {
                         }
                     }
                     
-                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">' . _e('child_profile_success') . '</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">' . $this->lang->line('child_profile_success') . '</div>');
                     redirect('child/add_child/'. $get_child_id, $lang);
                 } else {
-                    $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">' . _e('child_profile_error') . '</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">' . $this->lang->line('child_profile_error') . '</div>');
                     redirect('child/add_child'. $get_child_id, $lang);
                 }
                 
@@ -217,7 +217,7 @@ class Child extends MY_Controller {
     {
         
         $scripts = array(
-            'nanogallery/jquery.nanogallery.js',
+            'nanogallery/dist/jquery.nanogallery.min.js',
             'album.js'
         );
         $this->data['scripts'] = $scripts;

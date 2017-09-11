@@ -11,10 +11,10 @@
         var very_good = "<?php echo _e('very_good');?>";
         var no_data = "<?php echo _e('no_data');?>";
     </script>
-    <script src="<?php echo resources_url();?>jquery.js"></script>
-    <script src="<?php echo resources_url();?>jquery.form.js"></script>
-    <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
-    <script src="<?php echo resources_url();?>bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="<?php echo resources_url();?>jquery-3.2.1.min.js"></script>
+    <script src="<?php echo resources_url();?>jquery.form.min.js"></script>
+    <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.min.js"></script>
+    <script src="<?php echo resources_url();?>bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="<?php echo resources_url();?>slider/js/bootstrap-slider.js"></script>
     <script>
         $( function() {

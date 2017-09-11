@@ -31,6 +31,7 @@ $(document).ready(function() {
 		colorScheme : babyScheme,
 		colorSchemeViewer : babySchemeViewer,
 		thumbnailWidth : '300 XS100 LA400 XL500',
-		thumbnailHeight : '200 XS80 LA250 XL350'
+		thumbnailHeight : '200 XS80 LA250 XL350',
+		thumbnailLabel: { position: 'overImageOnBottom', hideIcons: true }
 	});
 });
