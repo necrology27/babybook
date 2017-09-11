@@ -143,6 +143,7 @@ $lang['discussions_title'] = "Discussions";
 $lang['discussions_num_comments'] = 'Comments';
 
 // Comments
+$lang['comments_title'] = "Comments";
 $lang['comments_form_instruction'] = "Join in, add your comment below.";
 $lang['comments_flag'] = ' [Flag]';
 $lang['comments_created_by'] = 'Created by ';

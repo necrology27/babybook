@@ -139,6 +139,7 @@ $lang['discussions_title'] = "Beszélgetés";
 $lang['discussions_num_comments'] = 'Hozzászóllások';
 
 // Comments
+$lang['comments_title'] = "Comentarii";
 $lang['comments_form_instruction'] = "Szólj hozzá";
 $lang['comments_flag'] = ' [Megjelölés]';
 $lang['comments_created_by'] = 'Készítette ';

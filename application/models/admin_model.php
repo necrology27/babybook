@@ -5,36 +5,43 @@ class Admin_model extends CI_Model {
         parent::__construct();
     }
     function dashboard_fetch_comments() {
-        $query = "SELECT * FROM 'comments', 'users'
-              WHERE 'comments'.'usr_id' = 'users'.'id'
-              AND 'cm_is_active' = '0' ";
         
-        $result = $this->db->query($query);
         
-        if ($result) {
-            return $result;
-        } else {
-            return false;
-        }
+        $this->db->select('*');
+        $this->db->from('comments a');
+        $this->db->join('users b', 'b.id=a.usr_id', 'left');
+        $query = $this->db->get();
+        
+//         $query = "SELECT * FROM 'comments', 'users'
+//               WHERE 'comments'.'usr_id' = 'users'.'id'
+//               AND 'cm_is_active' = '0' ";
+        $result = $query->result_array();
+        return $result;
+       
     }
     function dashboard_fetch_discussions() {
-        $query = "SELECT * FROM 'discussions', 'users'
-             WHERE 'discussions'.'usr_id' = 'users'.'id'
-             AND 'ds_is_active' = '0' ";
+        $this->db->select('*');
+        $this->db->from('discussions a');
+        $this->db->join('users b', 'b.id=a.usr_id', 'left');
+        $query = $this->db->get();
         
-        $result = $this->db->query($query);
+//         $query = "SELECT * FROM 'discussions', 'users'
+//              WHERE 'discussions'.'usr_id' = 'users'.'id'
+//              AND 'ds_is_active' = '0' "; enelkul!!!!
         
-        if ($result) {
+        $result = $query->result_array();
             return $result;
-        } else {
-            return false;
-        }
+       
     }
     
     function does_user_exist($email) {
+        
+        $this->db->select('*');
+        $this->db->from('users');
         $this->db->where('email', $email);
-        $query = $this->db->get('users');
-        return $query;
+        $query = $this->db->get();
+        $result = $query->result_array();
+        return $result;
     }
     function update_comments($is_active, $id) {
         if ($is_active == 1) {
