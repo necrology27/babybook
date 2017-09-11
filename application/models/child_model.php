@@ -13,6 +13,16 @@ class child_model extends CI_Model
         $this->db->insert('children', $data);
         return $this->db->insert_id();
     }
+    function getAllChildren()
+    {
+        $this->db->select('*');
+        $this->db->from('children');
+        $query = $this->db->get();
+        $result = $query->result_array();
+        
+        return $result;
+      
+    }
     
     function update_child_by_id($child_id, $data)
     {

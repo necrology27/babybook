@@ -30,6 +30,7 @@ $lang['sort_by'] = "Sort";
 $lang['last_updated']= "Last updated";
 $lang['today'] = "Today";
 $lang['days_ago'] = "days ago";
+$lang['users'] = "Users";
 
 //filter
 $lang['boy']= "Boy";
@@ -105,6 +106,7 @@ $lang['no_opportunity'] = "No opportunity";
 $lang['refusal'] = "Refusal";
 
 //profil
+$lang['children'] = "Children";
 $lang['profil_title'] = "Child's profil";
 $lang['actual_development_level'] = "Actual development level";
 $lang['album'] = "Album";
@@ -113,6 +115,7 @@ $lang['fine_motor'] = "Fine Motor - Adaptive";
 $lang['language'] = "Language";
 $lang['gross_motor'] = "Gross Motor";
 $lang['no_data'] = "No data!";
+$lang['parent'] = "Parent";
 
 $lang['weak']="Weak";
 $lang['below_average']="Below_average";

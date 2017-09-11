@@ -7,6 +7,7 @@ $lang['login_title'] = "Belépés";
 $lang['register_title'] = "Regisztráció";
 $lang['forgot_title'] = "Elfelejtett jelszó";
 $lang['album_title'] = "Fotóalbum";
+$lang['users'] = "Felhasználók";
 
 //login info
 $lang['password_label'] = "Jelszó";
@@ -87,6 +88,7 @@ $lang['profile_button']= "Profil";
 $lang['album_button']= "Fotóalbum";
 
 //add child
+$lang['children'] = "Gyerekek";
 $lang['child_name_placeholder'] = "Gyerek neve";
 $lang['birth_weight_label'] = "Születési tömeg";
 $lang['birth_length_label'] = "Születési hossz";
@@ -96,6 +98,7 @@ $lang['none_placeholder'] = "semmi";
 $lang['other_disorders_label'] = "Egyéb rendellenességek";
 $lang['default_image_label'] = "Alapértelmezett kép";
 $lang['my_child_label'] = "Saját gyerek";
+$lang['parent'] = "Szülő";
 
 //take test
 $lang['take_test_title'] = "Teszt kitöltése";

@@ -30,6 +30,7 @@ $lang['sort_by'] = "Sortare";
 $lang['last_updated']= "Ultima actualizare";
 $lang['today'] = "Azi";
 $lang['days_ago'] = "zile în urmă";
+$lang['users'] = "Utilizatori";
 
 //filter
 $lang['boy']= "Băiat";
@@ -87,6 +88,7 @@ $lang['profile_button']= "Profil";
 $lang['album_button']= "Album";
 
 //add child
+$lang['children'] = "Copii";
 $lang['child_name_placeholder'] = "Numele copilului";
 $lang['birth_weight_label'] = "Greutate la naștere";
 $lang['birth_length_label'] = "Lungime la naștere";
@@ -96,6 +98,7 @@ $lang['none_placeholder'] = "nici unul";
 $lang['other_disorders_label'] = "Alte tulburări";
 $lang['default_image_label'] = "Imagine prestabilită";
 $lang['my_child_label'] = "Copilul meu";
+$lang['parent'] = "Părinte";
 
 //take test
 $lang['take_test_title'] = "Completați testul";

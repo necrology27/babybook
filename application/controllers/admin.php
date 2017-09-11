@@ -7,9 +7,11 @@ class Admin extends MY_Controller {
         $this->load->library('form_validation');
         $this->load->model('Admin_model');
         $this->load->model('User_model');
+        $this->load->model('Child_model');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>'); 
     }
 
+    
     public function index() {
          
 
@@ -63,16 +65,61 @@ class Admin extends MY_Controller {
 //         }
 //     }
 
+    public function users() {
+        
+        $this->data['users'] = $this->User_model->getAllUsers();
+        
+        
+        $this->load->view('templates/header', $this->data);
+        $this->load->view('nav/top_nav');
+        $this->load->view('admin/admin_nav', $this->data);
+        $this->load->view('admin/users', $this->data);
+        $this->load->view('templates/footer', $this->data);
+    }
+    
+    public function discussions() {
+        
+        $this->data['discussion_query'] = $this->Admin_model->dashboard_fetch_discussions();
+        
+        
+        $this->load->view('templates/header', $this->data);
+        $this->load->view('nav/top_nav');
+        $this->load->view('admin/admin_nav', $this->data);
+        $this->load->view('admin/discussions', $this->data);
+        $this->load->view('templates/footer', $this->data);
+    }
+    
+    public function children() {
+        
+        $this->data['children'] = $this->Child_model->getAllChildren();
+        
+        
+        $this->load->view('templates/header', $this->data);
+        $this->load->view('nav/top_nav');
+        $this->load->view('admin/admin_nav', $this->data);
+        $this->load->view('admin/children', $this->data);
+        $this->load->view('templates/footer', $this->data);
+    }
+    
+    public function comments() {
+        
+        $this->data['comment_query'] = $this->Admin_model->dashboard_fetch_comments();
+        
+        $this->load->view('templates/header', $this->data);
+        $this->load->view('nav/top_nav');
+        $this->load->view('admin/admin_nav', $this->data);
+        $this->load->view('admin/comments', $this->data);
+        $this->load->view('templates/footer', $this->data);
+    }
+
     public function dashboard() {
         if ($this->session->userdata('logged_in') == FALSE) {
             redirect('admin/login');
         } 
 
-        $this->data['comment_query'] = $this->Admin_model->dashboard_fetch_comments();
-        $this->data['discussion_query'] = $this->Admin_model->dashboard_fetch_discussions();
-        $this->data['users'] = $this->User_model->getAllUsers();
-        $this->load->view('templates/header', $this->data);
+                $this->load->view('templates/header', $this->data);
         $this->load->view('nav/top_nav');
+        $this->load->view('admin/admin_nav', $this->data);
         $this->load->view('admin/dashboard', $this->data);
         $this->load->view('templates/footer', $this->data);
     }
