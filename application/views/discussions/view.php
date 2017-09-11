@@ -12,11 +12,9 @@ SORT: <?php echo anchor('discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC
     <?php foreach ($query as $result) { ?>
       <tr>
         <td>
+        <img src="<?php echo resources_url();?>img/<?php echo $result["role"];?>.ico" alt="flag" style="width:32px;height:32px;border:0;">
           <?php echo anchor('comments/index/'.$result['ds_id'],$result['ds_title']) . ' '
                 . _e('comments_created_by') . $result['name']; ?>
-
-          <?php echo anchor('discussions/flag/'.$result['ds_id'],
-          _e('discussion_flag')) ; ?>
           <br />
           <?php echo $result['ds_body'] ; ?>
         </td>

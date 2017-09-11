@@ -8,7 +8,9 @@
 <?php } ?>
 
 <!-- Comment - list of comments -->
-<?php foreach ($comment_query as $comment_result) { ?>
+<?php foreach ($comment_query as $comment_result) { 
+    
+    ?>
   <li class="media">
   
   <!-- user kepe 
@@ -16,7 +18,12 @@
       <img class="media-object" src="<?php echo base_url();?>resources/img/image.jpeg" />
      </a> -->
     <div class="media-body">
-      <h4 class="media-heading"><?php echo $comment_result['name'] . anchor('comments/flag/'.$comment_result['ds_id'] . '/' . $comment_result['cm_id'],_e('comments_flag')) ; ?></h4>
+      <h4 class="media-heading">
+      	<img src="<?php echo resources_url();?>img/<?php echo $comment_result["role"];?>.ico" alt="flag" style="width:32px;height:32px;border:0;">
+      	<?php echo $comment_result['name'] ; ?>
+      </h4>
+      
+      
       <?php echo $comment_result['cm_body'] ; ?>
     </div>
   </li>
@@ -27,7 +34,7 @@
 <p class="lead"><?php echo $this->lang->line('comments_form_instruction');?></p>
 
 <?php echo validation_errors(); ?>
-<?php echo form_open('comments/index','role="form"') ; ?>
+<?php echo form_open('comments/index') ; ?>
     
     <div class="form-group  col-md-10">
       <label for="comment_body"><?php echo $this->lang->line('comments_comment_body');?></label>

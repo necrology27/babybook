@@ -15,6 +15,7 @@ class Comments_model extends CI_Model {
         $this->db->order_by("a.cm_created_at", 'DESC');
         $query = $this->db->get();
         $result = $query->result_array();
+        return $result;
         
     }
     function new_comment($data) {
