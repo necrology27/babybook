@@ -9,6 +9,7 @@
       <th><?php echo _e('disorders_label') ?></th>
       <th><?php echo _e('birth_weight_label') ?></th>
       <th><?php echo _e('birth_length_label') ?></th>
+      <th><?php echo _e('delete') ?></th>
           
         </tr>
     </thead>
@@ -31,6 +32,10 @@
                   </td>
                   <td><?php echo $row['birth_weight'] ; ?></td>
                   <td><?php echo $row['birth_length'] ; ?></td>
+                  <td><?php echo anchor('admin/delete_child/'.$row['child_id'], 'Delete', 
+                             array('onClick' => "return confirm('Are you sure you want to delete?')"));
+                        ?><span class="glyphicon glyphicon-trash"></span>
+					</td>
                 <tr>
                
                   <td></td>

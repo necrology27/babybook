@@ -2,15 +2,18 @@
     <thead>
         <tr>
           <th>#</th>
-          <th>facebook id</th>
           <th><?php echo _e('name_label') ?></th>
           <th><?php echo _e('gender_label') ?></th>
+          <th><?php echo _e('number_of_children') ?></th>
+          <th><?php echo _e('number_of_discussions') ?></th>			<!-- vagy pontok szama -->
+          <th><?php echo _e('number_of_comments') ?></th>
           <th><?php echo _e('email_label') ?></th>
           <th><?php echo _e('registration_date') ?></th>
           <th><?php echo _e('birthday_label') ?></th>
           <th><?php echo _e('role_label') ?></th>
           <th><?php echo _e('language_label') ?></th>
           <th><?php echo _e('measurement_label') ?></th>
+          <th></th>
         <!--  <td>Actions</td> -->
         </tr>
     </thead>
@@ -19,22 +22,22 @@
             <?php foreach ($users as $row) : ?>
                 <tr>
                   <td><?php echo $row['id'] ; ?></td>
-                  <td><?php echo $row['facebook_id'] ; ?></td>
-                  <td><?php echo $row['name'] ; ?></td>
+                  <td><?php echo $row['name'] ; ?><?php if ($row['facebook_id'] != null) {?>  <span class="fa fa-facebook-square"></span><?php } ?></td>
                   <td><?php echo $row['gender'] ; ?></td>
+                  <td><?php echo $row['num_of_children'] ; ?></td>
+                  <td></td>
+                  <td></td>                  
                   <td><?php echo $row['email'] ; ?></td>
                   <td><?php echo $row['registration_date'] ; ?></td>
                   <td><?php echo $row['birthday'] ; ?></td>
                   <td><?php echo $row['role'] ; ?></td>
                   <td><?php echo $row['language'] ; ?></td>
                   <td><?php echo $row['measurement'] ; ?></td>
-                  
-                  <!-- <td><?php echo anchor('admin/update_item/cm/allow/'.
-                    $row->cm_id,$this->lang->line('admin_dash_allow')) . 
-                    ' ' . anchor('admin/update_item/cm/disallow/'.
-                    $row->cm_id,$this->lang->line('admin_dash_disallow')) ; ?>
-                  </td>
-                </tr> -->
+<!--                   <td><span class="glyphicon glyphicon-trash"></span></td> -->
+                  <td><?php echo anchor('admin/delete_user/'.$row['id'], 'Delete', 
+                             array('onClick' => "return confirm('Are you sure you want to delete?')"));
+                        ?><span class="glyphicon glyphicon-trash"></span>
+					</td>
                 <tr>
                
                   <td></td>

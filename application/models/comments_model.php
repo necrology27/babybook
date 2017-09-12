@@ -41,4 +41,8 @@ class Comments_model extends CI_Model {
             return false;
         }
     }
+    function delete($id){
+        $this -> db -> where('cm_id', $id);
+        $this->db->update('comments', array('cm_is_active' => '0'));
+    }
 }

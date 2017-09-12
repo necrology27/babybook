@@ -73,5 +73,9 @@ class Discussions_model extends CI_Model {
             return false;
         }
     }
+    function delete($id){
+        $this -> db -> where('ds_id', $id);
+        $this->db->update('discussions', array('ds_is_active' => '0'));
+    }
     
 }

@@ -150,4 +150,21 @@ class user_model extends CI_Model
             return $result;
     }
     
+    function get_all_info(){
+        $this->db->select('id, facebook_id, a.name, 	a.gender, email, a.registration_date, a.birthday, role, language, measurement, COUNT(child_id) as num_of_children');
+        $this->db->from('users a');
+        $this->db->join('children b', 'b.user_id=a.id', 'left');
+        
+      //  $this->db->join('comments c', 'c.usr_id=a.id', 'left');
+      //  $this->db->join('discussions d', 'd.usr_id=a.id', 'left');
+        $this->db->group_by('user_id'); 
+        $query = $this->db->get();
+        $result = $query->result_array();
+        return $result;
+    }
+    function delete($user_id){
+        $this -> db -> where('id', $user_id);
+        $this -> db -> delete('users');
+    }
+    
 }

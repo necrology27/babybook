@@ -10,6 +10,8 @@ class Admin_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('comments a');
         $this->db->join('users b', 'b.id=a.usr_id', 'left');
+        $this->db->where('cm_is_active', 1);
+        
         $query = $this->db->get();
         
 //         $query = "SELECT * FROM 'comments', 'users'
@@ -23,6 +25,7 @@ class Admin_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('discussions a');
         $this->db->join('users b', 'b.id=a.usr_id', 'left');
+        $this->db->where('ds_is_active', 1);
         $query = $this->db->get();
         
 //         $query = "SELECT * FROM 'discussions', 'users'

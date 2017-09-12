@@ -2,9 +2,12 @@
     <thead>
         <tr>
           <th>#</th>
-          <th>Name</th>
-          <th>Email</th>
-         <!--  <td>Actions</td> -->
+          <th><?php echo _e('users')?></th>
+         <th><?php echo _e('discussions_title')?></th>
+          <th><?php echo _e('discussions_text')?></th>
+          <th><?php echo _e('number_of_comments')?></th>
+          <th><?php echo _e('number_of_likes')?></th>
+          <th><?php echo _e('delete') ?></th>
         </tr>
     </thead>
     <tbody>
@@ -14,21 +17,15 @@
             <?php foreach ($discussion_query as $row) : ?>
                 <tr>
                   <td><?php echo $row['ds_id'] ; ?></td>
-                  <td><?php echo $row['name'] ; ?></td>
-                  <td><?php echo $row['email'] ; ?></td>
-             <!--    <td><?php echo anchor('admin/update_item/ds/allow/'.
-                    $row->ds_id,$this->lang->line('admin_dash_allow')) .
-                    ' ' . anchor('admin/update_item/ds/disallow/'.
-                    $row->ds_id,$this->lang->line('admin_dash_disallow')) ; ?>
-                  </td> -->  
-                </tr>
-                <tr>
-                  <td colspan="3"><?php echo $row['ds_title']; ?></td>
+                  <td><?php echo $row['id'] ; ?></td>
+                  <td><?php echo $row['ds_title']; ?></td>
+                  <td><?php echo $row['ds_body']; ?></td>
                   <td></td>
-                </tr>
-                <tr>
-                   <td colspan="3"><?php echo $row['ds_body']; ?></td>
                   <td></td>
+                  <td><?php echo anchor('admin/delete_discussion/'.$row['ds_id'], 'Delete', 
+                             array('onClick' => "return confirm('Are you sure you want to delete?')"));
+                        ?><span class="glyphicon glyphicon-trash"></span>
+					</td>
                 </tr>
             <?php endforeach ; ?>
         <?php else : ?>

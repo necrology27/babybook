@@ -117,6 +117,11 @@ class child_model extends CI_Model
         $age_in_month=($diff->y*12)+$diff->m+($diff->d/30);
         return $age_in_month;
     }
+   
+    function delete($id){
+        $this -> db -> where('child_id', $id);
+        $this -> db -> delete('children');
+    }
     
 }
 ?>

@@ -8,6 +8,8 @@ class Admin extends MY_Controller {
         $this->load->model('Admin_model');
         $this->load->model('User_model');
         $this->load->model('Child_model');
+        $this->load->model('Discussions_model');
+        $this->load->model('Comments_model');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>'); 
     }
 
@@ -15,61 +17,17 @@ class Admin extends MY_Controller {
     public function index() {
          
 
-        redirect('admin/dashboard');
     }
 
-//     public function login() {
-//         $this->form_validation->set_rules('usr_email', $this->lang->line('admin_login_email'), 'required|min_length[1]|max_length[255]');
-//         $this->form_validation->set_rules('usr_password', $this->lang->line('admin_login_password'), 'required|min_length[1]|max_length[25]');
-
-//         if ($this->form_validation->run() == FALSE) {
-//             $this->load->view('common/login_header');
-//             $this->load->view('nav/top_nav');
-//             $this->load->view('admin/login');
-//             $this->load->view('common/footer');
-//         } else {
-//             $usr_email = $this->input->post('usr_email');
-//             $usr_password = $this->input->post('usr_password');
-
-//             $query = $this->Admin_model->does_user_exist($usr_email);
-
-//             if ($query->num_rows() == 1) { // One matching row found
-//                 foreach ($query->result() as $row) {
-//                     // Call Encrypt library
-//                     $this->load->library('encrypt');
-
-//                     // Generate hash from a their password
-//                     $hash = $this->encrypt->sha1($usr_password);
-
-//                     // Compare the generated hash with that in the database
-//                     if ($hash != $row->usr_hash) {
-//                         // Didn't match so send back to login
-//                         $page_data['login_fail'] = true;
-//                         $this->load->view('common/login_header');
-//                         $this->load->view('nav/top_nav');
-//                         $this->load->view('admin/login',$page_data);
-//                         $this->load->view('common/footer'); 
-//                     } else {
-//                         $data = array(
-//                             'usr_id' => $row->usr_id,
-//                             'usr_email' => $row->usr_email,
-//                             'logged_in' => TRUE
-//                         );
-
-//                         // Save data to session
-//                         $this->session->set_userdata($data);
-//                         redirect('admin/dashboard');
-//                     }
-//                 }
-//             }
-//         }
-//     }
 
     public function users() {
-        
-        $this->data['users'] = $this->User_model->getAllUsers();
         ls_init_language();
+        $this->data['users'] = $this->User_model->get_all_info();
+        
+        
+       // echo '<pre>'; var_dump($this->data['users']); echo '</pre>'; die();
         $this->data['title'] = $this->lang->line('forum');
+        $this->data['active'] = 'users';
         
         $this->load->view('templates/header', $this->data);
         $this->load->view('nav/top_nav');
@@ -120,6 +78,9 @@ class Admin extends MY_Controller {
     }
 
     public function dashboard() {
+        
+        $this->data['users'] = $this->User_model->get_all_info();
+        ls_init_language();
         if ($this->session->userdata('logged_in') == FALSE) {
             redirect('admin/login');
         } 
@@ -129,8 +90,26 @@ class Admin extends MY_Controller {
         $this->load->view('templates/header', $this->data);
         $this->load->view('nav/top_nav');
         $this->load->view('admin/admin_nav', $this->data);
-        $this->load->view('admin/dashboard', $this->data);
+        $this->load->view('admin/users', $this->data);
         $this->load->view('templates/footer', $this->data);
+        
+    }
+    
+    public function delete_user($id){
+        $this->User_model->delete($id);
+        redirect('admin/users');
+    }
+    public function delete_child($id){
+        $this->Child_model->delete($id);
+        redirect('admin/children');
+    }
+    public function delete_comment($id){
+        $this->Comments_model->delete($id);
+        redirect('admin/comments');
+    }
+    public function delete_discussion($id){
+        $this->Discussions_model->delete($id);
+        redirect('admin/discussions');
     }
 
     public function update_item() {

@@ -3,9 +3,11 @@
     <thead>
         <tr>
           <th>#</th>
-          <th>Name</th>
-          <th>Email</th>
-        <!--  <td>Actions</td> -->
+          <th><?php echo _e('users')?></th>
+          <th><?php echo _e('discussion')?></th>
+          <th><?php echo _e('comments_comment_body')?></th>
+         
+          <th><?php echo _e('delete') ?></th>
         </tr>
     </thead>
     <tbody>
@@ -13,17 +15,13 @@
             <?php foreach ($comment_query as $row) : ?>
                 <tr>
                   <td><?php echo $row['cm_id'] ; ?></td>
-                  <td><?php echo $row['name'] ; ?></td>
-                  <td><?php echo $row['email'] ; ?></td>
-                  <!-- <td><?php echo anchor('admin/update_item/cm/allow/'.
-                    $row->cm_id,$this->lang->line('admin_dash_allow')) . 
-                    ' ' . anchor('admin/update_item/cm/disallow/'.
-                    $row->cm_id,$this->lang->line('admin_dash_disallow')) ; ?>
-                  </td>
-                </tr> -->
-                <tr>
-                  <td colspan="3"><?php echo $row['cm_body']; ?></td>
-                  <td></td>
+                  <td><?php echo $row['id'] ; ?></td>
+                  <td><?php echo $row['ds_id'] ; ?></td>
+                  <td><?php echo $row['cm_body']; ?></td>
+                  <td><?php echo anchor('admin/delete_comment/'.$row['cm_id'], 'Delete', 
+                             array('onClick' => "return confirm('Are you sure you want to delete?')"));
+                        ?><span class="glyphicon glyphicon-trash"></span>
+					</td>
                 </tr>
             <?php endforeach ; ?>
         <?php else : ?>
