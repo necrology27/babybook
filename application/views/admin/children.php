@@ -21,7 +21,14 @@
                   <td><?php echo $row['user_id'] ; ?></td>
                   <td><?php echo $row['gender'] ; ?></td>
                   <td><?php echo $row['birthday'] ; ?></td>
-                  <td><?php echo _e('genetical_disorders_label')."  ".$row['genetical_disorders']."  ". _e('other_disorders_label') ."  ". $row['other_disorders'] ; ?></td>
+                  <td><?php 
+                        if($row['genetical_disorders'] != null){ 
+                            echo _e('genetical_disorders_label')."  ".$row['genetical_disorders']; 
+                        } 
+                        if($row['other_disorders'] != null)
+                            echo _e('other_disorders_label') ."  ". $row['other_disorders'] ; 
+                        ?>
+                  </td>
                   <td><?php echo $row['birth_weight'] ; ?></td>
                   <td><?php echo $row['birth_length'] ; ?></td>
                 <tr>

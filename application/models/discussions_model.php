@@ -32,7 +32,7 @@ class Discussions_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('discussions a');
         $this->db->join('users b', 'b.id=a.usr_id', 'left');
-        $this->db->where('a.ds_is_active', 0);
+        $this->db->where('a.ds_is_active', 1);
         $this->db->order_by("ds_created_at", $dir);
         $query = $this->db->get();
         $result = $query->result_array();
