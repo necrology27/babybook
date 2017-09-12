@@ -4,11 +4,7 @@ class Discussions_model extends CI_Model {
     function __construct() {
         parent::__construct();
     }
-    
-    
-    
-    
-    
+
     function fetch_discussions($filter = null, $direction = null) {
         
         
@@ -54,7 +50,9 @@ class Discussions_model extends CI_Model {
     
     function create($data) {
        
-        $discussion_data = array('ds_title' => $data['ds_title'],
+        $discussion_data = array(
+            'ds_title' => $data['ds_title'],
+            'ds_link' => $data['ds_link'],
             'ds_body' => $data['ds_body'],
             'usr_id' => getCurrentUserID(),
             'ds_is_active' => '1');

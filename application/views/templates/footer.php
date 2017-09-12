@@ -44,6 +44,6 @@
         }
     }
     ?>
-    <script src="<?php echo resources_url();?>main.js?v=1"></script>
+    <script src="<?php echo resources_url();?>main.js?v=2"></script>
 	</body>
 </html>

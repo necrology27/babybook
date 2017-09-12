@@ -160,6 +160,7 @@ $lang['discussion_flag'] = ' [Megjelölés]';
 $lang['discussion_usr_name'] = 'A neved';
 $lang['discussion_usr_email'] = 'Email címed';
 $lang['discussion_ds_title'] = 'A téma címe';
+$lang['discussion_ds_link'] = 'Link hozzáadása (opcionális)';
 $lang['discussion_ds_body'] = 'A kérdésed, megjegyzésed stb.';
 
 // Admin - login

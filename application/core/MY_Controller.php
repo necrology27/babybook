@@ -21,6 +21,37 @@ class MY_Controller extends CI_Controller
         return (! preg_match("/^([-a-z_ áéöüóőúűíÉÁŐÚŰÖÜÓÍ])+$/i", $str)) ? FALSE : TRUE;
     }
 
+    /**
+     * Validate URL
+     *
+     * @access    public
+     * @param    string
+     * @return    string
+     */
+    function valid_url($url)
+    {
+        if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$url))
+        {
+            return FALSE;
+        }
+        
+        return TRUE;
+    }
+    
+    // --------------------------------------------------------------------
+    
+    /**
+     * Real URL
+     *
+     * @access    public
+     * @param    string
+     * @return    string
+     */
+    function real_url($url)
+    {
+        return @fsockopen("$url", 80, $errno, $errstr, 30);
+    } 
+    
     function valid_date($date)
     {
         $d = DateTime::createFromFormat('Y-m-d', $date);

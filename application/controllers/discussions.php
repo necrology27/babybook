@@ -33,23 +33,28 @@ class Discussions extends MY_Controller {
     
     public function create() {
         $this->form_validation->set_rules('ds_title', $this->lang->line('discussion_ds_title'), 'required|min_length[1]|max_length[255]');
+        $this->form_validation->set_rules('ds_link', $this->lang->line('discussion_ds_link'), 'callback_valid_url');
         $this->form_validation->set_rules('ds_body', $this->lang->line('discussion_ds_body'), 'required|min_length[1]|max_length[5000]');
         
         ls_init_language();
         $this->data['title'] = $this->lang->line('top_nav_new_discussion');
         if ($this->form_validation->run() == FALSE) {
+            ls_init_language();
+            $this->data['title'] = $this->lang->line('discussions_title');
             $this->load->view('templates/header');
             $this->load->view('nav/top_nav');
             $this->load->view('discussions/new');
             $this->load->view('templates/footer');
         } else {
             $data = array(
-                
                 'ds_title' => $this->input->post('ds_title'),
+                'ds_link' => $this->input->post('ds_link'),
                 'ds_body' =>  $this->input->post('ds_body')
             );
             
             if ($ds_id = $this->Discussions_model->create($data)) {
+                ls_init_language();
+                $this->data['title'] = $this->lang->line('discussions_title');
                 redirect('comments/index/'.$ds_id);
             } else {
                 // error

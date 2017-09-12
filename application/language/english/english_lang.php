@@ -164,6 +164,7 @@ $lang['discussion_flag'] = ' [Flag]';
 $lang['discussion_usr_name'] = 'Your name';
 $lang['discussion_usr_email'] = 'Your email';
 $lang['discussion_ds_title'] = 'Discussion title';
+$lang['discussion_ds_link'] = 'Post a link (optional)';
 $lang['discussion_ds_body'] = 'Your question, point etc';
 
 // Admin - login

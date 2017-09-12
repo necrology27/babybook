@@ -1,4 +1,8 @@
 <div>
+	<button class="btn btn-success video-show">Show video</button>
+  	<h3>Youtube</h3>
+    <iframe id="vid1" style="display: none;" height="300" width="500" src="http://www.youtube.com/embed/m5Jmh9JKnyQ" frameborder="0" allowfullscreen></iframe>
+
 	<div class="container-fluid" id="child_boxes">
 	<h2><?php echo _e('my_children'); ?></h2>
 		<?php 
