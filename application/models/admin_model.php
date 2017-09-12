@@ -4,9 +4,9 @@ class Admin_model extends CI_Model {
     function __construct() {
         parent::__construct();
     }
-    function dashboard_fetch_comments() {
+    function dashboard_fetch_comments($first,  $num_per_page) {
         
-        
+        $this->db->limit($num_per_page, $first);
         $this->db->select('*');
         $this->db->from('comments a');
         $this->db->join('users b', 'b.id=a.usr_id', 'left');
@@ -21,7 +21,8 @@ class Admin_model extends CI_Model {
         return $result;
        
     }
-    function dashboard_fetch_discussions() {
+    function dashboard_fetch_discussions($first,  $num_per_page) {
+        $this->db->limit($num_per_page, $first);
         $this->db->select('*');
         $this->db->from('discussions a');
         $this->db->join('users b', 'b.id=a.usr_id', 'left');

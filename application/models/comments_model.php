@@ -45,4 +45,10 @@ class Comments_model extends CI_Model {
         $this -> db -> where('cm_id', $id);
         $this->db->update('comments', array('cm_is_active' => '0'));
     }
+    function get_num_of_comment(){
+        $this->db->select('*');
+        $this->db->from('comments');
+        $query = $this->db->get();
+        return $this->db->affected_rows();
+    }
 }

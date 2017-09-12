@@ -13,15 +13,23 @@ class child_model extends CI_Model
         $this->db->insert('children', $data);
         return $this->db->insert_id();
     }
-    function getAllChildren()
+    function getAllChildren($first,  $num_per_page)
     {
+       
+        
+        $this->db->limit($num_per_page, $first);
+        $this->db->get_compiled_select('children', FALSE);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        //var_dump($result); die();
+        return $result; 
+    }
+    
+    function get_num_of_child(){
         $this->db->select('*');
         $this->db->from('children');
         $query = $this->db->get();
-        $result = $query->result_array();
-        
-        return $result;
-      
+        return $this->db->affected_rows();
     }
     
     function update_child_by_id($child_id, $data)

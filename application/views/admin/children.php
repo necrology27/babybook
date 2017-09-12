@@ -1,3 +1,4 @@
+
 <table class="table">
 <thead>
 <tr>
@@ -47,4 +48,7 @@
                 </tr>
         <?php endif; ?>
     </tbody>
+    
+    
 </table>
+

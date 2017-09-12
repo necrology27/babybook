@@ -78,4 +78,10 @@ class Discussions_model extends CI_Model {
         $this->db->update('discussions', array('ds_is_active' => '0'));
     }
     
+    function get_num_of_discussions(){
+        $this->db->select('*');
+        $this->db->from('discussions');
+        $query = $this->db->get();
+        return $this->db->affected_rows();
+    }
 }

@@ -22,8 +22,8 @@
                   <td><?php echo $row['ds_body']; ?></td>
                   <td></td>
                   <td></td>
-                  <td><?php echo anchor('admin/delete_discussion/'.$row['ds_id'], 'Delete', 
-                             array('onClick' => "return confirm('Are you sure you want to delete?')"));
+                  <td><?php echo anchor('admin/delete_discussion/'.$row['ds_id'], 'Disable', 
+                             array('onClick' => "return confirm('Are you sure you want to disable?')"));
                         ?><span class="glyphicon glyphicon-trash"></span>
 					</td>
                 </tr>

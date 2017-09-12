@@ -39,7 +39,7 @@
     {
         foreach($this->data['scripts'] as $script)
         {
-            echo '<script src="'. resources_url().$script.'?v=4"></script>';
+            echo '<script src="'. resources_url().$script.'?v=9"></script>';
           
         }
     }
