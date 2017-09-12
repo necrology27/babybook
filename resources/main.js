@@ -1,3 +1,13 @@
+$(".video-show").click( function () {
+	$("#vid1").toggle();
+	var video = $("#vid1").attr("src");
+	$("#vid1").attr("src","");
+	$("#vid1").attr("src",video);
+});
+
+$(".showLink").click(function() {
+	$(this).next().toggle();
+});
 
 $(function() {
 	$(document).on(
