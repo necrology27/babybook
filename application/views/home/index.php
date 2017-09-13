@@ -46,6 +46,7 @@
                       <li class="small"><input type="radio" name="sort" onclick="sort_by_name()"/><?php echo _e('sort_by_name');; ?></li>
                       <li class="small"><input type="radio" name="sort" onclick="sort_by_age()"/><?php echo _e('sort_by_age'); ?></li>
                       <li class="small"><input type="radio" name="sort" onclick="sort_by_registration()"/><?php echo _e('sort_by_registration'); ?></li>
+                      <li class="small"><input type="radio" name="sort" onclick="sort_by_last_update()"/><?php echo _e('sort_by_last_update'); ?></li>
                     </ul>
         	    </div>
             	 
@@ -74,6 +75,7 @@
                             </h3>
                             <input class="birthday" id="child_id" type = 'hidden' value=<?php echo $children[$j]['birthday']; ?> >
                             <input class="registration_date" id="child_id" type = 'hidden' value=<?php echo $children[$j]['registration_date']; ?> >
+                            <input class="last_update" id="child_id" type = 'hidden' value=<?php echo $last_up[$j]; ?> >
                            
                             <p><?php echo _e('last_updated');?>:<br> <?php if ($last_up[$j] == 0) 
                                                                               echo _e('today');

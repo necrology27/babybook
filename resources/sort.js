@@ -118,6 +118,30 @@ function sort_by_registration() {
 	  }
 }
 
+function sort_by_last_update() {
+	var list, i, switching, b, shouldSwitch;
+	  list = document.getElementById("childs");
+	  switching = true;
+	  while (switching) {
+	    switching = false;
+	    b = list.getElementsByClassName("one_child");
+	    for (i = 0; i < (b.length - 1); i++) {
+	    	a = b[i].getElementsByClassName("last_update")[0];
+	    	a_next= b[i+1].getElementsByClassName("last_update")[0];
+	      shouldSwitch = false;
+	      
+	      if (a.value > a_next.value) {
+	        shouldSwitch= true;
+	        break;
+	      }
+	    }
+	    if (shouldSwitch) {
+	      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+	      switching = true;
+	    }
+	  }
+}
+
 $('#gender_check_list input[type=checkbox]').change(function(){ 
 	var children = document.getElementsByClassName('child_box');
 	var checkedItems = $('#gender_check_list').find('input:checked');

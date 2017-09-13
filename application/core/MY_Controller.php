@@ -65,11 +65,12 @@ class MY_Controller extends CI_Controller
         
         $CI->form_validation->set_message('edit_unique', "Sorry, that %s is already being used.");
         
-        list ($table, $field, $current_id) = explode(".", $params);
+        list ($table, $field, $current_id, $chid) = explode(".", $params);
         
         $query = $CI->db->select()
             ->from($table)
             ->where($field, $value)
+            ->where('child_id !=', $chid)
             ->limit(1)
             ->get();
         

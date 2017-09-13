@@ -30,7 +30,7 @@ class Child extends MY_Controller {
         $this->data['id'] = getCurrentUserID();
         
         // set validation rules
-        $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|callback_exists[children.name.'.$session_data['id'].']|min_length[3]|max_length[30]|xss_clean');
+        $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|callback_edit_unique[children.name.'.$session_data['id'].'.'.$get_child_id.']|min_length[3]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
         // validate form input
         
@@ -127,8 +127,8 @@ class Child extends MY_Controller {
             {
                 if ($this->child_model->update_child_by_id($get_child_id, $new_child_data))
                 {
-                    
-                    if ($_FILES['userfile'] != null) {
+                   
+                    if ($_FILES['userfile']['size'] != 0) {
                         
                         $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">' . $this->lang->line('success_message') . '</div>');
                         
