@@ -213,11 +213,17 @@ class Child extends MY_Controller {
         }
     }
     
+    function upload_album_images() {
+        var_dump($_FILES);
+    }
+    
     function album($child_id = NULL)
     {
         
         $scripts = array(
             'nanogallery/dist/jquery.nanogallery.min.js',
+            'core.js',
+            'upload.js',
             'album.js'
         );
         $this->data['scripts'] = $scripts;

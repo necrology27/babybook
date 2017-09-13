@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	$(".upload").upload({
+
+		action: base_url + "child/upload_album_images"
+	});
 	var babyScheme = {
 		navigationbar : {
 			background : '#9ce',
