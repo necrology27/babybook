@@ -35,9 +35,11 @@
         	</div>
         	<div class="form-group">
         		<input class="btn btn-primary" type="submit" value="<?php echo _e('login_title'); ?>" />
-        		<button class="btn-default btn" style="float: right;" onclick="location.href='<?php echo base_url();?>user/register'"><?php echo _e('register_title'); ?></button>
+        		
         	</div>
+        	
     	<?php echo form_close()?>
+    	<button class="btn-default btn" style="float: right;" onclick="location.href='<?php echo base_url();?>user/register'"><?php echo _e('register_title'); ?></button>
 	<div class="form-group">
 		
     	<a href='<?php echo base_url();?>user/forgot' tabindex="4"><?php echo _e('forgot_title'); ?></a> 	

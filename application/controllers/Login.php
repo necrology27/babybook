@@ -34,8 +34,8 @@ class Login extends MY_Controller
         $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database|sha1');
         
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('login_view', $data);
-            $this->load->view('templates/footer', $data);
+            $this->load->view('login_view', $this->data);
+            $this->load->view('templates/footer', $this->data);
         } else {
             redirect('home', 'refresh');
         }
