@@ -1,6 +1,13 @@
 $(document).ready(function() {
+	var formData = new FormData();
+	var fdata = $('upload_file').serializeArray();
+    $.each(fdata,function(key,input){
+    	formData.append(input.name,input.value);
+    });
+	
+    console.log(formData);
 	$(".upload").upload({
-
+		data: formData,
 		action: base_url + "child/upload_album_images"
 	});
 	var babyScheme = {

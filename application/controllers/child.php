@@ -215,6 +215,55 @@ class Child extends MY_Controller {
     
     function upload_album_images() {
         var_dump($_FILES);
+        
+        $upload_date=time();
+        if (!file_exists(FCPATH . 'uploads/'. getCurrentUserID() . '/'.$childId)) {
+            mkdir(FCPATH . 'uploads/' . getCurrentUserID() . '/'.$childId, 0777, true);
+        }
+        
+        $config['upload_path'] = FCPATH . 'uploads/' . getCurrentUserID() . '/'.$childId;
+        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['file_name'] = 'img_'.$upload_date;
+        $config['file_ext_tolower'] = TRUE;
+        $config['remove_spaces'] = TRUE;
+        $config['max_size'] = '8192000';
+        $config['max_width'] = '2048';
+        $config['max_height'] = '2048';
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+        
+        if($this->upload->do_upload())
+        {
+            
+            $data = array('upload_data' => $this->upload->data());
+            
+            $config['image_library'] = 'gd2';
+            $config['source_image'] = $upload_data['full_path'];
+            $config['maintain_ratio'] = TRUE;
+            $config['width']    = 250;
+            $config['height']   = 250;
+            
+            $this->load->library('image_lib', $config);
+            
+            $this->image_lib->clear();
+            $this->image_lib->initialize($configer);
+            $this->image_lib->resize();
+            
+            $upload_data = $data['upload_data'];
+            $file_name =   $upload_data['file_name'];
+            $data = array(
+                'child_id' => $childId,
+                'file_name' =>  $file_name,
+                'title' => $title,
+                'description' => $description
+            );
+            $this->data = $this->data + $data;
+            $imageId=$this->image_model->insertImage($data);
+            
+            $this->load->view('save_child', $this->data);
+            return true;
+        }
+        return false;
     }
     
     function album($child_id = NULL)

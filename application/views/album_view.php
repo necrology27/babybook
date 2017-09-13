@@ -7,7 +7,7 @@
                 <h4><span class="glyphicon"></span><?php echo  _e('upload_photo_label');?></h4>
             </div>
             <div class="modal-body" id="upload_modal_body">
-                <form method="post" action="" id="upload_file" type="" >
+                <form method="post" action="" id="upload_file">
                     <label for="title"><?php echo  _e('title_label');?></label>
        				<input class="form-control" type="text" name="title" id="new_title" value="" />
        				<br>
@@ -40,7 +40,13 @@
                         <input type="text" class="form-control" readonly>
                     </div>
                     <div class="upload"></div>
+                        <input type="button" class="btn btn-default pull-right"
+                       		id="uploadingFileButton" name="uploadingFileButton"
+                          		value="<?php echo  _e('upload_button');?>"/>
+                  	</div>
               	</form>
+                    <br>
+                    <br>
             </div>
             <br>
             <div class="modal-footer">
