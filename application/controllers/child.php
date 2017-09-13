@@ -30,7 +30,7 @@ class Child extends MY_Controller {
         $this->data['id'] = getCurrentUserID();
         
         // set validation rules
-        $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|callback_edit_unique[children.name.'.$session_data['id'].'.'.$get_child_id.']|min_length[3]|max_length[30]|xss_clean');
+        $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|callback_edit_child_unique[children.name.'.$session_data['id'].'.'.$get_child_id.']|min_length[3]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
         // validate form input
         
@@ -274,8 +274,8 @@ class Child extends MY_Controller {
         $this->data['title'] = $this->lang->line('profil_title');
         
         $scores = $this->answer_model->get_score($child_id);
-        $min_score=-10;
-        $max_score=10;
+        $min_score=-30;
+        $max_score=30;
         
         $total=$max_score-$min_score;
         

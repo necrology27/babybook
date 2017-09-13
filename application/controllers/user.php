@@ -55,7 +55,8 @@ class user extends MY_Controller
     
     function register()
     {
-        $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|min_length[3]|max_length[30]|xss_clean');
+        
+        $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|callback_edit_unique[users.name.0.]|min_length[3]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|sha1');
         $this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|required|matches[password]|sha1');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');

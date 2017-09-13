@@ -58,7 +58,7 @@ class MY_Controller extends CI_Controller
         return $d && $d->format('Y-m-d') === $date;
     }
 
-    function edit_unique($value, $params)
+    function edit_child_unique($value, $params)
     {
         $CI = & get_instance();
         $CI->load->database();
@@ -85,7 +85,32 @@ class MY_Controller extends CI_Controller
             }
             return $uniq;
     }
+    
 
+    
+    function edit_unique($value, $params)
+    {
+       
+        $CI = & get_instance();
+        $CI->load->database();
+        
+        $CI->form_validation->set_message('edit_unique', "Sorry, that %s is already being used.");
+        
+        list ($table, $field, $current_id) = explode(".", $params);
+        
+        $query = $CI->db->select()
+        ->from($table)
+        ->where($field, $value)
+        ->where('id !=', $current_id)
+        ->get();
+        
+        if ($query->row()) {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
+    
     function exists($value, $params)
     {
         $CI = & get_instance();

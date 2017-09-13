@@ -34,7 +34,7 @@
         						    <div class="form-group">
         						    <label><?php echo _e('gender_label'); ?></label><br>
         							<input class="radiobtn" type="radio" name="gender" value="M"> <?php echo _e('male'); ?><br>
-          							<input class="radiobtn" type="radio" name="gender" value="F" checked><?php echo _e('female'); ?><br>
+          							<input class="radiobtn" type="radio" name="gender" value="F" checked> <?php echo _e('female'); ?><br>
         						</div>
 
         						<div class="form-group">

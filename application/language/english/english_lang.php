@@ -46,6 +46,8 @@ $lang['year5']= "5+ years";
 $lang['sort_by_name']= "by name";
 $lang['sort_by_age']= "by age";
 $lang['sort_by_registration']= "by registration date";
+$lang['sort_by_last_update']= "by last update";
+
 $lang['search_by_name']= "Search by name";
 
 //album
@@ -142,7 +144,6 @@ $lang['system_system_name'] = "babybook Forum";
 // Top Nav
 $lang['top_nav_view_discussions'] = "Home";
 $lang['top_nav_new_discussion'] = "New Discussion";
-$lang['top_nav_login'] = "Login";
 
 // Discussions
 $lang['discussions_title'] = "Discussions";
@@ -161,11 +162,11 @@ $lang['comments_comment_body'] = 'Comment';
 // Discussions
 $lang['discussion_form_instruction'] = "Create your own discussion, fill in the form below";
 $lang['discussion_flag'] = ' [Flag]';
-$lang['discussion_usr_name'] = 'Your name';
-$lang['discussion_usr_email'] = 'Your email';
-$lang['discussion_ds_title'] = 'Discussion title';
-$lang['discussion_ds_link'] = 'Post a link (optional)';
-$lang['discussion_ds_body'] = 'Your question, point etc';
+$lang['discussion_usr_name'] = 'Numele tău';
+$lang['discussion_usr_email'] = 'Email-ul tau';
+$lang['discussion_ds_title'] = 'Titlul discuției';
+$lang['discussion_ds_link'] = 'Postează un link (opțional)';
+$lang['discussion_ds_body'] = 'Întrebarea, punctul, etc.';
 
 // Admin - login
 $lang['admin_login_header'] = "Please sign in";

@@ -46,6 +46,7 @@ $lang['sort_by_name']= "După nume";
 $lang['sort_by_age']= "După vârstă";
 $lang['sort_by_registration']= "După data de înregistrare";
 $lang['search_by_name']= "Căutare după nume";
+$lang['sort_by_last_update']= "După ultima actualizare";
 
 //album
 $lang['new_album_label'] = "Album nou";
@@ -137,37 +138,38 @@ $lang['system_system_name'] = "babybook Forum";
 
 // Top Nav
 $lang['top_nav_view_discussions'] = "Home";
-$lang['top_nav_new_discussion'] = "Új beszélgetés";
+$lang['top_nav_new_discussion'] = "Discuție nouă";
 
 // Discussions
-$lang['discussions_title'] = "Beszélgetés";
-$lang['discussions_num_comments'] = 'Hozzászóllások';
+$lang['discussions_title'] = "Discuţii";
+$lang['discussions_num_comments'] = 'Comentarii';
 
 // Comments
 $lang['comments_title'] = "Comentarii";
-$lang['comments_form_instruction'] = "Szólj hozzá";
-$lang['comments_flag'] = ' [Megjelölés]';
-$lang['comments_created_by'] = 'Készítette ';
-$lang['comments_created_at'] = ' létrehozta ';
-$lang['comments_comment_name'] = 'A neved';
-$lang['comments_comment_email'] = 'Email címed';
-$lang['comments_comment_body'] = 'Hozzászollás';
+$lang['comments_form_instruction'] = "Alăturați-vă, adăugați comentariul dvs. de mai jos.";
+$lang['comments_flag'] = ' [Flag]';
+$lang['comments_created_by'] = 'Creat de ';
+$lang['comments_created_at'] = ' la ';
+$lang['comments_comment_name'] = 'Numele tău';
+$lang['comments_comment_email'] = 'Your email';
+$lang['comments_comment_body'] = 'Comment';
 
 // Discussions
-$lang['discussion_form_instruction'] = "Hozza létre saját témáját, töltse ki az alábbi úrlapot";
-$lang['discussion_flag'] = ' [Megjelölés]';
-$lang['discussion_usr_name'] = 'A neved';
-$lang['discussion_usr_email'] = 'Email címed';
-$lang['discussion_ds_title'] = 'A téma címe';
-$lang['discussion_ds_link'] = 'Trimiteți un link (opțional)';
-$lang['discussion_ds_body'] = 'A kérdésed, megjegyzésed stb.';
+$lang['discussion_form_instruction'] = "Create your own discussion, fill in the form below";
+$lang['discussion_flag'] = ' [Flag]';
+$lang['discussion_usr_name'] = 'Your name';
+$lang['discussion_usr_email'] = 'Your email';
+$lang['discussion_ds_title'] = 'Discussion title';
+$lang['discussion_ds_link'] = 'Post a link (optional)';
+$lang['discussion_ds_body'] = 'Your question, observații etc';
 
 // Admin - login
-$lang['admin_login_header'] = "Kérlek jelentkezz be";
+$lang['admin_login_header'] = "Conectați-vă";
 $lang['admin_login_email'] = "Email";
-$lang['admin_login_password'] = "Jelszó";
-$lang['admin_login_signin'] = "Bejelentkezés...";
-$lang['admin_login_error'] = "Oupsz!  Valami hiba történt!";
-$lang['admin_dash_allow'] = "Engedélyezve";
-$lang['admin_dash_disallow'] = "Nem engedélyezve";
-//----------------------------------------------------------------------------------------------------------------
+$lang['admin_login_password'] = "Parolă";
+$lang['admin_login_signin'] = "Conectare...";
+$lang['admin_login_error'] = "Hopa! Ceva a mers prost - trebuie să plecați!";
+$lang['admin_dash_allow'] = "Permite";
+$lang['admin_dash_disallow'] = "Nu permite";
+
+//-------------------------------------------------------------------------------------------------------------

@@ -47,6 +47,7 @@ $lang['sort_by_name']= "Név szerint";
 $lang['sort_by_age']= "Életkor szerint";
 $lang['sort_by_registration']= "Regisztráció ideje szerint";
 $lang['search_by_name']= "Keresés név szerint";
+$lang['sort_by_last_update']= "Utolsó frissítés szerint";
 
 //album
 $lang['new_album_label'] = "Új album";
