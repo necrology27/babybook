@@ -71,14 +71,19 @@ class MY_Controller extends CI_Controller
             ->from($table)
             ->where($field, $value)
             ->where('child_id !=', $chid)
-            ->limit(1)
             ->get();
-        
-        if ($query->row() && $query->row()->user_id == $current_id) {
-            return FALSE;
-        } else {
-            return TRUE;
-        }
+            
+            $result = $query->result_array();
+           
+            $uniq=true;
+            foreach ($result as $r){
+                
+                if ($r['user_id'] == $current_id){
+                    $uniq=false;
+                }
+                
+            }
+            return $uniq;
     }
 
     function exists($value, $params)
