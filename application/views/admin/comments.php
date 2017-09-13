@@ -18,8 +18,8 @@
                   <td><?php echo $row['id'] ; ?></td>
                   <td><?php echo $row['ds_id'] ; ?></td>
                   <td><?php echo $row['cm_body']; ?></td>
-                  <td><?php echo anchor('admin/delete_comment/'.$row['cm_id'], 'Delete', 
-                             array('onClick' => "return confirm('Are you sure you want to delete?')"));
+                  <td><?php echo anchor('admin/delete_comment/'.$row['cm_id'], 'Disable', 
+                             array('onClick' => "return confirm('Are you sure you want to disable?')"));
                         ?><span class="glyphicon glyphicon-trash"></span>
 					</td>
                 </tr>

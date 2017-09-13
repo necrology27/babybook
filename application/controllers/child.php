@@ -108,7 +108,7 @@ class Child extends MY_Controller {
                     // successfully sent mail
                    
                     $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">' . $this->lang->line('success_message') . '</div>');
-                    $err = $this->do_upload($this->data["user_id"], $childID);
+                    $err = $this->do_upload($this->data["user_id"], $childID, "Default image");
                     
                     if ($err !== true) {
                         $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">' . $err . '!!!</div>');
@@ -132,7 +132,7 @@ class Child extends MY_Controller {
                         
                         $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">' . $this->lang->line('success_message') . '</div>');
                         
-                        $err = $this->do_upload($session_data['id'], $get_child_id);
+                        $err = $this->do_upload($session_data['id'], $get_child_id, "Default image");
                         
                         if ($err !== true)
                         {
@@ -153,7 +153,7 @@ class Child extends MY_Controller {
         }
     }
     
-    public function do_upload($user_id, $childId){
+    public function do_upload($user_id, $childId, $title){
         
         $upload_date=time();
         if (!file_exists(FCPATH . 'uploads/'.$user_id. '/'.$childId)) {
@@ -193,7 +193,7 @@ class Child extends MY_Controller {
             $data = array(
                  'child_id' => $childId,
                  'file_name' =>  $file_name,
-                 'title' => 'Default image',
+                  'title' => $title,
              );
             $this->data = $this->data + $data;
             $imageId=$this->image_model->insertImage($data);
@@ -222,13 +222,10 @@ class Child extends MY_Controller {
         );
         $this->data['scripts'] = $scripts;
         
-        $session_data = $this->session->userdata('logged_in');
-        $id = $session_data['id'];
-        
         $child_data = $this->child_model->get_child_data($child_id);
-        $user_data = $this->user_model->get_user_data($session_data['id']);
+        $user_data = $this->user_model->get_user_data(getCurrentUserID());
         $this->data['user_name'] = $user_data['name'];
-        $this->data['user_id'] = $session_data['id'];
+        $this->data['user_id'] = getCurrentUserID();
         $this->data['name'] = $child_data['name'];
         $this->data['birthday'] = $child_data['birthday'];
         $this->data['error'] = ' ';
@@ -251,9 +248,9 @@ class Child extends MY_Controller {
     function profil($child_id = NULL)
     {
         $session_data = $this->session->userdata('logged_in');
-        $id = $session_data['id'];
+       
         
-        if($this->child_model->is_parent_child_relation($child_id,  $id)==false)
+        if($this->child_model->is_parent_child_relation($child_id,  getCurrentUserID())==false)
         {
             header("Location: http://localhost/babybook_git/index.php/home");
         }

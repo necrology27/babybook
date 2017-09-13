@@ -4,8 +4,8 @@ $lang['msg'] = "CodeIgniter Internationalization example.";
 // titles
 $lang['home_title'] = "Home";
 $lang['login_title'] = "Login";
-$lang['register_title'] = "Register";
-$lang['forgot_title'] = "Forgot Password";
+$lang['register_title'] = "Sign up";
+$lang['forgot_title'] = "Forgot your password?";
 $lang['update_title'] = "Update profile";
 $lang['child_update_title'] = "Update your child's profile";
 $lang['take_test_title'] = "Take the test";

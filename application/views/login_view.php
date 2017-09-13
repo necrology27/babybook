@@ -35,14 +35,22 @@
         	</div>
         	<div class="form-group">
         		<input class="btn btn-primary" type="submit" value="<?php echo _e('login_title'); ?>" />
+        		<button class="btn-default btn" style="float: right;" onclick="location.href='<?php echo base_url();?>user/register'"><?php echo _e('register_title'); ?></button>
         	</div>
     	<?php echo form_close()?>
 	<div class="form-group">
-    	<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>user/forgot'"><?php echo _e('forgot_title'); ?></button>
-    	<button class="btn-default btn" onclick="location.href='<?php echo base_url();?>user/register'"><?php echo _e('register_title'); ?></button>
-		<div id='fb-root'></div>
-		<div class='fb-login-button' onclick="faceFunc()">Bejelentkezés Facebook-kal</div>  
-		<label id=status></label>
+		
+    	<a href='<?php echo base_url();?>user/forgot' tabindex="4"><?php echo _e('forgot_title'); ?></a> 	
+    	
+		<div id="fb-root"></div>
+		<div  class="social-wrap a">
+		<hr>
+		
+    		<button  id="facebook" onclick="javascript:login();" >Sign in with Facebook</button>
+
+    </div>
+   
+        
 </div>
 </div>
 </div>
