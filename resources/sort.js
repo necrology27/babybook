@@ -103,9 +103,10 @@ function sort_by_registration() {
 	    b = list.getElementsByClassName("one_child");
 	    for (i = 0; i < (b.length - 1); i++) {
 	    	a = b[i].getElementsByClassName("registration_date")[0];
+	    	
 	    	a_next= b[i+1].getElementsByClassName("registration_date")[0];
 	      shouldSwitch = false;
-	      
+	      console.log(a);
 	      if (a.value > a_next.value) {
 	        shouldSwitch= true;
 	        break;
@@ -129,7 +130,7 @@ function sort_by_last_update() {
 	    	a = b[i].getElementsByClassName("last_update")[0];
 	    	a_next= b[i+1].getElementsByClassName("last_update")[0];
 	      shouldSwitch = false;
-	      
+	      console.log(a);
 	      if (a.value > a_next.value) {
 	        shouldSwitch= true;
 	        break;

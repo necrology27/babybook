@@ -34,8 +34,11 @@ class Home extends MY_Controller
                 $this->data['child_count'] = 0;
             for ($i = 0; $i < $this->data['child_count']; $i++) 
             {
+               
                 $this->data['def_imgs'][$i] = $this->image_model->get_def_img($this->data['children'][$i]['child_id']);
-                $this->data['last_up'][$i] = $this->child_model->get_last_update($this->data['children'][$i]['child_id']);
+                $this->data['last_up_day'][$i] = $this->child_model->get_last_update_day($this->data['children'][$i]['child_id']);
+                $this->data['last_up_all'][$i] = $this->child_model->get_last_update_all($this->data['children'][$i]['child_id']);
+                
             }
            
                 

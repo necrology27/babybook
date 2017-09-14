@@ -74,13 +74,13 @@
                                 ?></em>
                             </h3>
                             <input class="birthday" id="child_id" type = 'hidden' value=<?php echo $children[$j]['birthday']; ?> >
-                            <input class="registration_date" id="child_id" type = 'hidden' value=<?php echo $children[$j]['registration_date']; ?> >
-                            <input class="last_update" id="child_id" type = 'hidden' value=<?php echo $last_up[$j]; ?> >
+                            <input class="registration_date" id="child_id" type = 'hidden' value="<?php echo $children[$j]['registration_date']; ?>" >
+                            <input class="last_update" id="child_id" type = 'hidden' value="<?php echo $last_up_all[$j]; ?>" >
                            
-                            <p><?php echo _e('last_updated');?>:<br> <?php if ($last_up[$j] == 0) 
+                            <p><?php echo _e('last_updated');?>:<br> <?php if ($last_up_day[$j] == 0) 
                                                                               echo _e('today');
                                                                            else {
-                                                                              echo $last_up[$j] . " "; 
+                                                                              echo $last_up_day[$j] . " "; 
                                                                               _e('days_ago');
                                                                            }
                                                                      ?></p>
