@@ -60,12 +60,18 @@
 	border-radius: 4px;
 }
 
+body {
+	min-height: 100%;
+}
+
 .footer {
+	text-align: center;
+	padding: 10px;
 	display: block;
-	position: fixed;
-	float: right;
-	bottom: 3%;
-	right: 5%;
+  	position: relative;
+	left: 0;
+	bottom: 0;
+	right: 0;
 	text-decoration: none;
 	font-style: normal;
 	font-weight: bold;

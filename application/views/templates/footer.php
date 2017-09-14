@@ -1,7 +1,7 @@
                	<br>
                	<br>
                	<br>
-               	<div class="footer">
+               	<div class="footer white-container">
                	 <em><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:babybook.contact@gmail.com">babybook.contact@gmail.com</a></em>
                	 <br>
                 <em>babybook &copy; <?php $d =  new DateTime(); echo date('Y'); ?></em>   

@@ -15,11 +15,14 @@ table, .white-container {
     border-radius: 15px;
 }
 
-  body {
-	background: #ffffff url(<?php echo resources_url() . "img/meadow.png"?>) no-repeat scroll;
+body {
+    margin: 0 auto;
+    background: #ffffff url(<?php echo resources_url() . "img/meadow.png"?>) no-repeat scroll;
     background-size: cover;
-    }
+    height: 100%;
+}
 </style>
+<title>babybook | <?php echo $this->data['title'];?></title>
 </head>
 <body> 
 
