@@ -12,6 +12,7 @@
 table, .white-container {
     padding-left: 10px;
     padding-top: 2px;
+    margin-bottom: 15px;
     background: #fff;
     border-radius: 10px;
 }
