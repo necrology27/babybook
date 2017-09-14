@@ -8,7 +8,7 @@
 				class="img-circle" alt="<?php echo _e('missing_image');?>" width="250">
 		</div>
 
-		<div class="container">
+		<div class="container white-container">
 			<div>
 				<h3><?php echo _e('social'); ?></h3>
 				<div class="progress">

@@ -1,10 +1,8 @@
 <div>
-	<button class="btn btn-success video-show">Show video</button>
-  	<h3>Youtube</h3>
-    <iframe id="vid1" style="display: none;" height="300" width="500" src="http://www.youtube.com/embed/m5Jmh9JKnyQ" frameborder="0" allowfullscreen></iframe>
-
+	
 	<div class="container-fluid" id="child_boxes">
-	<h2><?php echo _e('my_children'); ?></h2>
+		<div class="white-container">
+		<h2><?php echo _e('my_children'); ?></h2>
 		<?php 
 		if ($child_count==0)
 		{?>
@@ -51,7 +49,7 @@
         	    </div>
             	 
             </div>
-            
+          </div>
             <div id="childs">  
 		   <?php
 		    for ($i = 0; $i < $child_count/3; $i++) {

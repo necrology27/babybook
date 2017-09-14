@@ -9,8 +9,17 @@
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>jquery-ui/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>nanogallery/dist/css/nanogallery.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+table, .white-container {
+    background: #fff;
+    border-radius: 15px;
+}
 
-<title>babybook | <?php echo $this->data['title']; ?></title>
+  body {
+	background: #ffffff url(<?php echo resources_url() . "img/meadow.png"?>) no-repeat scroll;
+    background-size: cover;
+    }
+</style>
 </head>
 <body> 
 

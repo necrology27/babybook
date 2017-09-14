@@ -108,7 +108,7 @@
 }
 
 .back-left {
-	z-index: -1;
+	z-index: 1;
 	top: 20%;
 	left: 7%;
 	display: block;

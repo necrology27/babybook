@@ -79,7 +79,9 @@
         </div>
     </div>
 </div>
-	<div class="btn-group-vertical col-md-2 col-xs-12 pull-right" role="group" aria-label="New image/album">
+<div class="container white-container">
+<div>
+	<div class="btn-group-vertical col-md-3 col-xs-12 pull-right" role="group" aria-label="New image/album">
       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#upload_modal" id="new_image_btn"><?php echo  _e('upload_photo_label');?></button>
       <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#album_modal" id="album_btn"><?php echo  _e('new_album_label');?></button>
     </div>
@@ -103,4 +105,5 @@ else{ ?>
     }?>
 	</div>
 <?php }?>
+</div>
 </div>
