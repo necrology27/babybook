@@ -32,6 +32,7 @@ $lang['last_updated']= "Last updated";
 $lang['today'] = "Today";
 $lang['days_ago'] = "days ago";
 $lang['users'] = "Users";
+$lang['less_than_a_day'] = "Less than a day";
 
 //filter
 $lang['boy']= "Boy";

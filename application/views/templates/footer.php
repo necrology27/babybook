@@ -1,7 +1,12 @@
                	<br>
                	<br>
                	<br>
-                <em class="footer">babybook &copy; <?php $d =  new DateTime(); echo date('Y'); ?></em>   
+               	<div class="footer">
+               	 <em><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:babybook.contact@gmail.com">babybook.contact@gmail.com</a></em>
+               	 <br>
+                <em>babybook &copy; <?php $d =  new DateTime(); echo date('Y'); ?></em>   
+               
+                </div>
     <script>
         var base_url = "<?php echo base_url();?>";
         var weak = "<?php echo _e('weak');?>";

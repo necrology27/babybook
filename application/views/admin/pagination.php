@@ -12,7 +12,7 @@
     <?php     
    for($i=0; $i<$num_of_pages; $i++) { 
    ?>
-       <li class="page-item" id=<?php echo $i?>><a href="<?php echo base_url();?>admin/children/<?php echo $i?>"><?php echo $i."  " ?></a></li>
+       <li class="page-item" id=<?php echo $i?>><a href="<?php echo base_url();?>admin/children/<?php echo $i?>"><?php echo ($i+1)."  " ?></a></li>
    <?php  } ?>
     </ul>
    </div>
