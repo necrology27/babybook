@@ -78,7 +78,7 @@
                             <input class="last_update" id="child_id" type = 'hidden' value="<?php echo $last_up_all[$j]; ?>" >
                            
                             <p><?php echo _e('last_updated');?>:<br> <?php if ($last_up_day[$j] == 0) 
-                                                                              echo _e('today');
+                                                                              echo _e('less_than_a_day');
                                                                            else {
                                                                               echo $last_up_day[$j] . " "; 
                                                                               _e('days_ago');

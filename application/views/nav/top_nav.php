@@ -24,7 +24,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><?php echo anchor('admin/login', $this->lang->line('top_nav_login')) ; ?></li>
+       <li><button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>login/logout'" ><?php echo _e('logout'); ?></button></li>
       </ul>
     </div><!--/.nav-collapse -->
     </nav>

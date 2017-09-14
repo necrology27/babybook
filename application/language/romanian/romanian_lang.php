@@ -31,6 +31,7 @@ $lang['last_updated']= "Ultima actualizare";
 $lang['today'] = "Azi";
 $lang['days_ago'] = "zile în urmă";
 $lang['users'] = "Utilizatori";
+$lang['less_than_a_day'] = "Mai puțin de o zi";
 
 //filter
 $lang['boy']= "Băiat";
