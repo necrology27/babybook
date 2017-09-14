@@ -303,7 +303,6 @@ class Child extends MY_Controller {
     function profil($child_id = NULL)
     {
         $session_data = $this->session->userdata('logged_in');
-       
         
         if($this->child_model->is_parent_child_relation($child_id,  getCurrentUserID())==false)
         {
@@ -316,6 +315,7 @@ class Child extends MY_Controller {
         $this->data['user_id'] = $session_data['id'];
         $this->data['name'] = $child_data['name'];
         $this->data['birthday'] = $child_data['birthday'];
+        $this->data['gender'] = $child_data['gender'];
         $this->data['error'] = ' ';
         $this->data['child_id'] = $child_id;
         

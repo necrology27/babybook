@@ -80,6 +80,7 @@ $lang['role_label'] = "Szerepkör";
 
 
 //buttons
+$lang['change_password'] = "Jelszó megváltoztatása";
 $lang['add_button'] = "Hozzáad";
 $lang['save_button'] = "Mentés";
 $lang['cancel_button'] = "Mégse";

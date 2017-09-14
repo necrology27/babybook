@@ -78,6 +78,7 @@ $lang['registration_date'] = "Registration date";
 $lang['role_label'] = "Role";
 
 //buttons
+$lang['change_password'] = "Schimbare parolă";
 $lang['logout'] = "Delogare";
 $lang['add_button'] = "Adăugare";
 $lang['save_button'] = "Salvare";

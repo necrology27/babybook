@@ -1,5 +1,12 @@
 <div>
 	<div class="panel-heading">
+	<div class="container white-container col-md-offset-2 col-md-3" style="text-align: center; padding-bottom: 30px;">
+		<h4><?php _e("child_name_placeholder");?>: <strong><?php echo $this->data['name'];?></strong></h4>
+		<h5><?php _e("birthday_label");?>: <strong><?php echo $this->data['birthday'];?></strong></h5>
+		<h5><?php _e("gender_label");?>: <strong><?php echo $this->data['gender'];?></strong></h5>
+		<button onclick="location.href='<?php echo base_url();?>child/add_child/<?php echo $child_id;?>'" 
+				class="btn btn-danger" title="Edit"><?php echo _e('edit_button');?></button>
+	</div>
 		    <?php echo $this->session->flashdata('verify_msg'); ?>
 			<!-- <h4><?php echo $profil_title; ?></h4>  -->
 		<div style="text-align: center;">

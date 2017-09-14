@@ -1,5 +1,4 @@
 <div>
-	
 	<div class="container-fluid" id="child_boxes">
 		<div class="white-container">
 		<h2><?php echo _e('my_children'); ?></h2>
@@ -83,10 +82,11 @@
                                                                            }
                                                                      ?></p>
                             <h4>
-                            <a href="<?php echo base_url();?>child/add_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger" title="Edit"><?php echo _e('edit_button');?></a>
-                            <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['child_id'];?>" class="label label-success"  title="Take test"><?php echo _e('take_test_button');?></a>
-                            <a href="<?php echo base_url();?>child/profil/<?php echo $children[$j]['child_id'];?>" class="label label-success" title="Profile"><?php echo _e('profile_button');?></a>
-                   			<a href="<?php echo base_url();?>child/album/<?php echo $children[$j]['child_id'];?>" class="label label-success" title="Album"><?php echo _e('album_button');?></a></h4>	
+                            <a href="<?php echo base_url();?>child/add_child/<?php echo $children[$j]['child_id'];?>" class="label label-danger child-btn" title="Edit"><?php echo _e('edit_button');?></a>
+                            <a href="<?php echo base_url();?>make_test/set_text_items/<?php echo $children[$j]['child_id'];?>" class="label label-success child-btn"  title="Take test"><?php echo _e('take_test_button');?></a>
+                            <br>
+                            <a href="<?php echo base_url();?>child/profil/<?php echo $children[$j]['child_id'];?>" class="label label-success child-btn" title="Profile"><?php echo _e('profile_button');?></a>
+                   			<a href="<?php echo base_url();?>child/album/<?php echo $children[$j]['child_id'];?>" class="label label-success child-btn" title="Album"><?php echo _e('album_button');?></a></h4>	
                       	</div>
                    </div>
         		</div>

@@ -92,6 +92,7 @@ $lang['none_placeholder'] = "none";
 $lang['child_name_placeholder'] = "Child's name";
 
 //buttons
+$lang['change_password'] = "Change password";
 $lang['logout'] = "Logout";
 $lang['add_button'] = "Add";
 $lang['save_button'] = "Save";
