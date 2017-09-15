@@ -30,7 +30,20 @@ class Discussions extends MY_Controller {
         ls_init_language();
         $this->data['title'] = $this->lang->line('discussions_title');
         $page_data['query'] = $this->Discussions_model->fetch_discussions($filter,$direction);
-      
+        
+        $ratings = $this->Discussions_model->get_current_user_ratings();
+
+        for ($i=0; $i<sizeOf($page_data['query']); $i++)
+        {
+            $page_data['query'][$i]['type']=null;
+            foreach ($ratings as $rating)
+            {                
+                if($rating['ds_id']==$page_data['query'][$i]['ds_id'])
+                    $page_data['query'][$i]['type']=$rating['type'];   
+            }
+        }
+        
+        //var_dump($page_data['query']); die();
         
         $this->load->view('templates/header');
         $this->load->view('nav/top_nav');

@@ -25,12 +25,14 @@ class rating extends MY_Controller {
         if($_POST['ds_id']){
             //calculates the numbers of like or dislike
             if($_POST['type'] == 1){
-                $like = ($_POST['value'] + 1);
-                $this->discussions_model->add_like($_POST['ds_id'], $like);
+                $like = ($_POST['like_value'] + 1);
+                $dislike = $_POST['dislike_value'];
+                $this->discussions_model->add_like($_POST['ds_id'], $like, $dislike);
                 
             }else{
-                $dislike = ($_POST['value'] + 1);
-                $ret=$this->discussions_model->add_dislike($_POST['ds_id'], $dislike);
+                $dislike = ($_POST['dislike_value'] + 1);
+                $like = $_POST['like_value'];
+                $ret=$this->discussions_model->add_dislike($_POST['ds_id'], $like, $dislike);
             }
         }
         echo "ok";

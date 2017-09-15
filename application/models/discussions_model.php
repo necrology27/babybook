@@ -25,22 +25,39 @@ class Discussions_model extends CI_Model {
         } else {
             $dir = 'ASC';
         }
-        $this->db->select('*');
+        $this->db->select('a.ds_id, b.role, a.ds_link,  a.like_num, a.dislike_num, a.ds_title, a.ds_body, a.like_num, a.dislike_num, b.id, b.name');
         $this->db->from('discussions a');
         $this->db->join('users b', 'b.id=a.usr_id', 'left');
         $this->db->where('a.ds_is_active', 1);
+   
         $this->db->order_by("ds_created_at", $dir);
+        
         $query = $this->db->get();
         $result = $query->result_array();
 
-            return $result;
+        return $result;
 
+    }
+    
+    function get_current_user_ratings()
+    {
+        $this->db->select('a.ds_id, b.type');
+        $this->db->from('discussions a');
+        $this->db->join('ratings b', 'a.ds_id=b.ds_id', 'left outer');
+        $this->db->where('a.ds_is_active', 1);
+        $this->db->where("b.user_id", getCurrentUserID());
+        $query = $this->db->get();
+        $result = $query->result_array();
+        return $result;
+        
     }
     
     function fetch_discussion($ds_id) {
         $this->db->select('*');
         $this->db->from('discussions a');
-        $this->db->join('users b', 'b.id=a.usr_id', 'left');
+        $this->db->join('ratings c', 'c.ds_id=a.ds_id', 'left');
+        $this->db->join('users b', 'a.usr_id=b.id', 'left');
+        
         $this->db->where_in('a.ds_id', array($ds_id));
         $query = $this->db->get();
         $result = $query->result_array();
@@ -104,35 +121,40 @@ class Discussions_model extends CI_Model {
         return $r;
      }
     
-    function add_like($ds_id, $value){
+     function add_like($ds_id, $like_value, $dislike_value){
         $this -> db -> where('ds_id', $ds_id);
-        $this->db->update('discussions', array('like_num' => $value));
-       
+        $this->db->update('discussions', array('like_num' => $like_value));
+        
         $this->db->delete('ratings', array('user_id' => getCurrentUserID(), 'ds_id' => $ds_id));
+        if($this->db->affected_rows()==1)
+        {
+           //$dislike_value=$dislike_value-1;
+            $this -> db -> where('ds_id', $ds_id);
+            $this->db->update('discussions', array('dislike_num' => $dislike_value-1));
+        }
+        
         $rating = array(
             'user_id' => getCurrentUserID(),
             'ds_id' => $ds_id,
             'type' => "1",
             
         );
+        
         $this->db->insert('ratings', $rating);
-        return $this->db->insert_id();
+        return true;
     }
     
-    function add_dislike($ds_id, $value){
+    function add_dislike($ds_id, $like_value, $dislike_value){
         $this -> db -> where('ds_id', $ds_id);
-        $this->db->update('discussions', array('dislike_num' => $value));
+        $this->db->update('discussions', array('dislike_num' => $dislike_value));
         
         $this->db->delete('ratings', array('user_id' => getCurrentUserID(), 'ds_id' => $ds_id));
-        //if($this->db->affected_rows()==1)
-        //{
-            //kellett törölni, tehat discussions-ben like_num= like_num-1
-//             $this->db->from('discussions');
-//             $this -> db -> where('ds_id', $ds_id);
-         //    $this->db->set('like_num', 'like_num - ' . (int) 1, FALSE);
-           // $this->db->update('discussions', array('like_num' => $this->get_like_rating($ds_id)-1));
-       //     $this->db->update('discussions', array('like_num' => 'like_num - ' . (int) 1)); 
-     //   }
+        if($this->db->affected_rows()==1)
+        {
+            $like_value=$like_value-1;
+            $this -> db -> where('ds_id', $ds_id);
+            $this->db->update('discussions', array('like_num' => $like_value)); 
+        }
       
         $rating = array(
             'user_id' => getCurrentUserID(),
@@ -141,7 +163,7 @@ class Discussions_model extends CI_Model {
             
         );
         $this->db->insert('ratings', $rating);
-        return $this->get_like_rating($ds_id);
+        return true;
     }
     
     function get_vote($user_id, $ds_id){

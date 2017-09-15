@@ -20,13 +20,14 @@
           
           <div class="ratings">
             <p class="pull-right"></p>
+            <input class="rating_type" id="<?php echo $result['ds_id']?>" type = 'hidden' value=<?php echo $result['type']; ?> >
             <p>
                 <!-- Like Icon HTML -->
-                <span class="glyphicon glyphicon-thumbs-up rate btn" id="like.<?php echo $result['ds_id']. "." . $result['like_num']; ?>"></span>&nbsp;
+                <span class="glyphicon glyphicon-thumbs-up rate btn" id="like.<?php echo $result['ds_id']. "." . $result['like_num']. "." .$result['dislike_num']; ?>"></span>&nbsp;
                 <!-- Like Counter -->
                 <span class="counter" ><?php echo $result['like_num']; ?></span>&nbsp;&nbsp;&nbsp;
                 <!-- Dislike Icon HTML -->
-                <span class="glyphicon glyphicon-thumbs-down rate btn" id="dislike.<?php echo $result['ds_id']. "." . $result['dislike_num']; ?>"></span>&nbsp;
+                <span class="glyphicon glyphicon-thumbs-down rate btn" id="dislike.<?php echo $result['ds_id']. "." . $result['like_num']. "." .$result['dislike_num'];  ?>"></span>&nbsp;
                 <!-- Dislike Counter -->
                 <span class="counter" ><?php echo $result['dislike_num']; ?></span>
             </p>
@@ -55,5 +56,8 @@
     <?php } ?>
 
   </tbody>
+  
+  
+  
 </table>
 </div>

@@ -44,7 +44,7 @@
     {
         foreach($this->data['scripts'] as $script)
         {
-            echo '<script src="'. resources_url().$script.'?v=8"></script>';
+            echo '<script src="'. resources_url().$script.'?v=7"></script>';
           
         }
     }

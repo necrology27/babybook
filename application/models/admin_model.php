@@ -13,10 +13,6 @@ class Admin_model extends CI_Model {
         $this->db->where('cm_is_active', 1);
         
         $query = $this->db->get();
-        
-//         $query = "SELECT * FROM 'comments', 'users'
-//               WHERE 'comments'.'usr_id' = 'users'.'id'
-//               AND 'cm_is_active' = '0' ";
         $result = $query->result_array();
         return $result;
        
@@ -28,11 +24,6 @@ class Admin_model extends CI_Model {
         $this->db->join('users b', 'b.id=a.usr_id', 'left');
         $this->db->where('ds_is_active', 1);
         $query = $this->db->get();
-        
-//         $query = "SELECT * FROM 'discussions', 'users'
-//              WHERE 'discussions'.'usr_id' = 'users'.'id'
-//              AND 'ds_is_active' = '0' "; enelkul!!!!
-        
         $result = $query->result_array();
             return $result;
        
