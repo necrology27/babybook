@@ -24,8 +24,8 @@
           	<?php echo $comment_result['name'] ; ?>
           </h4>
           
-          
-          <?php echo $comment_result['cm_body'] ; ?>
+          <small><small class="pull-right"><?php echo $comment_result['cm_created_at'];?></small></small>
+          <p><?php echo $comment_result['cm_body']; ?></p>
         </div>
       </li>
     <?php } ?>

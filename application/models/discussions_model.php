@@ -7,7 +7,6 @@ class Discussions_model extends CI_Model {
 
     function fetch_discussions($filter = null, $direction = null) {
         
-        
         if ($filter != null) {
             if ($filter == 'age') {
                 $filter = 'ds_created_at';
