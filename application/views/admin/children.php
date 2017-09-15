@@ -1,5 +1,5 @@
 
-<table class="table">
+<table class="table" id="myTable">
 <thead>
 <tr>
     	<th>#</th>
@@ -14,12 +14,14 @@
           
         </tr>
     </thead>
-    <tbody>
+    
+    <tbody id="children">
+    
         <?php if (sizeof($children) > 0) : ?>
             <?php foreach ($children as $row) : ?>
-                <tr>
+                <tr class="one_child" id="child<?php echo $row['child_id'];?>">
                   <td><?php echo $row['child_id'] ; ?></td>
-                  <td><?php echo $row['name'] ; ?></td>
+                  <td class="name"><?php echo $row['name'] ; ?></td>
                   <td><?php echo $row['user_id'] ; ?></td>
                   <td><?php echo $row['gender'] ; ?></td>
                   <td><?php echo $row['birthday'] ; ?></td>
@@ -37,10 +39,7 @@
                              array('onClick' => "return confirm('Are you sure you want to delete?')"));
                         ?><span class="glyphicon glyphicon-trash"></span>
 					</td>
-                <tr>
-               
-                  <td></td>
-                </tr>
+                
             <?php endforeach ; ?>
         <?php else : ?>
                 <tr>

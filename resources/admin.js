@@ -11,8 +11,8 @@ $(document).ready(function() {
 		console.log("hely: "+current_place)
 		var e = document.getElementById(current_place);
 		e.className += " active";
-		
-		
-		
-		
 });
+
+function search_by_name() {
+   
+}

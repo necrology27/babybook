@@ -1,4 +1,4 @@
- function myFunction() {
+ function search_by_name() {
     var input, filter, ul, li, a, i;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();

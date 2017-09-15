@@ -33,7 +33,7 @@
                 </div>
                 
                 <div class="col-xs-12 col-md-2 pull-right form-group">
-                	<input class="form-control" type="text" id="myInput" onkeyup="myFunction()" placeholder="<?php echo _e('search_by_name'); ?>">
+                	<input class="form-control" type="text" id="myInput" onkeyup="search_by_name()" placeholder="<?php echo _e('search_by_name'); ?>">
                 </div>
             
            		<div class="dropdown pull-right">
