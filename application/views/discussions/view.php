@@ -1,5 +1,4 @@
-SORT: <?php echo anchor('discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC' : 'ASC'),'Newest '
-            . (($dir == 'ASC') ? 'DESC' : 'ASC'));?>
+
 <div class="container-fluid">
 <table class="table table-hover table-responsive">
   <thead>
@@ -9,8 +8,31 @@ SORT: <?php echo anchor('discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC
   </thead>
   <tbody class=" col-md-offset-1">
 
+  <tr>
+  	<td>SORT: <?php echo anchor('discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC' : 'ASC'),'Newest '
+            . (($dir == 'ASC') ? 'DESC' : 'ASC'));?>
+    </td>
+  </tr>
     <?php foreach ($query as $result) { ?>
       <tr>
+          <td>
+          <!--  rating_active disabled hozzaadni a class-hez -->
+          
+          <div class="ratings">
+            <p class="pull-right"></p>
+            <p>
+                <!-- Like Icon HTML -->
+                <span class="glyphicon glyphicon-thumbs-up rate btn" id="like.<?php echo $result['ds_id']. "." . $result['like_num']; ?>"></span>&nbsp;
+                <!-- Like Counter -->
+                <span class="counter" ><?php echo $result['like_num']; ?></span>&nbsp;&nbsp;&nbsp;
+                <!-- Dislike Icon HTML -->
+                <span class="glyphicon glyphicon-thumbs-down rate btn" id="dislike.<?php echo $result['ds_id']. "." . $result['dislike_num']; ?>"></span>&nbsp;
+                <!-- Dislike Counter -->
+                <span class="counter" ><?php echo $result['dislike_num']; ?></span>
+            </p>
+        </div>
+          
+          </td>
         <td>
             <span class="pull-left">
     			<img src="<?php echo resources_url();?>img/<?php echo $result["role"];?>.ico" alt="flag" class="pull-left" style="width:32px;height:32px;border:0;">

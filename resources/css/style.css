@@ -701,3 +701,8 @@ ul.sm-wrap a{
     color: #000 !important; /* active text color */
     background-color: #a94442; /* active bg color */
 }
+.rating_active{
+	
+	 background-color: rgb(77, 219, 255);
+	 disabled:true ;
+}

@@ -96,7 +96,7 @@
             
             });
             console.log("12");
-            //FB.logout();
+           
         }
 
 

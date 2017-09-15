@@ -25,6 +25,7 @@
 
       <ul class="nav navbar-nav navbar-right">
        <li><button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>login/logout'" ><?php echo _e('logout'); ?></button></li>
+       
       </ul>
     </div><!--/.nav-collapse -->
     </nav>

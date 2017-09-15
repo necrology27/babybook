@@ -14,16 +14,15 @@ class send_answer extends MY_Controller {
             'email'
         ));
         $this->load->database();
-        $this->load->model('user_model');
         $this->load->model('answer_model');
         $this->load->model('child_model');
     }
     
     public function index()
     {
-       
-        $session_data = $this->session->userdata('logged_in');
-        $userId = $session_data['id'];
+
+        
+        $userId = getCurrentUserID();
         
         $skill_id =  $this->input->post('id');
         $skill_group_id =  $this->input->post('skill_group_id');

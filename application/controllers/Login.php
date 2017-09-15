@@ -61,7 +61,7 @@ class Login extends MY_Controller
             'user_language_id' => 1
             
         );
-
+        
         setCurrentUserData($sess_array);
         
         echo "ok";

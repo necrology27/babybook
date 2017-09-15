@@ -11,6 +11,12 @@ class Discussions extends MY_Controller {
     }
     
     public function index() {
+        $scripts = array(
+            'rating.js'
+        );
+        
+        $this->data['scripts'] = $scripts;
+        
         if ($this->uri->segment(3)) {
             $filter = $this->uri->segment(4);
             $direction = $this->uri->segment(5);
@@ -24,11 +30,12 @@ class Discussions extends MY_Controller {
         ls_init_language();
         $this->data['title'] = $this->lang->line('discussions_title');
         $page_data['query'] = $this->Discussions_model->fetch_discussions($filter,$direction);
+      
         
         $this->load->view('templates/header');
         $this->load->view('nav/top_nav');
         $this->load->view('discussions/view', $page_data);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/footer', $this->data);
     }
     
     public function create() {

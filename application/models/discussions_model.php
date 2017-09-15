@@ -32,7 +32,7 @@ class Discussions_model extends CI_Model {
         $this->db->order_by("ds_created_at", $dir);
         $query = $this->db->get();
         $result = $query->result_array();
-       
+
             return $result;
 
     }
@@ -82,4 +82,78 @@ class Discussions_model extends CI_Model {
         $query = $this->db->get();
         return $this->db->affected_rows();
     }
+    
+    function get_like_rating($ds_id){
+        $this->db->select('COUNT(b.id) as like_num');
+        $this->db->from('discussions a');
+        $this->db->join('ratings b', 'b.ds_id=a.ds_id', 'left');
+        $this->db->where('a.ds_id', $ds_id);
+        $this->db->where('type', "1");
+        $query = $this->db->get();
+        $result = $query->result_array();
+        return $this->db->affected_rows()['like_num']; 
+    }
+    function get_dislike_rating($ds_id){
+        $this->db->select('COUNT(ds_id) as dislike_num');
+        $this->db->from('discussions');
+        $this->db->join('skills b', 'b.id=a.skill_id', 'left');
+        $this->db->where('ds_id', $ds_id);
+        $this->db->where('type', "0");
+        $query = $this->db->get();
+        $r['dislike_num']= $this->db->affected_rows()['dislike_num'];
+        return $r;
+     }
+    
+    function add_like($ds_id, $value){
+        $this -> db -> where('ds_id', $ds_id);
+        $this->db->update('discussions', array('like_num' => $value));
+       
+        $this->db->delete('ratings', array('user_id' => getCurrentUserID(), 'ds_id' => $ds_id));
+        $rating = array(
+            'user_id' => getCurrentUserID(),
+            'ds_id' => $ds_id,
+            'type' => "1",
+            
+        );
+        $this->db->insert('ratings', $rating);
+        return $this->db->insert_id();
+    }
+    
+    function add_dislike($ds_id, $value){
+        $this -> db -> where('ds_id', $ds_id);
+        $this->db->update('discussions', array('dislike_num' => $value));
+        
+        $this->db->delete('ratings', array('user_id' => getCurrentUserID(), 'ds_id' => $ds_id));
+        //if($this->db->affected_rows()==1)
+        //{
+            //kellett törölni, tehat discussions-ben like_num= like_num-1
+//             $this->db->from('discussions');
+//             $this -> db -> where('ds_id', $ds_id);
+         //    $this->db->set('like_num', 'like_num - ' . (int) 1, FALSE);
+           // $this->db->update('discussions', array('like_num' => $this->get_like_rating($ds_id)-1));
+       //     $this->db->update('discussions', array('like_num' => 'like_num - ' . (int) 1)); 
+     //   }
+      
+        $rating = array(
+            'user_id' => getCurrentUserID(),
+            'ds_id' => $ds_id,
+            'type' => "0",
+            
+        );
+        $this->db->insert('ratings', $rating);
+        return $this->get_like_rating($ds_id);
+    }
+    
+    function get_vote($user_id, $ds_id){
+        
+        $this->db->select('type');
+        $this->db->from('ratings');
+        $this->db->where('user_id', $user_id);
+        $this->db->where('ds_id', $ds_id);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        
+    }
+    
+    
 }

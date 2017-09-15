@@ -1,5 +1,5 @@
 <?php
-class send_answer extends MY_Controller {
+class rating extends MY_Controller {
     
     public function __construct()
     {
@@ -16,33 +16,23 @@ class send_answer extends MY_Controller {
         $this->load->database();
         $this->load->model('user_model');
         $this->load->model('answer_model');
-        $this->load->model('child_model');
+        $this->load->model('discussions_model');
     }
     public function index()
     {
-        var_dump("itt van!!!!"); die();
-        echo "ok";
-    }
-    
-    public function make_rate()
-    {
-        var_dump("itt van!!!!"); die();
         $userId = getCurrentUserID();
-
-         if($_POST['ds_id']){
-            $prev_record = $this->discussions_model->get_rating($_POST['ds_id']);
-            $prev_like = $prev_record['like_num'];
-            $prev_dislike = $prev_record['dislike_num'];
-            
+        
+        if($_POST['ds_id']){
             //calculates the numbers of like or dislike
             if($_POST['type'] == 1){
-                $like = ($prev_like + 1);
+                $like = ($_POST['value'] + 1);
                 $this->discussions_model->add_like($_POST['ds_id'], $like);
+                
             }else{
-                $dislike = ($prev_dislike + 1);
-                $this->discussions_model->add_dislike($_POST['ds_id'], $dislike);
+                $dislike = ($_POST['value'] + 1);
+                $ret=$this->discussions_model->add_dislike($_POST['ds_id'], $dislike);
             }
-            echo "ok";
         }
+        echo "ok";
     }
 }
