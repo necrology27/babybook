@@ -54,7 +54,9 @@ body {
     		<div class="btn-group" role="group" aria-label="New image/album">
     			<button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/update'"><?php echo _e('edit_profile'); ?></button>
       			<button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>login/logout'" ><?php echo _e('logout'); ?></button>
+      			<?php  if (getCurrentUserRole() == "3") {?>
       			<button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>admin/dashboard'" >Admin</button>
+      			<?php  }?>
   			</div>
       		</li>
       		<li><p class="navbar-text" id="user"><?php echo _e('logged_in_as'); ?>: <?php echo getCurrentUserName(); ?></p></li>

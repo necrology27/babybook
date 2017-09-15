@@ -28,7 +28,6 @@ class user_model extends CI_Model
             return $res['id'];
     }
     
-    
     function get_user_data_by_face_id($facebook_id)
     {
         $this->db->select('*');
@@ -41,8 +40,19 @@ class user_model extends CI_Model
             else
                 return false;
     }
-
     
+    function get_user_role_by_id($id)
+    {
+        $this->db->select('role');
+        $this->db->from('users');
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if ($this->db->affected_rows() > 0)
+            return $result[0]['role'];
+        else
+            return false;
+    }
     
     function get_user_data($id)
     {
@@ -79,8 +89,6 @@ class user_model extends CI_Model
         }
     }
     
-    
-    
     function get_users_children($id)
     {
         $this->db->select('*');
@@ -94,8 +102,6 @@ class user_model extends CI_Model
             return false;
     }
     
-   
-
     function get_user_lang($user_id)
     {
         $this->db->select('language');
@@ -141,6 +147,7 @@ class user_model extends CI_Model
         $this->db->where('email', $data);
         return $this->db->update('users');
     }
+    
     function getAllUsers()
     {
         $this->db->select('*');
@@ -157,21 +164,18 @@ class user_model extends CI_Model
         return $this->db->affected_rows();
     }
     
-    
     function get_all_info($first,  $num_per_page){
         
         $this->db->limit($num_per_page, $first);
         $this->db->select('id, facebook_id, a.name, 	a.gender, email, a.registration_date, a.birthday, role, language, measurement, COUNT(child_id) as num_of_children');
         $this->db->from('users a');
         $this->db->join('children b', 'b.user_id=a.id', 'left');
-        
-      //  $this->db->join('comments c', 'c.usr_id=a.id', 'left');
-      //  $this->db->join('discussions d', 'd.usr_id=a.id', 'left');
         $this->db->group_by('user_id'); 
         $query = $this->db->get();
         $result = $query->result_array();
         return $result;
     }
+    
     function delete($user_id){
         $this -> db -> where('id', $user_id);
         $this -> db -> delete('users');

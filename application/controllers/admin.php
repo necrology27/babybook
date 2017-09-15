@@ -14,23 +14,27 @@ class Admin extends MY_Controller {
         
     }
 
-    public function index() {}
+    public function index() {
+        if (getCurrentUserRole() != 3) {
+            redirect("home", 'refresh');
+        }
+    }
 
     public function users($page=0) {
+        if (getCurrentUserRole() != 3) {
+            redirect("home", 'refresh');
+        }
+        
         $this->load_scripts();
         $this->data['current_place']= "users";
         $this->data['current_page']= $page;
         $this->data['num_of_data']= $this->User_model->get_num_of_user();
         $this->data['num_per_page']=5;
         $first=$this->data['num_per_page']*$page;
-       // $this->data['users'] = $this->Child_model->getAllChildren($first,  $this->data['num_per_page']);
-        
         
         ls_init_language();
         $this->data['users'] = $this->User_model->get_all_info($first,  $this->data['num_per_page']);
         
-        
-        //echo '<pre>'; var_dump($this->data['users']); echo '</pre>'; die();
         $this->data['title'] = $this->lang->line('admin_users');
         $this->data['active'] = 'users';
         
@@ -43,6 +47,10 @@ class Admin extends MY_Controller {
     }
     
     public function discussions($page=0) {
+        
+        if (getCurrentUserRole() != 3) {
+            redirect("home", 'refresh');
+        }
         $this->load_scripts();
         $this->data['current_place']= "discussions";
         $this->data['current_page']= $page;
@@ -66,6 +74,10 @@ class Admin extends MY_Controller {
    
     
     public function children($page=0) {
+        
+        if (getCurrentUserRole() != 3) {
+            redirect("home", 'refresh');
+        }
         $this->load_scripts();
         $this->data['current_place']= "children";
         $this->data['current_page']= $page;
@@ -86,6 +98,10 @@ class Admin extends MY_Controller {
     }
     
     public function comments($page=0) {
+        
+        if (getCurrentUserRole() != 3) {
+            redirect("home", 'refresh');
+        }
         $this->load_scripts();
         
         $this->data['current_place']= "comments";
@@ -108,6 +124,9 @@ class Admin extends MY_Controller {
 
     public function dashboard() {
         
+        if (getCurrentUserRole() != 3) {
+            redirect("home", 'refresh');
+        }
         $this->users();
         
     }
@@ -116,23 +135,23 @@ class Admin extends MY_Controller {
         $this->User_model->delete($id);
         redirect('admin/users');
     }
+    
     public function delete_child($id){
         $this->Child_model->delete($id);
         redirect('admin/children');
     }
+    
     public function delete_comment($id){
         $this->Comments_model->delete($id);
         redirect('admin/comments');
     }
+    
     public function delete_discussion($id){
         $this->Discussions_model->delete($id);
         redirect('admin/discussions');
     }
 
     public function update_item() {
-//         if ($this->session->userdata('logged_in') == FALSE) {
-//             redirect('admin/login');
-//         } 
 
         if ($this->uri->segment(4) == 'allow') {
             $is_active = 1;
@@ -148,6 +167,7 @@ class Admin extends MY_Controller {
 
         redirect('admin');
     }
+    
     public function load_scripts(){
         
         $scripts = array(
