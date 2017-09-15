@@ -166,6 +166,18 @@ $lang['discussion_ds_title'] = 'A téma címe';
 $lang['discussion_ds_link'] = 'Link hozzáadása (opcionális)';
 $lang['discussion_ds_body'] = 'A kérdésed, megjegyzésed stb.';
 
+// Admin - titles
+$lang['admin_users'] = "Felhasználók kezelése";
+$lang['admin_children'] = "Gyerekek kezelése";
+$lang['admin_discussions'] = "Beszélgetések kezelése";
+$lang['admin_comments'] = "Kommentek kezelése";
+
+// Admin - headers
+$lang['discussions_text'] = "Tartalom";
+$lang['number_of_comments'] = "Kommentek száma";
+$lang['number_of_likes'] = "Likeok száma";
+$lang['number_of_dislikes'] = "Dislikeok száma";
+
 // Admin - login
 $lang['admin_login_header'] = "Kérlek jelentkezz be";
 $lang['admin_login_email'] = "Email";

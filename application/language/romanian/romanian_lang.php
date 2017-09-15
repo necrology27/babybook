@@ -139,7 +139,7 @@ $lang['child_update_error'] = "Oops! Nu se poate <b>actualiza profilul copilului
 $lang['system_system_name'] = "babybook Forum";
 
 // Top Nav
-$lang['top_nav_view_discussions'] = "Home";
+$lang['top_nav_view_discussions'] = "Acasă";
 $lang['top_nav_new_discussion'] = "Discuție nouă";
 
 // Discussions
@@ -157,13 +157,25 @@ $lang['comments_comment_email'] = 'Your email';
 $lang['comments_comment_body'] = 'Comment';
 
 // Discussions
-$lang['discussion_form_instruction'] = "Create your own discussion, fill in the form below";
-$lang['discussion_flag'] = ' [Flag]';
-$lang['discussion_usr_name'] = 'Your name';
-$lang['discussion_usr_email'] = 'Your email';
-$lang['discussion_ds_title'] = 'Discussion title';
-$lang['discussion_ds_link'] = 'Post a link (optional)';
-$lang['discussion_ds_body'] = 'Your question, observații etc';
+$lang['discussion_form_instruction'] = "Creați o discuție proprie, completați formularul de mai jos";
+$lang['discussion_flag'] = ' [Steag]';
+$lang['discussion_usr_name'] = 'Numele tău';
+$lang['discussion_usr_email'] = 'Email-ul tau';
+$lang['discussion_ds_title'] = 'Titlul discuției';
+$lang['discussion_ds_link'] = 'Postează un link (opțional)';
+$lang['discussion_ds_body'] = 'Întrebarea, punctul, etc.';
+
+// Admin - titles
+$lang['admin_users'] = "Administrare utilizatori";
+$lang['admin_children'] = "Adminsitrare copii";
+$lang['admin_discussions'] = "Administrare discuții";
+$lang['admin_comments'] = "Administrare comentarii";
+
+// Admin - headers
+$lang['discussions_text'] = "Conţinut";
+$lang['number_of_comments'] = "Numărul de comentarii";
+$lang['number_of_likes'] = "Numărul de preferințe";
+$lang['number_of_dislikes'] = "Numărul de antipatie";
 
 // Admin - login
 $lang['admin_login_header'] = "Conectați-vă";

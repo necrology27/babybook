@@ -164,18 +164,30 @@ $lang['comments_comment_body'] = 'Comment';
 // Discussions
 $lang['discussion_form_instruction'] = "Create your own discussion, fill in the form below";
 $lang['discussion_flag'] = ' [Flag]';
-$lang['discussion_usr_name'] = 'Numele tău';
-$lang['discussion_usr_email'] = 'Email-ul tau';
-$lang['discussion_ds_title'] = 'Titlul discuției';
-$lang['discussion_ds_link'] = 'Postează un link (opțional)';
-$lang['discussion_ds_body'] = 'Întrebarea, punctul, etc.';
+$lang['discussion_usr_name'] = 'Your name';
+$lang['discussion_usr_email'] = 'Your email';
+$lang['discussion_ds_title'] = 'Discussion title';
+$lang['discussion_ds_link'] = 'Post a link (optional)';
+$lang['discussion_ds_body'] = 'Your question, observații etc';
+
+// Admin - titles
+$lang['admin_users'] = "Manage Users";
+$lang['admin_children'] = "Manage Children";
+$lang['admin_discussions'] = "Manage Discussions";
+$lang['admin_comments'] = "Manage Comments";
+
+// Admin - headers
+$lang['discussions_text'] = "Content";
+$lang['number_of_comments'] = "Number of Comments";
+$lang['number_of_likes'] = "Number of Likes";
+$lang['number_of_dislikes'] = "Number of Dislikes";
 
 // Admin - login
 $lang['admin_login_header'] = "Please sign in";
 $lang['admin_login_email'] = "Email";
 $lang['admin_login_password'] = "Password";
-$lang['admin_login_signin'] = "Signin...";
-$lang['admin_login_error'] = "Whoops!  Something went wrong - have another go!";
+$lang['admin_login_signin'] = "Sign in...";
+$lang['admin_login_error'] = "Whoops! Something went wrong - have another go!";
 $lang['admin_dash_allow'] = "Allow";
 $lang['admin_dash_disallow'] = "Disallow";
 

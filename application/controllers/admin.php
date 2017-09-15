@@ -10,17 +10,11 @@ class Admin extends MY_Controller {
         $this->load->model('Child_model');
         $this->load->model('Discussions_model');
         $this->load->model('Comments_model');
-        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>'); 
-       
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         
     }
 
-    
-    public function index() {
-         
-
-    }
-
+    public function index() {}
 
     public function users($page=0) {
         $this->load_scripts();
@@ -37,7 +31,7 @@ class Admin extends MY_Controller {
         
         
         //echo '<pre>'; var_dump($this->data['users']); echo '</pre>'; die();
-        $this->data['title'] = $this->lang->line('forum');
+        $this->data['title'] = $this->lang->line('admin_users');
         $this->data['active'] = 'users';
         
         $this->load->view('templates/header', $this->data);
@@ -59,7 +53,7 @@ class Admin extends MY_Controller {
         $this->data['discussion_query'] = $this->Admin_model->dashboard_fetch_discussions($first,  $this->data['num_per_page']);
         
         ls_init_language();
-        $this->data['title'] = $this->lang->line('forum');
+        $this->data['title'] = $this->lang->line('admin_discussions');
         
         $this->load->view('templates/header', $this->data);
         $this->load->view('nav/top_nav');
@@ -81,7 +75,7 @@ class Admin extends MY_Controller {
         $this->data['children'] = $this->Child_model->getAllChildren($first,  $this->data['num_per_page']);
         
         ls_init_language();
-        $this->data['title'] = $this->lang->line('forum');
+        $this->data['title'] = $this->lang->line('admin_children');
         
         $this->load->view('templates/header', $this->data);
         $this->load->view('nav/top_nav');
@@ -103,7 +97,7 @@ class Admin extends MY_Controller {
         $this->data['comment_query'] = $this->Admin_model->dashboard_fetch_comments($first,  $this->data['num_per_page']);
         
         ls_init_language();
-        $this->data['title'] = $this->lang->line('forum');
+        $this->data['title'] = $this->lang->line('admin_comments');
         $this->load->view('templates/header', $this->data);
         $this->load->view('nav/top_nav');
         $this->load->view('admin/admin_nav', $this->data);
