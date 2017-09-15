@@ -7,7 +7,7 @@
       </h2>
       <p class="lead"><?php echo $discussion_result['ds_body']; ?></p>
     <?php } ?>
-    
+    <ul>
     <!-- Comment - list of comments -->
     <?php foreach ($comment_query as $comment_result) { 
         
@@ -29,7 +29,7 @@
         </div>
       </li>
     <?php } ?>
-    
+    </ul>
     <!-- Form - begin form section -->
     <br /><br />
     <p class="lead"><?php echo $this->lang->line('comments_form_instruction');?></p>
