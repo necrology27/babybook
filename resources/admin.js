@@ -5,17 +5,13 @@ $(document).ready(function() {
 		var d = document.getElementById(current_page);
 		d.className += " active";
 		
-		
 		var current_place=document.getElementById("current_place").innerHTML;
 		
 		console.log("hely: "+current_place)
 		var e = document.getElementById(current_place);
 		e.className += " active";
 		
-		
 		$(".role_radio").click(function (e) {
-	    	
-	    	
 	    	var name = $(this).attr('id');
 	    	var arr = name.split(".");
 	    	var role_type = arr[0];
@@ -34,7 +30,6 @@ $(document).ready(function() {
 			      }
 	        });
 			
-	    });
-		
+	    });	
 		
 });
