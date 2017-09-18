@@ -500,6 +500,7 @@
 	function uploadFile(data, file) {
 		if (file.size >= data.maxSize || file.error === true) {
 			abortFile(data, file, "size");
+			alert("Max file size: " + data.maxSize);
 		} else if (data.chunked) {
 			// Chunked upload
 			file.started = true;
@@ -513,17 +514,19 @@
 			uploadChunk(data, file);
 		} else {
 			var formData = new FormData();
-
 			formData.append(data.postKey, file.file);
 			formData = setFormData(data, formData, file);
 
 			if (formData === false) {
 				abortFile(data, file, "abort");
+				alert("File type not allowed!");
 			} else {
 				// Standard upload
+				var chid = document.getElementById("child_id").innerHTML;
 				file.started = true;
 				file.transfer = $.ajax({
-					url         : data.action,
+					url         : data.action+"/"+chid,
+					mimeType	: "multipart/form-data",
 					data        : formData,
 					dataType    : data.dataType,
 					type        : "POST",
@@ -555,6 +558,9 @@
 					},
 					success: function(response, status, jqXHR) {
 						file.complete = true;
+						
+						var gallery = $("#gallery");
+						gallery.html(response);
 
 						data.uploaded++;
 						data.$el.trigger(Events.fileComplete, [ file, response ]);

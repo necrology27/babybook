@@ -95,13 +95,13 @@ body {
     40%  {top:-40%;}
     60%  {top:-20%;}
     80%  {top:0%;}
-    100%  {top:10%;}
+    100%  {top:2%;}
 }
 
 .animated_form {
 	display: block;
 	position: relative;
-	top: 10%;
+	top: 2%;
     animation-name: jon_a_form;
     animation-timing-function: linear;
     animation-duration: 1s;

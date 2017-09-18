@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>bootstrap-3.3.7-dist/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>css/style.css">
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>upload.css">
+<link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>light.css">
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>slider/css/slider.css">
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>jquery-ui/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>nanogallery/dist/css/nanogallery.min.css">
@@ -15,11 +16,12 @@ table, .white-container {
     margin-bottom: 15px;
     background: #fff;
     border-radius: 10px;
+    box-shadow: 2px 2px 10px #888888;
 }
 
 body {
     margin: 0 auto;
-    background: #ffffff url(<?php echo resources_url() . "img/meadow.png"?>) no-repeat scroll;
+    background: #ffffff url(<?php echo resources_url() . "img/balls.jpg"?>) no-repeat scroll;
     background-size: cover;
     height: 100%;
 }

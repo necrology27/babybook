@@ -1,6 +1,5 @@
 <div>
-	<div class="panel-heading">
-	<div class="container white-container col-md-offset-2 col-md-3" style="text-align: center; padding-bottom: 30px;">
+	<div class="container white-container col-md-offset-2 col-md-3" style="text-align: center; display: grid; position: relative; padding-bottom: 15px;">
 		<h4><?php _e("child_name_placeholder");?>: <strong><?php echo $this->data['name'];?></strong></h4>
 		<h5><?php _e("birthday_label");?>: <strong><?php echo $this->data['birthday'];?></strong></h5>
 		<h5><?php _e("gender_label");?>: <strong><?php echo $this->data['gender'];?></strong></h5>
@@ -8,14 +7,13 @@
 				class="btn btn-danger" title="Edit"><?php echo _e('edit_button');?></button>
 	</div>
 		    <?php echo $this->session->flashdata('verify_msg'); ?>
-			<!-- <h4><?php echo $profil_title; ?></h4>  -->
 		<div style="text-align: center;">
 			<img
 				src="<?php echo uploads_url() . $user_id . "/" . $child_id . "/" . $this->image_model->get_def_img($child_id); ?>"
 				class="img-circle" alt="<?php echo _e('missing_image');?>" width="250">
 		</div>
 
-		<div class="container white-container">
+		<div class="container white-container" style="display: grid;">
 			<div>
 				<h3><?php echo _e('social'); ?></h3>
 				<div class="progress">
@@ -56,5 +54,4 @@
 			</div>
     		<?php echo $this->session->flashdata('msg'); ?>
     		</div>
-	</div>
 </div>
