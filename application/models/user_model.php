@@ -54,6 +54,24 @@ class user_model extends CI_Model
             return false;
     }
     
+    function change_role($id, $new_role_type)
+    {
+        
+        if($new_role_type==="admin")
+            $this->db->set('role', 3);
+            
+            elseif($new_role_type==="expert")
+                $this->db->set('role', 2);
+                
+                else
+                    $this->db->set('role', 1);
+                  
+                    $this->db->where('id', $id);
+                    $this->db->update('users');
+                    
+                    return true;
+    }
+    
     function get_user_data($id)
     {
         $this->db->select('*');
@@ -167,10 +185,10 @@ class user_model extends CI_Model
     function get_all_info($first,  $num_per_page){
         
         $this->db->limit($num_per_page, $first);
-        $this->db->select('id, facebook_id, a.name, 	a.gender, email, a.registration_date, a.birthday, role, language, measurement, COUNT(child_id) as num_of_children');
+        $this->db->select('a.id, a.facebook_id, a.name, 	a.gender, email, a.registration_date, a.birthday, role, language, measurement, COUNT(child_id) as num_of_children, a.role');
         $this->db->from('users a');
         $this->db->join('children b', 'b.user_id=a.id', 'left');
-        $this->db->group_by('user_id'); 
+        $this->db->group_by('a.id');
         $query = $this->db->get();
         $result = $query->result_array();
         return $result;

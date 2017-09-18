@@ -186,4 +186,6 @@ $lang['admin_login_error'] = "Hopa! Ceva a mers prost - trebuie să plecați!";
 $lang['admin_dash_allow'] = "Permite";
 $lang['admin_dash_disallow'] = "Nu permite";
 
+$lang['admin'] = "Admin";
+$lang['expert'] = "Expert";
 //-------------------------------------------------------------------------------------------------------------

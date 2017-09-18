@@ -31,11 +31,12 @@ class Admin extends MY_Controller {
         $this->data['current_page']= $page;
         $this->data['num_of_data']= $this->User_model->get_num_of_user();
 
+        
         $first=$this->data['num_per_page']*$page;
        
         ls_init_language();
         $this->data['users'] = $this->User_model->get_all_info($first,  $this->data['num_per_page']);
-        
+      //  var_dump($this->data['users']); die();
         $this->data['title'] = $this->lang->line('admin_users');
         $this->data['active'] = 'users';
         
@@ -133,6 +134,14 @@ class Admin extends MY_Controller {
     public function delete_user($id){
         $this->User_model->delete($id);
         redirect('admin/users');
+    }
+    
+    public function change_role(){
+        $user_id =  $this->input->post('user_id');
+        $new_role_type =  $this->input->post('new_role_type');
+        $this->User_model->change_role($user_id, $new_role_type);
+      //  redirect('admin/users');
+        echo $new_role_type;
     }
     
     public function delete_child($id){

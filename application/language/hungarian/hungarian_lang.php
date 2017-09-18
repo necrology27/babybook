@@ -186,4 +186,7 @@ $lang['admin_login_signin'] = "Bejelentkezés...";
 $lang['admin_login_error'] = "Oupsz!  Valami hiba történt!";
 $lang['admin_dash_allow'] = "Engedélyezve";
 $lang['admin_dash_disallow'] = "Nem engedélyezve";
+
+$lang['admin'] = "Adminisztrátor";
+$lang['expert'] = "Szakértő";
 //--------------------------------------------------------------------------------------------------------
