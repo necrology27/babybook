@@ -213,15 +213,15 @@ class Child extends MY_Controller {
         }
     }
     
-    function upload_album_images() {
-        var_dump($_FILES);
+    function upload_album_images($child_id) {
         
         $upload_date=time();
-        if (!file_exists(FCPATH . 'uploads/'. getCurrentUserID() . '/'.$childId)) {
-            mkdir(FCPATH . 'uploads/' . getCurrentUserID() . '/'.$childId, 0777, true);
+        if (!file_exists(FCPATH . 'uploads/'. getCurrentUserID() . '/'.$child_id)) {
+            mkdir(FCPATH . 'uploads/' . getCurrentUserID() . '/'.$child_id, 0777, true);
         }
         
-        $config['upload_path'] = FCPATH . 'uploads/' . getCurrentUserID() . '/'.$childId;
+        $config['upload_path'] = FCPATH . 'uploads/' . getCurrentUserID() . '/'.$child_id;
+        
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
         $config['file_name'] = 'img_'.$upload_date;
         $config['file_ext_tolower'] = TRUE;
@@ -231,11 +231,12 @@ class Child extends MY_Controller {
         $config['max_height'] = '2048';
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
-        
-        if($this->upload->do_upload())
+
+        if($this->upload->do_upload("file"))
         {
             
             $data = array('upload_data' => $this->upload->data());
+            $upload_data = $this->upload->data();
             
             $config['image_library'] = 'gd2';
             $config['source_image'] = $upload_data['full_path'];
@@ -246,29 +247,34 @@ class Child extends MY_Controller {
             $this->load->library('image_lib', $config);
             
             $this->image_lib->clear();
-            $this->image_lib->initialize($configer);
+            $this->image_lib->initialize($config);
             $this->image_lib->resize();
             
             $upload_data = $data['upload_data'];
             $file_name =   $upload_data['file_name'];
             $data = array(
-                'child_id' => $childId,
+                'child_id' => $child_id,
                 'file_name' =>  $file_name,
-                'title' => $title,
-                'description' => $description
+                'title' => "new image",
+                'description' => "no description"
             );
             $this->data = $this->data + $data;
             $imageId=$this->image_model->insertImage($data);
             
-            $this->load->view('save_child', $this->data);
-            return true;
+            $this->data['user_id'] = getCurrentUserID();
+            $this->data['imgs'] = $this->image_model->get_all_imgs($this->data['child_id']);
+            if( $this->data['imgs']!=false)
+                $this->data['img_count'] = count($this->data['imgs']);
+            else
+                $this->data['img_count'] = 0;
+                
+            echo $this->load->view('nano_view', $this->data, true);
         }
         return false;
     }
     
-    function album($child_id = NULL)
+    function album($child_id)
     {
-        
         $scripts = array(
             'nanogallery/dist/jquery.nanogallery.min.js',
             'core.js',
