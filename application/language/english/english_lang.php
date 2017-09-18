@@ -52,6 +52,8 @@ $lang['sort_by_last_update']= "by last update";
 $lang['search_by_name']= "Search by name";
 
 //album
+$lang['remove_selected_label'] = "Remove selected";
+$lang['remove_selected_question'] = "Are you sure you want to remove selected images?";
 $lang['new_album_label'] = "New album";
 $lang['upload_photo_label'] = "Upload photo";
 $lang['title_label'] = "Title";

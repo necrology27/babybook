@@ -1,4 +1,4 @@
-$(document).ready(function() {
+function load_album() {
 	var formData = new FormData();
 	
 	$(".upload").upload({
@@ -38,8 +38,36 @@ $(document).ready(function() {
 		itemsBaseURL : base_url + 'uploads/',
 		colorScheme : babyScheme,
 		colorSchemeViewer : babySchemeViewer,
-		thumbnailWidth : '300 XS100 LA400 XL500',
-		thumbnailHeight : '200 XS80 LA250 XL350',
-		thumbnailLabel: { position: 'overImageOnBottom', hideIcons: true }
+	    itemsSelectable : true, showCheckboxes: true, checkboxStyle : 'left:15px; top:15px;',
+		thumbnailWidth : '300 XS100 LA250 XL300',
+		thumbnailHeight : '200 XS80 LA170 XL220',
+		thumbnailLabel: { position: 'overImageOnBottom', hideIcons: false }
 	});
+	
+}
+
+$(document).ready(function() {
+	load_album();
+	
+	$("#remove_btn").on("click", function(){
+		var selected = $('#nanoGallery').nanoGallery('getSelectedItems');
+		for (i = 0; i < selected.length; i++) {
+			var name = selected[i].src.split("/")[8];
+		    $.ajax({
+		        url: base_url + 'child/delete_images/' + name+"/"+chid,
+		        type: 'POST',
+		        data: {
+		            file_name: name,
+		            child_id: chid
+		        },
+		        dataType: 'html',
+		        success: function(response) {
+					var gallery = $("#gallery");
+					gallery.html(response);
+
+					load_album();
+		        }
+		    });
+		}
+	});	
 });

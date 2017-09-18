@@ -292,6 +292,7 @@ class Child extends MY_Controller {
         $this->data['error'] = ' ';
         $this->data['child_id'] = $child_id;
         
+        
         $this->data['imgs'] = $this->image_model->get_all_imgs($this->data['child_id']);
         if( $this->data['imgs']!=false)
             $this->data['img_count'] = count($this->data['imgs']);
@@ -304,6 +305,25 @@ class Child extends MY_Controller {
         $this->load->view('templates/header', $this->data);
         $this->load->view('album_view', $this->data);
         $this->load->view('templates/footer', $this->data);
+    }
+    
+    function delete_images($id, $chid)
+    {
+        $this->image_model->deleteImage($id);
+        
+        $data = array(
+            'child_id' => $chid
+        );
+        $this->data = $this->data + $data;
+        
+        $this->data['user_id'] = getCurrentUserID();
+        $this->data['imgs'] = $this->image_model->get_all_imgs($chid);
+        if( $this->data['imgs']!=false)
+            $this->data['img_count'] = count($this->data['imgs']);
+        else
+            $this->data['img_count'] = 0;
+        
+        echo $this->load->view('nano_view', $this->data, true);
     }
     
     function profil($child_id = NULL)

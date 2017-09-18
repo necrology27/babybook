@@ -13,6 +13,12 @@ class image_model extends CI_Model
         return $this->db->insert_id();
     }
     
+    function deleteImage($data)
+    {
+        $this -> db -> where('file_name', $data);
+        $this -> db -> delete('images');
+    }
+    
     function get_def_img_id($child_id)
     {
         $this->db->select('default_image');
@@ -39,7 +45,7 @@ class image_model extends CI_Model
     
     function get_all_imgs($child_id)
     {
-        $this->db->select('file_name, title, description');
+        $this->db->select('id, file_name, title, description');
         $this->db->from('images');
         $this->db->where('child_id', $child_id);
         $query = $this->db->get();

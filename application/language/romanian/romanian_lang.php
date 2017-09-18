@@ -50,6 +50,8 @@ $lang['search_by_name']= "Căutare după nume";
 $lang['sort_by_last_update']= "După ultima actualizare";
 
 //album
+$lang['remove_selected_label'] = "Șterge elementele selectate";
+$lang['remove_selected_question'] = "Sigur doriți să ştergeți imaginile selectate?";
 $lang['new_album_label'] = "Album nou";
 $lang['upload_photo_label'] = "Încarcă fotografie";
 $lang['title_label'] = "Titlu";

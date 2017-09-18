@@ -51,6 +51,8 @@ $lang['search_by_name']= "Keresés név szerint";
 $lang['sort_by_last_update']= "Utolsó frissítés szerint";
 
 //album
+$lang['remove_selected_label'] = "Kiválasztottak törlése";
+$lang['remove_selected_question'] = "Biztosan törölni akarja a kiválasztott képeket?";
 $lang['new_album_label'] = "Új album";
 $lang['upload_photo_label'] = "Fénykép feltöltése";
 $lang['title_label'] = "Cím";

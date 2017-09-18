@@ -111,7 +111,7 @@ nanoGALLERY v5.10.3 release notes.
     colorScheme : 'none', colorSchemeViewer : 'default',
     items : null,
     itemsBaseURL : '',
-    itemsSelectable : false, showCheckboxes: true, checkboxStyle : 'left:15px; top:15px;',
+    itemsSelectable : true, showCheckboxes: true, checkboxStyle : 'left:15px; top:15px;',
     keepSelection: false,
     jsonCharset: 'Latin', jsonProvider: '',
     paginationMaxLinesPerPage : 0, paginationDots : false, paginationSwipe : true,

@@ -10,7 +10,7 @@
 		<div style="text-align: center;">
 			<img
 				src="<?php echo uploads_url() . $user_id . "/" . $child_id . "/" . $this->image_model->get_def_img($child_id); ?>"
-				class="img-circle" alt="<?php echo _e('missing_image');?>" width="250">
+				class="img-circle" alt="<?php echo _e('missing_image');?>" height="250">
 		</div>
 
 		<div class="container white-container" style="display: grid;">

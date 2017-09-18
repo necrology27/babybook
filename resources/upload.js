@@ -566,6 +566,7 @@
 						data.$el.trigger(Events.fileComplete, [ file, response ]);
 
 						checkQueue(data);
+						load_album();
 					},
 					error: function(jqXHR, status, error) {
 						abortFile(data, file, error);
