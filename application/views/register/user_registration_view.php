@@ -110,6 +110,15 @@
 							<?php echo form_error('measurement'); ?>
 							</span>
 						</div>
+						
+						<div class="form-group">
+							<label><?php echo _e('role_label'); ?></label><br>
+							<input class="radiobtn" type="radio" name="role" value="1" checked> <?php echo _e('parent'); ?><br>
+  							<input class="radiobtn" type="radio" name="role" value="2"> <?php echo _e('expert'); ?><br>
+							<span class="text-danger">
+							<?php echo form_error('role'); ?>
+							</span>
+						</div>
 
 						<div class="form-group">
 							<button name="submit" type="submit" class="btn btn-default"><?php echo _e('signup_button'); ?></button>

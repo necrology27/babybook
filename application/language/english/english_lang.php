@@ -192,3 +192,6 @@ $lang['admin_dash_allow'] = "Allow";
 $lang['admin_dash_disallow'] = "Disallow";
 
 //-------------------------------------------------------------------------------------------------------------
+
+$lang['admin'] = "Admin";
+$lang['expert'] = "Expert";

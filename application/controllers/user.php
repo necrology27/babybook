@@ -70,7 +70,8 @@ class user extends MY_Controller
                 'password' => $this->input->post('password'),
                 'email' => $this->input->post('email'),
                 'birthday' => $this->input->post('birthday'),
-                'role' => 1,
+                'gender' => $this->input->post('gender'),
+                'role' => $this->input->post('role'),
                 'language' => $this->input->post('language'),
                 'measurement' => $this->input->post('measurement')
             );
