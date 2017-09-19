@@ -14,15 +14,14 @@ class Home extends MY_Controller
 
     public function index()
     {
-        if ($this->session->userdata('logged_in')) {
+        if (getCurrentUserID()) {
             
             $scripts = array(
                 'sort.js'
             );
             $this->data['scripts'] = $scripts;
             
-            $session_data = $this->session->userdata('logged_in');
-            $id = $session_data['id'];
+            $this->data['points'] = $this->user_model->get_user_data(getCurrentUserID())['points'];
             
             ls_init_language();
             $this->data['title'] = $this->lang->line('home_title');
@@ -41,7 +40,7 @@ class Home extends MY_Controller
                 
             }
            
-                
+         
             $this->load->view('templates/header', $this->data);
             $this->load->view('home/index.php', $this->data);
             $this->load->view('templates/footer', $this->data);

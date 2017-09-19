@@ -33,7 +33,7 @@
         <td>
             <span class="pull-left">
     			<img src="<?php echo resources_url();?>img/<?php echo $result["role"];?>.ico" alt="flag" class="pull-left" style="width:32px;height:32px;border:0;">
-                <span class="col-md-2"><?php echo anchor('comments/index/'.$result['ds_id'],$result['ds_title']);?></span>
+                <span  class="col-md-2 text"><?php echo anchor('comments/index/'.$result['ds_id'],$result['ds_title']);?></span>
             </span>
             <br>
             <div class="small text-muted col-md-offset-3">

@@ -33,8 +33,8 @@
 						<?php if ($child_id == 0) { ?>
         						    <div class="form-group">
         						    <label><?php echo _e('gender_label'); ?></label><br>
-        							<input class="radiobtn" type="radio" name="gender" value="M"> <?php echo _e('male'); ?><br>
-          							<input class="radiobtn" type="radio" name="gender" value="F" checked> <?php echo _e('female'); ?><br>
+        							<input class="radiobtn" type="radio" name="gender" value="M"> <?php echo _e('male_child'); ?><br>
+          							<input class="radiobtn" type="radio" name="gender" value="F" checked> <?php echo _e('female_child'); ?><br>
         						</div>
 
         						<div class="form-group">
@@ -115,7 +115,7 @@
 						
 						
 							<div class="form-group">
-							<input type="checkbox" name="is_parent" value="is_parent"><?php echo _e('my_child_label'); ?><br>
+							<input type="checkbox" name="is_parent" value="is_parent"> <?php echo _e('my_child_label'); ?><br>
 							<?php echo form_error('is_parent'); ?>
 							
 							</div>
@@ -124,7 +124,7 @@
 
 						<div class="form-group">
 							<button name="submit" type="submit" class="btn btn-primary"><?php echo _e('save_button'); ?></button>
-							<button name="cancel" type="reset" class="btn btn-default"><?php echo _e('cancel_button'); ?></button>
+							<button name="cancel" type="reset" onclick="location.href='<?php echo base_url();?>home'" class="btn btn-default"><?php echo _e('cancel_button'); ?></button>
 						</div>
 					<?php echo form_close(); ?>
                 <?php echo $this->session->flashdata('msg'); ?>

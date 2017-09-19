@@ -1,13 +1,15 @@
 <div class="container white-container">
     <!-- Discussion - initial comment -->
-    <?php foreach ($discussion_querys as $discussion_result) { ?>
+  <?php foreach ($discussion_querys as $discussion_result) { ?> 
       <h2>
           <?php echo $discussion_result['ds_title']; ?><br />
           <small><?php echo $this->lang->line('comments_created_by') . $discussion_result['name']; ?> <small class="pull-right"><?php echo $discussion_result['ds_created_at']; ?></small></small>
       </h2>
       <p class="lead"><?php echo $discussion_result['ds_body']; ?></p>
     <?php } ?>
+     <hr/>
     <ul>
+   
     <!-- Comment - list of comments -->
     <?php foreach ($comment_query as $comment_result) { 
         

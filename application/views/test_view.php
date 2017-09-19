@@ -53,7 +53,7 @@
 	</div>	
 	<div class="form-group">
 		<button type="button" class="btn btn-primary" onclick="location.href='<?php echo base_url();?>home'"><?php echo _e('save_button');?></button>
-		<button name="cancel" type="reset" class="btn btn-default"><?php echo _e('cancel_button');?></button>
+		<button name="cancel" type="reset" onclick="location.href='<?php echo base_url();?>home'" class="btn btn-default"><?php echo _e('cancel_button');?></button>
 		
 	</div>
 </form>

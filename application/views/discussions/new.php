@@ -20,6 +20,7 @@
         </div>
         <div class="form-group col-md-11">
           <button type="submit" class="btn btn-success"><?php echo $this->lang->line('save_button');?></button>
+          <button name="cancel" onclick="location.href='<?php echo base_url();?>discussions'" type="reset" class="btn btn-default"><?php echo _e('cancel_button'); ?></button>
         </div>
     <?php echo form_close() ; ?>
 </div>

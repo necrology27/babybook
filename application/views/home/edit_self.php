@@ -90,7 +90,7 @@
         
         						<div class="form-group">
         							<button name="submit" type="submit" class="btn btn-primary"><?php echo _e('save_button'); ?></button>
-        							<button name="cancel" type="reset" class="btn btn-default"><?php echo _e('cancel_button'); ?></button>
+        							<button name="cancel" onclick="location.href='<?php echo base_url();?>home'" type="reset" class="btn btn-default"><?php echo _e('cancel_button'); ?></button>
         						</div>
             					<?php echo form_close()?>
                             </div>
@@ -118,7 +118,7 @@
         
         						<div class="form-group">
         							<button name="submit" type="submit" class="btn btn-primary"><?php echo _e('save_button'); ?></button>
-        							<button name="cancel" type="reset" class="btn btn-default"><?php echo _e('cancel_button'); ?></button>
+        							<button name="cancel" onclick="location.href='<?php echo base_url();?>home'" type="reset" class="btn btn-default"><?php echo _e('cancel_button'); ?></button>
         						</div>
         						<?php echo form_close()?>
 							</div>

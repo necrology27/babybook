@@ -43,3 +43,11 @@ function getCurrentUserRole()
     
     return $CI->user_model->get_user_role_by_id($user_data['id']);
 }
+function getCurrentUserPoints()
+{
+    $CI =& get_instance();
+    $user_data = $CI->session->userdata('logged_in');
+    $CI->load->model('user_model');
+    
+    return $CI->user_model->get_user_points_by_id($user_data['id']);
+}

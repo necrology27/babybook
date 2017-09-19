@@ -49,21 +49,21 @@ body {
 
 		<li><a href="<?php echo base_url();?>child/add_child"><?php echo _e('add_child'); ?></a></li>
         <li><a href="<?php echo base_url();?>discussions"><?php echo _e('forum'); ?></a></li>
-        <li><a href="#"><?php echo _e('settings'); ?></a></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
     		<li>
     		<div class="btn-group" role="group" aria-label="New image/album">
     			<button class="btn-default btn navbar-btn" onclick="location.href='<?php echo base_url();?>home/update'"><?php echo _e('edit_profile'); ?></button>
-      			<button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>login/logout'" ><?php echo _e('logout'); ?></button>
+      			<button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>login/logout'" > <span class="glyphicon glyphicon-log-out"> </span><?php echo _e('logout'); ?></button>
       			<?php  if (getCurrentUserRole() == "3") {?>
       			<button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>admin/dashboard'" >Admin</button>
       			<?php  }?>
   			</div>
       		</li>
-      		<li><p class="navbar-text" id="user"><?php echo _e('logged_in_as'); ?>: <?php echo getCurrentUserName(); ?></p></li>
-      </ul>
+      		<li><p class="navbar-text" id="user"><?php echo _e('logged_in_as'); ?>: <?php echo getCurrentUserName(); ?></p> <p style="font-size:12px; text-align:right"> <?php  echo _e('points_num').": ".getCurrentUserPoints()?></p></li>
+      		
+      		</ul>
       
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

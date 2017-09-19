@@ -2,7 +2,7 @@
 	<div class="container white-container col-md-offset-2 col-md-3" style="text-align: center; display: grid; position: relative; padding-bottom: 15px;">
 		<h4><?php _e("child_name_placeholder");?>: <strong><?php echo $this->data['name'];?></strong></h4>
 		<h5><?php _e("birthday_label");?>: <strong><?php echo $this->data['birthday'];?></strong></h5>
-		<h5><?php _e("gender_label");?>: <strong><?php echo $this->data['gender'];?></strong></h5>
+		<h5><?php _e("gender_label");?>: <strong><?php if ($this->data['gender']==="F") echo _e('girl');  else echo _e('boy');?></strong></h5></h5>
 		<button onclick="location.href='<?php echo base_url();?>child/add_child/<?php echo $child_id;?>'" 
 				class="btn btn-danger" title="Edit"><?php echo _e('edit_button');?></button>
 	</div>

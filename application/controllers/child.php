@@ -14,7 +14,7 @@ class Child extends MY_Controller {
     
     public function add_child($get_child_id = 0){
         
-        $session_data = $this->session->userdata('logged_in');
+        $measurement = $this->user_model->get_user_data(getCurrentUserID())['measurement'];
         if($get_child_id != 0)
         {
             ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Szulo-e?????
@@ -30,7 +30,7 @@ class Child extends MY_Controller {
         $this->data['id'] = getCurrentUserID();
         
         // set validation rules
-        $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|callback_edit_child_unique[children.name.'.$session_data['id'].'.'.$get_child_id.']|min_length[3]|max_length[30]|xss_clean');
+        $this->form_validation->set_rules('name', 'Name', 'trim|required|callback_alpha_dash_space|callback_edit_child_unique[children.name.'.getCurrentUserId().'.'.$get_child_id.']|min_length[3]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('birthday', 'Birthday', 'trim|required|callback_valid_date');
         // validate form input
         
@@ -79,11 +79,17 @@ class Child extends MY_Controller {
                     $is_par=1;
                $new_child_data = array(
                    'gender' => $this->input->post('gender'),
-                   'birth_weight' => $this->input->post('birth_weight'),
-                   'birth_length' => $this->input->post('birth_length'),
                    'apgar_score' => $this->input->post('apgar_score'),
                    'is_parent' =>  $is_par
                    );
+               if($measurement === "English units(yard, stone)"){
+                   $new_child_data['birth_weight'] = $this->input->post('birth_weight')*453.59237;
+                   $new_child_data['birth_length'] = $this->input->post('birth_length')*0.0254;
+               }
+               else{
+                   $new_child_data['birth_weight'] = $this->input->post('birth_weight');
+                   $new_child_data['birth_length'] = $this->input->post('birth_length');
+               }
             }
             else{
                 $new_child_data['child_id'] = $get_child_id;

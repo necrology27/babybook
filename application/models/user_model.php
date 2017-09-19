@@ -199,4 +199,18 @@ class user_model extends CI_Model
         $this -> db -> delete('users');
     }
     
+    
+    function get_user_points_by_id($id)
+    {
+        $this->db->select('points');
+        $this->db->from('users');
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if ($this->db->affected_rows() > 0)
+            return $result[0]['points'];
+            else
+                return false;
+    }
+
 }

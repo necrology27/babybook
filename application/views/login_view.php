@@ -34,8 +34,11 @@
         		<br />
         	</div>
         	<div class="form-group">
-        		<input class="btn btn-primary" type="submit" value="<?php echo _e('login_title'); ?>" />
-        		
+        	
+        	<button type="submit" class="btn btn-primary">
+  				<i class="icon-user icon-white"></i> <span class="glyphicon glyphicon-log-in"></span> <?php echo _e('login_title'); ?>
+			</button>
+
         	</div>
         	
     	<?php echo form_close()?>

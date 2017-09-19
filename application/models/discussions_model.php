@@ -56,7 +56,7 @@ class Discussions_model extends CI_Model {
         $this->db->from('discussions a');
         $this->db->join('ratings c', 'c.ds_id=a.ds_id', 'left');
         $this->db->join('users b', 'a.usr_id=b.id', 'left');
-        
+        $this->db->group_by('a.ds_id');
         $this->db->where_in('a.ds_id', array($ds_id));
         $query = $this->db->get();
         $result = $query->result_array();
