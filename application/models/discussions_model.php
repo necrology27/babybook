@@ -73,7 +73,10 @@ class Discussions_model extends CI_Model {
             'usr_id' => getCurrentUserID(),
             'ds_is_active' => '1');
         if ($this->db->insert('discussions',$discussion_data) ) {
+            
+            $this->inc_user_points_by_ds(getCurrentUserID(), 10);
             return $this->db->insert_id();
+            
         } else {
             return false;
         }
@@ -139,8 +142,30 @@ class Discussions_model extends CI_Model {
             
         );
         
+        $this->inc_user_points_by_ds($ds_id, 2);
         $this->db->insert('ratings', $rating);
+        
         return true;
+    }
+    
+    function inc_user_points_by_ds($ds_id, $num){
+        //pontszamok novelese
+        $this->db->select('usr_id');
+        $this->db->from('discussions');
+        $this->db->where('ds_id', $ds_id);
+        $query = $this->db->get();
+        $us_id= $query->result_array()[0]['usr_id'];
+        
+        $this->db->select('points');
+        $this->db->from('users');
+        $this->db->where('id', $us_id);
+        $query = $this->db->get();
+        $us_points= $query->result_array()[0]['points'];
+        
+        $this -> db -> where('id', $us_id);
+        $this->db->update('users', array('points' => $us_points+10));
+        
+        return $us_points;
     }
     
     function add_dislike($ds_id, $like_value, $dislike_value){
