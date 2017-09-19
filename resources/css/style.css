@@ -715,3 +715,10 @@ ul.sm-wrap a{
 	 background-color: rgb(77, 219, 255);
 	 disabled:true ;
 }
+.text {
+  display: block;
+  width: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

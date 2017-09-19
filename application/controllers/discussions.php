@@ -41,9 +41,16 @@ class Discussions extends MY_Controller {
                 if($rating['ds_id']==$page_data['query'][$i]['ds_id'])
                     $page_data['query'][$i]['type']=$rating['type'];   
             }
+            if ($page_data['query'][$i]['name']==null)
+            {
+                $page_data['query'][$i]['name']= "unknown";
+                $page_data['query'][$i]['role']=4;
+                
+            }
         }
         
-        //var_dump($page_data['query']); die();
+        
+       // var_dump($page_data['query']); die();
         
         $this->load->view('templates/header');
         $this->load->view('nav/top_nav');
