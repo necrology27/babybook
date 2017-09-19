@@ -4,7 +4,7 @@
 		<div class="row" >
 			<div class="col-md-6 col-md-offset-3">
        			<?php echo $this->session->flashdata('verify_msg'); ?>
-				<div class="panel panel-default">
+				<div class="baby panel panel-default">
 					<div class="panel-heading">
 						<ul class="nav nav-tabs">
                             <li class="<?php if ($this->data['tab'] == "settings") echo "active";?>">

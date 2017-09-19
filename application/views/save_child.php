@@ -7,7 +7,7 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
         <?php echo $this->session->flashdata('verify_msg'); ?>
-			<div class="panel panel-default">
+			<div class="baby panel panel-default">
 				<div class="panel-heading">
 					<h4><?php echo _e('add_child'); ?></h4>
 				</div>

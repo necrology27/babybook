@@ -4,7 +4,7 @@
     		<?php echo '<p id="chid" style="display:hidden;">' .$this->session->flashdata('child_id') . '</p>'; ?>
     		
     	<?php echo $this->session->flashdata('verify_msg'); ?>
-        	<div class="panel panel-default">
+        	<div class="baby panel panel-default">
         		<div class="panel-heading">
         			<h4><?php echo _e('take_test_title'); ?></h4>
         			<input id="child_id" type = 'hidden' value=<?php echo $child_id; ?> >

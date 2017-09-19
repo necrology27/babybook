@@ -60,6 +60,7 @@ $lang['upload_photo_label'] = "Upload photo";
 $lang['title_label'] = "Title";
 $lang['album_label'] = "Album";
 $lang['no_album_label'] = "-";
+$lang['no_image'] = "Child's album is empty!";
 $lang['description_label'] = "Description";
 $lang['choose_file_label'] = "Choose file";
 $lang['click_on_label'] = "Click on";

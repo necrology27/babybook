@@ -1,7 +1,7 @@
 <?php if ($img_count==0)
 {?>
 	<br/>
-    <h1><?php echo $no_child; ?></h1>
+    <h1><?php _e("no_image"); ?></h1>
 <?php
 }
 else{ ?>

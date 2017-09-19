@@ -59,6 +59,7 @@ $lang['upload_photo_label'] = "Fénykép feltöltése";
 $lang['title_label'] = "Cím";
 $lang['album_label'] = "Album";
 $lang['no_album_label'] = "-";
+$lang['no_image'] = "A gyermek albuma üres!";
 $lang['description_label'] = "Leírás";
 $lang['choose_file_label'] = "Fájl kiválasztása";
 $lang['click_on_label'] = "Kattintson a";

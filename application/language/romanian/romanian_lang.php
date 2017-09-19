@@ -58,6 +58,7 @@ $lang['upload_photo_label'] = "Încarcă fotografie";
 $lang['title_label'] = "Titlu";
 $lang['album_label'] = "Album";
 $lang['no_album_label'] = "-";
+$lang['no_image'] = "Albumul copilului este gol!";
 $lang['description_label'] = "Descriere";
 $lang['choose_file_label'] = "Alege fișierul";
 $lang['click_on_label'] = "Click pe";
