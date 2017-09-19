@@ -52,10 +52,7 @@
             <div id="childs">  
 		   <?php
 		    for ($i = 0; $i < $child_count/3; $i++) {
-		        ?>
-           		
-        		    <?php
-        		  for($j=$i*3; $j < min($i*3+3, $child_count); $j++) {
+    		  for($j=$i*3; $j < min($i*3+3, $child_count); $j++) {
         		?>   
                 <div class="col-md-3 one_child" id="child<?php echo $j;?>">   
         	     	<div class="thumbnail child_box">
