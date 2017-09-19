@@ -15,10 +15,10 @@ class Home extends MY_Controller
     public function index()
     {
         if (getCurrentUserID()) {
-            
             $scripts = array(
                 'sort.js'
             );
+
             $this->data['scripts'] = $scripts;
             
             $this->data['points'] = $this->user_model->get_user_data(getCurrentUserID())['points'];
@@ -83,7 +83,7 @@ class Home extends MY_Controller
             
             if ($this->user_model->updateUser($data)) {
                 
-                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Profile updated!</div>');
+                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">'.$this->lang->line('profile_updated').'</div>');
                 $user_data = array(
                     'id' => $data['id'],
                     'name' => $data['name'],
@@ -93,7 +93,7 @@ class Home extends MY_Controller
                 ls_init_language();
                 redirect('home/update_password', $lang);
             } else {
-                $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t update profile.  Please try again later!!!</div>');
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">'.$this->lang->line('profile_update_error').'</div>');
                 redirect('home/update_password', $lang);
             }
         }
@@ -148,7 +148,7 @@ class Home extends MY_Controller
             );
             if ($this->user_model->updateUser($data)) {
                 
-                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Profile updated!</div>');
+                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">'.$this->lang->line('profile_updated').'</div>');
                 $user_data = array(
                     'id' => $data['id'],
                     'name' => $data['name'],
@@ -159,7 +159,7 @@ class Home extends MY_Controller
                 redirect('home/update', $lang);
             } else {
                 // error
-                $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t update profile.  Please try again later!!!</div>');
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">'.$this->lang->line('profile_update_error').'</div>');
                 redirect('home/update', $lang);
             }
         }

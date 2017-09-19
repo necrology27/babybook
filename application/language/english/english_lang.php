@@ -33,6 +33,7 @@ $lang['today'] = "Today";
 $lang['days_ago'] = "days ago";
 $lang['users'] = "Users";
 $lang['less_than_a_day'] = "Less than a day";
+$lang['points_num'] = "Number of Points";
 
 //filter
 $lang['boy']= "Boy";
@@ -136,9 +137,15 @@ $lang['success_message'] = "Success!";
 $lang['add_child_error'] = "Oops! Can't <b>add child</b>.  Please try again later!";
 $lang['child_update_success'] = "Successfully updated your child's profile!";
 $lang['child_update_error'] = "Oops! Can't <b>update your child's profile</b>.  Please try again later!";
-$lang[''] = "";
-$lang[''] = "";
-$lang[''] = "";
+
+$lang['profile_updated'] = "Profile updated!";
+$lang['profile_update_error'] = "Oops! Error. Can\'t update profile.  Please try again later!!!";
+$lang['mail_sent'] = "Mail sent, check your inbox!";
+$lang['mail_sent_error'] = "Oops! Can\'t send email.  Please try again later!!!";
+$lang['registration_succuss'] = "You are Successfully Registered!";
+$lang['registration_error'] = "Oops! Error. Can\'t insert data.  Please try again later!!!";
+$lang['email_new_generated_password'] = "Your new randomly generated password is: ";
+$lang['email_new_generated_password2'] = ". You may want to change this password as soon as possible.";
 
 
 // ------------------------------------------------------- Forum ----------------------------------------

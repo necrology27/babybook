@@ -53,17 +53,16 @@ class Login extends MY_Controller
             'email' => $user_email
         );
         
-        $user_id = $this->user_model->insert_user_by_facebook_id($data);
-        
+        $user = $this->user_model->insert_user_by_facebook_id($data);
         $sess_array = array(
             'name' => $user_name,
-            'id' => $user_id,
-            'user_language_id' => 1
+            'id' => $user['id'],
+            'user_language_id' => $user['language']
             
         );
         
         setCurrentUserData($sess_array);
-        
+       // redirect('home', 'refresh');
         echo "ok";
     }
     

@@ -33,6 +33,7 @@ $lang['last_updated']= "Utolsó frissítés";
 $lang['today'] = "Ma";
 $lang['days_ago'] = "napja";
 $lang['less_than_a_day'] = "Kevesebb mint egy napja";
+$lang['points_num'] = "Pontszám";
     
 //filter
 $lang['boy']= "Fiú";

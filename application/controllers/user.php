@@ -33,11 +33,11 @@ class user extends MY_Controller
             if ($this->sendMail($data, $pwd)) {
                 
                 $this->user_model->changePassword($data, $pwd);
-                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">Mail sent, check your inbox!</div>');
+                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">'.$this->lang->line('mail_sent').'</div>');
                 redirect('user/forgot');
             } else {
                 // error
-                $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Can\'t send email.  Please try again later!!!</div>');
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">'.$this->lang->line('mail_sent_error').'</div>');
                 redirect('user/forgot');
             }
         }
@@ -49,7 +49,7 @@ class user extends MY_Controller
         //$this->email->to($receiver_email);
         $this->email->to($target);
         $this->email->subject('babybook | Password reset');
-        $this->email->message('Your new randomly generated password is: ' . $pwd . '. You may want to change this password as soon as possible.');
+        $this->email->message($this->lang->line('email_new_generated_password') . $pwd . $this->lang->line('email_new_generated_password2'));
         return $this->email->send(); 
     }
     
@@ -78,10 +78,10 @@ class user extends MY_Controller
             
             if ($id = $this->user_model->insertUser($data)) {
                 
-                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">You are Successfully Registered!</div>');
+                $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">'.$this->lang->line('registration_succuss').'</div>');
                 redirect('user/register', $data);
             } else {
-                $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Oops! Error. Can\'t insert data.  Please try again later!!!</div>');
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">'.$this->lang->line('registration_error').'</div>');
                 redirect('user/register');
             }
         }

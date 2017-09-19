@@ -22,10 +22,10 @@ class user_model extends CI_Model
         if($res==false)
         {
             $this->db->insert('users', $data);
-            return $this->db->insert_id();
+            return $this->get_user_data($this->db->insert_id());
         }
         else
-            return $res['id'];
+            return $res;
     }
     
     function get_user_data_by_face_id($facebook_id)
