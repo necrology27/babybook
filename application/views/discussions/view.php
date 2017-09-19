@@ -7,8 +7,8 @@
     	</thead>
         <tbody class="col-md-offset-1">
             <tr>
-                <td>SORT: 
-                	<?php echo anchor('discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC' : 'ASC'),'Newest '
+                <td>
+                    <?php echo _e('sort_label').' '.anchor('discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC' : 'ASC'),'Newest '
                         . (($dir == 'ASC') ? 'DESC' : 'ASC'));?>
                 </td>
             </tr>

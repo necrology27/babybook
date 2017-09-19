@@ -54,6 +54,7 @@ class Admin extends MY_Controller {
             redirect("home", 'refresh');
         }
         $this->load_scripts();
+        ls_init_language();
         $this->data['current_place']= "discussions";
         $this->data['current_page']= $page;
         $this->data['num_of_data']= $this->Discussions_model->get_num_of_discussions();
@@ -62,7 +63,7 @@ class Admin extends MY_Controller {
         
         $this->data['discussion_query'] = $this->Admin_model->dashboard_fetch_discussions($first,  $this->data['num_per_page']);
         
-        ls_init_language();
+       
         $this->data['title'] = $this->lang->line('admin_discussions');
         
         $this->load->view('templates/header', $this->data);
@@ -81,13 +82,14 @@ class Admin extends MY_Controller {
             redirect("home", 'refresh');
         }
         $this->load_scripts();
+        ls_init_language();
         $this->data['current_place']= "children";
         $this->data['current_page']= $page;
         $this->data['num_of_data']= $this->Child_model->get_num_of_child();
         $first=$this->data['num_per_page']*$page;
         $this->data['children'] = $this->Child_model->getAllChildren($first,  $this->data['num_per_page']);
         
-        ls_init_language();
+        
         $this->data['title'] = $this->lang->line('admin_children');
         
         $this->load->view('templates/header', $this->data);

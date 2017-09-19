@@ -14,18 +14,17 @@ class Child extends MY_Controller {
     
     public function add_child($get_child_id = 0){
         
+        ls_init_language();
         $measurement = $this->user_model->get_user_data(getCurrentUserID())['measurement'];
         if($get_child_id != 0)
         {
             ##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Szulo-e?????
-           
             if($this->child_model->is_parent_child_relation($get_child_id,  getCurrentUserID())==false)
             {
                 header("Location: http://localhost/babybook_git/index.php/home");
             }
         }
-        
-        ls_init_language();
+
         $this->data['title'] = $this->lang->line('add_child');
         $this->data['id'] = getCurrentUserID();
         
@@ -135,10 +134,9 @@ class Child extends MY_Controller {
                 {
                    
                     if ($_FILES['userfile']['size'] != 0) {
-                        
+
+                        $err = $this->do_upload(getCurrentUserID(), $get_child_id, "Default image");
                         $this->session->set_flashdata('msg', '<div class="alert alert-success text-center">' . $this->lang->line('success_message') . '</div>');
-                        
-                        $err = $this->do_upload($session_data['id'], $get_child_id, "Default image");
                         
                         if ($err !== true)
                         {
@@ -199,7 +197,7 @@ class Child extends MY_Controller {
             $data = array(
                  'child_id' => $childId,
                  'file_name' =>  $file_name,
-                  'title' => $title,
+                 'title' => $title
              );
             $this->data = $this->data + $data;
             $imageId=$this->image_model->insertImage($data);
