@@ -7,7 +7,6 @@ $(document).ready(function() {
     	var id = arr[0];
     	var skill_group_id=arr[1];
     	var value = arr[2];
-		console.log(id + " " + skill_group_id+ " " + value);
 		$.ajax({
 		  method: 'POST',
 		  url: base_url + 'send_answer',
@@ -19,7 +18,6 @@ $(document).ready(function() {
 		    'value': value
 		  },
 		  success: function(data) {
-		         console.log("kesz");
 		      }
         });
  

@@ -47,7 +47,7 @@ if(isset($scripts))
 {
     foreach($this->data['scripts'] as $script)
     {
-        echo '<script src="'. resources_url().$script.'?v=2"></script>';
+        echo '<script src="'. resources_url().$script.'?v=3"></script>';
       
     }
 }

@@ -105,7 +105,6 @@ function sort_by_registration() {
 	    	
 	    	a_next= b[i+1].getElementsByClassName("registration_date")[0];
 	      shouldSwitch = false;
-	      console.log(a);
 	      if (a.value > a_next.value) {
 	        shouldSwitch= true;
 	        break;
@@ -129,7 +128,6 @@ function sort_by_last_update() {
 	    	a = b[i].getElementsByClassName("last_update")[0];
 	    	a_next= b[i+1].getElementsByClassName("last_update")[0];
 	      shouldSwitch = false;
-	      console.log(a);
 	      if (a.value > a_next.value) {
 	        shouldSwitch= true;
 	        break;

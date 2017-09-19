@@ -14,17 +14,16 @@
             padding-left: 10px;
             padding-top: 2px;
             margin-bottom: 15px;
-            background: #fdc;
+            background: #ADBA72;
             border-radius: 10px;
             box-shadow: 2px 2px 10px #888888;
         }
         
-        .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
-         .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12,
-         .panel, .panel-heading, nav, .navbar
-         {
-            background: #fdc;
+        .baby
+        {
+            background: #ADBA72;
             border-radius: 5px;
+            border: 0px;
         }
         
         .panel-default > .panel-heading 
@@ -44,7 +43,7 @@
     <title>babybook | <?php echo $this->data['title'];?></title>
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="baby navbar navbar-default navbar-static-top">
 		<div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">

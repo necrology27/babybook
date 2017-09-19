@@ -1,11 +1,11 @@
 $(document).ready(function() {
-	var current_page=document.getElementById("current_page").innerHTML;
-			
+	var current_page = $.trim(document.getElementById("current_page").innerHTML);
+	console.log("oldal: " + current_page);
 	var d = document.getElementById(current_page);
 	d.className += " active";
 	
-	var current_place=document.getElementById("current_place").innerHTML;
-	
+	var current_place = $.trim(document.getElementById("current_place").innerHTML);
+	console.log("hely: " + current_place);
 	var e = document.getElementById(current_place);
 	e.className += " active";
 	
@@ -37,10 +37,7 @@ $("#sortInput").on('keydown', function(){
         },
         dataType: 'html',
         success: function(response) {
-			var gallery = $("#gallery");
-			gallery.html(response);
-
-			load_album();
+        	
         }
     });
 });	

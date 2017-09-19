@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default ">
+<nav class="baby navbar navbar-default ">
     <div class="container">
         <ul class="nav navbar-nav" style="list-style-type: none;">
             <li class="page-item" id="users"><a href="<?php echo base_url();?>admin/users"><?php echo _e('users'); ?></a></li>
@@ -10,11 +10,11 @@
     		<input class="form-control" type="text" id="sortInput" onkeyup="search_by_name()" placeholder="<?php echo _e('search_by_name'); ?>">
         </div>
     </div>
+    <p id="current_place" style="display: none;">
+    	<?php echo $current_place; ?>
+    </p>
+    <p id="current_page" style="display: none;">
+    	<?php echo $current_page; ?>
+    </p>
 </nav>
-<em id="current_place"  style="display: none;">
-	<?php echo $current_place; ?>
-</em>
-<em id="current_page"  style="display: none;">
-	<?php echo $current_page; ?>
-</em>
 
