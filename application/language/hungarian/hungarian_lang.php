@@ -132,10 +132,21 @@ $lang['very_good']="Nagyon jó";
 
 //messages
 $lang['missing_image'] = "Hiányzó kép";
-$lang['success_message'] = "Siker!";
+$lang['success_message'] = "Sikerült!";
 $lang['add_child_error'] = "Hoppá! Nem sikerült a <b>gyereket hozzáadni</b>. Próbálkozzon később!";
 $lang['child_update_success'] = "Gyerek profilja sikeresen frissítve!";
 $lang['child_update_error'] = "Hoppá! Nem sikerült a <b>gyereket frissíteni</b>. Próbálkozzon később!";
+
+$lang['profile_updated'] = "Profil frissítve!";
+$lang['profile_update_error'] = "Hoppá! Hiba. Nem lehet frissíteni a profilt. Kérlek, próbáld újra később!!!";
+$lang['mail_sent'] = "E-mail elküldve, ellenőrizze a postaládáját!";
+$lang['mail_sent_error'] = "Hoppá! Nem lehet e-mailt küldeni. Kérlek, próbáld újra később!!!";
+$lang['registration_succuss'] = "Ön sikeresen regisztrált!";
+$lang['registration_error'] = "Hoppá! Hiba. Nem lehet feltölteni adatokat. Kérlek, próbáld újra később!!!";
+$lang['email_new_generated_password'] = "Az új, véletlenszerűen létrehozott jelszó: ";
+$lang['email_new_generated_password2'] = ". Lehet, hogy a jelszót a lehető leghamarabb meg szeretné változtatni.";
+$lang['invalid_username_or_password'] = "Érvénytelen felhasználónév vagy jelszó";
+
 
 
 // ------------------------------------------------------- Forum ----------------------------------------

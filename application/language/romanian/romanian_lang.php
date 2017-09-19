@@ -136,6 +136,16 @@ $lang['add_child_error'] = "Oops! Nu se poate <b>adăuga copilul</b>. Încercaț
 $lang['child_update_success'] = "Profilul copilului actualizat cu succes!";
 $lang['child_update_error'] = "Oops! Nu se poate <b>actualiza profilul copilului</b>. Încercați din nou mai târziu!";
 
+$lang['profile_updated'] = "Profil actualizat!";
+$lang['profile_update_error'] = "Hopa! Eroare. Nu se poate actualiza profilul. Vă rugăm să încercați din nou mai târziu!!!";
+$lang['mail_sent'] = "Mesajul trimis, verificați căsuța poștală!";
+$lang['mail_sent_error'] = "Hopa! Nu puteți trimite e-mailuri. Vă rugăm să încercați din nou mai târziu!!!";
+$lang['registration_succuss'] = "Sunteți înregistrat cu succes!";
+$lang['registration_error'] = "Hopa! Eroare. Nu puteți introduce date. Vă rugăm să încercați din nou mai târziu!!!";
+$lang['email_new_generated_password'] = "Noua dvs. parola generată aleatoriu este: ";
+$lang['email_new_generated_password2'] = ". Poate doriți să schimbați această parolă cât mai curând posibil";
+$lang['invalid_username_or_password'] = "Nume de utilizator sau parola incorecte";
+
 
 // ------------------------------------------------------- Forum ----------------------------------------
 // General

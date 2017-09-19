@@ -33,8 +33,8 @@
 						<?php if ($child_id == 0) { ?>
         						    <div class="form-group">
         						    <label><?php echo _e('gender_label'); ?></label><br>
-        							<input class="radiobtn" type="radio" name="gender" value="M"> <?php echo _e('male_child'); ?><br>
-          							<input class="radiobtn" type="radio" name="gender" value="F" checked> <?php echo _e('female_child'); ?><br>
+        							<input class="radiobtn" type="radio" name="gender" value="M"> <?php echo _e('boy'); ?><br>
+          							<input class="radiobtn" type="radio" name="gender" value="F" checked> <?php echo _e('girl'); ?><br>
         						</div>
 
         						<div class="form-group">

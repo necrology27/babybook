@@ -146,6 +146,7 @@ $lang['registration_succuss'] = "You are Successfully Registered!";
 $lang['registration_error'] = "Oops! Error. Can\'t insert data.  Please try again later!!!";
 $lang['email_new_generated_password'] = "Your new randomly generated password is: ";
 $lang['email_new_generated_password2'] = ". You may want to change this password as soon as possible.";
+$lang['invalid_username_or_password'] = "Invalid username or password";
 
 
 // ------------------------------------------------------- Forum ----------------------------------------
