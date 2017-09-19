@@ -1,5 +1,5 @@
 <!-- Fixed navbar -->
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -11,23 +11,23 @@
       <a class="navbar-brand" href="<?php echo base_url();?>home">babybook</a>
     </div>
 <div class="navbar-collapse collapse">
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="<?php echo base_url();?>discussions"><?php echo $this->lang->line('system_system_name'); ?></a>
     </div>
     
       <ul class="nav navbar-nav">
-      
-        <li <?php if ($this->uri->segment(1) == '') {echo 'class="active"';} ; ?>><?php echo anchor('/', $this->lang->line('top_nav_view_discussions')) ; ?></li>
-        <li <?php if ($this->uri->segment(1) == 'discussions') {echo 'class="active"';} ; ?>><?php echo anchor('discussions/create', $this->lang->line('top_nav_new_discussion')) ; ?></li>
+        <li <?php if ($this->uri->segment(2) == 'create') {echo 'class="active"';} ; ?>>
+        <?php echo anchor('discussions/create', $this->lang->line('top_nav_new_discussion')) ; ?>
+        </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
        <li><button  class="btn-primary btn navbar-btn" onclick="location.href='<?php echo base_url();?>login/logout'" ><?php echo _e('logout'); ?></button></li>
        
       </ul>
-    </div><!--/.nav-collapse -->
+    </div>
     </nav>
   </div>
 </div>

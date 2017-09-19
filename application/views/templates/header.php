@@ -9,15 +9,29 @@
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>slider/css/slider.css">
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>jquery-ui/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>nanogallery/dist/css/nanogallery.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 table, .white-container {
     padding-left: 10px;
     padding-top: 2px;
     margin-bottom: 15px;
-    background: #fff;
+    background: #fdc;
     border-radius: 10px;
     box-shadow: 2px 2px 10px #888888;
+}
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
+ .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12,
+ .panel, .panel-heading, nav, .navbar
+ {
+    background: #fdc;
+    border-radius: 5px;
+}
+
+.panel-default > .panel-heading 
+{
+    color: #fff;
+    border-radius: 5px;
+    background: #965;
 }
 
 body {
@@ -61,7 +75,7 @@ body {
       			<?php  }?>
   			</div>
       		</li>
-      		<li><p class="navbar-text" id="user"><?php echo _e('logged_in_as'); ?>: <?php echo getCurrentUserName(); ?></p> <p style="font-size:12px; text-align:right"> <?php  echo _e('points_num').": ".getCurrentUserPoints()?></p></li>
+      		<li><p class="navbar-text" id="user"><?php echo _e('logged_in_as'); ?>: <?php echo getCurrentUserName(); ?>(<strong><?php  echo getCurrentUserPoints();?></strong>)</p></li>
       		
       		</ul>
       
