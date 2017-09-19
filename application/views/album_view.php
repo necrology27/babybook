@@ -10,10 +10,9 @@
                     <label for="title"><?php echo  _e('title_label');?></label>
        				<input class="form-control" type="text" name="title" id="new_album_title" value="" />
        				<br>
-       				
            			<div class="modal-footer">
                         <input type="button" class="btn btn-default pull-right"
-                       		id="new_album_save_button" name="new_album_save_button"
+                       			id="new_album_save_button" name="new_album_save_button"
                           		value="<?php echo  _e('upload_button');?>"/>
                   	</div>
           		</form>
@@ -50,11 +49,11 @@
     </div>
     <p id="child_id" style="display: none;"><?php echo $this->data['child_id'];?></p>
     <div id="gallery" class="row col-xs-12">
-            <?php $this->load->view('nano_view', $this->data);?>
+        <?php $this->load->view('nano_view', $this->data);?>
     </div>
     <button type="button" class="btn btn-danger btn-lg col-md-2 col-xs-12 pull-right"
-    	 data-toggle="modal" data-target="#remove_modal" id="modal_btn" style="margin-bottom: 15px;">
-    	<?php echo  _e('remove_selected_label');?>
+    	 	data-toggle="modal" data-target="#remove_modal" id="modal_btn" style="margin-bottom: 15px;">
+		<?php echo  _e('remove_selected_label');?>
     </button>
     	
 </div>
