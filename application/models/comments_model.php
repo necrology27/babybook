@@ -13,7 +13,7 @@ class Comments_model extends CI_Model {
         $this->db->join('ratings d','a.cm_id=d.cm_id', 'left outer');
         $this->db->where('a.cm_is_active', 1);
         $this->db->where_in('b.ds_id',  array($ds_id));
-        $this->db->order_by("a.cm_created_at", 'DESC');
+        $this->db->order_by("a.cm_created_at", 'ASC');
         $query = $this->db->get();
         $result = $query->result_array();
         return $result;

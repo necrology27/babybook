@@ -43,6 +43,8 @@ class skill_model extends CI_Model
     }
     function get_skills_by_age($age, $lang)
     {
+        if($lang==3)
+            $lang=1;
         $this->db->select('*');
         $this->db->from('skills a');
         $this->db->join('skill_language b', 'b.skill_id=a.id', 'left');

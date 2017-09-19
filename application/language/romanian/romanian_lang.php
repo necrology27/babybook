@@ -158,6 +158,7 @@ $lang['top_nav_new_discussion'] = "Discuție nouă";
 // Discussions
 $lang['discussions_title'] = "Discuţii";
 $lang['discussions_num_comments'] = 'Comentarii';
+$lang['sort_label']= 'SORT:';
 
 // Comments
 $lang['comments_title'] = "Comentarii";

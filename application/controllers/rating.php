@@ -14,14 +14,10 @@ class rating extends MY_Controller {
             'email'
         ));
         $this->load->database();
-        $this->load->model('user_model');
-        $this->load->model('answer_model');
         $this->load->model('discussions_model');
     }
     public function index()
     {
-        $userId = getCurrentUserID();
-        
         if($_POST['ds_id']){
             //calculates the numbers of like or dislike
             if($_POST['type'] == 1){

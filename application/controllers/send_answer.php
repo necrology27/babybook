@@ -20,22 +20,13 @@ class send_answer extends MY_Controller {
     
     public function index()
     {
-
-        
-        $userId = getCurrentUserID();
-        
-        $skill_id =  $this->input->post('id');
-        $skill_group_id =  $this->input->post('skill_group_id');
-        $learned =  $this->input->post('value');
-        $child_id =  $this->input->post('child_id');
-        $age=4;
         $data = array(
-            'child_id' =>$child_id,
-            'skill_id' => $skill_id,
-            'skill_group_id' => $skill_group_id,
+            'child_id' =>$this->input->post('child_id'),
+            'skill_id' => $this->input->post('id'),
+            'skill_group_id' => $this->input->post('skill_group_id'),
             'age' => $this->get_child_age($this->child_model->get_child_birthday($child_id)['birthday']),
-            'learned' => $learned,
-            'user_id' => $userId
+            'learned' => $this->input->post('value'),
+            'user_id' => getCurrentUserID()
         );
         $result = $this->answer_model->insert_answer($data);
         echo "ok";

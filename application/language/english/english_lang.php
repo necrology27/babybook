@@ -179,6 +179,7 @@ $lang['discussion_usr_email'] = 'Your email';
 $lang['discussion_ds_title'] = 'Discussion title';
 $lang['discussion_ds_link'] = 'Post a link (optional)';
 $lang['discussion_ds_body'] = 'Your question, observații etc';
+$lang['sort_label']= 'SORT:';
 
 // Admin - titles
 $lang['admin_users'] = "Manage Users";
