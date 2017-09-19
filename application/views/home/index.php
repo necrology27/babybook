@@ -89,6 +89,7 @@
                    			<a href="<?php echo base_url();?>child/album/<?php echo $children[$j]['child_id'];?>" class="label label-success child-btn" title="Album"><?php echo _e('album_button');?></a></h4>	
                       	</div>
                    </div>
+                   <div class="overlay-name"><h2><?php echo $children[$j]['name'];?></h2></div>
         		</div>
         		<?php
         		  }?>

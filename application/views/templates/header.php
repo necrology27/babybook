@@ -22,8 +22,8 @@ table, .white-container {
 
 body {
     margin: 0 auto;
-    background: #ffffff url(<?php echo resources_url() . "img/balls.jpg"?>) no-repeat scroll;
-    background-size: cover;
+    background: #ffffff url(<?php echo resources_url() . "img/asd.jpg"?>) repeat fixed;
+    background-size: 250px;
     height: 100%;
 }
 </style>
