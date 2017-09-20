@@ -25,8 +25,9 @@
                             <li class="small"><input type="checkbox" id="male_check"/><?php echo _e('boy'); ?></li>
                         </ul>
                 	 </div>
-               		<div class="form-inline col-md-4 col-xs-12">
+               		<div class="form-inline col-md-4 col-xs-12" style="margin-top: -10px;">
                			<label for="ageslider" class=""><?php echo _e('by_age');?>:</label>
+               			<br>
                			<div class="form-group col-md-4">
                        		<input type="text" id="ageslider" class="span2" value="" data-slider-min="0" data-slider-max="72"
                         	 		data-slider-step="0.1" data-slider-value="[0, 72]" data-slider-orientation="horizontal" data-slider-handle="round"
