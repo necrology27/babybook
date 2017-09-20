@@ -1,7 +1,7 @@
 <div class="col-md-10 col-md-offset-1">
 	<div class="container-fluid" id="child_boxes">
-		<div class="white-container">
-			<h2 style="display: inline-block; margin: 5px;"><?php _e('my_children'); ?></h2>
+		<div class="white-container container">
+			<h2 class="col-md-2"><?php _e('my_children'); ?></h2>
     		<?php 
     		if ($child_count==0)
     		{?>
@@ -11,10 +11,10 @@
     		}
     		else{
             ?> 
-		   		<div class="container">
+		   		<div class="container col-md-9">
     		    	<h3 class="pull-left" style="display: inline-block;"><?php _e('filter');?>:</h3>
     		    	<br>
-               		<div class="dropdown pull-left col-md-2">
+               		<div class="dropdown col-md-2 form-inline">
                         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="gendercheck">
                         	<span class="glyphicon glyphicon-cog"></span>  
                         	<?php echo _e('by_gender');?>  
@@ -25,18 +25,15 @@
                             <li class="small"><input type="checkbox" id="male_check"/><?php echo _e('boy'); ?></li>
                         </ul>
                 	 </div>
-               		<div class="pull-left form-inline">
-               			<label for="ageslider" class="col-md-8 col-xs-12"><?php echo _e('by_age');?>:</label>
+               		<div class="form-inline col-md-4 col-xs-12">
+               			<label for="ageslider" class=""><?php echo _e('by_age');?>:</label>
                			<div class="form-group col-md-4">
                        		<input type="text" id="ageslider" class="span2" value="" data-slider-min="0" data-slider-max="72"
                         	 		data-slider-step="0.1" data-slider-value="[0, 72]" data-slider-orientation="horizontal" data-slider-handle="round"
                 	  				data-slider-selection="after" data-slider-tooltip="show">
     					</div>
                     </div>
-                    <div class="col-xs-12 col-md-2 pull-right form-group">
-                    	<input class="form-control" type="text" id="myInput" onkeyup="search_by_name()" placeholder="<?php echo _e('search_by_name'); ?>">
-                    </div>
-               		<div class="dropdown pull-right">
+               		<div class="dropdown col-md-2 form-inline">
                         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="regdatecheck">
                         <span class="glyphicon glyphicon-cog"></span> <?php echo _e('sort_by');?> <span class="caret"></span></button>
                         <ul class="dropdown-menu" aria-labelledby="regdatecheck">
@@ -46,6 +43,9 @@
                             <li class="small"><input type="radio" name="sort" onclick="sort_by_last_update()"/><?php echo _e('sort_by_last_update'); ?></li>
                         </ul>
             	    </div>
+                    <div class="pull-left col-xs-12 col-md-2 form-inline">
+                    	<input class="form-control" type="text" id="myInput" onkeyup="search_by_name()" placeholder="<?php echo _e('search_by_name'); ?>">
+                    </div>
 				</div>
 		</div>
         <div id="childs">  
