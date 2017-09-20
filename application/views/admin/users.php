@@ -2,18 +2,15 @@
     <thead>
         <tr>
             <th>#</th>
-            <th><?php echo _e('name_label') ?></th>
-            <th><?php echo _e('user_role') ?></th>
-            <th><?php echo _e('gender_label') ?></th>
-            <th><?php echo _e('number_of_children') ?></th>
-            <th><?php echo _e('number_of_discussions') ?></th>
-            <th><?php echo _e('number_of_comments') ?></th>
-            <th><?php echo _e('email_label') ?></th>
-            <th><?php echo _e('registration_date') ?></th>
-            <th><?php echo _e('birthday_label') ?></th>
-            <th><?php echo _e('role_label') ?></th>
-            <th><?php echo _e('language_label') ?></th>
-            <th><?php echo _e('measurement_label') ?></th>
+            <th><?php _e('name_label') ?></th>
+            <th><?php _e('role_label');?></th>
+            <th><?php _e('gender_label') ?></th>
+            <th><?php _e('email_label') ?></th>
+            <th><?php _e('registration_date') ?></th>
+            <th><?php _e('birthday_label') ?></th>
+            <th><?php _e('role_label') ?></th>
+            <th><?php _e('language_label') ?></th>
+            <th><?php _e('measurement_label') ?></th>
             <th></th>
         </tr>
     </thead>
@@ -24,38 +21,34 @@
                     <td><?php echo $row['id'] ; ?></td>
                     <td><?php echo $row['name'] ; ?><?php if ($row['facebook_id'] != null) {?>  <span class="fa fa-facebook-square"></span><?php } ?></td>
                     <td>
-                         <div class="dropdown pull-left col-md-2">
-                         	<?php echo $row['role'] ; ?>
-                          	<div class="dropdown pull-right">
+                         <div class="dropdown">
+                          	<div class="dropdown">
                             	<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="regdatecheck">
                                 	<span class="glyphicon glyphicon-cog"></span> 
-                                	<?php echo _e('sort_by');?> 
+                                	<?php _e('change_role');?> 
                                 	<span class="caret"></span>
                                	</button>
                                 <ul class="dropdown-menu" aria-labelledby="regdatecheck">
                                     <li class="small">
                                     	<input type="radio" name="role" 
-                                    			class="role_radio" id="admin.<?php echo  $row['id']; ?>"/>
-                                    	<?php echo  _e('admin'); ?>
+                                    			class="role_radio" id="admin.<?php echo $row['id']; ?>"/>
+                                    	<?php _e('admin'); ?>
                                     </li>
                                     <li class="small">
                                     	<input type="radio" name="role" 
-                                       			class="role_radio" id="parent.<?php echo  $row['id']; ?>"/>
-                                        <?php echo  _e('parent'); ?>
+                                       			class="role_radio" id="parent.<?php echo $row['id']; ?>"/>
+                                        <?php _e('parent'); ?>
                                     </li>
                                     <li class="small">
                                     	<input type="radio" name="role" 
-                                        		class="role_radio" id="expert.<?php echo  $row['id']; ?>"/>
-                                        <?php echo  _e('expert'); ?>
+                                        		class="role_radio" id="expert.<?php echo $row['id']; ?>"/>
+                                        <?php _e('expert'); ?>
                                     </li>
                                 </ul>
                             </div>
                     	</div>
                     </td>
                     <td><?php echo $row['gender'] ; ?></td>
-                    <td><?php echo 0 ; ?></td>
-                    <td></td>
-                    <td></td>                  
                     <td><?php echo $row['email'] ; ?></td>
                     <td><?php echo $row['registration_date'] ; ?></td>
                     <td><?php echo $row['birthday'] ; ?></td>
@@ -75,18 +68,3 @@
         <?php endif; ?>
     </tbody>
 </table>
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <h2>Modal Header</h2>
-        </div>
-        <div class="modal-body">
-            <p>Some text in the Modal Body</p>
-            <p>Some other text...</p>
-        </div>
-        <div class="modal-footer">
-          	<h3>Modal Footer</h3>
-        </div>
-    </div>
-</div>

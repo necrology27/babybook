@@ -149,9 +149,10 @@ $('#gender_check_list input[type=checkbox]').change(function(){
 		}
 	} else {
 		for (var i = 0; i < children.length/2; i++) {
-			if ($('#female_check').is(":checked") && document.getElementById('gender' + i).innerHTML == 'male') {
+			console.log("jo");
+			if ($('#female_check').is(":checked") && $.trim(document.getElementById('gender' + i).innerHTML) == 'male') {
 				$('#child' + i).hide();
-			} else if ($('#male_check').is(":checked") && document.getElementById('gender' + i).innerHTML == 'female') {
+			} else if ($('#male_check').is(":checked") && $.trim(document.getElementById('gender' + i).innerHTML) == 'female') {
 				$('#child' + i).hide();
 			}
 		}

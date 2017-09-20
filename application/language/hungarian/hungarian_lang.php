@@ -191,6 +191,7 @@ $lang['discussions_text'] = "Tartalom";
 $lang['number_of_comments'] = "Kommentek száma";
 $lang['number_of_likes'] = "Likeok száma";
 $lang['number_of_dislikes'] = "Dislikeok száma";
+$lang['change_role'] = "Szerepkör változtatása";
 
 // Admin - login
 $lang['admin_login_header'] = "Kérlek jelentkezz be";

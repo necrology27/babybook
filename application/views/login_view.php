@@ -3,11 +3,17 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0; charset=utf-8" />
     <title>babybook | <?php echo _e('login_title'); ?></title>
-    <link href="<?php echo resources_url(); ?>/css/style.css"
-    	rel="stylesheet" type="text/css" />
     <link href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css"
     	rel="stylesheet" type="text/css" />
+    <link href="<?php echo resources_url(); ?>/css/style.css"
+    	rel="stylesheet" type="text/css" />
     <style type="text/css">
+        body {
+            margin: 0 auto;
+            height: 100%;
+            background: #ffffff url(<?php echo resources_url() . "img/asd.jpg"?>) repeat fixed;
+            background-size: 250px;
+        }
         button#facebook {
             border-color: #2d5073;
             background-color: #3b5998;
@@ -21,10 +27,10 @@
 	<div class="row animated_form">
 		<div class="col-md-6 col-md-offset-3">
 			<div class="panel panel-default">
-				<div class="panel-heading">
+				<div class="panel-heading baby-heading">
 					<h1>babybook | <?php echo _e('login_title'); ?></h1>
 				</div>
-				<div class="panel-body">
+				<div class="panel-body baby">
                     <?php echo validation_errors(); ?>
                     <?php echo form_open('login/verify_login'); ?>
                 	<div class="form-group">

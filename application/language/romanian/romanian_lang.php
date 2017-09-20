@@ -190,6 +190,7 @@ $lang['discussions_text'] = "Conţinut";
 $lang['number_of_comments'] = "Numărul de comentarii";
 $lang['number_of_likes'] = "Numărul de preferințe";
 $lang['number_of_dislikes'] = "Numărul de antipatie";
+$lang['change_role'] = "Schimbați rolul";
 
 // Admin - login
 $lang['admin_login_header'] = "Conectați-vă";

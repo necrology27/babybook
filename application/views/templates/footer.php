@@ -1,7 +1,7 @@
 <br>
 <br>
 <br>
-<div class="footer white-container">
+<div class="footer white-container col-md-12">
     <em>
     	<span class="glyphicon glyphicon-envelope"></span> 
     	<a href="mailto:babybook.contact@gmail.com">babybook.contact@gmail.com</a>

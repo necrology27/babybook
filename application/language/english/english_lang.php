@@ -192,6 +192,7 @@ $lang['discussions_text'] = "Content";
 $lang['number_of_comments'] = "Number of Comments";
 $lang['number_of_likes'] = "Number of Likes";
 $lang['number_of_dislikes'] = "Number of Dislikes";
+$lang['change_role'] = "Change Role";
 
 // Admin - login
 $lang['admin_login_header'] = "Please sign in";

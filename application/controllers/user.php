@@ -28,8 +28,6 @@ class user extends MY_Controller
             
             $pwd = $this->generatePassword(8);
             
-            
-            // insert form data into database
             if ($this->sendMail($data, $pwd)) {
                 
                 $this->user_model->changePassword($data, $pwd);

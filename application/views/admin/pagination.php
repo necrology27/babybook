@@ -1,4 +1,4 @@
-<div class="baby col-md-6" style="text-align: center;margin:0 auto;">
+<div class="baby col-md-4 col-md-offset-4">
 	<?php
         $n=$num_of_data;
         $num_of_pages=ceil($n/$num_per_page);

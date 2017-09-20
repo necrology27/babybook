@@ -142,7 +142,7 @@ class Home extends MY_Controller
                 'gender' => $this->input->post('gender'),
                 'email' => $this->input->post('email'),
                 'birthday' => $this->input->post('birthday'),
-                'role' => 2,
+                'role' => getCurrentUserRole(),
                 'language' => $this->input->post('language'),
                 'measurement' => $this->input->post('measurement')
             );

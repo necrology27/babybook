@@ -1,4 +1,4 @@
-<div>
+<div class="col-md-10 col-md-offset-1">
 	<div class="container-fluid" id="child_boxes">
 		<div class="white-container">
 			<h2><?php echo _e('my_children'); ?></h2>
@@ -55,7 +55,9 @@
         		?>   
                     <div class="col-md-3 one_child" id="child<?php echo $j;?>">   
             	     	<div class="thumbnail child_box">
-                          	<img class="child_box" style="max-height: 100%;" src="<?php echo uploads_url() . getCurrentUserID() . "/" . $children[$j]['child_id'] . "/" . $def_imgs[$j]; ?>" alt="<?php echo $children[$j]['name'];?>">
+                          	<img class="child_box" style="max-height: 100%;" 
+                          			src="<?php echo uploads_url() . getCurrentUserID() . "/" . $children[$j]['child_id'] . "/" . $def_imgs[$j]; ?>" 
+                          			alt="<?php echo $children[$j]['name'];?>">
                             <div class="caption">
                                 <h3><?php echo $children[$j]['name'];?>
                                 	<em id="age<?php echo $j;?>" style="display: none;"><?php echo $children[$j]['birthday']; ?></em>
@@ -94,7 +96,9 @@
                        					class="label label-success child-btn" title="Album"><?php echo _e('album_button');?></a></h4>	
                           	</div>
             	     	</div>
-                   		<div class="overlay-name"><h2><?php echo $children[$j]['name'];?></h2></div>
+                   		<div class="overlay-name <?php if ($children[$j]['gender'] == "M") echo "boy"; else echo "girl";?>">
+                   			<h2><?php echo $children[$j]['name'];?></h2>
+                   		</div>
                     </div>
             		<?php
                     }

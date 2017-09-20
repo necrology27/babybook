@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0; charset=utf-8">
-<title>babybook | <?php echo $this->data['register_title']; ?></title>
-<script src="<?php echo resources_url();?>jquery.js"></script>
-<script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
-<script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0; charset=utf-8">
+    <title>babybook | <?php _e("register_title"); ?></title>
+    <script src="<?php echo resources_url();?>jquery.js"></script>
+    <script src="<?php echo resources_url();?>jquery-ui/jquery-ui.js"></script>
+    <script>
     $( function() {
     	var date = $('.datepicker2').datepicker({
         	 dateFormat: 'yy-mm-dd',
@@ -15,26 +15,31 @@
     	 }).val();
     } );
     </script>
-<link rel="stylesheet"
-	href="<?php echo resources_url(); ?>jquery-ui/jquery-ui.css">
-<link href="<?php echo resources_url(); ?>/css/style.css"
-	rel="stylesheet" type="text/css" />
-<link
-	href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css"
-	rel="stylesheet" type="text/css" />
+	<link rel="stylesheet"
+			href="<?php echo resources_url(); ?>jquery-ui/jquery-ui.css">
+	<link href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo resources_url(); ?>/css/style.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body {
+            margin: 0 auto;
+            height: 100%;
+            background: #ffffff url(<?php echo resources_url() . "img/asd.jpg"?>) repeat fixed;
+            background-size: 250px;
+        }
+    </style>
 </head>
 <body>
 	<img src="<?php echo resources_url();?>img/bemaszik.png" alt="<?php echo _e('missing_image'); ?>" class="back-left" />
-	<button class="btn-default btn-right" onclick="location.href='<?php echo base_url();?>login'"><?php echo _e('back_to_login'); ?></button>
+	<button class="btn-default btn-right btn-warning" onclick="location.href='<?php echo base_url();?>login'"><?php echo _e('back_to_login'); ?></button>
 	<div class="container animated_form">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
         <?php echo $this->session->flashdata('verify_msg'); ?>
 			<div class="panel panel-default">
-					<div class="panel-heading">
+					<div class="panel-heading baby-heading">
 						<h4><?php echo _e('register_title'); ?></h4>
 					</div>
-					<div class="panel-body">
+					<div class="panel-body baby">
                 <?php $attributes = array("name" => "registrationform");
                 echo form_open("user/register", $attributes); ?>
                 <div class="form-group">

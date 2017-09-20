@@ -10,34 +10,11 @@
     <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>jquery-ui/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>nanogallery/dist/css/nanogallery.min.css">
     <style>
-        table, .white-container {
-            padding-left: 10px;
-            padding-top: 2px;
-            margin-bottom: 15px;
-            background: #ADBA72;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px #888888;
-        }
-        
-        .baby
-        {
-            background: #ADBA72;
-            border-radius: 5px;
-            border: 0px;
-        }
-        
-        .panel-default > .panel-heading 
-        {
-            color: #fff;
-            border-radius: 5px;
-            background: #965;
-        }
-        
         body {
             margin: 0 auto;
+            height: 100%;
             background: #ffffff url(<?php echo resources_url() . "img/asd.jpg"?>) repeat fixed;
             background-size: 250px;
-            height: 100%;
         }
     </style>
     <title>babybook | <?php echo $this->data['title'];?></title>
