@@ -12,7 +12,7 @@
     		else{
             ?> 
 		   		<div class="container col-md-9">
-    		    	<h3 class="pull-left" style="display: inline-block;"><?php _e('filter');?>:</h3>
+    		    	<label class="form-inline col-md-1" style="margin-top: 10px;"><?php _e('filter');?>:</label>
     		    	<br>
                		<div class="dropdown col-md-2 form-inline">
                         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="gendercheck">

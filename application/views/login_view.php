@@ -24,8 +24,8 @@
 <body>
 	<img src="<?php echo resources_url();?>img/bemaszik.png" alt='"<?php echo _e('missing_image'); ?>"'
 		class="back-left" />
-	<div class="row animated_form">
-		<div class="col-md-6 col-md-offset-3">
+	<div class="row animated_form col-md-6 col-md-offset-3">
+		<div class="">
 			<div class="panel panel-default">
 				<div class="panel-heading baby-heading">
 					<h1>babybook | <?php echo _e('login_title'); ?></h1>
