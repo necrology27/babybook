@@ -1,11 +1,11 @@
-<div class="container-fluid">
+<div class="container-fluid col-md-8 col-md-offset-2">
     <table class="table table-hover table-responsive">
       	<thead>
             <tr>
               	<th class="row md-col-2"><?php echo $this->lang->line('discussions_title') ; ?></th>
             </tr>
     	</thead>
-        <tbody class="col-md-offset-1">
+        <tbody class="">
             <tr>
                 <td>
                     <?php echo _e('sort_label').' '.anchor('discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC' : 'ASC'),'Newest '

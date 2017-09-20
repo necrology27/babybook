@@ -20,7 +20,7 @@
     <title>babybook | <?php echo $this->data['title'];?></title>
 </head>
 <body>
-    <nav class="baby navbar navbar-default navbar-static-top">
+    <nav class="baby-heading navbar navbar-default navbar-static-top">
 		<div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -39,15 +39,15 @@
                 <ul class="nav navbar-nav navbar-right">
             		<li>
                 		<div class="btn-group" role="group" aria-label="New image/album">
-                			<button class="btn-default btn navbar-btn" 
+                			<button class="btn-primary btn navbar-btn" 
                 					onclick="location.href='<?php echo base_url();?>home/update'"><?php echo _e('edit_profile'); ?></button>
-                  			<button class="btn-primary btn navbar-btn" 
+                  			<button class="btn-default btn navbar-btn" 
                   					onclick="location.href='<?php echo base_url();?>login/logout'" > 
                   				<span class="glyphicon glyphicon-log-out"> </span>
                   				<?php echo _e('logout'); ?>
                   			</button>
                   			<?php  if (getCurrentUserRole() == "3") {?>
-                  				<button class="btn-primary btn navbar-btn" 
+                  				<button class="btn-info btn navbar-btn" 
                   						onclick="location.href='<?php echo base_url();?>admin/dashboard'" >Admin</button>
                   			<?php  }?>
                 		</div>

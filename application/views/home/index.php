@@ -1,18 +1,18 @@
 <div class="col-md-10 col-md-offset-1">
 	<div class="container-fluid" id="child_boxes">
 		<div class="white-container">
-			<h2><?php echo _e('my_children'); ?></h2>
+			<h2 style="display: inline-block; margin: 5px;"><?php _e('my_children'); ?></h2>
     		<?php 
     		if ($child_count==0)
     		{?>
     			<br/>
-    		    <h1><?php echo _e('no_child'); ?></h1>
+    		    <h1><?php _e('no_child'); ?></h1>
     		<?php
     		}
     		else{
             ?> 
 		   		<div class="container">
-    		    	<h3 class="pull-left"><?php echo _e('filter');?>:</h3>
+    		    	<h3 class="pull-left" style="display: inline-block;"><?php _e('filter');?>:</h3>
     		    	<br>
                		<div class="dropdown pull-left col-md-2">
                         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="gendercheck">

@@ -155,10 +155,10 @@ $lang['system_system_name'] = "babybook Fórum";
 
 // Top Nav
 $lang['top_nav_view_discussions'] = "Home";
-$lang['top_nav_new_discussion'] = "Új beszélgetés";
+$lang['top_nav_new_discussion'] = "Új bejegyzés";
 
 // Discussions
-$lang['discussions_title'] = "Beszélgetések";
+$lang['discussions_title'] = "Bejegyzések";
 $lang['discussions_num_comments'] = 'Hozzászóllások';
 $lang['sort_label']= 'RENDEZÉS:';
 
@@ -183,7 +183,7 @@ $lang['discussion_ds_body'] = 'A kérdésed, megjegyzésed stb.';
 // Admin - titles
 $lang['admin_users'] = "Felhasználók kezelése";
 $lang['admin_children'] = "Gyerekek kezelése";
-$lang['admin_discussions'] = "Beszélgetések kezelése";
+$lang['admin_discussions'] = "Bejegyzések kezelése";
 $lang['admin_comments'] = "Kommentek kezelése";
 
 // Admin - headers

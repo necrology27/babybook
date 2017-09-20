@@ -2,14 +2,14 @@ table, .white-container {
     padding-left: 10px;
     padding-top: 2px;
     margin-bottom: 15px;
-    background: #ADBA72;
+    background: #b0e18c;
     border-radius: 10px;
     box-shadow: 2px 2px 10px #888888;
 }
 
 .baby
 {
-    background: #ADBA72;
+    background: #b0e18c;
     border-radius: 5px;
     border: 0px;
 }
@@ -18,20 +18,20 @@ table, .white-container {
 {
     color: #fff;
     border-radius: 5px;
-    background: #965;
+    background: #8db43f;
 }
 
 .baby-heading
 {
-    color: #fff;
+    color: #000;
     border-radius: 5px;
-    background: #965;
+    background: #8db43f;
 }
 
 .thumbnail {
     position:relative;
     overflow:hidden;
-	background-color: hsla(29, 100%, 83%, 0.75);
+	background-color: hsla(29, 100%, 85%, 0.75);
 }
 
 .thumbnail .child_box {
