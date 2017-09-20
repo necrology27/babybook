@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="sr-only">Toggle navigation</span>
                 </button>
-                <img class="pull-left img-circle" alt="babybook" src="<?php echo resources_url()?>/img/logo.png" style="display: inline-block; margin-top: 10px; height: 30px;">
+                <img class="pull-left img-circle" alt="babybook" src="<?php echo resources_url()?>/img/logo2.png" style="display: inline-block; margin-top: 10px; height: 30px;">
                 <a class="navbar-brand" href="<?php echo base_url();?>home">babybook</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
