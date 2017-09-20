@@ -13,12 +13,6 @@
             <input type="text" name="ds_title" class="form-control" id="ds_title" value="<?php echo set_value('ds_title'); ?>">
         </div>
         <div class="form-group col-md-10">
-          	<label for="ds_link">
-          		<?php echo $this->lang->line('discussion_ds_link');?>
-          	</label>
-          	<input type="text" name="ds_link" class="form-control" id="ds_link" value="<?php echo set_value('ds_link'); ?>">
-        </div>
-        <div class="form-group col-md-10">
           	<label for="ds_body">
           		<?php echo $this->lang->line('discussion_ds_body');?>
           	</label>

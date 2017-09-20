@@ -177,7 +177,6 @@ $lang['discussion_flag'] = ' [Steag]';
 $lang['discussion_usr_name'] = 'Numele tău';
 $lang['discussion_usr_email'] = 'Email-ul tau';
 $lang['discussion_ds_title'] = 'Titlul discuției';
-$lang['discussion_ds_link'] = 'Postează un link (opțional)';
 $lang['discussion_ds_body'] = 'Întrebarea, punctul, etc.';
 
 // Admin - titles

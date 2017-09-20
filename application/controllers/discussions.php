@@ -60,7 +60,6 @@ class Discussions extends MY_Controller {
     
     public function create() {
         $this->form_validation->set_rules('ds_title', $this->lang->line('discussion_ds_title'), 'required|min_length[1]|max_length[255]');
-       // $this->form_validation->set_rules('ds_link', $this->lang->line('discussion_ds_link'), 'callback_real_url');
         $this->form_validation->set_rules('ds_body', $this->lang->line('discussion_ds_body'), 'required|min_length[1]|max_length[5000]');
         
         ls_init_language();
@@ -75,7 +74,6 @@ class Discussions extends MY_Controller {
         } else {
             $data = array(
                 'ds_title' => $this->input->post('ds_title'),
-                //'ds_link' => $this->input->post('ds_link'),
                 'ds_body' =>  $this->input->post('ds_body')
             );
             

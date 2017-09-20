@@ -6,7 +6,7 @@ class Comments_model extends CI_Model {
     }
     function fetch_comments($ds_id) {
         
-        $this->db->select('a.cm_body,c.role, a.cm_created_at, a.cm_id, b.ds_link, b.ds_id, a.like_num, a.dislike_num, b.ds_title, b.ds_body, a.like_num, a.dislike_num, c.id, c.name, d.type');
+        $this->db->select('a.cm_body,c.role, a.cm_created_at, a.cm_id, b.ds_id, a.like_num, a.dislike_num, b.ds_title, b.ds_body, a.like_num, a.dislike_num, c.id, c.name, d.type');
         $this->db->from('comments a');
         $this->db->join('discussions b', 'b.ds_id=a.ds_id', 'left');
         $this->db->join('users c', 'c.id=a.usr_id', 'left');

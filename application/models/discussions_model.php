@@ -24,7 +24,7 @@ class Discussions_model extends CI_Model {
         } else {
             $dir = 'ASC';
         }
-        $this->db->select('a.ds_id, b.role, a.ds_link,  a.like_num, a.dislike_num, a.ds_title, a.ds_body, a.like_num, a.dislike_num, b.id, b.name');
+        $this->db->select('a.ds_id, b.role,  a.like_num, a.dislike_num, a.ds_title, a.ds_body, a.like_num, a.dislike_num, b.id, b.name');
         $this->db->from('discussions a');
         $this->db->join('users b', 'b.id=a.usr_id', 'left');
         $this->db->where('a.ds_is_active', 1);
@@ -68,18 +68,14 @@ class Discussions_model extends CI_Model {
        
         $discussion_data = array(
             'ds_title' => $data['ds_title'],
-            'ds_link' => $data['ds_link'],
             'ds_body' => $data['ds_body'],
             'usr_id' => getCurrentUserID(),
             'ds_is_active' => '1');
-        if ($this->db->insert('discussions',$discussion_data) ) {
-            
-            $this->inc_user_points_by_ds(getCurrentUserID(), 10);
-            return $this->db->insert_id();
-            
-        } else {
-            return false;
-        }
+        $this->db->insert('discussions',$discussion_data);
+        $id=$this->db->insert_id();
+        $this->inc_user_points_by_ds(getCurrentUserID(), 10);
+            return $id;
+
     }
     
     function flag($ds_id) {
@@ -142,7 +138,7 @@ class Discussions_model extends CI_Model {
             
         );
         
-        $this->inc_user_points_by_ds($ds_id, 2);
+        $this->inc_user_points_by_ds($ds_id, 1);
         $this->db->insert('ratings', $rating);
         
         return true;

@@ -59,7 +59,6 @@ $lang['upload_photo_label'] = "Fénykép feltöltése";
 $lang['title_label'] = "Cím";
 $lang['album_label'] = "Album";
 $lang['no_album_label'] = "-";
-$lang['no_image'] = "A gyermek albuma üres!";
 $lang['description_label'] = "Leírás";
 $lang['choose_file_label'] = "Fájl kiválasztása";
 $lang['click_on_label'] = "Kattintson a";
@@ -161,6 +160,7 @@ $lang['top_nav_new_discussion'] = "Új beszélgetés";
 // Discussions
 $lang['discussions_title'] = "Beszélgetések";
 $lang['discussions_num_comments'] = 'Hozzászóllások';
+$lang['sort_label']= 'RENDEZÉS:';
 
 // Comments
 $lang['comments_title'] = "Hozzászóllások";
@@ -178,7 +178,6 @@ $lang['discussion_flag'] = ' [Megjelölés]';
 $lang['discussion_usr_name'] = 'A neved';
 $lang['discussion_usr_email'] = 'Email címed';
 $lang['discussion_ds_title'] = 'A téma címe';
-$lang['discussion_ds_link'] = 'Link hozzáadása (opcionális)';
 $lang['discussion_ds_body'] = 'A kérdésed, megjegyzésed stb.';
 
 // Admin - titles
