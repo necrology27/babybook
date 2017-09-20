@@ -152,7 +152,7 @@ $lang['invalid_username_or_password'] = "Invalid username or password";
 
 // ------------------------------------------------------- Forum ----------------------------------------
 // General
-$lang['system_system_name'] = "babybook Forum";
+$lang['system_system_name'] = "Forum";
 
 // Top Nav
 $lang['top_nav_view_discussions'] = "Home";
@@ -164,7 +164,7 @@ $lang['discussions_num_comments'] = 'Comments';
 
 // Comments
 $lang['comments_title'] = "Comments";
-$lang['comments_form_instruction'] = "Join in, add your comment below.";
+$lang['comments_form_instruction'] = "Add your comment below!";
 $lang['comments_flag'] = ' [Flag]';
 $lang['comments_created_by'] = 'Created by ';
 $lang['comments_created_at'] = ' at ';
@@ -178,7 +178,7 @@ $lang['discussion_flag'] = ' [Flag]';
 $lang['discussion_usr_name'] = 'Your name';
 $lang['discussion_usr_email'] = 'Your email';
 $lang['discussion_ds_title'] = 'Discussion title';
-$lang['discussion_ds_body'] = 'Your question, observații etc';
+$lang['discussion_ds_body'] = 'Your question, observations, etc.';
 $lang['sort_label']= 'SORT:';
 
 // Admin - titles

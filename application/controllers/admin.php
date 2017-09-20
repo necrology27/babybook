@@ -88,8 +88,6 @@ class Admin extends MY_Controller {
         $this->data['num_of_data']= $this->Child_model->get_num_of_child();
         $first=$this->data['num_per_page']*$page;
         $this->data['children'] = $this->Child_model->getAllChildren($first,  $this->data['num_per_page']);
-        
-        
         $this->data['title'] = $this->lang->line('admin_children');
         
         $this->load->view('templates/header', $this->data);

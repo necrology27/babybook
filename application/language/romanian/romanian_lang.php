@@ -150,7 +150,7 @@ $lang['invalid_username_or_password'] = "Nume de utilizator sau parola incorecte
 
 // ------------------------------------------------------- Forum ----------------------------------------
 // General
-$lang['system_system_name'] = "babybook Forum";
+$lang['system_system_name'] = "Forum";
 
 // Top Nav
 $lang['top_nav_view_discussions'] = "Acasă";
@@ -163,7 +163,7 @@ $lang['sort_label']= 'SORT:';
 
 // Comments
 $lang['comments_title'] = "Comentarii";
-$lang['comments_form_instruction'] = "Alăturați-vă, adăugați comentariul dvs. de mai jos.";
+$lang['comments_form_instruction'] = "Adauga comentariul tau mai jos!";
 $lang['comments_flag'] = ' [Flag]';
 $lang['comments_created_by'] = 'Creat de ';
 $lang['comments_created_at'] = ' la ';
@@ -177,7 +177,7 @@ $lang['discussion_flag'] = ' [Steag]';
 $lang['discussion_usr_name'] = 'Numele tău';
 $lang['discussion_usr_email'] = 'Email-ul tau';
 $lang['discussion_ds_title'] = 'Titlul discuției';
-$lang['discussion_ds_body'] = 'Întrebarea, punctul, etc.';
+$lang['discussion_ds_body'] = 'Întrebarea, observații etc.';
 
 // Admin - titles
 $lang['admin_users'] = "Administrare utilizatori";

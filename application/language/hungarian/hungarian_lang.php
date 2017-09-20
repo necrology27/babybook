@@ -151,7 +151,7 @@ $lang['invalid_username_or_password'] = "Érvénytelen felhasználónév vagy je
 
 // ------------------------------------------------------- Forum ----------------------------------------
 // General
-$lang['system_system_name'] = "babybook Fórum";
+$lang['system_system_name'] = "Fórum";
 
 // Top Nav
 $lang['top_nav_view_discussions'] = "Home";
@@ -164,7 +164,7 @@ $lang['sort_label']= 'RENDEZÉS:';
 
 // Comments
 $lang['comments_title'] = "Hozzászóllások";
-$lang['comments_form_instruction'] = "Szólj hozzá";
+$lang['comments_form_instruction'] = "Szólj hozzá!";
 $lang['comments_flag'] = ' [Megjelölés]';
 $lang['comments_created_by'] = 'Készítette ';
 $lang['comments_created_at'] = ' létrehozta ';
