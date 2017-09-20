@@ -6,6 +6,7 @@
     		if ($child_count==0)
     		{?>
     			<br/>
+    			<br/>
     		    <h1><?php _e('no_child'); ?></h1>
     		<?php
     		}
