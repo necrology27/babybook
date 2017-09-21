@@ -7,7 +7,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <?php if (getCurrentUserRole() == 3) {?>
+            <a class="navbar-brand" href="<?php echo base_url();?>admin">babybook</a>
+            <?php } else {?>
             <a class="navbar-brand" href="<?php echo base_url();?>home">babybook</a>
+            <?php }?>
         </div>
         <div id="admin-nav" class="baby-heading navbar-collapse collapse">
             <div class="container-fluid">
