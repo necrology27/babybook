@@ -41,6 +41,10 @@ $(document).ready(function() {
         });
  
     });
+    
+    $(".showText").click(function (e) {
+    	$(this).next().toggle();
+    });
 
 });
 

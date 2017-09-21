@@ -14,7 +14,7 @@
             </tr>
         	<?php foreach ($query as $result) { ?>
               	<tr>
-                    <td class="row md-col-2">
+                    <td class="col-md-2">
                         <div class="ratings">
                             <input class="rating_type" id="<?php echo $result['ds_id']?>" type = 'hidden' value=<?php echo $result['type']; ?> >
                             <p>
@@ -49,6 +49,10 @@
                         <br>
                         <div class="small text-muted col-md-offset-3">
                         	<?php _e('comments_created_by'); echo ": " . $result['name']; ?>
+                        </div>
+                        <button class="small btn btn-info showText" style="display: block;">+</button>
+                        <div class="col-md-5 well container" style="display: none;">
+                            <?php echo $result['ds_body']; ?>
                         </div>
                     </td>
               	</tr>
