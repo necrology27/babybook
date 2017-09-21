@@ -192,7 +192,7 @@ $lang['admin_comments'] = "Kommentek kezelése";
 // Admin - headers
 $lang['discussions_text'] = "Tartalom";
 $lang['number_of_comments'] = "Kommentek száma";
-$lang['number_of_likes'] = "Likeok száma";
+$lang['number_of_likes'] = "Kedvelések száma";
 $lang['number_of_dislikes'] = "Dislikeok száma";
 $lang['change_role'] = "Szerepkör változtatása";
 
