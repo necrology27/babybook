@@ -1,5 +1,5 @@
 <div class="container-fluid col-md-8 col-md-offset-2">
-    <table class="table table-hover table-responsive">
+    <table class="table table-hover table-responsive table-striped">
       	<thead>
             <tr>
               	<th class="row md-col-2"><?php echo $this->lang->line('discussions_title') ; ?></th>
