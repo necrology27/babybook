@@ -15,8 +15,6 @@ class child_model extends CI_Model
     }
     function getAllChildren($first,  $num_per_page)
     {
-       
-        
         $this->db->limit($num_per_page, $first);
         $this->db->get_compiled_select('children', FALSE);
         $query = $this->db->get();
@@ -126,7 +124,6 @@ class child_model extends CI_Model
         } else
             return false;
     }
-    
     public function get_child_age_by_id($child_id)
     {
         
@@ -138,7 +135,7 @@ class child_model extends CI_Model
         $age_in_month=($diff->y*12)+$diff->m+($diff->d/30);
         return $age_in_month;
     }
-   
+
     function delete($id){
         $this -> db -> where('child_id', $id);
         $this -> db -> delete('children');

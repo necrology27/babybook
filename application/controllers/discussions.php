@@ -87,13 +87,4 @@ class Discussions extends MY_Controller {
             }
         }
     }
-    public function flag() {
-        $ds_id = $this->uri->segment(3);
-        if ($this->Discussions_model->flag($ds_id)) {
-            redirect('discussions/');
-        } else {
-            // error
-            // load view and flash sess error
-        }
-    }
 }

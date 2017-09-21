@@ -46,14 +46,4 @@ class Comments extends MY_Controller {
             }
         }
     }
-    
-    public function flag() {
-        $cm_id = $this->uri->segment(4);
-        if ($this->Comments_model->flag($cm_id)) {
-            redirect('comments/index/'.$this->uri->segment(3));
-        } else {
-            // error
-            // load view and flash sess error
-        }
-    }
 }

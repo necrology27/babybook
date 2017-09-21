@@ -44,8 +44,6 @@ class answer_model extends CI_Model
                 return false;
                 
     }
-    
-    
     function last_checked_skill($childID)
     {
         for($i=0; $i<4; $i++)
@@ -61,11 +59,6 @@ class answer_model extends CI_Model
         }
         
         return $res;
-        
-        
-        
-        
-        
     }
     
     #SELECT skill_group_id, COUNT(user_id) as fail_num FROM `answers` WHERE`child_id` = 232 AND `learned`='Fail' GROUP BY `skill_group_id`
@@ -132,8 +125,7 @@ class answer_model extends CI_Model
         }
         return $score;
     }
-    
-    
+
     function get_score($child_id)
     {
         $full_answers = $this->get_answers_with_data_by_child($child_id);
@@ -141,14 +133,10 @@ class answer_model extends CI_Model
         if($full_answers != null){
             $age=$full_answers[0]["age"];
         }
-       
         $ans1=array();
         $ans2=array();
         $ans3=array();
         $ans4=array();
-        
-       
-        
         foreach ($full_answers as $one_answer)
         {
             if($one_answer["skill_group_id"]==1)
@@ -160,7 +148,6 @@ class answer_model extends CI_Model
                         elseif($one_answer["skill_group_id"]==4)
                         $ans4[]=$one_answer;
         }
-       
         $scores['personal_social']=$this->count_score($ans1, $age);
         $scores['fine_motor']=$this->count_score($ans2, $age);
         $scores['language']=$this->count_score($ans3, $age);
