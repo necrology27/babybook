@@ -23,7 +23,7 @@
                     <td><?php echo $row['birthday'] ; ?></td>
                     <td><?php 
                         if($row['genetical_disorders'] != null){ 
-                            echo _e('genetical_disorders_label')."  ".$row['genetical_disorders']; 
+                            echo _e('genetical_disorders_label')."  ".$row['genetical_disorders']."  "; 
                         } 
                         if($row['other_disorders'] != null)
                             echo _e('other_disorders_label') ."  ". $row['other_disorders'] ; 
