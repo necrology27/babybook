@@ -13,7 +13,11 @@ class Child extends MY_Controller {
     }
     
     public function add_child($get_child_id = 0){
-        
+        if(ls_get_current_language_id() == 2) {
+            $this->config->set_item('language', 'hungarian');
+        } else if(ls_get_current_language_id() == 2) {
+            $this->config->set_item('language', 'romanian');
+        }
         ls_init_language();
         $measurement = $this->user_model->get_user_data(getCurrentUserID())['measurement'];
         if($get_child_id != 0)

@@ -53,6 +53,11 @@ class Home extends MY_Controller
     {
         $session_data = $this->session->userdata('logged_in');
         $id = getCurrentUserID();
+        if(ls_get_current_language_id() == 2) {
+            $this->config->set_item('language', 'hungarian');
+        } else if(ls_get_current_language_id() == 2) {
+            $this->config->set_item('language', 'romanian');
+        }
         ls_init_language();
         $this->data['title'] = $this->lang->line('update_title');
         

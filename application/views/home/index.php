@@ -1,8 +1,7 @@
 <div class="col-md-10 col-md-offset-1">
-			<h2 class="col-md-2"><?php _e('my_children'); ?></h2>
+	<h2 class=" white-container container col-md-offset-2 col-md-2"><?php _e('my_children'); ?></h2>
 	<div class="container-fluid" id="child_boxes">
 		<div class="white-container container-fluid">
-
     		<?php 
     		if ($child_count==0)
     		{?>
@@ -14,8 +13,8 @@
     		else{
             ?> 
 		   		<div class="container filter-container col-md-12">
-    		    	<label class="form-inline col-md-1 age-filter"><?php _e('filter');?>:</label>
     		    	<br>
+    		    	<label class="form-inline col-md-1 age-filter"><?php _e('filter');?>:</label>
                		<div class="dropdown col-md-2 form-inline">
                         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="gendercheck">
                         	<span class="glyphicon glyphicon-cog"></span>  

@@ -15,12 +15,18 @@ class Comments extends MY_Controller {
         } else {
             $ds_id = $this->uri->segment(3);
         }
+
+        if(ls_get_current_language_id() == 2) {
+            $this->config->set_item('language', 'hungarian');
+        } else if(ls_get_current_language_id() == 2) {
+            $this->config->set_item('language', 'romanian');
+        }
+        ls_init_language();
         
         $page_data['discussion_querys'] = $this->Discussions_model->fetch_discussion($ds_id);
         $page_data['comment_query'] = $this->Comments_model->fetch_comments($ds_id);
         $page_data['ds_id'] = $ds_id;
         
-        ls_init_language();
         $this->data['title'] = $page_data['discussion_querys'][0]['ds_title'];
         
         $this->form_validation->set_rules('ds_id', $this->lang->line('comments_comment_hidden_id'), 'required|min_length[1]|max_length[11]');

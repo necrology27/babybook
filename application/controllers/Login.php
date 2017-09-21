@@ -9,13 +9,16 @@ class Login extends MY_Controller
     {
         parent::__construct();
         $this->load->model('user_model', '', TRUE);
-       
     }
 
     function index()
     {
-        if(getCurrentLoggedInUser() != NULL)
+        if(getCurrentLoggedInUser() != NULL){
+            if(getCurrentUserRole() == 3) {
+                redirect (base_url('admin/users'));
+            }
             redirect(base_url('home'));
+        }
             
         ls_init_language();
         $this->data['title'] = $this->lang->line('login_title');
@@ -37,6 +40,9 @@ class Login extends MY_Controller
             $this->load->view('login_view', $this->data);
             $this->load->view('templates/footer', $this->data);
         } else {
+            if(getCurrentUserRole() == 3) {
+                redirect (base_url('admin/users'));
+            }
             redirect('home', 'refresh');
         }
     }

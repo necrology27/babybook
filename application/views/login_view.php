@@ -26,11 +26,12 @@
 <body>
 	<img src="<?php echo resources_url();?>img/bemaszik.png" alt='"<?php echo _e('missing_image'); ?>"'
 		class="back-left" />
-	<div class="row animated_form col-md-6 col-md-offset-3">
+	<div class="row col-md-6 col-md-offset-3">
 		<div class="">
 			<div class="panel panel-default">
-				<div class="panel-heading baby-heading">
-					<h1>babybook | <?php echo _e('login_title'); ?></h1>
+				<div class="panel-heading baby-heading container-fluid">
+					<img src="<?php echo resources_url();?>img/logo2.png" alt='"<?php echo _e('missing_image'); ?>"' class="img-circle logo col-md-2">
+					<h1 class="col-md-6 col-md-offset-1">babybook | <?php _e('login_title'); ?></h1>
 				</div>
 				<div class="panel-body baby">
                     <?php echo validation_errors(); ?>
