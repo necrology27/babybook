@@ -101,6 +101,7 @@ $lang['birth_weight_label'] = "Greutate la naștere";
 $lang['birth_length_label'] = "Lungime la naștere";
 $lang['apgar_score_label'] = "Scorul Apgar";
 $lang['genetical_disorders_label'] = "Tulburări genetice";
+$lang['disorders_label'] = "Tulburări";
 $lang['none_placeholder'] = "nici unul";
 $lang['other_disorders_label'] = "Alte tulburări";
 $lang['default_image_label'] = "Imagine prestabilită";
@@ -155,11 +156,13 @@ $lang['system_system_name'] = "Forum";
 // Top Nav
 $lang['top_nav_view_discussions'] = "Acasă";
 $lang['top_nav_new_discussion'] = "Discuție nouă";
+$lang['registration_date'] = "Data înregistrării";
 
 // Discussions
 $lang['discussions_title'] = "Discuţii";
 $lang['discussions_num_comments'] = 'Comentarii';
 $lang['sort_label']= 'SORT:';
+$lang['discussion_label'] = 'Discuție';
 
 // Comments
 $lang['comments_title'] = "Comentarii";

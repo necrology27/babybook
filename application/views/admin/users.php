@@ -8,7 +8,6 @@
             <th><?php _e('email_label') ?></th>
             <th><?php _e('registration_date') ?></th>
             <th><?php _e('birthday_label') ?></th>
-            <th><?php _e('role_label') ?></th>
             <th><?php _e('language_label') ?></th>
             <th><?php _e('measurement_label') ?></th>
             <th></th>
@@ -17,10 +16,10 @@
     <tbody>
         <?php if (sizeof($users) > 0) : ?>
             <?php foreach ($users as $row) : ?>
-                <tr>
+                <tr> 
                     <td><?php echo $row['id'] ; ?></td>
                     <td><?php echo $row['name'] ; ?><?php if ($row['facebook_id'] != null) {?>  <span class="fa fa-facebook-square"></span><?php } ?></td>
-                    <td>
+                    <td><?php echo $row['role']."  " ; ?>
                          <div class="dropdown">
                           	<div class="dropdown">
                             	<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="regdatecheck">
@@ -52,7 +51,6 @@
                     <td><?php echo $row['email'] ; ?></td>
                     <td><?php echo $row['registration_date'] ; ?></td>
                     <td><?php echo $row['birthday'] ; ?></td>
-                    <td><?php echo $row['role'] ; ?></td>
                     <td><?php echo $row['language'] ; ?></td>
                     <td><?php echo $row['measurement'] ; ?></td>
                     <td><?php echo anchor('admin/delete_user/'.$row['id'], 'Delete', 

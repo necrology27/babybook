@@ -9,7 +9,7 @@
             <th><?php echo _e('disorders_label') ?></th>
             <th><?php echo _e('birth_weight_label') ?></th>
             <th><?php echo _e('birth_length_label') ?></th>
-            <th><?php echo _e('delete') ?></th>
+            <th></th>
 		</tr>
     </thead>
     <tbody id="children">

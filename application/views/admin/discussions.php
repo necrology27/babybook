@@ -5,9 +5,9 @@
             <th><?php echo _e('users')?></th>
             <th><?php echo _e('discussions_title')?></th>
             <th><?php echo _e('discussions_text')?></th>
-            <th><?php echo _e('number_of_comments')?></th>
             <th><?php echo _e('number_of_likes')?></th>
-            <th><?php echo _e('delete') ?></th>
+            <th><?php echo _e('number_of_dislikes')?></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -18,8 +18,8 @@
                     <td><?php echo $row['id'] ; ?></td>
                     <td><?php echo $row['ds_title']; ?></td>
                     <td><?php echo $row['ds_body']; ?></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $row['like_num']; ?></td>
+                    <td><?php echo $row['dislike_num']; ?></td>
                     <td><?php echo anchor('admin/delete_discussion/'.$row['ds_id'], 'Disable', 
                              array('onClick' => "return confirm('Are you sure you want to disable?')"));
                         ?><span class="glyphicon glyphicon-trash"></span>

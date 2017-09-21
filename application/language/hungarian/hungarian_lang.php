@@ -101,6 +101,7 @@ $lang['birth_weight_label'] = "Születési tömeg";
 $lang['birth_length_label'] = "Születési hossz";
 $lang['apgar_score_label'] = "Apgar-érték";
 $lang['genetical_disorders_label'] = "Genetikai rendellenességek";
+$lang['disorders_label'] = "Rendellenességek";
 $lang['none_placeholder'] = "semmi";
 $lang['other_disorders_label'] = "Egyéb rendellenességek";
 $lang['default_image_label'] = "Alapértelmezett kép";
@@ -152,6 +153,7 @@ $lang['invalid_username_or_password'] = "Érvénytelen felhasználónév vagy je
 // ------------------------------------------------------- Forum ----------------------------------------
 // General
 $lang['system_system_name'] = "Fórum";
+$lang['registration_date'] = "Regisztráció ideje";
 
 // Top Nav
 $lang['top_nav_view_discussions'] = "Home";
@@ -179,6 +181,7 @@ $lang['discussion_usr_name'] = 'A neved';
 $lang['discussion_usr_email'] = 'Email címed';
 $lang['discussion_ds_title'] = 'A téma címe';
 $lang['discussion_ds_body'] = 'A kérdésed, megjegyzésed stb.';
+$lang['discussion_label'] = 'Bejegyzés';
 
 // Admin - titles
 $lang['admin_users'] = "Felhasználók kezelése";

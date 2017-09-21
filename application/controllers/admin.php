@@ -65,7 +65,7 @@ class Admin extends MY_Controller {
         
        
         $this->data['title'] = $this->lang->line('admin_discussions');
-        
+
         $this->load->view('templates/header', $this->data);
         $this->load->view('nav/top_nav');
         $this->load->view('admin/admin_nav', $this->data);

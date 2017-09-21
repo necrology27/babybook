@@ -85,6 +85,7 @@ $lang['birth_length_label'] = "Birth length";
 $lang['apgar_score_label'] = "Apgar score";
 $lang['genetical_disorders_label'] = "Genetical disorders";
 $lang['other_disorders_label'] = "Other disorders";
+$lang['disorders_label'] = "Disorders";
 $lang['default_image_label'] = "Default image";
 $lang['my_child_label'] = "My child";
 $lang['registration_date'] = "Registration date";
@@ -179,6 +180,7 @@ $lang['discussion_usr_name'] = 'Your name';
 $lang['discussion_usr_email'] = 'Your email';
 $lang['discussion_ds_title'] = 'Discussion title';
 $lang['discussion_ds_body'] = 'Your question, observations, etc.';
+$lang['discussion_label'] = 'Discussion';
 $lang['sort_label']= 'SORT:';
 
 // Admin - titles

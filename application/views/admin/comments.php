@@ -3,9 +3,9 @@
     	<tr>
             <th>#</th>
             <th><?php echo _e('users')?></th>
-            <th><?php echo _e('discussion')?></th>
+            <th><?php echo _e('discussion_label')?></th>
             <th><?php echo _e('comments_comment_body')?></th>
-            <th><?php echo _e('delete') ?></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
