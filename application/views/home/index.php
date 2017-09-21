@@ -1,7 +1,8 @@
 <div class="col-md-10 col-md-offset-1">
-	<div class="container-fluid" id="child_boxes">
-		<div class="white-container container">
 			<h2 class="col-md-2"><?php _e('my_children'); ?></h2>
+	<div class="container-fluid" id="child_boxes">
+		<div class="white-container container-fluid">
+
     		<?php 
     		if ($child_count==0)
     		{?>
@@ -12,8 +13,8 @@
     		}
     		else{
             ?> 
-		   		<div class="container col-md-9">
-    		    	<label class="form-inline col-md-1" style="margin-top: 10px;"><?php _e('filter');?>:</label>
+		   		<div class="container filter-container col-md-12">
+    		    	<label class="form-inline col-md-1 age-filter"><?php _e('filter');?>:</label>
     		    	<br>
                		<div class="dropdown col-md-2 form-inline">
                         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="gendercheck">
@@ -26,7 +27,7 @@
                             <li class="small"><input type="checkbox" id="male_check"/><?php echo _e('boy'); ?></li>
                         </ul>
                 	 </div>
-               		<div class="form-inline col-md-4 col-xs-12" style="margin-top: -10px;">
+               		<div class="form-inline col-md-4 col-xs-12 age-filter" >
                			<label for="ageslider" class=""><?php echo _e('by_age');?>:</label>
                			<br>
                			<div class="form-group col-md-4">
@@ -35,7 +36,7 @@
                 	  				data-slider-selection="after" data-slider-tooltip="show">
     					</div>
                     </div>
-               		<div class="dropdown col-md-2 form-inline">
+               		<div class="dropdown col-md-2 form-inline sort-filter">
                         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" id="regdatecheck">
                         <span class="glyphicon glyphicon-cog"></span> <?php echo _e('sort_by');?> <span class="caret"></span></button>
                         <ul class="dropdown-menu" aria-labelledby="regdatecheck">

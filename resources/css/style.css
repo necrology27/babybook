@@ -651,3 +651,23 @@ li a:hover {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.age-filter
+{
+	margin-top: -10px;
+}
+
+@media screen and (max-width: 770px) {
+   .age-filter
+	{
+		margin-top: 5px;
+	}
+	div.filter-container
+	{
+		margin-bottom: 15px;
+	}
+	div.sort-filter
+	{
+		margin-bottom: 10px;
+	}
+}

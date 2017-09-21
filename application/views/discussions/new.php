@@ -16,9 +16,7 @@
           	<label for="ds_body">
           		<?php echo $this->lang->line('discussion_ds_body');?>
           	</label>
-          	<textarea class="form-control" rows="3" name="ds_body" id="ds_body">
-          		<?php echo set_value('ds_body'); ?>
-          	</textarea>
+          	<textarea class="form-control" rows="3" name="ds_body" id="ds_body"><?php echo set_value('ds_body'); ?></textarea>
         </div>
         <div class="form-group col-md-11">
           	<button type="submit" class="btn btn-success">

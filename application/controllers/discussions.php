@@ -59,10 +59,14 @@ class Discussions extends MY_Controller {
     }
     
     public function create() {
+        
+        $this->config->set_item('language', 'hungarian');
+        ls_init_language();
+       
         $this->form_validation->set_rules('ds_title', $this->lang->line('discussion_ds_title'), 'required|min_length[1]|max_length[255]');
         $this->form_validation->set_rules('ds_body', $this->lang->line('discussion_ds_body'), 'required|min_length[1]|max_length[5000]');
         
-        ls_init_language();
+       
         $this->data['title'] = $this->lang->line('top_nav_new_discussion');
         if ($this->form_validation->run() == FALSE) {
             ls_init_language();

@@ -6,6 +6,8 @@
 -- Generation Time: Sep 20, 2017 at 01:01 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
+Create Database babybook;
+use babybook;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -50,7 +52,7 @@ CREATE TABLE `answers` (
   `checked_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `user_id` int(11) DEFAULT NULL,
   `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -72,7 +74,7 @@ CREATE TABLE `children` (
   `genetical_disorders` varchar(240) DEFAULT NULL,
   `other_disorders` varchar(240) DEFAULT NULL,
   `registration_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -89,7 +91,7 @@ CREATE TABLE `comments` (
   `cm_is_active` int(1) NOT NULL,
   `like_num` int(11) NOT NULL DEFAULT '0',
   `dislike_num` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -124,17 +126,9 @@ CREATE TABLE `images` (
   `age` int(11) DEFAULT NULL,
   `title` varchar(100) DEFAULT NULL,
   `description` text
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `images`
---
-
-INSERT INTO `images` (`id`, `child_id`, `album_id`, `file_name`, `upload_date`, `age`, `title`, `description`) VALUES
-(1, 1, NULL, 'img_1505904712.jpg', '2017-09-20 10:51:52', NULL, 'Default image', NULL),
-(2, 2, NULL, 'img_1505904729.jpg', '2017-09-20 10:52:09', NULL, 'Default image', NULL),
-(3, 3, NULL, 'img_1505904920.jpg', '2017-09-20 10:55:20', NULL, 'Default image', NULL),
-(4, 4, NULL, 'img_1505904962.jpg', '2017-09-20 10:56:02', NULL, 'Default image', NULL);
 
 -- --------------------------------------------------------
 
@@ -145,7 +139,7 @@ INSERT INTO `images` (`id`, `child_id`, `album_id`, `file_name`, `upload_date`, 
 CREATE TABLE `languages` (
   `id` int(11) NOT NULL,
   `language_name` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -160,7 +154,7 @@ CREATE TABLE `ratings` (
   `cm_id` int(11) DEFAULT NULL,
   `type` enum('0','1') NOT NULL,
   `ratings_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -171,7 +165,7 @@ CREATE TABLE `ratings` (
 CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `name` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `roles`
@@ -192,7 +186,7 @@ CREATE TABLE `siblings` (
   `child_id1` int(11) DEFAULT NULL,
   `child_id2` int(11) DEFAULT NULL,
   `twins` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -349,7 +343,7 @@ INSERT INTO `skills` (`id`, `passed25pct`, `passed50pct`, `passed75pct`, `passed
 CREATE TABLE `skill_groups` (
   `id` int(11) NOT NULL,
   `name` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `skill_groups`
@@ -371,7 +365,7 @@ CREATE TABLE `skill_group_languages` (
   `lang_id` int(11) DEFAULT NULL,
   `skill_group_id` int(11) DEFAULT NULL,
   `skill_group_name` varchar(36) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -385,7 +379,7 @@ CREATE TABLE `skill_language` (
   `skill_id` int(11) DEFAULT NULL,
   `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `description` text CHARACTER SET utf8 COLLATE utf8_bin
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `skill_language`
@@ -661,9 +655,9 @@ CREATE TABLE `users` (
   `birthday` date DEFAULT NULL,
   `role` int(11) DEFAULT '1',
   `language` int(11) DEFAULT '1',
-  `measurement` enum('SI (metre, kilogram)','English units(yard, stone)') CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT 'SI (metre, kilogram)',
+  `measurement` enum('SI (metre, kilogram)','English units(yard, stone)') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'SI (metre, kilogram)',
   `points` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
