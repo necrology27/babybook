@@ -3,15 +3,13 @@
       	<thead>
             <tr>
               	<th class="row md-col-2"><?php echo $this->lang->line('discussions_title') ; ?></th>
-            </tr>
-    	</thead>
-        <tbody class="">
-            <tr>
-                <td>
+                <th class="pull-right">
                     <?php echo _e('sort_label').' '.anchor('discussions/index/sort/age/' . (($dir == 'ASC') ? 'DESC' : 'ASC'),'Newest '
                         . (($dir == 'ASC') ? 'DESC' : 'ASC'));?>
-                </td>
+                </th>
             </tr>
+    	</thead>
+        <tbody>
         	<?php foreach ($query as $result) { ?>
               	<tr>
                     <td class="col-md-2">
@@ -28,6 +26,7 @@
                                 &nbsp;
                                 &nbsp;
                                 &nbsp;
+                                <br>
                                 <span class="glyphicon glyphicon-thumbs-down rate btn" 
                                 		id="dislike.<?php echo $result['ds_id']. "." . $result['like_num']. "." .$result['dislike_num'];  ?>">
                                 </span>
