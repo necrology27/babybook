@@ -60,7 +60,11 @@ class Discussions extends MY_Controller {
     
     public function create() {
         
-        $this->config->set_item('language', 'hungarian');
+        if(ls_get_current_language_id() == 2) {
+            $this->config->set_item('language', 'hungarian');
+        } else if(ls_get_current_language_id() == 2) {
+            $this->config->set_item('language', 'romanian');
+        }
         ls_init_language();
        
         $this->form_validation->set_rules('ds_title', $this->lang->line('discussion_ds_title'), 'required|min_length[1]|max_length[255]');
