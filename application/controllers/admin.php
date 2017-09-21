@@ -18,7 +18,7 @@ class Admin extends MY_Controller {
         if (getCurrentUserRole() != 3) {
             redirect("home", 'refresh');
         }
-        
+        redirect('admin/users');
     }
 
     public function users($page=0) {
