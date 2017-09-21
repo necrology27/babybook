@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="shortcut icon" href="<?php echo base_url()?>/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo base_url()?>/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 charset=utf-8">
     <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo resources_url();?>css/style.css">

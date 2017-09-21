@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="shortcut icon" href="<?php echo base_url()?>/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo base_url()?>/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, charset=utf-8">
     <title>babybook | <?php echo _e('forgot_title'); ?></title>
     <link rel="stylesheet" href="<?php echo resources_url(); ?>jquery-ui/jquery-ui.css">

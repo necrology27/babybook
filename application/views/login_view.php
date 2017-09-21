@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <link rel="shortcut icon" href="<?php echo base_url()?>/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo base_url()?>/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0; charset=utf-8" />
     <title>babybook | <?php echo _e('login_title'); ?></title>
     <link href="<?php echo resources_url(); ?>/bootstrap-3.3.7-dist/css/bootstrap.css"
