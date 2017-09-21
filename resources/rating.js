@@ -9,8 +9,8 @@ $(document).ready(function() {
 			$(disc_rating[i]).next().children()[0].style.pointerEvents = 'none';
 			}
 		if(disc_rating[i].value=="0"){
-			$(disc_rating[i]).next().children()[2].className += " rating_active";
-			$(disc_rating[i]).next().children()[2].style.pointerEvents = 'none';
+			$(disc_rating[i]).next().children()[3].className += " rating_active";
+			$(disc_rating[i]).next().children()[3].style.pointerEvents = 'none';
 		}	
 	}
 
