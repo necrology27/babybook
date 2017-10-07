@@ -66,7 +66,7 @@ class make_test extends MY_Controller {
                $nr_of_fail_ans = $this->answer_model->get_nr_fail_answer($child_id);
                    
                $last_check = $this->answer_model->last_checked_skill($child_id);
-               
+              // var_dump($nr_of_fail_ans);die();
                for($i=0; $i<4; $i++)
                {
                    

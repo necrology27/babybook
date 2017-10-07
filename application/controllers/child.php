@@ -357,8 +357,8 @@ class Child extends MY_Controller {
         $this->data['title'] = $this->lang->line('profil_title');
         
         $scores = $this->answer_model->get_score($child_id);
-        $min_score=-30;
-        $max_score=30;
+        $min_score=-50;
+        $max_score=50;
         
         $total=$max_score-$min_score;
         

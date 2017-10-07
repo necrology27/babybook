@@ -59,7 +59,7 @@
               		<li>
               			<p class="navbar-text" id="user">
               				<?php echo _e('logged_in_as'); ?>: <?php echo getCurrentUserName(); ?>
-              				(<strong><?php  echo getCurrentUserPoints();?></strong>)
+              				(<strong><?php  echo getCurrentUserPoints();?> pont</strong>)
               			</p>
               		</li>
           		</ul>

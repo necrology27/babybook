@@ -1,5 +1,5 @@
 <div class="col-md-10 col-md-offset-1">
-	<h2 class=" white-container container col-md-offset-2 col-md-2"><?php _e('my_children'); ?></h2>
+	<h2 class=" white-container container col-md-offset-2 col-md-3"><?php _e('my_children'); ?></h2>
 	<div class="container-fluid" id="child_boxes">
 		<div class="white-container container-fluid">
     		<?php 

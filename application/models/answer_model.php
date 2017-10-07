@@ -51,7 +51,7 @@ class answer_model extends CI_Model
             $this->db->select('MAX(skill_id) as max_skill_id');
             $this->db->from('answers');
             $this->db->where('child_id', $childID);
-            $this->db->where('skill_group_id', $i);
+            $this->db->where('skill_group_id', $i+1);
             $query = $this->db->get();
             $result = $query->result_array();
             $res[$i]=$result[0]["max_skill_id"];
@@ -70,7 +70,7 @@ class answer_model extends CI_Model
             $this->db->from('answers');
             $this->db->where('child_id', $childID);
             $this->db->where('learned', 'Fail');
-            $this->db->where('skill_group_id', $i);
+            $this->db->where('skill_group_id', $i+1);
             $query = $this->db->get();
             $result = $query->result_array();
             $res[$i]=$result[0]["fail_nr"];

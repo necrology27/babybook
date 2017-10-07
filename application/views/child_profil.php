@@ -10,9 +10,9 @@
 	<div style="text-align: center;">
 		<img
 			src="<?php echo uploads_url() . $user_id . "/" . $child_id . "/" . $this->image_model->get_def_img($child_id); ?>"
-			class="img-circle" alt="<?php echo _e('missing_image');?>" height="250" style="background-color: #93DAFF; margin-bottom: 20px;">
+			class="img-circle" alt="<?php echo _e('missing_image');?>" height="200" style="background-color: #93DAFF; margin-bottom: 20px;">
 	</div>
-	<div class="baby container white-container" style="display: grid;">
+	<div class="baby container white-container" style="display: grid height:'120';">
 		<div>
 			<h3><?php echo _e('social'); ?></h3>
 			<div class="progress">
